@@ -3,7 +3,7 @@ from pathlib import Path
 from app.agents.schema import Agent, AgentRegistry
 
 
-ROOT_DIR = Path(__file__).resolve().parents[5]
+ROOT_DIR = Path(__file__).resolve().parents[4]
 REGISTRY_PATH = ROOT_DIR / "packages" / "agents" / "registry.json"
 LEGACY_AGENT_ALIASES = {
     "policy": "Hill",

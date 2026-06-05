@@ -2,7 +2,7 @@ from pathlib import Path
 from app.agents.schema import Agent
 
 
-ROOT_DIR = Path(__file__).resolve().parents[5]
+ROOT_DIR = Path(__file__).resolve().parents[4]
 PROMPTS_DIR = ROOT_DIR / "packages" / "agents" / "prompts"
 
 

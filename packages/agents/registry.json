@@ -1,131 +1,2044 @@
 {
   "agents": [
-    {"name":"Jarvis","role":"central_orchestrator","department":"executive","model_role":"orchestrator","prompt_file":"jarvis.md","description":"Central orchestrator for all Jarvis operations.","responsibility":"Coordinate all agents, understand user intent, plan workflows, assign work, request approval when required, and ensure safe execution."},
-
-    {"name":"Athena","role":"chief_strategy_agent","department":"executive","model_role":"orchestrator","prompt_file":"athena.md","description":"Business strategy and long-term planning agent.","responsibility":"Create business strategy, growth planning, competitive positioning, and high-level operational direction."},
-    {"name":"Alfred","role":"operations_manager","department":"operations","model_role":"orchestrator","prompt_file":"alfred.md","description":"Daily operations manager.","responsibility":"Manage daily business operations, task prioritization, internal process flow, and operational reporting."},
-    {"name":"Friday","role":"reporting_officer","department":"operations","model_role":"fast","prompt_file":"friday.md","description":"Reports and WhatsApp summaries.","responsibility":"Prepare instant, hourly, daily, and weekly reports for Janon through the reporting channel."},
-    {"name":"Oracle","role":"decision_memory_keeper","department":"operations","model_role":"fast","prompt_file":"oracle.md","description":"Decision memory and repeated-doubt prevention agent.","responsibility":"Store confirmed decisions, retrieve previous answers, prevent repeated doubts, and maintain operational memory."},
-
-    {"name":"Peter","role":"full_stack_developer","department":"development","model_role":"coder","prompt_file":"peter.md","description":"Full-stack software development agent.","responsibility":"Build, refactor, debug, and maintain production-grade software systems."},
-    {"name":"Tony","role":"software_architect","department":"development","model_role":"coder","prompt_file":"tony.md","description":"Software architecture agent.","responsibility":"Design scalable architecture, choose stacks, define modules, APIs, database structure, and engineering standards."},
-    {"name":"Ada","role":"algorithm_engineer","department":"development","model_role":"coder","prompt_file":"ada.md","description":"Algorithms and complex logic agent.","responsibility":"Solve complex programming logic, algorithms, optimization, and data-structure problems."},
-    {"name":"Linus","role":"code_review_engineer","department":"development","model_role":"coder","prompt_file":"linus.md","description":"Code review and standards agent.","responsibility":"Review code quality, maintainability, security, performance, and style compliance."},
-    {"name":"Dennis","role":"systems_programmer","department":"development","model_role":"coder","prompt_file":"dennis.md","description":"Low-level systems programming agent.","responsibility":"Handle systems programming, memory-sensitive work, native modules, and performance-focused code."},
-
-    {"name":"Taylor","role":"frontend_engineer","department":"frontend","model_role":"coder","prompt_file":"taylor.md","description":"Frontend engineering agent.","responsibility":"Build clean, responsive, accessible frontend interfaces using React, Vue, Tailwind, and modern JavaScript."},
-    {"name":"Victor","role":"vue_engineer","department":"frontend","model_role":"coder","prompt_file":"victor.md","description":"Vue frontend specialist.","responsibility":"Build Vue, Nuxt, and component-based frontend systems."},
-    {"name":"Rhea","role":"react_engineer","department":"frontend","model_role":"coder","prompt_file":"rhea.md","description":"React frontend specialist.","responsibility":"Build React, Next.js, Electron UI, state management, and frontend application structure."},
-    {"name":"Mason","role":"ui_component_engineer","department":"frontend","model_role":"coder","prompt_file":"mason.md","description":"UI component system agent.","responsibility":"Create reusable UI components, design systems, and frontend component libraries."},
-    {"name":"Iris","role":"accessibility_engineer","department":"frontend","model_role":"coder","prompt_file":"iris.md","description":"Accessibility specialist.","responsibility":"Ensure WCAG accessibility, semantic HTML, keyboard navigation, and readable user interfaces."},
-
-    {"name":"Bruno","role":"backend_engineer","department":"backend","model_role":"coder","prompt_file":"bruno.md","description":"Backend engineering agent.","responsibility":"Build APIs, business logic, authentication, queues, database integration, and backend services."},
-    {"name":"Lara","role":"laravel_engineer","department":"backend","model_role":"coder","prompt_file":"lara.md","description":"Laravel specialist.","responsibility":"Build Laravel applications, Blade, Livewire, Filament, APIs, queues, policies, and database systems."},
-    {"name":"Django","role":"django_engineer","department":"backend","model_role":"coder","prompt_file":"django.md","description":"Django specialist.","responsibility":"Build Django apps, ORM models, admin panels, APIs, authentication, and deployment-ready backend systems."},
-    {"name":"Felix","role":"fastapi_engineer","department":"backend","model_role":"coder","prompt_file":"felix.md","description":"FastAPI specialist.","responsibility":"Build FastAPI services, async APIs, AI backends, tool APIs, and microservices."},
-    {"name":"Nolan","role":"nodejs_engineer","department":"backend","model_role":"coder","prompt_file":"nolan.md","description":"Node.js backend specialist.","responsibility":"Build Express, NestJS, APIs, workers, integrations, and Node.js backend services."},
-    {"name":"Gordon","role":"go_engineer","department":"backend","model_role":"coder","prompt_file":"gordon.md","description":"Go backend specialist.","responsibility":"Build high-performance Go services, APIs, workers, and backend utilities."},
-    {"name":"Rusty","role":"rust_engineer","department":"backend","model_role":"coder","prompt_file":"rusty.md","description":"Rust specialist.","responsibility":"Build Rust daemons, task runners, command guards, resource monitors, and performance-critical modules."},
-
-    {"name":"Mia","role":"mobile_app_engineer","department":"mobile","model_role":"coder","prompt_file":"mia.md","description":"Mobile app development agent.","responsibility":"Build mobile apps and mobile-first architecture."},
-    {"name":"Flutter","role":"flutter_engineer","department":"mobile","model_role":"coder","prompt_file":"flutter.md","description":"Flutter specialist.","responsibility":"Build Flutter apps, widgets, state management, API integration, and deployment preparation."},
-    {"name":"Kara","role":"kotlin_android_engineer","department":"mobile","model_role":"coder","prompt_file":"kara.md","description":"Android Kotlin specialist.","responsibility":"Build native Android apps using Kotlin."},
-    {"name":"Sofia","role":"swift_ios_engineer","department":"mobile","model_role":"coder","prompt_file":"sofia.md","description":"iOS Swift specialist.","responsibility":"Build native iOS apps using Swift and Apple platform standards."},
-    {"name":"Riley","role":"react_native_engineer","department":"mobile","model_role":"coder","prompt_file":"riley.md","description":"React Native specialist.","responsibility":"Build cross-platform mobile apps using React Native."},
-
-    {"name":"Edison","role":"desktop_app_engineer","department":"desktop","model_role":"coder","prompt_file":"edison.md","description":"Desktop app specialist.","responsibility":"Build desktop apps using Electron, Tauri, Python Qt, and .NET when required."},
-    {"name":"Electron","role":"electron_engineer","department":"desktop","model_role":"coder","prompt_file":"electron.md","description":"Electron specialist.","responsibility":"Build and maintain React + Electron desktop applications."},
-    {"name":"Tauri","role":"tauri_engineer","department":"desktop","model_role":"coder","prompt_file":"tauri.md","description":"Tauri specialist.","responsibility":"Build lightweight desktop applications using Tauri and Rust."},
-
-    {"name":"Diana","role":"database_architect","department":"database","model_role":"coder","prompt_file":"diana.md","description":"Database architecture agent.","responsibility":"Design database schemas, relationships, indexing, migrations, and data integrity rules."},
-    {"name":"Postgres","role":"postgresql_specialist","department":"database","model_role":"coder","prompt_file":"postgres.md","description":"PostgreSQL specialist.","responsibility":"Handle PostgreSQL, pgvector, indexing, query optimization, and database administration."},
-    {"name":"Myra","role":"mysql_specialist","department":"database","model_role":"coder","prompt_file":"myra.md","description":"MySQL specialist.","responsibility":"Handle MySQL schema design, optimization, migrations, and Laravel database patterns."},
-    {"name":"Vector","role":"vector_database_specialist","department":"database","model_role":"research","prompt_file":"vector.md","description":"Vector DB and embedding specialist.","responsibility":"Manage embeddings, semantic search, RAG indexes, pgvector, and retrieval quality."},
-
-    {"name":"Rhodes","role":"devops_engineer","department":"devops","model_role":"coder","prompt_file":"rhodes.md","description":"Deployment and infrastructure agent.","responsibility":"Manage VPS, Docker, K3s, SSL, backups, logs, deployments, and rollback."},
-    {"name":"Kube","role":"kubernetes_engineer","department":"devops","model_role":"coder","prompt_file":"kube.md","description":"Kubernetes/K3s specialist.","responsibility":"Manage K3s namespaces, workloads, services, ingress, secrets, volumes, and cluster health."},
-    {"name":"Docker","role":"docker_engineer","department":"devops","model_role":"coder","prompt_file":"docker.md","description":"Docker specialist.","responsibility":"Create Dockerfiles, Compose files, containers, images, networks, and build pipelines."},
-    {"name":"Nginx","role":"nginx_engineer","department":"devops","model_role":"coder","prompt_file":"nginx.md","description":"Nginx and ingress specialist.","responsibility":"Configure Nginx, reverse proxies, ingress routes, SSL routing, and domain mapping."},
-    {"name":"Atlas","role":"backup_engineer","department":"devops","model_role":"fast","prompt_file":"atlas.md","description":"Backup and recovery specialist.","responsibility":"Create backup plans, restore procedures, grace-period retention, and disaster recovery workflows."},
-    {"name":"Sentinel","role":"monitoring_engineer","department":"devops","model_role":"fast","prompt_file":"sentinel.md","description":"Monitoring specialist.","responsibility":"Monitor uptime, logs, resources, errors, failures, and escalation triggers."},
-
-    {"name":"Bruce","role":"qa_engineer","department":"qa","model_role":"coder","prompt_file":"bruce.md","description":"QA and testing agent.","responsibility":"Test projects before deployment and produce deployment-readiness reports."},
-    {"name":"Cypress","role":"e2e_testing_engineer","department":"qa","model_role":"coder","prompt_file":"cypress.md","description":"End-to-end testing specialist.","responsibility":"Create and run E2E tests using Playwright/Cypress-style workflows."},
-    {"name":"Percy","role":"performance_tester","department":"qa","model_role":"coder","prompt_file":"percy.md","description":"Performance testing agent.","responsibility":"Check speed, Lighthouse performance, API response times, and optimization opportunities."},
-    {"name":"Quinn","role":"quality_auditor","department":"qa","model_role":"fast","prompt_file":"quinn.md","description":"Quality audit specialist.","responsibility":"Audit final outputs against LKP quality standards before approval."},
-
-    {"name":"VictorSec","role":"cybersecurity_specialist","department":"security","model_role":"coder","prompt_file":"victorsec.md","description":"Cybersecurity specialist.","responsibility":"Audit security, vulnerabilities, authentication, authorization, secrets, and secure coding."},
-    {"name":"Vault","role":"secrets_manager","department":"security","model_role":"fast","prompt_file":"vault.md","description":"Secrets and credentials specialist.","responsibility":"Manage secret handling rules, token safety, access separation, and credential protection."},
-    {"name":"Shield","role":"application_security_engineer","department":"security","model_role":"coder","prompt_file":"shield.md","description":"Application security agent.","responsibility":"Check OWASP risks, validation, permissions, uploads, sessions, and API security."},
-    {"name":"Gatekeeper","role":"approval_security_guard","department":"security","model_role":"fast","prompt_file":"gatekeeper.md","description":"Approval and risk guard.","responsibility":"Classify actions by risk and enforce strict approval requirements."},
-
-    {"name":"Uma","role":"uiux_designer","department":"uiux","model_role":"orchestrator","prompt_file":"uma.md","description":"UI/UX design specialist.","responsibility":"Design user flows, layouts, wireframes, dashboards, and product experience."},
-    {"name":"Figma","role":"design_system_specialist","department":"uiux","model_role":"orchestrator","prompt_file":"figma.md","description":"Design system agent.","responsibility":"Create consistent design systems, typography, spacing, components, and brand UI standards."},
-    {"name":"Nova","role":"brand_designer","department":"uiux","model_role":"orchestrator","prompt_file":"nova.md","description":"Brand design agent.","responsibility":"Support brand identity, visual consistency, campaign creatives, and professional presentation."},
-
-    {"name":"Neil","role":"seo_specialist","department":"seo","model_role":"orchestrator","prompt_file":"neil.md","description":"SEO specialist.","responsibility":"Improve organic visibility using ethical, white-hat SEO only."},
-    {"name":"Serena","role":"technical_seo_specialist","department":"seo","model_role":"coder","prompt_file":"serena.md","description":"Technical SEO specialist.","responsibility":"Audit sitemaps, robots.txt, structured data, page speed, canonical tags, and crawlability."},
-    {"name":"Link","role":"backlink_researcher","department":"seo","model_role":"research","prompt_file":"link.md","description":"White-hat backlink researcher.","responsibility":"Find ethical directory, partnership, citation, and guest-post opportunities without spam."},
-    {"name":"Local","role":"local_seo_specialist","department":"seo","model_role":"research","prompt_file":"local.md","description":"Local SEO specialist.","responsibility":"Improve local visibility, business listings, location pages, and local content strategy."},
-
-    {"name":"Natasha","role":"content_creator","department":"content","model_role":"orchestrator","prompt_file":"natasha.md","description":"Content creation agent.","responsibility":"Create business content, blogs, captions, scripts, website copy, and platform-specific content."},
-    {"name":"Blake","role":"blog_writer","department":"content","model_role":"orchestrator","prompt_file":"blake.md","description":"Blog writing specialist.","responsibility":"Write SEO-friendly blog posts and insights for LKP and client websites."},
-    {"name":"Copy","role":"copywriter","department":"content","model_role":"orchestrator","prompt_file":"copy.md","description":"Copywriting specialist.","responsibility":"Write persuasive website copy, ad copy, landing-page copy, and CTA-driven content."},
-    {"name":"Script","role":"video_script_writer","department":"content","model_role":"orchestrator","prompt_file":"script.md","description":"Video script specialist.","responsibility":"Write short-form and long-form video scripts for marketing and education."},
-    {"name":"Tamil","role":"tamil_content_specialist","department":"content","model_role":"orchestrator","prompt_file":"tamil.md","description":"Tamil content specialist.","responsibility":"Create and refine Tamil content for Sri Lankan audiences."},
-
-    {"name":"Maya","role":"digital_marketing_manager","department":"marketing","model_role":"orchestrator","prompt_file":"maya.md","description":"Digital marketing manager.","responsibility":"Plan digital campaigns, funnels, content calendars, lead generation, and campaign performance."},
-    {"name":"Meta","role":"meta_ads_specialist","department":"marketing","model_role":"research","prompt_file":"meta.md","description":"Meta ads specialist.","responsibility":"Plan Facebook and Instagram campaigns using official platform rules and ethical advertising."},
-    {"name":"LinkedIn","role":"linkedin_marketing_specialist","department":"marketing","model_role":"research","prompt_file":"linkedin.md","description":"LinkedIn marketing specialist.","responsibility":"Plan B2B LinkedIn content, outreach, company updates, and lead campaigns."},
-    {"name":"Xavier","role":"x_marketing_specialist","department":"marketing","model_role":"research","prompt_file":"xavier.md","description":"X/Twitter marketing specialist.","responsibility":"Plan X content, threads, updates, and brand positioning."},
-    {"name":"Tiktok","role":"tiktok_marketing_specialist","department":"marketing","model_role":"research","prompt_file":"tiktok.md","description":"TikTok marketing specialist.","responsibility":"Plan TikTok video ideas, scripts, hooks, and posting strategy."},
-    {"name":"YouTube","role":"youtube_strategy_specialist","department":"marketing","model_role":"research","prompt_file":"youtube.md","description":"YouTube strategy specialist.","responsibility":"Plan YouTube videos, titles, descriptions, thumbnails, and channel growth."},
-
-    {"name":"Sasha","role":"sales_manager","department":"sales","model_role":"customer_support","prompt_file":"sasha.md","description":"Sales management agent.","responsibility":"Handle sales strategy, lead qualification, follow-ups, and sales pipeline support."},
-    {"name":"Pepper","role":"customer_care_agent","department":"customer_support","model_role":"customer_support","prompt_file":"pepper.md","description":"Customer support agent.","responsibility":"Reply professionally to customer inquiries, collect requirements, and route work."},
-    {"name":"Morgan","role":"finance_quotation_manager","department":"finance","model_role":"orchestrator","prompt_file":"morgan.md","description":"Quotation and finance agent.","responsibility":"Prepare quotations, invoices, renewals, payment tracking, and pricing-based documents."},
-    {"name":"Ledger","role":"accounting_agent","department":"finance","model_role":"fast","prompt_file":"ledger.md","description":"Accounting support agent.","responsibility":"Track income, expenses, invoices, renewals, and financial summaries."},
-    {"name":"Renewal","role":"renewal_manager","department":"finance","model_role":"fast","prompt_file":"renewal.md","description":"Domain and hosting renewal agent.","responsibility":"Track yearly service renewals, unpaid clients, grace periods, and suspension schedules."},
-
-    {"name":"Lawrence","role":"contract_manager","department":"legal","model_role":"orchestrator","prompt_file":"lawrence.md","description":"Contract management agent.","responsibility":"Draft contract structures, service terms, payment policies, ownership clauses, and corporate legal wording."},
-    {"name":"Hill","role":"policy_manager","department":"legal","model_role":"fast","prompt_file":"policy.md","description":"Policy management agent.","responsibility":"Maintain internal policies for client source code ownership, payments, privacy, renewals, and service suspension."},
-
-    {"name":"Vision","role":"research_agent","department":"research","model_role":"research","prompt_file":"vision.md","description":"Research and trusted-source agent.","responsibility":"Research from official, trusted, high-authority sources and reject weak or risky information."},
-    {"name":"Lois","role":"documentation_specialist","department":"documentation","model_role":"orchestrator","prompt_file":"docu.md","description":"Documentation specialist.","responsibility":"Create technical docs, user manuals, SOPs, README files, and internal documentation."},
-    {"name":"Tutor","role":"training_agent","department":"training","model_role":"orchestrator","prompt_file":"tutor.md","description":"Training and teaching agent.","responsibility":"Teach concepts step by step and create learning material for staff or users."},
-
-    {"name":"Cisco","role":"browser_automation_engineer","department":"automation","model_role":"fast","prompt_file":"happy.md","description":"Browser automation agent.","responsibility":"Use Playwright safely for form filling, browser workflows, screenshots, and controlled browser tasks."},
-    {"name":"Fury","role":"api_integration_specialist","department":"automation","model_role":"coder","prompt_file":"api.md","description":"API integration specialist.","responsibility":"Integrate official APIs for WhatsApp, Meta, LinkedIn, X, TikTok, email, and other business systems."},
-    {"name":"Tempus","role":"task_scheduler_agent","department":"automation","model_role":"fast","prompt_file":"scheduler.md","description":"Task scheduling specialist.","responsibility":"Manage scheduled jobs, retries, queue timing, reports, and task calendars."},
-
-    {"name":"Cypher","role":"data_engineer","department":"data","model_role":"coder","prompt_file":"data.md","description":"Data engineering agent.","responsibility":"Build data pipelines, imports, exports, transformations, and structured business data workflows."},
-    {"name":"Analyst","role":"business_analyst","department":"analytics","model_role":"orchestrator","prompt_file":"analyst.md","description":"Business analytics agent.","responsibility":"Analyze sales, marketing, projects, customer behavior, renewals, and business performance."},
-    {"name":"Metric","role":"analytics_dashboard_specialist","department":"analytics","model_role":"coder","prompt_file":"metric.md","description":"Analytics dashboard specialist.","responsibility":"Build dashboards, KPIs, reports, charts, and data summaries."},
-
-    {"name":"Aiden","role":"ai_engineer","department":"ai","model_role":"coder","prompt_file":"aiden.md","description":"AI engineering agent.","responsibility":"Build AI workflows, model routing, RAG, embeddings, prompts, and agent systems."},
-    {"name":"Wanda","role":"prompt_engineer","department":"ai","model_role":"orchestrator","prompt_file":"prompt.md","description":"Prompt engineering agent.","responsibility":"Create high-quality prompts, system messages, agent instructions, and task templates."},
-    {"name":"Rag","role":"rag_engineer","department":"ai","model_role":"coder","prompt_file":"rag.md","description":"RAG specialist.","responsibility":"Build retrieval-augmented generation pipelines, chunking, embeddings, and knowledge retrieval."},
-    {"name":"Strange","role":"model_router","department":"ai","model_role":"fast","prompt_file":"model.md","description":"Model routing specialist.","responsibility":"Choose the right model for tasks based on cost, speed, quality, and capability."},
-
-    {"name":"Wordpress","role":"wordpress_engineer","department":"cms","model_role":"coder","prompt_file":"wordpress.md","description":"WordPress specialist.","responsibility":"Build WordPress websites, themes, plugins, SEO setup, and client CMS workflows."},
-    {"name":"Shopify","role":"shopify_specialist","department":"ecommerce","model_role":"coder","prompt_file":"shopify.md","description":"Shopify specialist.","responsibility":"Build Shopify stores, product setup, theme configuration, and e-commerce workflows."},
-    {"name":"Commerce","role":"ecommerce_architect","department":"ecommerce","model_role":"coder","prompt_file":"commerce.md","description":"E-commerce architecture specialist.","responsibility":"Design e-commerce systems, checkout flows, orders, inventory, payments, and customer portals."},
-    {"name":"Gambit","role":"pos_system_specialist","department":"business_systems","model_role":"coder","prompt_file":"pos.md","description":"POS system specialist.","responsibility":"Build POS, inventory, stock, sales, receipt, barcode, and cashier workflows."},
-    {"name":"Forge","role":"erp_system_specialist","department":"business_systems","model_role":"coder","prompt_file":"erp.md","description":"ERP specialist.","responsibility":"Design ERP modules including HR, finance, inventory, CRM, procurement, and reporting."},
-    {"name":"Mantis","role":"crm_specialist","department":"business_systems","model_role":"coder","prompt_file":"crm.md","description":"CRM specialist.","responsibility":"Build lead, customer, quotation, follow-up, support, and sales pipeline systems."},
-
-    {"name":"Raven","role":"email_system_specialist","department":"communication","model_role":"coder","prompt_file":"email.md","description":"Email system specialist.","responsibility":"Handle email integration, SMTP, templates, inbox automation, and customer email workflows."},
-    {"name":"WhatsApp","role":"whatsapp_cloud_api_specialist","department":"communication","model_role":"coder","prompt_file":"whatsapp.md","description":"WhatsApp Cloud API specialist.","responsibility":"Integrate WhatsApp Cloud API, webhooks, templates, customer replies, and reporting flows."},
-    {"name":"Canary","role":"voice_assistant_specialist","department":"communication","model_role":"research","prompt_file":"voice.md","description":"Voice assistant specialist.","responsibility":"Plan speech-to-text, text-to-speech, voice commands, and local voice workflows."},
-
-    {"name":"Constantine","role":"domain_management_agent","department":"infrastructure","model_role":"fast","prompt_file":"domain.md","description":"Domain management specialist.","responsibility":"Manage domain purchase workflows, DNS planning, registrar automation, and renewal tracking."},
-    {"name":"Cloudflare","role":"dns_cloudflare_specialist","department":"infrastructure","model_role":"coder","prompt_file":"cloudflare.md","description":"Cloudflare DNS specialist.","responsibility":"Manage DNS records, SSL, proxying, redirects, and domain configuration."},
-    {"name":"Bishop","role":"git_repository_manager","department":"infrastructure","model_role":"coder","prompt_file":"git.md","description":"Git and repository specialist.","responsibility":"Manage Gitea repositories, GitHub backups, branches, commits, tags, releases, and source ownership."},
-
-    {"name":"Mystique","role":"image_generation_specialist","department":"creative","model_role":"research","prompt_file":"image.md","description":"Image and creative generation specialist.","responsibility":"Plan creative prompts, ad visuals, thumbnails, and image workflows."},
-    {"name":"Quicksilver","role":"video_production_specialist","department":"creative","model_role":"orchestrator","prompt_file":"video.md","description":"Video production specialist.","responsibility":"Plan video ads, reels, scripts, storyboards, shot lists, and platform video formats."},
-
-    {"name":"Moira","role":"hr_recruitment_agent","department":"hr","model_role":"orchestrator","prompt_file":"recruiter.md","description":"HR recruitment specialist.","responsibility":"Create job posts, candidate scoring, interview questions, onboarding, and staff communication."},
-    {"name":"Coulson","role":"admin_officer","department":"administration","model_role":"fast","prompt_file":"admin.md","description":"Administration officer.","responsibility":"Handle internal admin tasks, SOPs, schedules, records, and office workflows."}
+    {
+      "name": "Jarvis",
+      "role": "central_orchestrator",
+      "department": "executive",
+      "model_role": "orchestrator",
+      "prompt_file": "jarvis.md",
+      "description": "Central orchestrator for all Jarvis operations.",
+      "responsibility": "Coordinate all agents, understand user intent, plan workflows, assign work, request approval when required, and ensure safe execution.",
+      "profile_path": "packages/agents/prompts/jarvis.md",
+      "priority": 5,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "agent_registry",
+        "task_dashboard",
+        "approval_records",
+        "operational_reports"
+      ],
+      "authority_scope": "May coordinate and review central orchestrator work within approved company operations but must preserve approval gates for dangerous actions."
+    },
+    {
+      "name": "Athena",
+      "role": "chief_strategy_agent",
+      "department": "executive",
+      "model_role": "orchestrator",
+      "prompt_file": "athena.md",
+      "description": "Business strategy and long-term planning agent.",
+      "responsibility": "Create business strategy, growth planning, competitive positioning, and high-level operational direction.",
+      "profile_path": "packages/agents/prompts/athena.md",
+      "priority": 5,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "agent_registry",
+        "task_dashboard",
+        "approval_records",
+        "operational_reports"
+      ],
+      "authority_scope": "May coordinate and review chief strategy agent work within approved company operations but must preserve approval gates for dangerous actions."
+    },
+    {
+      "name": "Alfred",
+      "role": "operations_manager",
+      "department": "operations",
+      "model_role": "orchestrator",
+      "prompt_file": "alfred.md",
+      "description": "Daily operations manager.",
+      "responsibility": "Manage daily business operations, task prioritization, internal process flow, and operational reporting.",
+      "profile_path": "packages/agents/prompts/alfred.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "task_dashboard",
+        "reports",
+        "memory_lookup",
+        "approval_records"
+      ],
+      "authority_scope": "May coordinate and review operations manager work within approved company operations but must preserve approval gates for dangerous actions."
+    },
+    {
+      "name": "Friday",
+      "role": "reporting_officer",
+      "department": "operations",
+      "model_role": "fast",
+      "prompt_file": "friday.md",
+      "description": "Reports and WhatsApp summaries.",
+      "responsibility": "Prepare instant, hourly, daily, and weekly reports for Janon through the reporting channel.",
+      "profile_path": "packages/agents/prompts/friday.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "task_dashboard",
+        "reports",
+        "memory_lookup",
+        "approval_records"
+      ],
+      "authority_scope": "May coordinate and review reporting officer work within approved company operations but must preserve approval gates for dangerous actions."
+    },
+    {
+      "name": "Oracle",
+      "role": "decision_memory_keeper",
+      "department": "operations",
+      "model_role": "fast",
+      "prompt_file": "oracle.md",
+      "description": "Decision memory and repeated-doubt prevention agent.",
+      "responsibility": "Store confirmed decisions, retrieve previous answers, prevent repeated doubts, and maintain operational memory.",
+      "profile_path": "packages/agents/prompts/oracle.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "task_dashboard",
+        "reports",
+        "memory_lookup",
+        "approval_records"
+      ],
+      "authority_scope": "May coordinate and review decision memory keeper work within approved company operations but must preserve approval gates for dangerous actions."
+    },
+    {
+      "name": "Peter",
+      "role": "full_stack_developer",
+      "department": "development",
+      "model_role": "coder",
+      "prompt_file": "peter.md",
+      "description": "Full-stack software development agent.",
+      "responsibility": "Build, refactor, debug, and maintain production-grade software systems.",
+      "profile_path": "packages/agents/prompts/peter.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "project_scanner",
+        "code_reviewer",
+        "doc_generator",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine full stack developer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Tony",
+      "role": "software_architect",
+      "department": "development",
+      "model_role": "coder",
+      "prompt_file": "tony.md",
+      "description": "Software architecture agent.",
+      "responsibility": "Design scalable architecture, choose stacks, define modules, APIs, database structure, and engineering standards.",
+      "profile_path": "packages/agents/prompts/tony.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "project_scanner",
+        "code_reviewer",
+        "doc_generator",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine software architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Ada",
+      "role": "algorithm_engineer",
+      "department": "development",
+      "model_role": "coder",
+      "prompt_file": "ada.md",
+      "description": "Algorithms and complex logic agent.",
+      "responsibility": "Solve complex programming logic, algorithms, optimization, and data-structure problems.",
+      "profile_path": "packages/agents/prompts/ada.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "project_scanner",
+        "code_reviewer",
+        "doc_generator",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine algorithm engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Linus",
+      "role": "code_review_engineer",
+      "department": "development",
+      "model_role": "coder",
+      "prompt_file": "linus.md",
+      "description": "Code review and standards agent.",
+      "responsibility": "Review code quality, maintainability, security, performance, and style compliance.",
+      "profile_path": "packages/agents/prompts/linus.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "project_scanner",
+        "code_reviewer",
+        "doc_generator",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine code review engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Dennis",
+      "role": "systems_programmer",
+      "department": "development",
+      "model_role": "coder",
+      "prompt_file": "dennis.md",
+      "description": "Low-level systems programming agent.",
+      "responsibility": "Handle systems programming, memory-sensitive work, native modules, and performance-focused code.",
+      "profile_path": "packages/agents/prompts/dennis.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "project_scanner",
+        "code_reviewer",
+        "doc_generator",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine systems programmer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Taylor",
+      "role": "frontend_engineer",
+      "department": "frontend",
+      "model_role": "coder",
+      "prompt_file": "taylor.md",
+      "description": "Frontend engineering agent.",
+      "responsibility": "Build clean, responsive, accessible frontend interfaces using React, Vue, Tailwind, and modern JavaScript.",
+      "profile_path": "packages/agents/prompts/taylor.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "component_review",
+        "design_review",
+        "accessibility_checklist",
+        "code_reviewer"
+      ],
+      "authority_scope": "May execute routine frontend engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Victor",
+      "role": "vue_engineer",
+      "department": "frontend",
+      "model_role": "coder",
+      "prompt_file": "victor.md",
+      "description": "Vue frontend specialist.",
+      "responsibility": "Build Vue, Nuxt, and component-based frontend systems.",
+      "profile_path": "packages/agents/prompts/victor.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "component_review",
+        "design_review",
+        "accessibility_checklist",
+        "code_reviewer"
+      ],
+      "authority_scope": "May execute routine vue engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Rhea",
+      "role": "react_engineer",
+      "department": "frontend",
+      "model_role": "coder",
+      "prompt_file": "rhea.md",
+      "description": "React frontend specialist.",
+      "responsibility": "Build React, Next.js, Electron UI, state management, and frontend application structure.",
+      "profile_path": "packages/agents/prompts/rhea.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "component_review",
+        "design_review",
+        "accessibility_checklist",
+        "code_reviewer"
+      ],
+      "authority_scope": "May execute routine react engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Mason",
+      "role": "ui_component_engineer",
+      "department": "frontend",
+      "model_role": "coder",
+      "prompt_file": "mason.md",
+      "description": "UI component system agent.",
+      "responsibility": "Create reusable UI components, design systems, and frontend component libraries.",
+      "profile_path": "packages/agents/prompts/mason.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "component_review",
+        "design_review",
+        "accessibility_checklist",
+        "code_reviewer"
+      ],
+      "authority_scope": "May execute routine ui component engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Iris",
+      "role": "accessibility_engineer",
+      "department": "frontend",
+      "model_role": "coder",
+      "prompt_file": "iris.md",
+      "description": "Accessibility specialist.",
+      "responsibility": "Ensure WCAG accessibility, semantic HTML, keyboard navigation, and readable user interfaces.",
+      "profile_path": "packages/agents/prompts/iris.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "component_review",
+        "design_review",
+        "accessibility_checklist",
+        "code_reviewer"
+      ],
+      "authority_scope": "May execute routine accessibility engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Bruno",
+      "role": "backend_engineer",
+      "department": "backend",
+      "model_role": "coder",
+      "prompt_file": "bruno.md",
+      "description": "Backend engineering agent.",
+      "responsibility": "Build APIs, business logic, authentication, queues, database integration, and backend services.",
+      "profile_path": "packages/agents/prompts/bruno.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "api_planner",
+        "schema_review",
+        "code_reviewer",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine backend engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Lara",
+      "role": "laravel_engineer",
+      "department": "backend",
+      "model_role": "coder",
+      "prompt_file": "lara.md",
+      "description": "Laravel specialist.",
+      "responsibility": "Build Laravel applications, Blade, Livewire, Filament, APIs, queues, policies, and database systems.",
+      "profile_path": "packages/agents/prompts/lara.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "api_planner",
+        "schema_review",
+        "code_reviewer",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine laravel engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Django",
+      "role": "django_engineer",
+      "department": "backend",
+      "model_role": "coder",
+      "prompt_file": "django.md",
+      "description": "Django specialist.",
+      "responsibility": "Build Django apps, ORM models, admin panels, APIs, authentication, and deployment-ready backend systems.",
+      "profile_path": "packages/agents/prompts/django.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "api_planner",
+        "schema_review",
+        "code_reviewer",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine django engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Felix",
+      "role": "fastapi_engineer",
+      "department": "backend",
+      "model_role": "coder",
+      "prompt_file": "felix.md",
+      "description": "FastAPI specialist.",
+      "responsibility": "Build FastAPI services, async APIs, AI backends, tool APIs, and microservices.",
+      "profile_path": "packages/agents/prompts/felix.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "api_planner",
+        "schema_review",
+        "code_reviewer",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine fastapi engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Nolan",
+      "role": "nodejs_engineer",
+      "department": "backend",
+      "model_role": "coder",
+      "prompt_file": "nolan.md",
+      "description": "Node.js backend specialist.",
+      "responsibility": "Build Express, NestJS, APIs, workers, integrations, and Node.js backend services.",
+      "profile_path": "packages/agents/prompts/nolan.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "api_planner",
+        "schema_review",
+        "code_reviewer",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine nodejs engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Gordon",
+      "role": "go_engineer",
+      "department": "backend",
+      "model_role": "coder",
+      "prompt_file": "gordon.md",
+      "description": "Go backend specialist.",
+      "responsibility": "Build high-performance Go services, APIs, workers, and backend utilities.",
+      "profile_path": "packages/agents/prompts/gordon.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "api_planner",
+        "schema_review",
+        "code_reviewer",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine go engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Rusty",
+      "role": "rust_engineer",
+      "department": "backend",
+      "model_role": "coder",
+      "prompt_file": "rusty.md",
+      "description": "Rust specialist.",
+      "responsibility": "Build Rust daemons, task runners, command guards, resource monitors, and performance-critical modules.",
+      "profile_path": "packages/agents/prompts/rusty.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "api_planner",
+        "schema_review",
+        "code_reviewer",
+        "safe_shell_plan"
+      ],
+      "authority_scope": "May execute routine rust engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Mia",
+      "role": "mobile_app_engineer",
+      "department": "mobile",
+      "model_role": "coder",
+      "prompt_file": "mia.md",
+      "description": "Mobile app development agent.",
+      "responsibility": "Build mobile apps and mobile-first architecture.",
+      "profile_path": "packages/agents/prompts/mia.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "release_checklist",
+        "api_planner",
+        "code_reviewer",
+        "testing_notes"
+      ],
+      "authority_scope": "May execute routine mobile app engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Flutter",
+      "role": "flutter_engineer",
+      "department": "mobile",
+      "model_role": "coder",
+      "prompt_file": "flutter.md",
+      "description": "Flutter specialist.",
+      "responsibility": "Build Flutter apps, widgets, state management, API integration, and deployment preparation.",
+      "profile_path": "packages/agents/prompts/flutter.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "release_checklist",
+        "api_planner",
+        "code_reviewer",
+        "testing_notes"
+      ],
+      "authority_scope": "May execute routine flutter engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Kara",
+      "role": "kotlin_android_engineer",
+      "department": "mobile",
+      "model_role": "coder",
+      "prompt_file": "kara.md",
+      "description": "Android Kotlin specialist.",
+      "responsibility": "Build native Android apps using Kotlin.",
+      "profile_path": "packages/agents/prompts/kara.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "release_checklist",
+        "api_planner",
+        "code_reviewer",
+        "testing_notes"
+      ],
+      "authority_scope": "May execute routine kotlin android engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Sofia",
+      "role": "swift_ios_engineer",
+      "department": "mobile",
+      "model_role": "coder",
+      "prompt_file": "sofia.md",
+      "description": "iOS Swift specialist.",
+      "responsibility": "Build native iOS apps using Swift and Apple platform standards.",
+      "profile_path": "packages/agents/prompts/sofia.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "release_checklist",
+        "api_planner",
+        "code_reviewer",
+        "testing_notes"
+      ],
+      "authority_scope": "May execute routine swift ios engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Riley",
+      "role": "react_native_engineer",
+      "department": "mobile",
+      "model_role": "coder",
+      "prompt_file": "riley.md",
+      "description": "React Native specialist.",
+      "responsibility": "Build cross-platform mobile apps using React Native.",
+      "profile_path": "packages/agents/prompts/riley.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "release_checklist",
+        "api_planner",
+        "code_reviewer",
+        "testing_notes"
+      ],
+      "authority_scope": "May execute routine react native engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Edison",
+      "role": "desktop_app_engineer",
+      "department": "desktop",
+      "model_role": "coder",
+      "prompt_file": "edison.md",
+      "description": "Desktop app specialist.",
+      "responsibility": "Build desktop apps using Electron, Tauri, Python Qt, and .NET when required.",
+      "profile_path": "packages/agents/prompts/edison.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "desktop_build_planner",
+        "code_reviewer",
+        "logging_tools",
+        "release_notes"
+      ],
+      "authority_scope": "May execute routine desktop app engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Electron",
+      "role": "electron_engineer",
+      "department": "desktop",
+      "model_role": "coder",
+      "prompt_file": "electron.md",
+      "description": "Electron specialist.",
+      "responsibility": "Build and maintain React + Electron desktop applications.",
+      "profile_path": "packages/agents/prompts/electron.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "desktop_build_planner",
+        "code_reviewer",
+        "logging_tools",
+        "release_notes"
+      ],
+      "authority_scope": "May execute routine electron engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Tauri",
+      "role": "tauri_engineer",
+      "department": "desktop",
+      "model_role": "coder",
+      "prompt_file": "tauri.md",
+      "description": "Tauri specialist.",
+      "responsibility": "Build lightweight desktop applications using Tauri and Rust.",
+      "profile_path": "packages/agents/prompts/tauri.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "desktop_build_planner",
+        "code_reviewer",
+        "logging_tools",
+        "release_notes"
+      ],
+      "authority_scope": "May execute routine tauri engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Diana",
+      "role": "database_architect",
+      "department": "database",
+      "model_role": "coder",
+      "prompt_file": "diana.md",
+      "description": "Database architecture agent.",
+      "responsibility": "Design database schemas, relationships, indexing, migrations, and data integrity rules.",
+      "profile_path": "packages/agents/prompts/diana.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "schema_tools",
+        "migration_planner",
+        "query_review",
+        "integrity_checks"
+      ],
+      "authority_scope": "May execute routine database architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Postgres",
+      "role": "postgresql_specialist",
+      "department": "database",
+      "model_role": "coder",
+      "prompt_file": "postgres.md",
+      "description": "PostgreSQL specialist.",
+      "responsibility": "Handle PostgreSQL, pgvector, indexing, query optimization, and database administration.",
+      "profile_path": "packages/agents/prompts/postgres.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "schema_tools",
+        "migration_planner",
+        "query_review",
+        "integrity_checks"
+      ],
+      "authority_scope": "May execute routine postgresql specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Myra",
+      "role": "mysql_specialist",
+      "department": "database",
+      "model_role": "coder",
+      "prompt_file": "myra.md",
+      "description": "MySQL specialist.",
+      "responsibility": "Handle MySQL schema design, optimization, migrations, and Laravel database patterns.",
+      "profile_path": "packages/agents/prompts/myra.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "schema_tools",
+        "migration_planner",
+        "query_review",
+        "integrity_checks"
+      ],
+      "authority_scope": "May execute routine mysql specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Vector",
+      "role": "vector_database_specialist",
+      "department": "database",
+      "model_role": "research",
+      "prompt_file": "vector.md",
+      "description": "Vector DB and embedding specialist.",
+      "responsibility": "Manage embeddings, semantic search, RAG indexes, pgvector, and retrieval quality.",
+      "profile_path": "packages/agents/prompts/vector.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "schema_tools",
+        "migration_planner",
+        "query_review",
+        "integrity_checks"
+      ],
+      "authority_scope": "May execute routine vector database specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Rhodes",
+      "role": "devops_engineer",
+      "department": "devops",
+      "model_role": "coder",
+      "prompt_file": "rhodes.md",
+      "description": "Deployment and infrastructure agent.",
+      "responsibility": "Manage VPS, Docker, K3s, SSL, backups, logs, deployments, and rollback.",
+      "profile_path": "packages/agents/prompts/rhodes.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "deployment_checklist",
+        "log_review",
+        "approval_records",
+        "infrastructure_notes"
+      ],
+      "authority_scope": "May execute routine devops engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Kube",
+      "role": "kubernetes_engineer",
+      "department": "devops",
+      "model_role": "coder",
+      "prompt_file": "kube.md",
+      "description": "Kubernetes/K3s specialist.",
+      "responsibility": "Manage K3s namespaces, workloads, services, ingress, secrets, volumes, and cluster health.",
+      "profile_path": "packages/agents/prompts/kube.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "deployment_checklist",
+        "log_review",
+        "approval_records",
+        "infrastructure_notes"
+      ],
+      "authority_scope": "May execute routine kubernetes engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Docker",
+      "role": "docker_engineer",
+      "department": "devops",
+      "model_role": "coder",
+      "prompt_file": "docker.md",
+      "description": "Docker specialist.",
+      "responsibility": "Create Dockerfiles, Compose files, containers, images, networks, and build pipelines.",
+      "profile_path": "packages/agents/prompts/docker.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "deployment_checklist",
+        "log_review",
+        "approval_records",
+        "infrastructure_notes"
+      ],
+      "authority_scope": "May execute routine docker engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Nginx",
+      "role": "nginx_engineer",
+      "department": "devops",
+      "model_role": "coder",
+      "prompt_file": "nginx.md",
+      "description": "Nginx and ingress specialist.",
+      "responsibility": "Configure Nginx, reverse proxies, ingress routes, SSL routing, and domain mapping.",
+      "profile_path": "packages/agents/prompts/nginx.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "deployment_checklist",
+        "log_review",
+        "approval_records",
+        "infrastructure_notes"
+      ],
+      "authority_scope": "May execute routine nginx engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Atlas",
+      "role": "backup_engineer",
+      "department": "devops",
+      "model_role": "fast",
+      "prompt_file": "atlas.md",
+      "description": "Backup and recovery specialist.",
+      "responsibility": "Create backup plans, restore procedures, grace-period retention, and disaster recovery workflows.",
+      "profile_path": "packages/agents/prompts/atlas.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "deployment_checklist",
+        "log_review",
+        "approval_records",
+        "infrastructure_notes"
+      ],
+      "authority_scope": "May execute routine backup engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Sentinel",
+      "role": "monitoring_engineer",
+      "department": "devops",
+      "model_role": "fast",
+      "prompt_file": "sentinel.md",
+      "description": "Monitoring specialist.",
+      "responsibility": "Monitor uptime, logs, resources, errors, failures, and escalation triggers.",
+      "profile_path": "packages/agents/prompts/sentinel.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "deployment_checklist",
+        "log_review",
+        "approval_records",
+        "infrastructure_notes"
+      ],
+      "authority_scope": "May execute routine monitoring engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Bruce",
+      "role": "qa_engineer",
+      "department": "qa",
+      "model_role": "coder",
+      "prompt_file": "bruce.md",
+      "description": "QA and testing agent.",
+      "responsibility": "Test projects before deployment and produce deployment-readiness reports.",
+      "profile_path": "packages/agents/prompts/bruce.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "test_planner",
+        "quality_checklist",
+        "bug_reporting",
+        "release_readiness"
+      ],
+      "authority_scope": "May execute routine qa engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Cypress",
+      "role": "e2e_testing_engineer",
+      "department": "qa",
+      "model_role": "coder",
+      "prompt_file": "cypress.md",
+      "description": "End-to-end testing specialist.",
+      "responsibility": "Create and run E2E tests using Playwright/Cypress-style workflows.",
+      "profile_path": "packages/agents/prompts/cypress.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "test_planner",
+        "quality_checklist",
+        "bug_reporting",
+        "release_readiness"
+      ],
+      "authority_scope": "May execute routine e2e testing engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Percy",
+      "role": "performance_tester",
+      "department": "qa",
+      "model_role": "coder",
+      "prompt_file": "percy.md",
+      "description": "Performance testing agent.",
+      "responsibility": "Check speed, Lighthouse performance, API response times, and optimization opportunities.",
+      "profile_path": "packages/agents/prompts/percy.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "test_planner",
+        "quality_checklist",
+        "bug_reporting",
+        "release_readiness"
+      ],
+      "authority_scope": "May execute routine performance tester tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Quinn",
+      "role": "quality_auditor",
+      "department": "qa",
+      "model_role": "fast",
+      "prompt_file": "quinn.md",
+      "description": "Quality audit specialist.",
+      "responsibility": "Audit final outputs against LKP quality standards before approval.",
+      "profile_path": "packages/agents/prompts/quinn.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "test_planner",
+        "quality_checklist",
+        "bug_reporting",
+        "release_readiness"
+      ],
+      "authority_scope": "May execute routine quality auditor tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "VictorSec",
+      "role": "cybersecurity_specialist",
+      "department": "security",
+      "model_role": "coder",
+      "prompt_file": "victorsec.md",
+      "description": "Cybersecurity specialist.",
+      "responsibility": "Audit security, vulnerabilities, authentication, authorization, secrets, and secure coding.",
+      "profile_path": "packages/agents/prompts/victorsec.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "risk_classifier",
+        "audit_logs",
+        "approval_records",
+        "security_review"
+      ],
+      "authority_scope": "May assess and prepare cybersecurity specialist outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Vault",
+      "role": "secrets_manager",
+      "department": "security",
+      "model_role": "fast",
+      "prompt_file": "vault.md",
+      "description": "Secrets and credentials specialist.",
+      "responsibility": "Manage secret handling rules, token safety, access separation, and credential protection.",
+      "profile_path": "packages/agents/prompts/vault.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "risk_classifier",
+        "audit_logs",
+        "approval_records",
+        "security_review"
+      ],
+      "authority_scope": "May assess and prepare secrets manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Shield",
+      "role": "application_security_engineer",
+      "department": "security",
+      "model_role": "coder",
+      "prompt_file": "shield.md",
+      "description": "Application security agent.",
+      "responsibility": "Check OWASP risks, validation, permissions, uploads, sessions, and API security.",
+      "profile_path": "packages/agents/prompts/shield.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "risk_classifier",
+        "audit_logs",
+        "approval_records",
+        "security_review"
+      ],
+      "authority_scope": "May assess and prepare application security engineer outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Gatekeeper",
+      "role": "approval_security_guard",
+      "department": "security",
+      "model_role": "fast",
+      "prompt_file": "gatekeeper.md",
+      "description": "Approval and risk guard.",
+      "responsibility": "Classify actions by risk and enforce strict approval requirements.",
+      "profile_path": "packages/agents/prompts/gatekeeper.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "risk_classifier",
+        "audit_logs",
+        "approval_records",
+        "security_review"
+      ],
+      "authority_scope": "May assess and prepare approval security guard outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Uma",
+      "role": "uiux_designer",
+      "department": "uiux",
+      "model_role": "orchestrator",
+      "prompt_file": "uma.md",
+      "description": "UI/UX design specialist.",
+      "responsibility": "Design user flows, layouts, wireframes, dashboards, and product experience.",
+      "profile_path": "packages/agents/prompts/uma.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "design_system_review",
+        "wireframe_notes",
+        "accessibility_checklist",
+        "handoff_notes"
+      ],
+      "authority_scope": "May execute routine uiux designer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Figma",
+      "role": "design_system_specialist",
+      "department": "uiux",
+      "model_role": "orchestrator",
+      "prompt_file": "figma.md",
+      "description": "Design system agent.",
+      "responsibility": "Create consistent design systems, typography, spacing, components, and brand UI standards.",
+      "profile_path": "packages/agents/prompts/figma.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "design_system_review",
+        "wireframe_notes",
+        "accessibility_checklist",
+        "handoff_notes"
+      ],
+      "authority_scope": "May execute routine design system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Nova",
+      "role": "brand_designer",
+      "department": "uiux",
+      "model_role": "orchestrator",
+      "prompt_file": "nova.md",
+      "description": "Brand design agent.",
+      "responsibility": "Support brand identity, visual consistency, campaign creatives, and professional presentation.",
+      "profile_path": "packages/agents/prompts/nova.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "design_system_review",
+        "wireframe_notes",
+        "accessibility_checklist",
+        "handoff_notes"
+      ],
+      "authority_scope": "May execute routine brand designer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Neil",
+      "role": "seo_specialist",
+      "department": "seo",
+      "model_role": "orchestrator",
+      "prompt_file": "neil.md",
+      "description": "SEO specialist.",
+      "responsibility": "Improve organic visibility using ethical, white-hat SEO only.",
+      "profile_path": "packages/agents/prompts/neil.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "seo_checklist",
+        "content_review",
+        "report_templates",
+        "structured_data_notes"
+      ],
+      "authority_scope": "May execute routine seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Serena",
+      "role": "technical_seo_specialist",
+      "department": "seo",
+      "model_role": "coder",
+      "prompt_file": "serena.md",
+      "description": "Technical SEO specialist.",
+      "responsibility": "Audit sitemaps, robots.txt, structured data, page speed, canonical tags, and crawlability.",
+      "profile_path": "packages/agents/prompts/serena.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "seo_checklist",
+        "content_review",
+        "report_templates",
+        "structured_data_notes"
+      ],
+      "authority_scope": "May execute routine technical seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Link",
+      "role": "backlink_researcher",
+      "department": "seo",
+      "model_role": "research",
+      "prompt_file": "link.md",
+      "description": "White-hat backlink researcher.",
+      "responsibility": "Find ethical directory, partnership, citation, and guest-post opportunities without spam.",
+      "profile_path": "packages/agents/prompts/link.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "seo_checklist",
+        "content_review",
+        "report_templates",
+        "structured_data_notes"
+      ],
+      "authority_scope": "May execute routine backlink researcher tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Local",
+      "role": "local_seo_specialist",
+      "department": "seo",
+      "model_role": "research",
+      "prompt_file": "local.md",
+      "description": "Local SEO specialist.",
+      "responsibility": "Improve local visibility, business listings, location pages, and local content strategy.",
+      "profile_path": "packages/agents/prompts/local.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "seo_checklist",
+        "content_review",
+        "report_templates",
+        "structured_data_notes"
+      ],
+      "authority_scope": "May execute routine local seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Natasha",
+      "role": "content_creator",
+      "department": "content",
+      "model_role": "orchestrator",
+      "prompt_file": "natasha.md",
+      "description": "Content creation agent.",
+      "responsibility": "Create business content, blogs, captions, scripts, website copy, and platform-specific content.",
+      "profile_path": "packages/agents/prompts/natasha.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "content_briefs",
+        "brand_voice_guide",
+        "review_checklist",
+        "publishing_plans"
+      ],
+      "authority_scope": "May execute routine content creator tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Blake",
+      "role": "blog_writer",
+      "department": "content",
+      "model_role": "orchestrator",
+      "prompt_file": "blake.md",
+      "description": "Blog writing specialist.",
+      "responsibility": "Write SEO-friendly blog posts and insights for LKP and client websites.",
+      "profile_path": "packages/agents/prompts/blake.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "content_briefs",
+        "brand_voice_guide",
+        "review_checklist",
+        "publishing_plans"
+      ],
+      "authority_scope": "May execute routine blog writer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Copy",
+      "role": "copywriter",
+      "department": "content",
+      "model_role": "orchestrator",
+      "prompt_file": "copy.md",
+      "description": "Copywriting specialist.",
+      "responsibility": "Write persuasive website copy, ad copy, landing-page copy, and CTA-driven content.",
+      "profile_path": "packages/agents/prompts/copy.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "content_briefs",
+        "brand_voice_guide",
+        "review_checklist",
+        "publishing_plans"
+      ],
+      "authority_scope": "May execute routine copywriter tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Script",
+      "role": "video_script_writer",
+      "department": "content",
+      "model_role": "orchestrator",
+      "prompt_file": "script.md",
+      "description": "Video script specialist.",
+      "responsibility": "Write short-form and long-form video scripts for marketing and education.",
+      "profile_path": "packages/agents/prompts/script.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "content_briefs",
+        "brand_voice_guide",
+        "review_checklist",
+        "publishing_plans"
+      ],
+      "authority_scope": "May execute routine video script writer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Tamil",
+      "role": "tamil_content_specialist",
+      "department": "content",
+      "model_role": "orchestrator",
+      "prompt_file": "tamil.md",
+      "description": "Tamil content specialist.",
+      "responsibility": "Create and refine Tamil content for Sri Lankan audiences.",
+      "profile_path": "packages/agents/prompts/tamil.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "content_briefs",
+        "brand_voice_guide",
+        "review_checklist",
+        "publishing_plans"
+      ],
+      "authority_scope": "May execute routine tamil content specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Maya",
+      "role": "digital_marketing_manager",
+      "department": "marketing",
+      "model_role": "orchestrator",
+      "prompt_file": "maya.md",
+      "description": "Digital marketing manager.",
+      "responsibility": "Plan digital campaigns, funnels, content calendars, lead generation, and campaign performance.",
+      "profile_path": "packages/agents/prompts/maya.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "campaign_planner",
+        "content_calendar",
+        "performance_reports",
+        "audience_notes"
+      ],
+      "authority_scope": "May execute routine digital marketing manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Meta",
+      "role": "meta_ads_specialist",
+      "department": "marketing",
+      "model_role": "research",
+      "prompt_file": "meta.md",
+      "description": "Meta ads specialist.",
+      "responsibility": "Plan Facebook and Instagram campaigns using official platform rules and ethical advertising.",
+      "profile_path": "packages/agents/prompts/meta.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "campaign_planner",
+        "content_calendar",
+        "performance_reports",
+        "audience_notes"
+      ],
+      "authority_scope": "May execute routine meta ads specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "LinkedIn",
+      "role": "linkedin_marketing_specialist",
+      "department": "marketing",
+      "model_role": "research",
+      "prompt_file": "linkedin.md",
+      "description": "LinkedIn marketing specialist.",
+      "responsibility": "Plan B2B LinkedIn content, outreach, company updates, and lead campaigns.",
+      "profile_path": "packages/agents/prompts/linkedin.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "campaign_planner",
+        "content_calendar",
+        "performance_reports",
+        "audience_notes"
+      ],
+      "authority_scope": "May execute routine linkedin marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Xavier",
+      "role": "x_marketing_specialist",
+      "department": "marketing",
+      "model_role": "research",
+      "prompt_file": "xavier.md",
+      "description": "X/Twitter marketing specialist.",
+      "responsibility": "Plan X content, threads, updates, and brand positioning.",
+      "profile_path": "packages/agents/prompts/xavier.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "campaign_planner",
+        "content_calendar",
+        "performance_reports",
+        "audience_notes"
+      ],
+      "authority_scope": "May execute routine x marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Tiktok",
+      "role": "tiktok_marketing_specialist",
+      "department": "marketing",
+      "model_role": "research",
+      "prompt_file": "tiktok.md",
+      "description": "TikTok marketing specialist.",
+      "responsibility": "Plan TikTok video ideas, scripts, hooks, and posting strategy.",
+      "profile_path": "packages/agents/prompts/tiktok.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "campaign_planner",
+        "content_calendar",
+        "performance_reports",
+        "audience_notes"
+      ],
+      "authority_scope": "May execute routine tiktok marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "YouTube",
+      "role": "youtube_strategy_specialist",
+      "department": "marketing",
+      "model_role": "research",
+      "prompt_file": "youtube.md",
+      "description": "YouTube strategy specialist.",
+      "responsibility": "Plan YouTube videos, titles, descriptions, thumbnails, and channel growth.",
+      "profile_path": "packages/agents/prompts/youtube.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "campaign_planner",
+        "content_calendar",
+        "performance_reports",
+        "audience_notes"
+      ],
+      "authority_scope": "May execute routine youtube strategy specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Sasha",
+      "role": "sales_manager",
+      "department": "sales",
+      "model_role": "customer_support",
+      "prompt_file": "sasha.md",
+      "description": "Sales management agent.",
+      "responsibility": "Handle sales strategy, lead qualification, follow-ups, and sales pipeline support.",
+      "profile_path": "packages/agents/prompts/sasha.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "lead_tracking",
+        "proposal_templates",
+        "followup_plans",
+        "client_notes"
+      ],
+      "authority_scope": "May execute routine sales manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Pepper",
+      "role": "customer_care_agent",
+      "department": "customer_support",
+      "model_role": "customer_support",
+      "prompt_file": "pepper.md",
+      "description": "Customer support agent.",
+      "responsibility": "Reply professionally to customer inquiries, collect requirements, and route work.",
+      "profile_path": "packages/agents/prompts/pepper.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "support_templates",
+        "client_notes",
+        "task_routing",
+        "escalation_records"
+      ],
+      "authority_scope": "May execute routine customer care agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Morgan",
+      "role": "finance_quotation_manager",
+      "department": "finance",
+      "model_role": "orchestrator",
+      "prompt_file": "morgan.md",
+      "description": "Quotation and finance agent.",
+      "responsibility": "Prepare quotations, invoices, renewals, payment tracking, and pricing-based documents.",
+      "profile_path": "packages/agents/prompts/morgan.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "quotation_templates",
+        "invoice_records",
+        "approval_records",
+        "financial_summaries"
+      ],
+      "authority_scope": "May assess and prepare finance quotation manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Ledger",
+      "role": "accounting_agent",
+      "department": "finance",
+      "model_role": "fast",
+      "prompt_file": "ledger.md",
+      "description": "Accounting support agent.",
+      "responsibility": "Track income, expenses, invoices, renewals, and financial summaries.",
+      "profile_path": "packages/agents/prompts/ledger.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "quotation_templates",
+        "invoice_records",
+        "approval_records",
+        "financial_summaries"
+      ],
+      "authority_scope": "May assess and prepare accounting agent outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Renewal",
+      "role": "renewal_manager",
+      "department": "finance",
+      "model_role": "fast",
+      "prompt_file": "renewal.md",
+      "description": "Domain and hosting renewal agent.",
+      "responsibility": "Track yearly service renewals, unpaid clients, grace periods, and suspension schedules.",
+      "profile_path": "packages/agents/prompts/renewal.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "quotation_templates",
+        "invoice_records",
+        "approval_records",
+        "financial_summaries"
+      ],
+      "authority_scope": "May assess and prepare renewal manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Lawrence",
+      "role": "contract_manager",
+      "department": "legal",
+      "model_role": "orchestrator",
+      "prompt_file": "lawrence.md",
+      "description": "Contract management agent.",
+      "responsibility": "Draft contract structures, service terms, payment policies, ownership clauses, and corporate legal wording.",
+      "profile_path": "packages/agents/prompts/lawrence.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "policy_templates",
+        "approval_records",
+        "contract_review",
+        "risk_summaries"
+      ],
+      "authority_scope": "May assess and prepare contract manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Hill",
+      "role": "policy_manager",
+      "department": "legal",
+      "model_role": "fast",
+      "prompt_file": "policy.md",
+      "description": "Policy management agent.",
+      "responsibility": "Maintain internal policies for client source code ownership, payments, privacy, renewals, and service suspension.",
+      "profile_path": "packages/agents/prompts/policy.md",
+      "priority": 5,
+      "risk_level": "CRITICAL",
+      "approval_level": "HIGH",
+      "tools": [
+        "policy_templates",
+        "approval_records",
+        "contract_review",
+        "risk_summaries"
+      ],
+      "authority_scope": "May assess and prepare policy manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Vision",
+      "role": "research_agent",
+      "department": "research",
+      "model_role": "research",
+      "prompt_file": "vision.md",
+      "description": "Research and trusted-source agent.",
+      "responsibility": "Research from official, trusted, high-authority sources and reject weak or risky information.",
+      "profile_path": "packages/agents/prompts/vision.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "trusted_source_research",
+        "knowledge_base",
+        "summary_templates",
+        "risk_notes"
+      ],
+      "authority_scope": "May execute routine research agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Lois",
+      "role": "documentation_specialist",
+      "department": "documentation",
+      "model_role": "orchestrator",
+      "prompt_file": "docu.md",
+      "description": "Documentation specialist.",
+      "responsibility": "Create technical docs, user manuals, SOPs, README files, and internal documentation.",
+      "profile_path": "packages/agents/prompts/docu.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "doc_generator",
+        "readme_templates",
+        "knowledge_base",
+        "task_records"
+      ],
+      "authority_scope": "May execute routine documentation specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Tutor",
+      "role": "training_agent",
+      "department": "training",
+      "model_role": "orchestrator",
+      "prompt_file": "tutor.md",
+      "description": "Training and teaching agent.",
+      "responsibility": "Teach concepts step by step and create learning material for staff or users.",
+      "profile_path": "packages/agents/prompts/tutor.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "learning_plans",
+        "knowledge_base",
+        "training_outlines",
+        "task_summaries"
+      ],
+      "authority_scope": "May execute routine training agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Cisco",
+      "role": "browser_automation_engineer",
+      "department": "automation",
+      "model_role": "fast",
+      "prompt_file": "happy.md",
+      "description": "Browser automation agent.",
+      "responsibility": "Use Playwright safely for form filling, browser workflows, screenshots, and controlled browser tasks.",
+      "profile_path": "packages/agents/prompts/happy.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "workflow_planner",
+        "safe_browser_plan",
+        "safe_shell_plan",
+        "execution_logs"
+      ],
+      "authority_scope": "May execute routine browser automation engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Fury",
+      "role": "api_integration_specialist",
+      "department": "automation",
+      "model_role": "coder",
+      "prompt_file": "api.md",
+      "description": "API integration specialist.",
+      "responsibility": "Integrate official APIs for WhatsApp, Meta, LinkedIn, X, TikTok, email, and other business systems.",
+      "profile_path": "packages/agents/prompts/api.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "workflow_planner",
+        "safe_browser_plan",
+        "safe_shell_plan",
+        "execution_logs"
+      ],
+      "authority_scope": "May execute routine api integration specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Tempus",
+      "role": "task_scheduler_agent",
+      "department": "automation",
+      "model_role": "fast",
+      "prompt_file": "scheduler.md",
+      "description": "Task scheduling specialist.",
+      "responsibility": "Manage scheduled jobs, retries, queue timing, reports, and task calendars.",
+      "profile_path": "packages/agents/prompts/scheduler.md",
+      "priority": 3,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "workflow_planner",
+        "safe_browser_plan",
+        "safe_shell_plan",
+        "execution_logs"
+      ],
+      "authority_scope": "May execute routine task scheduler agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Cypher",
+      "role": "data_engineer",
+      "department": "data",
+      "model_role": "coder",
+      "prompt_file": "data.md",
+      "description": "Data engineering agent.",
+      "responsibility": "Build data pipelines, imports, exports, transformations, and structured business data workflows.",
+      "profile_path": "packages/agents/prompts/data.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "pipeline_planner",
+        "schema_tools",
+        "data_validation",
+        "report_templates"
+      ],
+      "authority_scope": "May execute routine data engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Analyst",
+      "role": "business_analyst",
+      "department": "analytics",
+      "model_role": "orchestrator",
+      "prompt_file": "analyst.md",
+      "description": "Business analytics agent.",
+      "responsibility": "Analyze sales, marketing, projects, customer behavior, renewals, and business performance.",
+      "profile_path": "packages/agents/prompts/analyst.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "dashboard_specs",
+        "kpi_reports",
+        "data_summaries",
+        "chart_notes"
+      ],
+      "authority_scope": "May execute routine business analyst tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Metric",
+      "role": "analytics_dashboard_specialist",
+      "department": "analytics",
+      "model_role": "coder",
+      "prompt_file": "metric.md",
+      "description": "Analytics dashboard specialist.",
+      "responsibility": "Build dashboards, KPIs, reports, charts, and data summaries.",
+      "profile_path": "packages/agents/prompts/metric.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "dashboard_specs",
+        "kpi_reports",
+        "data_summaries",
+        "chart_notes"
+      ],
+      "authority_scope": "May execute routine analytics dashboard specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Aiden",
+      "role": "ai_engineer",
+      "department": "ai",
+      "model_role": "coder",
+      "prompt_file": "aiden.md",
+      "description": "AI engineering agent.",
+      "responsibility": "Build AI workflows, model routing, RAG, embeddings, prompts, and agent systems.",
+      "profile_path": "packages/agents/prompts/aiden.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "prompt_library",
+        "model_routing_notes",
+        "knowledge_base",
+        "workflow_planner"
+      ],
+      "authority_scope": "May execute routine ai engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Wanda",
+      "role": "prompt_engineer",
+      "department": "ai",
+      "model_role": "orchestrator",
+      "prompt_file": "prompt.md",
+      "description": "Prompt engineering agent.",
+      "responsibility": "Create high-quality prompts, system messages, agent instructions, and task templates.",
+      "profile_path": "packages/agents/prompts/prompt.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "prompt_library",
+        "model_routing_notes",
+        "knowledge_base",
+        "workflow_planner"
+      ],
+      "authority_scope": "May execute routine prompt engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Rag",
+      "role": "rag_engineer",
+      "department": "ai",
+      "model_role": "coder",
+      "prompt_file": "rag.md",
+      "description": "RAG specialist.",
+      "responsibility": "Build retrieval-augmented generation pipelines, chunking, embeddings, and knowledge retrieval.",
+      "profile_path": "packages/agents/prompts/rag.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "prompt_library",
+        "model_routing_notes",
+        "knowledge_base",
+        "workflow_planner"
+      ],
+      "authority_scope": "May execute routine rag engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Strange",
+      "role": "model_router",
+      "department": "ai",
+      "model_role": "fast",
+      "prompt_file": "model.md",
+      "description": "Model routing specialist.",
+      "responsibility": "Choose the right model for tasks based on cost, speed, quality, and capability.",
+      "profile_path": "packages/agents/prompts/model.md",
+      "priority": 4,
+      "risk_level": "MEDIUM",
+      "approval_level": "MEDIUM",
+      "tools": [
+        "prompt_library",
+        "model_routing_notes",
+        "knowledge_base",
+        "workflow_planner"
+      ],
+      "authority_scope": "May execute routine model router tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Wordpress",
+      "role": "wordpress_engineer",
+      "department": "cms",
+      "model_role": "coder",
+      "prompt_file": "wordpress.md",
+      "description": "WordPress specialist.",
+      "responsibility": "Build WordPress websites, themes, plugins, SEO setup, and client CMS workflows.",
+      "profile_path": "packages/agents/prompts/wordpress.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "cms_build_checklist",
+        "seo_checklist",
+        "plugin_review",
+        "content_workflows"
+      ],
+      "authority_scope": "May execute routine wordpress engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Shopify",
+      "role": "shopify_specialist",
+      "department": "ecommerce",
+      "model_role": "coder",
+      "prompt_file": "shopify.md",
+      "description": "Shopify specialist.",
+      "responsibility": "Build Shopify stores, product setup, theme configuration, and e-commerce workflows.",
+      "profile_path": "packages/agents/prompts/shopify.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "checkout_workflows",
+        "catalog_planning",
+        "order_checklist",
+        "report_templates"
+      ],
+      "authority_scope": "May execute routine shopify specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Commerce",
+      "role": "ecommerce_architect",
+      "department": "ecommerce",
+      "model_role": "coder",
+      "prompt_file": "commerce.md",
+      "description": "E-commerce architecture specialist.",
+      "responsibility": "Design e-commerce systems, checkout flows, orders, inventory, payments, and customer portals.",
+      "profile_path": "packages/agents/prompts/commerce.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "checkout_workflows",
+        "catalog_planning",
+        "order_checklist",
+        "report_templates"
+      ],
+      "authority_scope": "May execute routine ecommerce architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Gambit",
+      "role": "pos_system_specialist",
+      "department": "business_systems",
+      "model_role": "coder",
+      "prompt_file": "pos.md",
+      "description": "POS system specialist.",
+      "responsibility": "Build POS, inventory, stock, sales, receipt, barcode, and cashier workflows.",
+      "profile_path": "packages/agents/prompts/pos.md",
+      "priority": 3,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "workflow_planner",
+        "approval_records",
+        "schema_tools",
+        "ops_reports"
+      ],
+      "authority_scope": "May execute routine pos system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Forge",
+      "role": "erp_system_specialist",
+      "department": "business_systems",
+      "model_role": "coder",
+      "prompt_file": "erp.md",
+      "description": "ERP specialist.",
+      "responsibility": "Design ERP modules including HR, finance, inventory, CRM, procurement, and reporting.",
+      "profile_path": "packages/agents/prompts/erp.md",
+      "priority": 3,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "workflow_planner",
+        "approval_records",
+        "schema_tools",
+        "ops_reports"
+      ],
+      "authority_scope": "May execute routine erp system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Mantis",
+      "role": "crm_specialist",
+      "department": "business_systems",
+      "model_role": "coder",
+      "prompt_file": "crm.md",
+      "description": "CRM specialist.",
+      "responsibility": "Build lead, customer, quotation, follow-up, support, and sales pipeline systems.",
+      "profile_path": "packages/agents/prompts/crm.md",
+      "priority": 3,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "workflow_planner",
+        "approval_records",
+        "schema_tools",
+        "ops_reports"
+      ],
+      "authority_scope": "May execute routine crm specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Raven",
+      "role": "email_system_specialist",
+      "department": "communication",
+      "model_role": "coder",
+      "prompt_file": "email.md",
+      "description": "Email system specialist.",
+      "responsibility": "Handle email integration, SMTP, templates, inbox automation, and customer email workflows.",
+      "profile_path": "packages/agents/prompts/email.md",
+      "priority": 3,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "message_templates",
+        "approval_records",
+        "audit_logs",
+        "workflow_plans"
+      ],
+      "authority_scope": "May execute routine email system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "WhatsApp",
+      "role": "whatsapp_cloud_api_specialist",
+      "department": "communication",
+      "model_role": "coder",
+      "prompt_file": "whatsapp.md",
+      "description": "WhatsApp Cloud API specialist.",
+      "responsibility": "Integrate WhatsApp Cloud API, webhooks, templates, customer replies, and reporting flows.",
+      "profile_path": "packages/agents/prompts/whatsapp.md",
+      "priority": 3,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "message_templates",
+        "approval_records",
+        "audit_logs",
+        "workflow_plans"
+      ],
+      "authority_scope": "May execute routine whatsapp cloud api specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Canary",
+      "role": "voice_assistant_specialist",
+      "department": "communication",
+      "model_role": "research",
+      "prompt_file": "voice.md",
+      "description": "Voice assistant specialist.",
+      "responsibility": "Plan speech-to-text, text-to-speech, voice commands, and local voice workflows.",
+      "profile_path": "packages/agents/prompts/voice.md",
+      "priority": 3,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "message_templates",
+        "approval_records",
+        "audit_logs",
+        "workflow_plans"
+      ],
+      "authority_scope": "May execute routine voice assistant specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Constantine",
+      "role": "domain_management_agent",
+      "department": "infrastructure",
+      "model_role": "fast",
+      "prompt_file": "domain.md",
+      "description": "Domain management specialist.",
+      "responsibility": "Manage domain purchase workflows, DNS planning, registrar automation, and renewal tracking.",
+      "profile_path": "packages/agents/prompts/domain.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "dns_notes",
+        "deployment_plans",
+        "approval_records",
+        "audit_logs"
+      ],
+      "authority_scope": "May execute routine domain management agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Cloudflare",
+      "role": "dns_cloudflare_specialist",
+      "department": "infrastructure",
+      "model_role": "coder",
+      "prompt_file": "cloudflare.md",
+      "description": "Cloudflare DNS specialist.",
+      "responsibility": "Manage DNS records, SSL, proxying, redirects, and domain configuration.",
+      "profile_path": "packages/agents/prompts/cloudflare.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "dns_notes",
+        "deployment_plans",
+        "approval_records",
+        "audit_logs"
+      ],
+      "authority_scope": "May execute routine dns cloudflare specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Bishop",
+      "role": "git_repository_manager",
+      "department": "infrastructure",
+      "model_role": "coder",
+      "prompt_file": "git.md",
+      "description": "Git and repository specialist.",
+      "responsibility": "Manage Gitea repositories, GitHub backups, branches, commits, tags, releases, and source ownership.",
+      "profile_path": "packages/agents/prompts/git.md",
+      "priority": 4,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "dns_notes",
+        "deployment_plans",
+        "approval_records",
+        "audit_logs"
+      ],
+      "authority_scope": "May execute routine git repository manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Mystique",
+      "role": "image_generation_specialist",
+      "department": "creative",
+      "model_role": "research",
+      "prompt_file": "image.md",
+      "description": "Image and creative generation specialist.",
+      "responsibility": "Plan creative prompts, ad visuals, thumbnails, and image workflows.",
+      "profile_path": "packages/agents/prompts/image.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "creative_briefs",
+        "asset_planning",
+        "review_notes",
+        "campaign_references"
+      ],
+      "authority_scope": "May execute routine image generation specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Quicksilver",
+      "role": "video_production_specialist",
+      "department": "creative",
+      "model_role": "orchestrator",
+      "prompt_file": "video.md",
+      "description": "Video production specialist.",
+      "responsibility": "Plan video ads, reels, scripts, storyboards, shot lists, and platform video formats.",
+      "profile_path": "packages/agents/prompts/video.md",
+      "priority": 3,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "creative_briefs",
+        "asset_planning",
+        "review_notes",
+        "campaign_references"
+      ],
+      "authority_scope": "May execute routine video production specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    },
+    {
+      "name": "Moira",
+      "role": "hr_recruitment_agent",
+      "department": "hr",
+      "model_role": "orchestrator",
+      "prompt_file": "recruiter.md",
+      "description": "HR recruitment specialist.",
+      "responsibility": "Create job posts, candidate scoring, interview questions, onboarding, and staff communication.",
+      "profile_path": "packages/agents/prompts/recruiter.md",
+      "priority": 3,
+      "risk_level": "HIGH",
+      "approval_level": "HIGH",
+      "tools": [
+        "recruitment_workflow",
+        "interview_templates",
+        "approval_records",
+        "onboarding_notes"
+      ],
+      "authority_scope": "May assess and prepare hr recruitment agent outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+    },
+    {
+      "name": "Coulson",
+      "role": "admin_officer",
+      "department": "administration",
+      "model_role": "fast",
+      "prompt_file": "admin.md",
+      "description": "Administration officer.",
+      "responsibility": "Handle internal admin tasks, SOPs, schedules, records, and office workflows.",
+      "profile_path": "packages/agents/prompts/admin.md",
+      "priority": 4,
+      "risk_level": "LOW",
+      "approval_level": "LOW",
+      "tools": [
+        "sop_records",
+        "approval_records",
+        "task_records",
+        "ops_checklists"
+      ],
+      "authority_scope": "May execute routine admin officer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+    }
   ]
 }
