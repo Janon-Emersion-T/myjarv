@@ -34,7 +34,7 @@ Audit notes:
 | Phase | Name | Status | Notes |
 |---|---|---|---|
 | 1 | Project Audit | complete | Repository audited, useful assets identified, implementation plan written. |
-| 2 | Agent Profile Standardization | pending | Existing agent prompts need a shared schema and authority model. |
+| 2 | Agent Profile Standardization | complete | All 102 agent profiles now include the canonical sections, with legacy prompt bodies preserved under `## Legacy Profile`. |
 | 3 | Agent Registry | pending | Registry exists, but must be expanded and validated against a stricter schema. |
 | 4 | Python Brain | pending | Existing FastAPI app must be reorganized into production-grade modules. |
 | 5 | Task Routing | pending | Current keyword routing is too shallow for multi-agent orchestration. |
@@ -92,10 +92,10 @@ Phases 15-20
 
 ## Immediate Next Steps
 
-1. Define a strict agent profile contract and shared schema.
-2. Audit all existing prompt files against that contract.
-3. Expand the registry to include authority, risk, tool, and priority metadata.
-4. Rebuild the Python brain around tasks, approvals, memory, and logs.
+1. Expand the registry to include authority, risk, tool, and priority metadata.
+2. Validate the registry against a stricter schema.
+3. Rebuild the Python brain around tasks, approvals, memory, and logs.
+4. Keep the prompt standardization script available for future agent additions and updates.
 
 ## Known Constraints
 
