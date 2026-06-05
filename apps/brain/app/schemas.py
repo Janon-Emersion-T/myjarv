@@ -14,6 +14,7 @@ TaskStatus = Literal[
     "executing",
     "completed",
     "failed",
+    "blocked",
 ]
 IntentCategory = Literal[
     "development",
@@ -52,6 +53,75 @@ class TaskCreateRequest(BaseModel):
 class TaskExecutionRequest(BaseModel):
     executor: str = Field(default="Jarvis", min_length=1)
     force_retry: bool = False
+
+
+class RoutingSimulationRequest(BaseModel):
+    message: str = Field(..., min_length=1)
+    preferred_agent: str | None = None
+    requested_action: str | None = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class TaskReassignmentRequest(BaseModel):
+    reviewer: str = Field(..., min_length=1)
+    agent: str = Field(..., min_length=1)
+    reason: str = Field(..., min_length=1)
+
+
+class RouteSubtask(BaseModel):
+    title: str
+    assigned_agent: str
+    strategy: Literal["single", "sequential", "parallel"]
+    depends_on: list[str] = Field(default_factory=list)
+    status: Literal["planned", "blocked", "optional"] = "planned"
+
+
+class RouteStage(BaseModel):
+    stage: str
+    assigned_agents: list[str] = Field(default_factory=list)
+    strategy: Literal["single", "sequential", "parallel"]
+    purpose: str
+
+
+class RouteCandidate(BaseModel):
+    agent: str
+    score: float
+    reasons: list[str] = Field(default_factory=list)
+
+
+class RouteDecision(BaseModel):
+    trace_id: str
+    mode: Literal["live", "simulation", "replay"] = "live"
+    intent_category: IntentCategory
+    confidence: float = Field(..., ge=0.0, le=1.0)
+    is_ambiguous: bool = False
+    ambiguity_reason: str | None = None
+    selected_agent: str
+    supporting_agents: list[str] = Field(default_factory=list)
+    fallback_agent: str
+    review_chain: list[str] = Field(default_factory=list)
+    escalation_chain: list[str] = Field(default_factory=list)
+    execution_strategy: Literal["single", "sequential", "parallel"]
+    stages: list[RouteStage] = Field(default_factory=list)
+    subtasks: list[RouteSubtask] = Field(default_factory=list)
+    priority: int = Field(..., ge=1, le=5)
+    risk_level: RiskLevel
+    approval_level: RiskLevel
+    client_context: str | None = None
+    project_context: str | None = None
+    knowledge_matches: list[str] = Field(default_factory=list)
+    memory_scopes: list[str] = Field(default_factory=list)
+    tool_matches: list[str] = Field(default_factory=list)
+    framework_hints: list[str] = Field(default_factory=list)
+    language_hints: list[str] = Field(default_factory=list)
+    reviewers_required: list[str] = Field(default_factory=list)
+    duplicate_of_task_id: str | None = None
+    retry_recommendation: str | None = None
+    timeout_seconds: int = 0
+    route_map: dict[str, list[str]] = Field(default_factory=dict)
+    candidates: list[RouteCandidate] = Field(default_factory=list)
+    warnings: list[str] = Field(default_factory=list)
+    reasoning: str
 
 
 class TaskHistoryEntry(BaseModel):
@@ -102,6 +172,7 @@ class TaskRecord(BaseModel):
     status: TaskStatus
     metadata: dict[str, Any] = Field(default_factory=dict)
     reasoning: str
+    routing: RouteDecision | None = None
     history: list[TaskHistoryEntry] = Field(default_factory=list)
     execution_result: AgentExecutionResponse | None = None
     review_result: ReviewResult | None = None

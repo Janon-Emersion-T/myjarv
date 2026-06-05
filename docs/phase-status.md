@@ -12,13 +12,14 @@ Roadmap-specific completion update:
 * Roadmap Phase 3, `Standardize Agent Profiles`, is now complete with all 102 agent prompts regenerated to the expanded canonical standard and enforced by [scripts/validate_agent_profile_sections.py](/var/www/jarvis/scripts/validate_agent_profile_sections.py).
 * Roadmap Phase 4, `Create Jarvis Brain`, is now complete with end-to-end task intake, approval-aware execution, result review, lifecycle history, wrapper modules at `apps/brain/*`, and API-level tests in [apps/brain/tests/test_phase4.py](/var/www/jarvis/apps/brain/tests/test_phase4.py).
 * Roadmap Phase 5, `Build Agent Registry`, is now complete with enriched agent metadata, department grouping, detector-backed validation, registry CLI commands, runtime registry APIs, and tests in [apps/brain/tests/test_phase5_registry.py](/var/www/jarvis/apps/brain/tests/test_phase5_registry.py).
+* Roadmap Phase 6, `Build Task Routing`, is now complete with a configurable routing engine, confidence scoring, multi-agent plans, reassignment, trace persistence, replay, analytics, CLI verification, and stress-tested API coverage in [apps/brain/tests/test_phase6_routing.py](/var/www/jarvis/apps/brain/tests/test_phase6_routing.py).
 
 Current useful assets preserved:
 
 * `packages/agents/prompts/*.md` contains the existing named agent profiles.
 * `packages/agents/registry.json` now contains enriched orchestration metadata.
 * `scripts/validate_agents.py` validates registry structure and prompt-file coverage.
-* `apps/brain/app` now contains the SQLite-first orchestration brain with tasks, approvals, memory, knowledge, and tools endpoints.
+* `apps/brain/app` now contains the SQLite-first orchestration brain with tasks, approvals, memory, knowledge, tools, and full routing-trace endpoints.
 * `apps/rust-core` contains the initial Rust workspace.
 * `apps/desktop` contains the Tauri + React + Tailwind desktop shell.
 

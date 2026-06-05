@@ -8,8 +8,17 @@ from app.knowledge.loader import knowledge_loader
 from app.logger import logger
 from app.memory import memory_store
 from app.orchestrator import orchestrate_task
+from app.routing import routing_engine, routing_store
+from app.routing.rules import routing_rules
 from app.security import enforce_local_auth
-from app.schemas import ApprovalDecisionRequest, MemoryCreateRequest, TaskCreateRequest, TaskExecutionRequest
+from app.schemas import (
+    ApprovalDecisionRequest,
+    MemoryCreateRequest,
+    RoutingSimulationRequest,
+    TaskCreateRequest,
+    TaskExecutionRequest,
+    TaskReassignmentRequest,
+)
 from app.task_manager import task_manager
 from app.tools.registry import tool_registry
 from app.workflows.business import BUSINESS_WORKFLOWS
@@ -21,7 +30,7 @@ router = APIRouter(dependencies=[Depends(enforce_local_auth)])
 
 @router.get("/health")
 def health() -> dict:
-    return {"status": "ok", "service": "Jarvis Brain", "version": "0.3.0"}
+    return {"status": "ok", "service": "Jarvis Brain", "version": "0.4.0"}
 
 
 @router.get("/agents")
@@ -100,6 +109,22 @@ def execute_task(task_id: str, request: TaskExecutionRequest) -> dict:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
+@router.post("/tasks/{task_id}/reassign")
+def reassign_task(task_id: str, request: TaskReassignmentRequest) -> dict:
+    try:
+        return task_manager.reassign_task(task_id, request.reviewer, request.agent, request.reason)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.get("/tasks/{task_id}/route-trace")
+def get_task_route_trace(task_id: str) -> dict:
+    trace = routing_store.get_trace_for_task(task_id)
+    if trace is None:
+        raise HTTPException(status_code=404, detail=f"No route trace found for task {task_id}")
+    return trace
+
+
 @router.get("/memory")
 def list_memory(scope: str | None = Query(default=None), limit: int = Query(default=100, ge=1, le=500)) -> dict:
     return {"memory": memory_store.list(scope=scope, limit=limit)}
@@ -120,6 +145,62 @@ def create_memory(request: MemoryCreateRequest) -> dict:
 @router.get("/logs")
 def get_logs(limit: int = Query(default=100, ge=1, le=500)) -> dict:
     return {"logs": logger.read_recent(limit=limit)}
+
+
+@router.post("/routing/simulate")
+def simulate_routing(request: RoutingSimulationRequest) -> dict:
+    return routing_engine.route(
+        message=request.message,
+        preferred_agent=request.preferred_agent,
+        requested_action=request.requested_action,
+        metadata=request.metadata,
+        mode="simulation",
+    )
+
+
+@router.get("/routing/analytics")
+def get_routing_analytics() -> dict:
+    return routing_store.analytics()
+
+
+@router.get("/routing/traces")
+def list_routing_traces(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"traces": routing_store.list_traces(limit=limit)}
+
+
+@router.get("/routing/traces/{trace_id}")
+def get_routing_trace(trace_id: str) -> dict:
+    try:
+        return routing_store.get_trace(trace_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/routing/traces/{trace_id}/replay")
+def replay_routing_trace(trace_id: str) -> dict:
+    try:
+        return routing_engine.replay(trace_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.get("/routing/map")
+def get_routing_map() -> dict:
+    rules = routing_rules.load()
+    edges = []
+    for label, config in rules.get("intent_categories", {}).items():
+        edges.append({"stage": f"intent:{label}", "agents": [config.get("department", "general")]})
+    for route in rules.get("direct_routes", []):
+        edges.append(
+            {
+                "stage": f"route:{route['label']}",
+                "agents": [route["primary"], *route.get("collaborators", []), *route.get("reviewers", [])],
+            }
+        )
+    return {
+        "nodes": sorted({node for edge in edges for node in edge["agents"]}),
+        "edges": edges,
+    }
 
 
 @router.get("/knowledge")

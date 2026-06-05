@@ -4,7 +4,7 @@ from app.router import router as brain_router
 
 app = FastAPI(
     title="Jarvis Brain",
-    version="0.3.0",
+    version="0.4.0",
     description="Local-first autonomous business operating system for LKProfessionals (Pvt) Ltd.",
 )
 

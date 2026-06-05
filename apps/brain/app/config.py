@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     APPROVALS_DIR: str = str(ROOT_DIR / "data" / "approvals")
     MEMORY_DIR: str = str(ROOT_DIR / "data" / "memory")
     KNOWLEDGE_DIR: str = str(ROOT_DIR / "data" / "knowledge")
+    ROUTING_RULES_PATH: str = str(ROOT_DIR / "packages" / "agents" / "routing-rules.json")
     PRODUCTION_LOCK_MODE: bool = False
     LOCAL_AUTH_TOKEN: str | None = None
     DEFAULT_LOG_LIMIT: int = 100

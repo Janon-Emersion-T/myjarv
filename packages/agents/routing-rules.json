@@ -1,0 +1,193 @@
+{
+  "version": "1.0.0",
+  "default_fallback_agent": "Jarvis",
+  "default_reviewers": ["Athena"],
+  "default_escalation_chain": ["Jarvis", "Athena", "Sentinel"],
+  "blacklisted_statuses": ["inactive", "deprecated"],
+  "intent_categories": {
+    "development": {
+      "keywords": ["code", "repository", "bug", "fix", "laravel", "react", "api", "architecture", "website", "web app", "project"],
+      "department": "development",
+      "reviewers": ["Linus", "Athena"],
+      "escalation_chain": ["Tony", "Athena", "Jarvis"],
+      "default_strategy": "sequential"
+    },
+    "marketing": {
+      "keywords": ["campaign", "seo", "blog", "ads", "social", "content", "youtube", "tiktok", "copy"],
+      "department": "marketing",
+      "reviewers": ["Analyst", "Athena"],
+      "escalation_chain": ["Maya", "Athena"],
+      "default_strategy": "parallel"
+    },
+    "finance": {
+      "keywords": ["invoice", "quotation", "finance", "payment", "budget", "pricing", "proposal"],
+      "department": "finance",
+      "reviewers": ["Ledger", "Athena"],
+      "escalation_chain": ["Morgan", "Jarvis"],
+      "default_strategy": "single"
+    },
+    "legal": {
+      "keywords": ["contract", "policy", "legal", "privacy", "terms", "agreement"],
+      "department": "legal",
+      "reviewers": ["Hill", "Athena"],
+      "escalation_chain": ["Lawrence", "Jarvis"],
+      "default_strategy": "single"
+    },
+    "operations": {
+      "keywords": ["report", "workflow", "schedule", "operations", "daily", "weekly", "briefing"],
+      "department": "operations",
+      "reviewers": ["Friday", "Athena"],
+      "escalation_chain": ["Alfred", "Jarvis"],
+      "default_strategy": "sequential"
+    },
+    "support": {
+      "keywords": ["support", "customer", "reply", "complaint", "ticket", "follow-up"],
+      "department": "support",
+      "reviewers": ["Pepper", "Athena"],
+      "escalation_chain": ["Pepper", "Jarvis"],
+      "default_strategy": "single"
+    },
+    "research": {
+      "keywords": ["research", "compare", "analysis", "market", "trusted", "benchmark"],
+      "department": "research",
+      "reviewers": ["Vision", "Athena"],
+      "escalation_chain": ["Vision", "Athena"],
+      "default_strategy": "sequential"
+    },
+    "creative": {
+      "keywords": ["image", "video", "design", "brand", "thumbnail", "graphic"],
+      "department": "design",
+      "reviewers": ["Nova", "Athena"],
+      "escalation_chain": ["Uma", "Athena"],
+      "default_strategy": "parallel"
+    },
+    "infrastructure": {
+      "keywords": ["server", "deploy", "nginx", "docker", "dns", "domain", "cloudflare", "hosting"],
+      "department": "infrastructure",
+      "reviewers": ["Sentinel", "Athena"],
+      "escalation_chain": ["Sentinel", "Jarvis"],
+      "default_strategy": "sequential"
+    },
+    "general": {
+      "keywords": ["general", "help", "assist", "jarvis"],
+      "department": "executive",
+      "reviewers": ["Athena"],
+      "escalation_chain": ["Jarvis", "Athena"],
+      "default_strategy": "single"
+    }
+  },
+  "direct_routes": [
+    {
+      "label": "web_request",
+      "match_any": ["website", "web app", "landing page", "company site", "portal"],
+      "primary": "Peter",
+      "collaborators": ["Lara", "Tony"],
+      "reviewers": ["Linus", "Athena"],
+      "strategy": "sequential",
+      "framework_hints": ["web"],
+      "language_hints": ["html", "css", "javascript"]
+    },
+    {
+      "label": "laravel_request",
+      "match_any": ["laravel", "blade", "livewire", "php artisan"],
+      "primary": "Lara",
+      "collaborators": ["Peter", "Tony"],
+      "reviewers": ["Linus", "Athena"],
+      "strategy": "sequential",
+      "framework_hints": ["laravel"],
+      "language_hints": ["php"]
+    },
+    {
+      "label": "wordpress_request",
+      "match_any": ["wordpress", "woocommerce", "elementor"],
+      "primary": "Wordpress",
+      "collaborators": ["Peter"],
+      "reviewers": ["Athena"],
+      "strategy": "sequential",
+      "framework_hints": ["wordpress"],
+      "language_hints": ["php"]
+    },
+    {
+      "label": "seo_request",
+      "match_any": ["seo", "google ranking", "keywords", "search console"],
+      "primary": "Neil",
+      "collaborators": ["Analyst", "Natasha"],
+      "reviewers": ["Athena"],
+      "strategy": "parallel"
+    },
+    {
+      "label": "marketing_copy",
+      "match_any": ["copy", "caption", "ad copy", "campaign copy", "marketing copy"],
+      "primary": "Natasha",
+      "collaborators": ["Maya", "Analyst"],
+      "reviewers": ["Athena"],
+      "strategy": "parallel"
+    },
+    {
+      "label": "finance_request",
+      "match_any": ["invoice", "quotation", "payment", "pricing", "budget"],
+      "primary": "Morgan",
+      "collaborators": ["Ledger"],
+      "reviewers": ["Athena"],
+      "strategy": "single"
+    },
+    {
+      "label": "legal_request",
+      "match_any": ["contract", "terms", "policy", "agreement", "legal"],
+      "primary": "Lawrence",
+      "collaborators": ["Hill"],
+      "reviewers": ["Athena"],
+      "strategy": "single"
+    },
+    {
+      "label": "git_request",
+      "match_any": ["git", "branch", "commit", "merge", "pull request"],
+      "primary": "Bishop",
+      "collaborators": ["Linus"],
+      "reviewers": ["Athena"],
+      "strategy": "sequential"
+    },
+    {
+      "label": "server_request",
+      "match_any": ["nginx", "docker", "cloudflare", "deploy", "server", "dns", "hosting"],
+      "primary": "Nginx",
+      "collaborators": ["Docker", "Constantine"],
+      "reviewers": ["Sentinel", "Athena"],
+      "strategy": "sequential"
+    }
+  ],
+  "tool_keywords": {
+    "git": ["git", "branch", "commit", "merge", "pull request"],
+    "docker": ["docker", "container", "image"],
+    "nginx": ["nginx", "reverse proxy"],
+    "figma": ["figma", "wireframe"],
+    "seo-audit": ["seo", "ranking", "keywords"],
+    "email": ["email", "mail", "outreach"]
+  },
+  "framework_routes": {
+    "laravel": "Lara",
+    "wordpress": "Wordpress",
+    "react": "Rhea",
+    "vue": "Victor",
+    "tauri": "Taylor",
+    "fastapi": "Fury"
+  },
+  "language_routes": {
+    "php": "Lara",
+    "python": "Ada",
+    "typescript": "Taylor",
+    "javascript": "Taylor",
+    "rust": "Dennis",
+    "sql": "Diana"
+  },
+  "client_routes": {
+    "lkprofessionals": {
+      "executive_reviewers": ["Jarvis", "Athena"],
+      "memory_scopes": ["company", "project", "client"]
+    }
+  },
+  "routing_overrides": {
+    "urgent executive briefing": "Jarvis",
+    "ceo report": "Jarvis"
+  }
+}

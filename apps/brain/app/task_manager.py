@@ -6,11 +6,14 @@ from pathlib import Path
 from typing import Any
 
 from app.agent_executor import agent_executor
+from app.agents.registry import get_agent_by_name
 from app.audit_logger import audit_logger
 from app.config import settings
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.logger import logger
+from app.orchestrator import _to_summary
 from app.response_formatter import response_formatter
+from app.routing import routing_engine, routing_store
 from app.result_reviewer import result_reviewer
 from app.safety import is_execution_allowed, should_retry
 from app.task_queue import task_queue
@@ -47,6 +50,7 @@ class TaskManager:
                     status TEXT NOT NULL,
                     metadata_json TEXT NOT NULL,
                     reasoning TEXT NOT NULL,
+                    routing_json TEXT,
                     execution_result_json TEXT,
                     review_result_json TEXT,
                     retry_count INTEGER NOT NULL DEFAULT 0,
@@ -57,6 +61,7 @@ class TaskManager:
             self._ensure_column(connection, "tasks", "intent_category", "TEXT NOT NULL DEFAULT 'general'")
             self._ensure_column(connection, "tasks", "supporting_agents_json", "TEXT NOT NULL DEFAULT '[]'")
             self._ensure_column(connection, "tasks", "priority", "INTEGER NOT NULL DEFAULT 3")
+            self._ensure_column(connection, "tasks", "routing_json", "TEXT")
             self._ensure_column(connection, "tasks", "execution_result_json", "TEXT")
             self._ensure_column(connection, "tasks", "review_result_json", "TEXT")
             self._ensure_column(connection, "tasks", "retry_count", "INTEGER NOT NULL DEFAULT 0")
@@ -108,8 +113,8 @@ class TaskManager:
                 INSERT INTO tasks (
                     id, created_at, updated_at, message, intent_category, preferred_agent, selected_agent_json,
                     supporting_agents_json, requested_action, priority, risk_level, approval_level, status, metadata_json, reasoning,
-                    execution_result_json, review_result_json, retry_count, last_error
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    routing_json, execution_result_json, review_result_json, retry_count, last_error
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     record["id"],
@@ -127,6 +132,7 @@ class TaskManager:
                     record["status"],
                     json.dumps(record.get("metadata", {})),
                     record["reasoning"],
+                    json.dumps(record.get("routing")) if record.get("routing") else None,
                     None,
                     None,
                     0,
@@ -143,6 +149,8 @@ class TaskManager:
                     payload=event.get("payload", {}),
                     created_at=event["created_at"],
                 )
+        if record.get("routing", {}).get("trace_id"):
+            routing_store.attach_task(record["routing"]["trace_id"], record["id"])
         task_queue.enqueue(record["id"])
         logger.log("INFO", "task.created", "Created task record.", {"task_id": record["id"], "status": record["status"]})
         audit_logger.record("task_created", "Created task record.", {"task_id": record["id"], "status": record["status"]})
@@ -161,6 +169,8 @@ class TaskManager:
         task = self._row_to_task(row)
         task["approvals"] = self.list_approvals(task_id)
         task["history"] = self.list_history(task_id)
+        if task.get("routing", {}).get("trace_id"):
+            task["route_trace"] = routing_store.get_trace(task["routing"]["trace_id"])
         return task
 
     def _decide(self, task_id: str, decision: str, reviewer: str, notes: str | None) -> dict[str, Any]:
@@ -205,6 +215,61 @@ class TaskManager:
 
     def reject_task(self, task_id: str, reviewer: str, notes: str | None) -> dict[str, Any]:
         return self._decide(task_id, "rejected", reviewer, notes)
+
+    def reassign_task(self, task_id: str, reviewer: str, agent_name: str, reason: str) -> dict[str, Any]:
+        task = self.get_task(task_id)
+        route = routing_engine.route(
+            message=task["message"],
+            requested_action=task.get("requested_action"),
+            preferred_agent=agent_name,
+            metadata={
+                **task.get("metadata", {}),
+                "task_id": task_id,
+                "route_override": agent_name,
+                "reassignment_reason": reason,
+                "previous_trace_id": task.get("routing", {}).get("trace_id"),
+            },
+        )
+        selected_agent = get_agent_by_name(route["selected_agent"])
+        supporting_agents = [_to_summary(get_agent_by_name(name)).model_dump() for name in route["supporting_agents"]]
+        now = datetime.now(UTC).isoformat()
+        with self._connect() as connection:
+            connection.execute(
+                """
+                UPDATE tasks
+                SET updated_at = ?, preferred_agent = ?, selected_agent_json = ?, supporting_agents_json = ?,
+                    priority = ?, risk_level = ?, approval_level = ?, reasoning = ?, routing_json = ?, status = ?
+                WHERE id = ?
+                """,
+                (
+                    now,
+                    agent_name,
+                    json.dumps(_to_summary(selected_agent).model_dump()),
+                    json.dumps(supporting_agents),
+                    route["priority"],
+                    route["risk_level"],
+                    route["approval_level"],
+                    route["reasoning"],
+                    json.dumps(route),
+                    "waiting_approval" if route["approval_level"] != "LOW" else "routed",
+                    task_id,
+                ),
+            )
+            self._insert_event(
+                connection=connection,
+                task_id=task_id,
+                status="routed",
+                actor=reviewer,
+                message=f"Task manually reassigned to {selected_agent.name}.",
+                payload={"reason": reason, "trace_id": route["trace_id"], "reassigned_to": selected_agent.name},
+                created_at=now,
+            )
+        audit_logger.record(
+            "task_reassigned",
+            "Task manually reassigned.",
+            {"task_id": task_id, "reviewer": reviewer, "agent": selected_agent.name},
+        )
+        return self.get_task(task_id)
 
     def list_approvals(self, task_id: str) -> list[dict[str, Any]]:
         with self._connect() as connection:
@@ -363,6 +428,7 @@ class TaskManager:
             "status": row["status"],
             "metadata": json.loads(row["metadata_json"]),
             "reasoning": row["reasoning"],
+            "routing": json.loads(row["routing_json"]) if row["routing_json"] else None,
             "execution_result": json.loads(row["execution_result_json"]) if row["execution_result_json"] else None,
             "review_result": json.loads(row["review_result_json"]) if row["review_result_json"] else None,
             "retry_count": row["retry_count"],

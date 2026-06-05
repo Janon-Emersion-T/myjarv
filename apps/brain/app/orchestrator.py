@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 
-from app.agents.router import classify_intent, classify_priority, select_agent, supporting_agents_for_intent
-from app.approval_gate import approval_gate
+from app.agents.registry import get_agent_by_name
+from app.routing import routing_engine
 from app.schemas import AgentSummary, TaskCreateRequest
 
 
@@ -21,21 +21,25 @@ def _to_summary(agent) -> AgentSummary:
 
 
 def orchestrate_task(request: TaskCreateRequest) -> dict:
-    agent = select_agent(request.message, request.preferred_agent)
-    intent_category = classify_intent(request.message)
-    selected_agent = _to_summary(agent)
-    supporting_agents = [_to_summary(item) for item in supporting_agents_for_intent(intent_category, agent)]
-    priority = classify_priority(request.message, agent)
-    risk_level, approval_level = approval_gate.classify(
-        request.message,
-        agent.approval_level,
-        request.requested_action,
+    route = routing_engine.route(
+        message=request.message,
+        requested_action=request.requested_action,
+        preferred_agent=request.preferred_agent,
+        metadata=request.metadata,
     )
+    agent = get_agent_by_name(route["selected_agent"])
+    selected_agent = _to_summary(agent)
+    supporting_agents = [_to_summary(get_agent_by_name(name)) for name in route["supporting_agents"]]
+    intent_category = route["intent_category"]
+    priority = route["priority"]
+    risk_level = route["risk_level"]
+    approval_level = route["approval_level"]
     status = "waiting_approval" if approval_level != "LOW" else "routed"
     reasoning = (
         f"Selected {agent.name} as the primary agent for the {intent_category} intent category. "
         f"Supporting agents: {', '.join(agent.name for agent in supporting_agents) or 'none'}. "
-        f"Task priority classified as {priority}, risk as {risk_level}, and approval requirement as {approval_level}."
+        f"Task priority classified as {priority}, risk as {risk_level}, approval requirement as {approval_level}, "
+        f"and routing confidence as {route['confidence']:.2f}."
     )
     now = datetime.now(UTC).isoformat()
     return {
@@ -51,6 +55,7 @@ def orchestrate_task(request: TaskCreateRequest) -> dict:
         "status": status,
         "metadata": request.metadata,
         "reasoning": reasoning,
+        "routing": route,
         "history": [
             {
                 "created_at": now,
@@ -70,6 +75,9 @@ def orchestrate_task(request: TaskCreateRequest) -> dict:
                     "priority": priority,
                     "risk_level": risk_level,
                     "approval_level": approval_level,
+                    "trace_id": route["trace_id"],
+                    "confidence": route["confidence"],
+                    "strategy": route["execution_strategy"],
                 },
             },
         ],

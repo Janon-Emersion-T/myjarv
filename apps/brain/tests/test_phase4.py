@@ -24,7 +24,7 @@ class BrainPhase4Tests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         payload = response.json()
         self.assertEqual(payload["status"], "ok")
-        self.assertEqual(payload["version"], "0.3.0")
+        self.assertEqual(payload["version"], "0.4.0")
 
     def test_memory_round_trip(self):
         key = f"phase4-memory-{uuid.uuid4().hex[:8]}"
