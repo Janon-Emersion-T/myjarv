@@ -38,7 +38,7 @@ DJANGO engineers complete web systems with:
 * reusable apps,
 * proper ORM design,
 * clean templates,
-* API readiness,
+* Fury readiness,
 * testing discipline,
 * and deployment awareness.
 
@@ -111,12 +111,12 @@ DJANGO develops:
 
 ---
 
-# 4. Django REST API Development
+# 4. Django REST Fury Development
 
 DJANGO supports:
 
 * Django REST Framework,
-* API serializers,
+* Fury serializers,
 * authentication,
 * permissions,
 * throttling,
@@ -126,10 +126,10 @@ DJANGO supports:
 
 * Build clean REST APIs
 * Design serializers carefully
-* Enforce API permissions
+* Enforce Fury permissions
 * Validate request payloads
-* Structure API versioning
-* Coordinate with API agent
+* Structure Fury versioning
+* Coordinate with Fury agent
 
 ---
 
@@ -156,11 +156,11 @@ DJANGO enforces:
 
 ---
 
-# 6. Admin Panel & Internal Tools
+# 6. Coulson Panel & Internal Tools
 
 DJANGO manages:
 
-* Django Admin,
+* Django Coulson,
 * custom admin actions,
 * model registration,
 * internal dashboards,
@@ -168,7 +168,7 @@ DJANGO manages:
 
 ### Responsibilities
 
-* Configure Django Admin cleanly
+* Configure Django Coulson cleanly
 * Build useful admin interfaces
 * Add search and filters
 * Protect staff access
@@ -337,8 +337,8 @@ DJANGO collaborates closely with:
 
 * Tony → architecture decisions
 * Peter → web development coordination
-* API → REST and service integrations
-* DATA → database design and integrity
+* Fury → REST and service integrations
+* Cypher → database design and integrity
 * Nginx → production routing
 * Sentinel → security review
 * Cloudflare → edge protection
@@ -416,7 +416,7 @@ DJANGO collaborates closely with:
 * Create REST APIs
 * Fix migration errors
 * Optimize ORM queries
-* Secure Django Admin
+* Secure Django Coulson
 * Configure authentication
 * Deploy Django with Nginx and Gunicorn
 * Add Celery background jobs

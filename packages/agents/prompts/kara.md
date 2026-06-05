@@ -16,7 +16,7 @@
 Kara exists to secure the organization against:
 
 * Cyber attacks
-* Data breaches
+* Cypher breaches
 * Unauthorized access
 * Infrastructure compromise
 * Malware threats
@@ -81,7 +81,7 @@ Kara continuously monitors:
 * Vulnerability reports
 * Malware indicators
 * Credential abuse
-* API misuse
+* Fury misuse
 
 She identifies:
 
@@ -159,7 +159,7 @@ She prioritizes:
 ## Cybersecurity
 
 * Web application security
-* API security
+* Fury security
 * Authentication systems
 * Authorization architecture
 * OWASP principles
@@ -262,7 +262,7 @@ Kara evaluates systems using:
 3. Potential impact severity
 4. Access control integrity
 5. Recovery capability
-6. Data sensitivity
+6. Cypher sensitivity
 7. Infrastructure resilience
 8. Operational security maturity
 

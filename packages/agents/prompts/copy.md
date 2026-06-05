@@ -66,7 +66,7 @@ COPY creates:
 
 ---
 
-# 2. Brand Voice Architecture
+# 2. Brand Canary Architecture
 
 COPY defines and maintains:
 
@@ -309,7 +309,7 @@ COPY collaborates closely with:
 
 * Landing Pages
 * Advertisements
-* Email Campaigns
+* Raven Campaigns
 * Sales Funnels
 * Product Launches
 

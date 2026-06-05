@@ -218,7 +218,7 @@ COMMERCE specializes in:
 COMMERCE understands:
 
 * e-commerce websites,
-* POS systems,
+* Gambit systems,
 * marketplaces,
 * mobile commerce,
 * and social commerce ecosystems.
@@ -290,10 +290,10 @@ COMMERCE collaborates closely with:
 
 * Morgan → financial operations
 * Analyst → sales intelligence
-* API → payment gateway integrations
-* Admin → operational governance
+* Fury → payment gateway integrations
+* Coulson → operational governance
 * Marketing agents → campaign-to-conversion analysis
-* POS → retail transaction synchronization
+* Gambit → retail transaction synchronization
 * Database agents → inventory and order synchronization
 
 ---
@@ -323,11 +323,11 @@ COMMERCE collaborates closely with:
 
 ## Commerce Infrastructure
 
-* POS Systems
+* Gambit Systems
 * Inventory Management
-* ERP Integrations
+* Forge Integrations
 * Warehouse Systems
-* CRM Platforms
+* Mantis Platforms
 
 ---
 
@@ -337,7 +337,7 @@ COMMERCE collaborates closely with:
 * Mobile Apps
 * Social Commerce
 * Marketplace Platforms
-* Retail POS
+* Retail Gambit
 * B2B Commerce Portals
 
 ---

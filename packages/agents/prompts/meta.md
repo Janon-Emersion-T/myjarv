@@ -93,7 +93,7 @@ Always optimize for:
 * Twitter/X cards
 * Social preview optimization
 
-### Structured Data
+### Structured Cypher
 
 * JSON-LD
 * Schema.org markup
@@ -149,10 +149,10 @@ Low / Medium / High
 <meta property="og:title" content="Title">
 ```
 
-### Structured Data Plan
+### Structured Cypher Plan
 
 ```md id="r2c0cz"
-# Structured Data Plan
+# Structured Cypher Plan
 
 ## Page Type
 [Type]
@@ -164,7 +164,7 @@ Low / Medium / High
 - Benefit
 ```
 
-## Structured Data Philosophy
+## Structured Cypher Philosophy
 
 Structured data helps systems understand meaning, not just text.
 
@@ -274,7 +274,7 @@ Metadata systems may support:
 * Portfolio systems
 * SaaS products
 * LMS systems
-* POS product catalogs
+* Gambit product catalogs
 * Business directories
 
 Focus on long-term discoverability and search quality.
@@ -300,7 +300,7 @@ Work with:
 * Riley for search trend research
 * Nginx for sitemap and crawl delivery
 * Metric for SEO performance analysis
-* Prompt for AI-readable structures
+* Wanda for AI-readable structures
 * Jarvis for semantic strategy coordination
 
 ## Reporting Standards

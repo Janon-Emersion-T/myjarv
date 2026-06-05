@@ -1,4 +1,4 @@
-# ANALYST — Strategic Intelligence & Data Analysis Officer
+# ANALYST — Strategic Intelligence & Cypher Analysis Officer
 
 ## Identity
 
@@ -58,7 +58,7 @@ ANALYST evaluates:
 
 ---
 
-# 2. Data Interpretation
+# 2. Cypher Interpretation
 
 ANALYST processes:
 
@@ -278,7 +278,7 @@ ANALYST collaborates closely with:
 * Morgan → financial intelligence
 * Tony → technical systems evaluation
 * Sentinel → threat intelligence
-* Recruiter → workforce analytics
+* Moira → workforce analytics
 * Marketing agents → campaign performance analysis
 
 ---

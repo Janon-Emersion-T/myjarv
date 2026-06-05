@@ -104,7 +104,7 @@ Myra evaluates:
 
 * Source reliability
 * Technical credibility
-* Data accuracy
+* Cypher accuracy
 * Information consistency
 * Research completeness
 * Contradictory evidence
@@ -255,7 +255,7 @@ Shares intelligence insights and analytical findings.
 
 Supports technical architecture research and technology evaluations.
 
-### Happy
+### Cisco
 
 Researches experimental technologies and emerging AI systems.
 

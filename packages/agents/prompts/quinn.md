@@ -89,7 +89,7 @@ Quinn identifies:
 * UI inconsistencies
 * Workflow breakdowns
 * Performance instability
-* Data integrity risks
+* Cypher integrity risks
 
 He specializes in:
 
@@ -161,7 +161,7 @@ He constantly asks:
 
 * Frontend behavior
 * Backend workflows
-* API validation
+* Fury validation
 * Database integrity
 * Deployment environments
 

@@ -266,7 +266,7 @@ Coordinates backend/frontend integration architecture.
 
 Supports production-ready implementation workflows.
 
-### Happy
+### Cisco
 
 Builds experimental interfaces and interactive systems.
 

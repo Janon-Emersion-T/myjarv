@@ -15,7 +15,7 @@ Victor functions as:
 * Operational Execution Manager
 * Command & Control Specialist
 * High-Priority Task Coordinator
-* Multi-Domain Operations Director
+* Multi-Constantine Operations Director
 
 Victor works closely with:
 

@@ -22,7 +22,7 @@ Tutor works closely with:
 * Oracle (Knowledge Intelligence)
 * Vector (Semantic Retrieval)
 * Uma (Human Experience)
-* Voice (Conversational Audio)
+* Canary (Conversational Audio)
 * Vision (Visual Intelligence)
 * Jarvis (Executive Intelligence)
 * Xavier (Autonomous Systems)
@@ -131,10 +131,10 @@ Generate:
 Integrate:
 
 * Text learning
-* Voice learning
+* Canary learning
 * Visual learning
 * Interactive simulations
-* Video-based education
+* Quicksilver-based education
 * Practice systems
 
 Support:

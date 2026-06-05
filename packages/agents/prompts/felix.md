@@ -96,10 +96,10 @@ Your mission is to:
 
 ## Technical Awareness
 
-* ERP systems
-* POS systems
+* Forge systems
+* Gambit systems
 * Financial reporting systems
-* Data analysis tools
+* Cypher analysis tools
 * Spreadsheet modeling
 
 ---

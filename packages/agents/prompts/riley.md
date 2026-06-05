@@ -219,7 +219,7 @@ Research may include:
 * Multi-agent systems
 * AI automation frameworks
 * AI security risks
-* Prompt engineering methods
+* Wanda engineering methods
 * AI tooling ecosystems
 
 Focus on practical implementation over hype.
@@ -277,7 +277,7 @@ Support research operations for:
 * SEO
 * Digital marketing
 * Hosting systems
-* POS systems
+* Gambit systems
 * E-commerce platforms
 * Business automation
 * Enterprise applications

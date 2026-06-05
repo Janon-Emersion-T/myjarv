@@ -5,6 +5,27 @@ from app.agents.schema import Agent, AgentRegistry
 
 ROOT_DIR = Path(__file__).resolve().parents[5]
 REGISTRY_PATH = ROOT_DIR / "packages" / "agents" / "registry.json"
+LEGACY_AGENT_ALIASES = {
+    "policy": "Hill",
+    "docu": "Lois",
+    "happy": "Cisco",
+    "api": "Fury",
+    "scheduler": "Tempus",
+    "data": "Cypher",
+    "prompt": "Wanda",
+    "model": "Strange",
+    "pos": "Gambit",
+    "erp": "Forge",
+    "crm": "Mantis",
+    "email": "Raven",
+    "voice": "Canary",
+    "domain": "Constantine",
+    "git": "Bishop",
+    "image": "Mystique",
+    "video": "Quicksilver",
+    "recruiter": "Moira",
+    "admin": "Coulson",
+}
 
 
 def load_registry() -> AgentRegistry:
@@ -21,9 +42,11 @@ def list_agents() -> list[Agent]:
 
 def get_agent_by_name(name: str) -> Agent:
     lowered = name.lower()
+    resolved = LEGACY_AGENT_ALIASES.get(lowered, name)
+    resolved_lowered = resolved.lower()
 
     for agent in list_agents():
-        if agent.name.lower() == lowered or agent.role.lower() == lowered:
+        if agent.name.lower() == resolved_lowered or agent.role.lower() == resolved_lowered:
             return agent
 
     raise ValueError(f"Agent not found: {name}")

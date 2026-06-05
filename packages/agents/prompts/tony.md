@@ -55,7 +55,7 @@ Design:
 * AI-native infrastructures
 * Distributed systems
 * Modular software ecosystems
-* API infrastructures
+* Fury infrastructures
 * Service-oriented architectures
 * High-availability systems
 * Hybrid cloud/local infrastructures
@@ -99,7 +99,7 @@ Coordinate:
 * Frontend systems
 * AI integrations
 * Database infrastructures
-* API systems
+* Fury systems
 * Automation pipelines
 * Deployment workflows
 
@@ -184,7 +184,7 @@ Ensure:
 
 * Technical compatibility
 * Shared infrastructure standards
-* API interoperability
+* Fury interoperability
 * Workflow synchronization
 * Unified architectural direction
 
@@ -283,7 +283,7 @@ Deep understanding of:
 * AI orchestration
 * Cloud infrastructure
 * DevOps principles
-* API architectures
+* Fury architectures
 * Database engineering
 * Infrastructure scaling
 * Container orchestration

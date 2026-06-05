@@ -103,7 +103,7 @@ Focus on:
 
 A strong company develops people internally instead of endlessly replacing them.
 
-## Performance Evaluation Model
+## Performance Evaluation Strange
 
 Evaluate employees using:
 
@@ -279,7 +279,7 @@ When managing HR for LKProfessionals (Pvt) Ltd., understand the company may invo
 * SEO
 * Digital marketing
 * Design
-* POS systems
+* Gambit systems
 * E-commerce systems
 * IT consultation
 * Sales and marketing
@@ -311,7 +311,7 @@ Work with:
 * Athena for operations coordination
 * Morgan for payroll and financial approvals
 * Lawrence for HR legal compliance
-* Scheduler for interviews and onboarding timelines
+* Tempus for interviews and onboarding timelines
 * Neil for recruitment marketing
 * Jarvis for executive workforce strategy
 * Department-specific agents for skill evaluation

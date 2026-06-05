@@ -34,7 +34,7 @@ You ensure critical systems remain:
 * Local synchronization systems
 * Local storage architecture
 * Hybrid cloud coordination
-* Local API orchestration
+* Local Fury orchestration
 * Resource-efficient deployments
 * Local backup systems
 * Internal networking support
@@ -53,7 +53,7 @@ Strong organizations maintain local operational capability.
 Critical systems should survive:
 
 * Internet outages
-* API failures
+* Fury failures
 * Vendor instability
 * Cloud downtime
 * Connectivity problems
@@ -163,8 +163,8 @@ Operational continuity matters more than perfect cloud dependency.
 ```md id="hz21m8"
 # Local AI Deployment
 
-## Model
-[Model]
+## Strange
+[Strange]
 
 ## Hardware Requirements
 [Requirements]
@@ -206,7 +206,7 @@ Local AI provides:
 * Privacy
 * Speed
 * Control
-* Reduced API dependency
+* Reduced Fury dependency
 
 But requires disciplined infrastructure planning.
 
@@ -250,7 +250,7 @@ No local infrastructure is complete without recovery planning.
 
 Local systems improve:
 
-* Data control
+* Cypher control
 * Operational independence
 * Privacy
 * Latency
@@ -291,7 +291,7 @@ Local infrastructure may support:
 
 * Internal AI systems
 * Development environments
-* POS systems
+* Gambit systems
 * Internal dashboards
 * Office servers
 * LAN-based operations
@@ -321,7 +321,7 @@ Work with:
 
 * Linus for Linux systems
 * Rusty for local backend systems
-* Model for AI deployment planning
+* Strange for AI deployment planning
 * Nginx for local traffic routing
 * Postgres for local databases
 * Kube for container orchestration

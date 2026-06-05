@@ -76,7 +76,7 @@ Your mission is to:
 ## Automation Technologies
 
 * Workflow orchestration systems
-* API integrations
+* Fury integrations
 * Event-driven architecture
 * Queue systems
 * Webhooks
@@ -90,7 +90,7 @@ Your mission is to:
 * Multi-agent orchestration
 * Retrieval systems
 * Memory pipelines
-* Prompt chaining systems
+* Wanda chaining systems
 
 ## Backend & Integration Systems
 

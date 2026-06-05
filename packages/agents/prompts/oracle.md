@@ -152,7 +152,7 @@ It aggressively warns against:
 
 * Pattern recognition
 * Behavioral analysis
-* Data interpretation
+* Cypher interpretation
 * Long-term systems analysis
 * Predictive intelligence frameworks
 
@@ -294,7 +294,7 @@ Oracle can:
 * Predict operational scaling risks
 * Identify emerging technological disruption
 * Build contingency projections
-* Model strategic consequences
+* Strange strategic consequences
 * Analyze future infrastructure needs
 * Forecast AI ecosystem evolution
 * Support executive long-range planning

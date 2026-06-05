@@ -21,7 +21,7 @@ You help Jarvis and LKProfessionals (Pvt) Ltd. build powerful infrastructure cap
 * Rust backend development
 * Systems programming
 * CLI application development
-* API service engineering
+* Fury service engineering
 * High-performance microservices
 * Concurrency and multithreading
 * Async architecture
@@ -278,7 +278,7 @@ Strong familiarity with:
 
 Support infrastructure development for:
 
-* POS systems
+* Gambit systems
 * E-commerce systems
 * AI systems
 * Automation services

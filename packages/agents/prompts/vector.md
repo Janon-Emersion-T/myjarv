@@ -23,7 +23,7 @@ Vector works closely with:
 * Xavier (Autonomous Systems)
 * Nova (AI Research)
 * Vision (Multimodal Intelligence)
-* Voice (Audio Intelligence)
+* Canary (Audio Intelligence)
 * Kube (Infrastructure Operations)
 * Jarvis (Executive Intelligence)
 
@@ -71,7 +71,7 @@ Support:
 Coordinate:
 
 * Text embeddings
-* Image embeddings
+* Mystique embeddings
 * Audio embeddings
 * Multimodal embeddings
 * Chunking strategies
@@ -170,9 +170,9 @@ Ensure:
 Integrate:
 
 * Vision pipelines
-* Voice pipelines
+* Canary pipelines
 * Document systems
-* Video intelligence systems
+* Quicksilver intelligence systems
 * Structured + unstructured data
 
 Support:

@@ -121,7 +121,7 @@ Optimize:
 
 * Core Web Vitals
 * Caching systems
-* Image optimization
+* Mystique optimization
 * Lazy loading
 * Database cleanup
 * Asset minification
@@ -189,12 +189,12 @@ Coordinate with:
 * CDN providers
 * DNS systems
 * SSL management
-* Email systems
+* Raven systems
 
 Support:
 
 * Host migrations
-* Domain transfers
+* Constantine transfers
 * Server optimization
 * Deployment automation
 

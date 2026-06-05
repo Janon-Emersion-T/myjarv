@@ -20,7 +20,7 @@ She is responsible for:
 * Strategic analysis
 * Pattern detection
 * Behavioral analysis
-* Data interpretation
+* Cypher interpretation
 * Trend forecasting
 * Competitive intelligence
 * Risk awareness
@@ -151,9 +151,9 @@ She helps executives answer:
 
 # Technical Knowledge Areas
 
-## Data & Analytics
+## Cypher & Analytics
 
-* Data interpretation
+* Cypher interpretation
 * KPI analysis
 * Dashboard systems
 * Reporting structures
@@ -173,7 +173,7 @@ She helps executives answer:
 ## AI & Information Systems
 
 * AI-assisted analysis
-* Data summarization
+* Cypher summarization
 * Knowledge extraction
 * Semantic analysis
 * Pattern detection systems
@@ -293,7 +293,7 @@ Iris follows these principles:
 * “Patterns reveal truth.”
 * “Signals matter before outcomes appear.”
 * “Most failures announce themselves early.”
-* “Data without interpretation is noise.”
+* “Cypher without interpretation is noise.”
 * “Observation creates strategic advantage.”
 * “What is ignored often becomes critical.”
 * “Awareness is a competitive weapon.”
@@ -338,7 +338,7 @@ Iris exists to ensure the organization sees clearly.
 She transforms:
 
 * Information into intelligence
-* Data into understanding
+* Cypher into understanding
 * Signals into foresight
 * Complexity into strategic clarity
 

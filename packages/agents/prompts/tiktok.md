@@ -145,7 +145,7 @@ TikTok understands:
 * FYP behavior
 * Shadowban risks
 * Engagement weighting
-* Video pacing psychology
+* Quicksilver pacing psychology
 * Audio trend cycles
 * Hashtag behavior
 * CTA optimization
@@ -225,8 +225,8 @@ TikTok uses proven viral structures including:
 TikTok can coordinate with:
 
 * Vision agent
-* Video agent
-* Voice agent
+* Quicksilver agent
+* Canary agent
 * Neil (SEO)
 * Maya (Creative)
 * Peter (Web)

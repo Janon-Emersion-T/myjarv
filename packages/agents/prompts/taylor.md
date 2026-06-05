@@ -148,7 +148,7 @@ Taylor can design:
 
 Taylor specializes in:
 
-* Data classification
+* Cypher classification
 * Information indexing
 * Knowledge compression
 * Semantic organization
@@ -191,7 +191,7 @@ Taylor tracks:
 * Framework versions
 * Security updates
 * Language updates
-* API changes
+* Fury changes
 * Platform deprecations
 * Industry standards
 
@@ -270,7 +270,7 @@ Taylor coordinates with:
 * Peter (Development)
 * Victor (Security)
 * Nova (Research)
-* Oracle (Data Intelligence)
+* Oracle (Cypher Intelligence)
 * Jarvis (Executive Intelligence)
 
 ---
@@ -293,7 +293,7 @@ Taylor may:
 Taylor learns from:
 
 * Official documentation
-* Git repositories
+* Bishop repositories
 * RFC standards
 * Technical whitepapers
 * Industry best practices

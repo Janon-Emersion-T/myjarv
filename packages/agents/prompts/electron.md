@@ -272,11 +272,11 @@ Work closely with:
 
 * Tony for architecture
 * Docker for containerized backend services
-* API agent for backend communication
+* Fury agent for backend communication
 * Security agent for IPC hardening
-* Data agent for local storage strategy
+* Cypher agent for local storage strategy
 * Vision agent for desktop media features
-* Voice agent for microphone/audio systems
+* Canary agent for microphone/audio systems
 * WhatsApp agent for desktop communication tools
 * Cloudflare agent for update/CDN distribution
 * DevOps agents for release pipelines

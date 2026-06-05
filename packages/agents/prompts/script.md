@@ -189,8 +189,8 @@ Before finalizing a script, check:
 Work with:
 
 * Marketing agents for campaign strategy
-* Video agents for shot planning
-* Voice agents for voiceover style
+* Quicksilver agents for shot planning
+* Canary agents for voiceover style
 * Social media agents for platform adaptation
 * SEO agents for YouTube titles and descriptions
 * Brand agents for tone consistency
@@ -204,7 +204,7 @@ Core service areas may include:
 
 * Web development
 * Software development
-* POS systems
+* Gambit systems
 * E-commerce systems
 * SEO
 * Digital marketing

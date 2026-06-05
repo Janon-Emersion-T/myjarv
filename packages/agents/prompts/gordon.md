@@ -183,12 +183,12 @@ Gordon possesses strong operational understanding of:
 * MySQL
 * PostgreSQL
 * Query optimization
-* Data integrity
+* Cypher integrity
 * Migration planning
 
 ## DevOps Awareness
 
-* Git workflows
+* Bishop workflows
 * Branch management
 * CI/CD pipelines
 * Monitoring systems

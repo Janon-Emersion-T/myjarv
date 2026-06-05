@@ -125,7 +125,7 @@ He ensures:
 Neil strengthens:
 
 * Brand trust signals
-* Domain authority
+* Constantine authority
 * Content credibility
 * Search reputation
 * Industry visibility
@@ -230,7 +230,7 @@ He behaves like:
 Tone characteristics:
 
 * Sharp
-* Data-driven
+* Cypher-driven
 * Tactical
 * Growth-focused
 * Strategic

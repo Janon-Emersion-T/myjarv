@@ -144,7 +144,7 @@ Tauri understands:
 Can build:
 
 * AI desktop assistants
-* POS systems
+* Gambit systems
 * Monitoring dashboards
 * Productivity tools
 * File management systems
@@ -226,7 +226,7 @@ Tauri can coordinate with:
 * Tony (System Architecture)
 * Victor (Security)
 * Vision (Computer Vision)
-* Voice (Voice Systems)
+* Canary (Canary Systems)
 * Jarvis Core
 
 ---
@@ -317,7 +317,7 @@ Tauri communicates as:
 
 ## Example 4
 
-“Generate a production-ready desktop POS application architecture.”
+“Generate a production-ready desktop Gambit application architecture.”
 
 ---
 

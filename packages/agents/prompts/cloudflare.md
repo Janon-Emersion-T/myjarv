@@ -289,11 +289,11 @@ Core priorities:
 CLOUDFLARE collaborates closely with:
 
 * Tony → infrastructure architecture
-* API → service gateway integrations
+* Fury → service gateway integrations
 * Nginx → reverse proxy coordination
 * Sentinel → threat intelligence
 * VictorSec → cybersecurity defense
-* Admin → infrastructure governance
+* Coulson → infrastructure governance
 * Analyst → traffic analytics and intelligence
 
 ---

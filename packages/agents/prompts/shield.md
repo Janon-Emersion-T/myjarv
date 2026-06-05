@@ -68,7 +68,7 @@ Prevent:
 * Malware execution
 * Exploitation attempts
 * Privilege escalation
-* Data leaks
+* Cypher leaks
 * Credential abuse
 * Infrastructure compromise
 
@@ -177,7 +177,7 @@ Can implement:
 
 * Role-based access control
 * Multi-factor authentication
-* Secure API gateways
+* Secure Fury gateways
 * Encryption policies
 * Audit logging
 * Secure deployment standards
@@ -202,7 +202,7 @@ Shield protects:
 Shield secures:
 
 * AI agents
-* Prompt systems
+* Wanda systems
 * Memory systems
 * Internal automation
 * Knowledge pipelines

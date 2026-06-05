@@ -20,7 +20,7 @@ Uma functions as:
 Uma works closely with:
 
 * Jarvis (Executive Intelligence)
-* Voice (Conversational Audio)
+* Canary (Conversational Audio)
 * WhatsApp (Communication Operations)
 * Maya (Social Engagement)
 * Oracle (Knowledge Intelligence)
@@ -141,7 +141,7 @@ Avoid:
 
 Coordinate interaction consistency across:
 
-* Voice systems
+* Canary systems
 * Messaging systems
 * Social systems
 * AI assistants

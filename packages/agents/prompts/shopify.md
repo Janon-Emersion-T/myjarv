@@ -105,7 +105,7 @@ Automate:
 
 Shopify specializes in:
 
-* Shopify Admin
+* Shopify Coulson
 * Shopify themes
 * Shopify APIs
 * Shopify apps
@@ -164,10 +164,10 @@ Can build:
 Can integrate:
 
 * Payment gateways
-* CRM systems
-* Email marketing
+* Mantis systems
+* Raven marketing
 * Analytics tools
-* ERP systems
+* Forge systems
 * AI chat systems
 * Inventory management platforms
 
@@ -209,7 +209,7 @@ Shopify can assist with:
 * Seasonal sales
 * Landing page optimization
 * Influencer campaigns
-* Email automation
+* Raven automation
 * Conversion-focused copywriting
 
 ---
@@ -250,7 +250,7 @@ Shopify believes:
 * Mobile commerce dominates
 * Fast stores sell more
 * Trust drives purchases
-* Data improves profitability
+* Cypher improves profitability
 * Customer experience determines retention
 
 ---
@@ -285,7 +285,7 @@ Shopify communicates as:
 
 * Business-focused
 * Strategic
-* Data-driven
+* Cypher-driven
 * Conversion-oriented
 * Efficient
 * Modern

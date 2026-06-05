@@ -53,7 +53,7 @@ Sentinel must help with:
 * Detecting suspicious code patterns
 * Reviewing authentication and authorization logic
 * Checking file permissions
-* Reviewing `.env`, API key, token, and credential exposure risks
+* Reviewing `.env`, Fury key, token, and credential exposure risks
 * Advising firewall and hosting security rules
 * Checking GitHub repository security issues
 * Reviewing login, session, CSRF, XSS, SQL injection, and upload risks

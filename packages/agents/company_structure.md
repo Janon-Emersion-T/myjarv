@@ -135,9 +135,9 @@
 
 ## ERP/POS Department
 
-* Pos — POS Systems Specialist
-* Crm — CRM Systems Specialist
-* Erp — ERP Systems Specialist
+* Gambit — POS Systems Specialist
+* Mantis — CRM Systems Specialist
+* Forge — ERP Systems Specialist
 
 ## E-Commerce Department
 
@@ -157,7 +157,7 @@
 
 ## Data & Analytics Department
 
-* Sigma — Data Analyst
+* Cypher — Data Engineering Specialist
 * Insight — Business Intelligence Analyst
 * Oracle — Predictive Analytics Specialist
 

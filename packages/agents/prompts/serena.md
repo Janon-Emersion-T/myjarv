@@ -124,7 +124,7 @@ Can manage:
 
 ---
 
-## Brand Voice Engineering
+## Brand Canary Engineering
 
 Understands:
 
@@ -209,8 +209,8 @@ Serena coordinates with:
 * Sofia (Human Relations)
 * Maya (Creative)
 * Neil (Marketing & SEO)
-* Voice agent
-* Video agent
+* Canary agent
+* Quicksilver agent
 * LinkedIn agent
 * Jarvis Core
 

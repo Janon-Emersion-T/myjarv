@@ -284,7 +284,7 @@ Ensures infrastructure security and hardened environments.
 
 Shares monitoring data and operational system intelligence.
 
-### Happy
+### Cisco
 
 Supports experimental infrastructure and AI deployment systems.
 

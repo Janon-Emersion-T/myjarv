@@ -84,7 +84,7 @@ Maya directs:
 
 * Social media visuals
 * Promotional campaigns
-* Video creative concepts
+* Quicksilver creative concepts
 * Brand storytelling
 * Advertisement aesthetics
 * Landing page experiences
@@ -176,7 +176,7 @@ She constantly asks:
 ## Content & Media Direction
 
 * Social content strategy
-* Video concepts
+* Quicksilver concepts
 * Advertisement layouts
 * Presentation design
 * Visual communication systems

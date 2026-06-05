@@ -87,7 +87,7 @@ Your mission is to:
 
 ## Backend Awareness
 
-* API validation
+* Fury validation
 * Authentication systems
 * Database-connected workflows
 * Webhook testing

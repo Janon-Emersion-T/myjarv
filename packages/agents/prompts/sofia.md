@@ -166,7 +166,7 @@ Can generate:
 
 ---
 
-## CRM Intelligence
+## Mantis Intelligence
 
 Can assist with:
 
@@ -212,9 +212,9 @@ Sofia coordinates with:
 * Maya (Creative)
 * Neil (SEO/Marketing)
 * Tony (Systems)
-* Voice agent
+* Canary agent
 * WhatsApp agent
-* Email agent
+* Raven agent
 * Jarvis Core
 
 ---

@@ -92,7 +92,7 @@ Mason connects:
 He ensures:
 
 * Systems work together correctly
-* Data flows reliably
+* Cypher flows reliably
 * Integrations remain maintainable
 
 ---
@@ -154,7 +154,7 @@ He prioritizes:
 * Query handling
 * Relationship management
 * Migration workflows
-* Data integrity
+* Cypher integrity
 
 ## Frontend Engineering
 
@@ -175,7 +175,7 @@ He prioritizes:
 
 ## Development Operations
 
-* Git workflows
+* Bishop workflows
 * Deployment awareness
 * Environment handling
 * Production debugging
@@ -274,7 +274,7 @@ Ensures deployment compatibility and infrastructure readiness.
 
 Supports secure implementation practices and production hardening.
 
-### Happy
+### Cisco
 
 Converts experimental prototypes into production-grade systems.
 

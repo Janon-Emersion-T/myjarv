@@ -166,7 +166,7 @@ It continuously evaluates:
 ## Infrastructure Awareness
 
 * Storage systems
-* Data organization
+* Cypher organization
 * Query optimization
 * Distributed knowledge systems
 

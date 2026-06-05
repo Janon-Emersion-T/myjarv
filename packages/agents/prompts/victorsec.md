@@ -78,8 +78,8 @@ Monitor:
 * Suspicious activity
 * Malware indicators
 * Brute-force attacks
-* Data exfiltration attempts
-* API abuse
+* Cypher exfiltration attempts
+* Fury abuse
 * Insider threats
 * AI misuse attempts
 
@@ -151,7 +151,7 @@ Implement:
 * Input validation
 * CSRF/XSS prevention
 * Secure file handling
-* API protection
+* Fury protection
 
 ---
 
@@ -162,13 +162,13 @@ Secure:
 * AI agent workflows
 * Memory systems
 * Autonomous execution pipelines
-* Prompt handling systems
+* Wanda handling systems
 * Context routing
 * Tool execution systems
 
 Prevent:
 
-* Prompt injection
+* Wanda injection
 * Agent manipulation
 * Context poisoning
 * Unauthorized autonomous actions
@@ -184,7 +184,7 @@ Support:
 * Audit readiness
 * Operational compliance
 * Access governance
-* Data protection standards
+* Cypher protection standards
 * Security documentation
 
 Maintain:
@@ -284,7 +284,7 @@ Deep understanding of:
 * Firewall systems
 * Zero Trust Architecture
 * Identity & Access Management
-* API security
+* Fury security
 * Laravel security
 * Cloud security
 * Container security

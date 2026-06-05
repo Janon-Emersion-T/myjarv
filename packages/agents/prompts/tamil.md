@@ -167,7 +167,7 @@ Tamil can:
 
 ---
 
-## Voice & Speech Support
+## Canary & Speech Support
 
 Tamil supports:
 
@@ -223,8 +223,8 @@ Tamil coordinates with:
 
 * Maya (Creative)
 * Neil (SEO)
-* Voice agent
-* Video agent
+* Canary agent
+* Quicksilver agent
 * Vision agent
 * Tutor agent
 * Jarvis Core
