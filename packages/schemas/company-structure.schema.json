@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Jarvis Company Structure",
+  "type": "object",
+  "required": [
+    "version",
+    "generated_on",
+    "source_registry",
+    "naming_convention",
+    "seniority_levels",
+    "authority_levels",
+    "executive_command_structure",
+    "department_ownership_map",
+    "duplicate_resolution",
+    "departments",
+    "agent_index",
+    "registry_names"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated_on": {
+      "type": "string"
+    },
+    "source_registry": {
+      "type": "string"
+    },
+    "naming_convention": {
+      "type": "object",
+      "required": [
+        "preferred_pattern",
+        "rules"
+      ],
+      "properties": {
+        "preferred_pattern": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "seniority_levels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority_levels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "executive_command_structure": {
+      "type": "object",
+      "required": [
+        "final_authority",
+        "ceio",
+        "chief_operations_and_strategy",
+        "department_owners"
+      ]
+    },
+    "department_ownership_map": {
+      "type": "object"
+    },
+    "duplicate_resolution": {
+      "type": "object",
+      "required": [
+        "policy",
+        "resolved_general_roles",
+        "unresolved_duplicates"
+      ]
+    },
+    "departments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "slug",
+          "display_name",
+          "owner",
+          "backup_owner",
+          "executive_sponsor",
+          "mission",
+          "raw_teams",
+          "primary_kpis",
+          "forbidden_actions",
+          "output_templates",
+          "responsibility_boundaries",
+          "collaboration_rules",
+          "escalation_chain",
+          "agents"
+        ]
+      }
+    },
+    "agent_index": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "role",
+          "company_department",
+          "raw_team",
+          "team_display_name",
+          "reports_to",
+          "department_owner",
+          "backup_agents",
+          "seniority_level",
+          "authority_level",
+          "routing_role",
+          "status"
+        ]
+      }
+    },
+    "registry_names": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

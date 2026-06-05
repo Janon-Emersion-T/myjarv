@@ -6,6 +6,10 @@ Last updated: 2026-06-06
 
 Jarvis now has a full foundational operating-platform skeleton across Python, Rust, frontend, documentation, registry, knowledge, tools, memory, approvals, and workflow layers.
 
+Roadmap-specific completion update:
+
+* Roadmap Phase 2, `Build the Company Structure`, is now complete through a generated and validated company operating model in [docs/company-structure.md](/var/www/jarvis/docs/company-structure.md) and [packages/agents/company-structure.json](/var/www/jarvis/packages/agents/company-structure.json).
+
 Current useful assets preserved:
 
 * `packages/agents/prompts/*.md` contains the existing named agent profiles.
