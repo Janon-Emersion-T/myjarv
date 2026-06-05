@@ -1,45 +1,33 @@
-from fastapi import APIRouter, Query
-from pydantic import BaseModel
-
-from app.agents.prompt_generator import AgentPromptGenerator
-from app.services.agent_service import AgentService
+from fastapi import APIRouter, HTTPException
+from app.agents.registry import list_agents, get_agent_by_name
+from app.agents.loader import load_agent_prompt
+from app.agents.schema import AgentRunRequest
+from app.services.agent_service import prepare_agent_response
 
 
 router = APIRouter(prefix="/agents", tags=["Agents"])
 
 
-class AgentAskRequest(BaseModel):
-    agent: str
-    message: str
-
-
 @router.get("")
-async def get_agents(department: str | None = Query(default=None)):
-    service = AgentService()
+def get_agents():
+    return {"agents": list_agents()}
 
-    if department:
+
+@router.get("/{name}")
+def get_agent(name: str):
+    try:
+        agent = get_agent_by_name(name)
         return {
-            "agents": service.list_agents_by_department(department)
+            "agent": agent,
+            "prompt": load_agent_prompt(agent),
         }
-
-    return {
-        "agents": service.list_available_agents()
-    }
+    except Exception as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
 
-@router.post("/generate-prompts")
-async def generate_missing_prompts():
-    generator = AgentPromptGenerator()
-    return generator.generate_missing_prompts()
-
-
-@router.post("/ask")
-async def ask_agent(request: AgentAskRequest):
-    service = AgentService()
-
-    result = await service.ask_agent(
-        agent_name=request.agent,
-        message=request.message
-    )
-
-    return result
+@router.post("/run")
+def run_agent(request: AgentRunRequest):
+    try:
+        return prepare_agent_response(request.message, request.agent)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))

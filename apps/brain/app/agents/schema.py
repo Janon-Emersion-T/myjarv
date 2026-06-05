@@ -1,7 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from typing import List, Optional
 
 
-class AgentDefinition(BaseModel):
+class Agent(BaseModel):
     name: str
     role: str
     department: str
@@ -11,14 +12,16 @@ class AgentDefinition(BaseModel):
     responsibility: str
 
 
+class AgentRegistry(BaseModel):
+    agents: List[Agent]
+
+
 class AgentRunRequest(BaseModel):
-    message: str
-    agent: str | None = None
+    message: str = Field(..., min_length=1)
+    agent: Optional[str] = None
 
 
 class AgentRunResponse(BaseModel):
-    selected_agent: str
-    role: str
-    department: str
-    prompt: str
-    response: str
+    selected_agent: Agent
+    system_prompt: str
+    user_message: str

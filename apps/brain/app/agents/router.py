@@ -1,76 +1,49 @@
-from app.agents.loader import AgentLoader
-from app.agents.schema import AgentDefinition
-
-loader = AgentLoader()
+from app.agents.registry import list_agents, get_agent_by_name
+from app.agents.schema import Agent
 
 
-KEYWORD_AGENT_MAP = {
+KEYWORD_MAP = {
     "laravel": "Lara",
+    "blade": "Lara",
     "livewire": "Lara",
-    "filament": "Lara",
-    "php": "Lara",
-    "vue": "Victor",
-    "nuxt": "Victor",
-    "react": "Rhea",
-    "next": "Rhea",
-    "frontend": "Taylor",
-    "ui": "Uma",
-    "ux": "Uma",
-    "database": "Diana",
-    "mysql": "Myra",
-    "postgres": "Postgres",
     "seo": "Neil",
-    "content": "Natasha",
-    "blog": "Blake",
     "marketing": "Maya",
     "facebook": "Meta",
     "instagram": "Meta",
     "linkedin": "LinkedIn",
-    "tiktok": "Tiktok",
+    "twitter": "Xavier",
+    "x ": "Xavier",
     "youtube": "YouTube",
-    "sales": "Sasha",
-    "customer": "Pepper",
-    "quote": "Morgan",
-    "invoice": "Morgan",
-    "contract": "Lawrence",
-    "policy": "Policy",
+    "whatsapp": "WhatsApp",
+    "api": "Api",
+    "database": "Diana",
+    "mysql": "Myra",
+    "postgres": "Postgres",
     "docker": "Docker",
     "nginx": "Nginx",
-    "server": "Rhodes",
-    "deploy": "Rhodes",
     "security": "VictorSec",
-    "test": "Bruce",
-    "qa": "Bruce",
+    "ui": "Uma",
+    "ux": "Uma",
+    "figma": "Figma",
     "pos": "Pos",
-    "erp": "Erp",
     "crm": "Crm",
-    "wordpress": "Wordpress",
-    "shopify": "Shopify",
-    "whatsapp": "WhatsApp",
-    "email": "Email",
-    "rag": "Rag",
-    "embedding": "Vector",
-    "prompt": "Prompt",
-    "agent": "Aiden",
+    "erp": "Erp",
+    "content": "Natasha",
+    "blog": "Blake",
+    "contract": "Lawrence",
+    "quote": "Morgan",
+    "invoice": "Morgan",
 }
 
 
-def select_agent(message: str, preferred_agent: str | None = None) -> AgentDefinition:
+def select_agent(message: str, preferred_agent: str | None = None) -> Agent:
     if preferred_agent:
-        agent = loader.find_by_name(preferred_agent)
-        if agent:
-            return agent
+        return get_agent_by_name(preferred_agent)
 
     text = message.lower()
 
-    for keyword, agent_name in KEYWORD_AGENT_MAP.items():
+    for keyword, agent_name in KEYWORD_MAP.items():
         if keyword in text:
-            agent = loader.find_by_name(agent_name)
-            if agent:
-                return agent
+            return get_agent_by_name(agent_name)
 
-    fallback = loader.find_by_name("Jarvis")
-    if fallback:
-        return fallback
-
-    raise RuntimeError("Jarvis agent is missing from registry.json")
+    return get_agent_by_name("Jarvis")

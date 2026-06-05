@@ -1,42 +1,27 @@
-from pathlib import Path
+from app.agents.schema import Agent
+from app.agents.loader import load_agent_prompt
 
-from app.agents.registry import AgentRegistry
 
+def build_system_prompt(agent: Agent) -> str:
+    base_prompt = load_agent_prompt(agent)
 
-class AgentPromptGenerator:
-    def __init__(self) -> None:
-        self.registry = AgentRegistry()
-        self.root_path = Path(__file__).resolve().parents[4]
-        self.template_path = self.root_path / "packages" / "agents" / "templates" / "base_agent.md"
+    return f"""
+{base_prompt}
 
-    def generate_missing_prompts(self) -> dict[str, int | list[str]]:
-        if not self.template_path.exists():
-            raise FileNotFoundError(f"Base prompt template not found: {self.template_path}")
+## Jarvis Agent Runtime Rules
 
-        template = self.template_path.read_text(encoding="utf-8")
-        created: list[str] = []
-        skipped: list[str] = []
+Agent Name: {agent.name}
+Role: {agent.role}
+Department: {agent.department}
+Model Role: {agent.model_role}
 
-        for agent in self.registry.agents.values():
-            prompt_path = self.registry.get_prompt_path(agent.name)
+Core responsibility:
+{agent.responsibility}
 
-            if prompt_path.exists():
-                skipped.append(agent.prompt_file)
-                continue
-
-            content = template.format(
-                name=agent.name,
-                role=agent.role.replace("_", " "),
-                department=agent.department,
-                responsibility=agent.description
-            )
-
-            prompt_path.write_text(content, encoding="utf-8")
-            created.append(agent.prompt_file)
-
-        return {
-            "created_count": len(created),
-            "skipped_count": len(skipped),
-            "created": created,
-            "skipped": skipped
-        }
+Rules:
+- Stay inside your role unless Jarvis asks for cross-agent support.
+- Be practical, direct, and production-focused.
+- Do not hallucinate.
+- Ask for missing critical information only when execution would be unsafe or impossible.
+- For code tasks, provide exact files, exact paths, and complete code.
+""".strip()
