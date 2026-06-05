@@ -9,6 +9,7 @@ Jarvis now has a full foundational operating-platform skeleton across Python, Ru
 Roadmap-specific completion update:
 
 * Roadmap Phase 2, `Build the Company Structure`, is now complete through a generated and validated company operating model in [docs/company-structure.md](/var/www/jarvis/docs/company-structure.md) and [packages/agents/company-structure.json](/var/www/jarvis/packages/agents/company-structure.json).
+* Roadmap Phase 3, `Standardize Agent Profiles`, is now complete with all 102 agent prompts regenerated to the expanded canonical standard and enforced by [scripts/validate_agent_profile_sections.py](/var/www/jarvis/scripts/validate_agent_profile_sections.py).
 
 Current useful assets preserved:
 
