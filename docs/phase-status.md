@@ -36,7 +36,7 @@ Audit notes:
 | 1 | Project Audit | complete | Repository audited, useful assets identified, implementation plan written. |
 | 2 | Agent Profile Standardization | complete | All 102 agent profiles now include the canonical sections, with legacy prompt bodies preserved under `## Legacy Profile`. |
 | 3 | Agent Registry | complete | Registry expanded with profile path, priority, tools, risk level, approval level, and authority scope; validation and runtime loading updated. |
-| 4 | Python Brain | pending | Existing FastAPI app must be reorganized into production-grade modules. |
+| 4 | Python Brain | complete | SQLite-backed FastAPI brain now exposes health, agents, tasks, approvals, memory, and logs through the required endpoints. |
 | 5 | Task Routing | pending | Current keyword routing is too shallow for multi-agent orchestration. |
 | 6 | Approval Gate | pending | No durable approval engine or approval records yet. |
 | 7 | Memory System | pending | No SQLite-backed memory layer yet. |

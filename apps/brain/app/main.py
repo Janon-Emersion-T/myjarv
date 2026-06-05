@@ -1,13 +1,11 @@
 from fastapi import FastAPI
 
-from app.api.health import router as health_router
-from app.api.agents import router as agents_router
+from app.router import router as brain_router
 
 app = FastAPI(
     title="Jarvis Brain",
-    version="0.1.0",
+    version="0.2.0",
     description="Local-first autonomous business operating system for LKProfessionals (Pvt) Ltd.",
 )
 
-app.include_router(health_router)
-app.include_router(agents_router)
+app.include_router(brain_router)
