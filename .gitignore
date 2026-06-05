@@ -1,0 +1,147 @@
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+venv/
+.env/
+.env
+.python-version
+
+# =========================
+# Node
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Electron build
+# =========================
+dist/
+build/
+out/
+release/
+
+# =========================
+# Rust
+# =========================
+target/
+Cargo.lock
+
+# Remove below line if this becomes a binary app crate later
+#! Cargo.lock
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+storage/logs/
+storage/runtime/
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+.cache/
+
+# =========================
+# Secrets
+# =========================
+.env.local
+.env.production
+.env.development
+
+secrets/
+credentials/
+private_keys/
+*.pem
+*.key
+*.crt
+
+# =========================
+# Ollama / AI
+# =========================
+models/
+*.gguf
+*.bin
+*.safetensors
+
+# =========================
+# Databases
+# =========================
+*.sqlite
+*.sqlite3
+*.db
+
+# =========================
+# Backups
+# =========================
+storage/backups/
+backups/
+
+# =========================
+# Uploads / generated files
+# =========================
+uploads/
+generated/
+exports/
+
+# =========================
+# Coverage / testing
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+coverage/
+
+# =========================
+# Docker
+# =========================
+docker-data/
+docker-volumes/
+
+# =========================
+# Kubernetes
+# =========================
+.kube/
+
+# =========================
+# Gitea
+# =========================
+gitea-data/
+
+# =========================
+# Runtime memory/cache
+# =========================
+storage/memory/
+storage/cache/
+storage/vector/
+storage/embeddings/
+
+# =========================
+# AI generated screenshots
+# =========================
+screenshots/

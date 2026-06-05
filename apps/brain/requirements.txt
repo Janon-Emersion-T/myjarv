@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+pydantic-settings
+python-dotenv
+sqlalchemy
+asyncpg
+psycopg2-binary
+alembic
+pgvector
+python-multipart
+aiofiles
