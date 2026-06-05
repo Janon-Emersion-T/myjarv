@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 
-from app.agent_loader import get_agent_detail, get_all_agents
+from app.agent_loader import get_agent_detail, get_all_agents, get_department_groups, get_registry_data
 from app.browser.planner import browser_planner
 from app.config import settings
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
@@ -26,7 +26,17 @@ def health() -> dict:
 
 @router.get("/agents")
 def list_agents() -> dict:
-    return {"agents": get_all_agents()}
+    return {
+        "version": get_registry_data()["version"],
+        "generated_on": get_registry_data()["generated_on"],
+        "departments": get_department_groups(),
+        "agents": get_all_agents(),
+    }
+
+
+@router.get("/agents/registry")
+def get_registry() -> dict:
+    return get_registry_data()
 
 
 @router.get("/agents/{name}")

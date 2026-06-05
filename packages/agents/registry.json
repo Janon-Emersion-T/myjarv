@@ -1,4 +1,325 @@
 {
+  "version": "2.0.0",
+  "generated_on": "2026-06-06",
+  "source_company_structure": "packages/agents/company-structure.json",
+  "departments": [
+    {
+      "slug": "executive",
+      "display_name": "Executive",
+      "owner": "Jarvis",
+      "backup_owner": "Athena",
+      "executive_sponsor": "Janon",
+      "teams": [
+        "executive"
+      ],
+      "agent_count": 2,
+      "agents": [
+        "Athena",
+        "Jarvis"
+      ]
+    },
+    {
+      "slug": "operations",
+      "display_name": "Operations",
+      "owner": "Alfred",
+      "backup_owner": "Friday",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "analytics",
+        "business_systems",
+        "communication",
+        "operations"
+      ],
+      "agent_count": 11,
+      "agents": [
+        "Analyst",
+        "Metric",
+        "Forge",
+        "Gambit",
+        "Mantis",
+        "Canary",
+        "Raven",
+        "WhatsApp",
+        "Alfred",
+        "Friday",
+        "Oracle"
+      ]
+    },
+    {
+      "slug": "development",
+      "display_name": "Development",
+      "owner": "Tony",
+      "backup_owner": "Peter",
+      "executive_sponsor": "Jarvis",
+      "teams": [
+        "backend",
+        "cms",
+        "database",
+        "desktop",
+        "development",
+        "ecommerce",
+        "frontend",
+        "mobile",
+        "qa"
+      ],
+      "agent_count": 36,
+      "agents": [
+        "Bruno",
+        "Django",
+        "Felix",
+        "Gordon",
+        "Lara",
+        "Nolan",
+        "Rusty",
+        "Wordpress",
+        "Diana",
+        "Myra",
+        "Postgres",
+        "Vector",
+        "Edison",
+        "Electron",
+        "Tauri",
+        "Ada",
+        "Dennis",
+        "Linus",
+        "Peter",
+        "Tony",
+        "Commerce",
+        "Shopify",
+        "Iris",
+        "Mason",
+        "Rhea",
+        "Taylor",
+        "Victor",
+        "Flutter",
+        "Kara",
+        "Mia",
+        "Riley",
+        "Sofia",
+        "Bruce",
+        "Cypress",
+        "Percy",
+        "Quinn"
+      ]
+    },
+    {
+      "slug": "design",
+      "display_name": "Design",
+      "owner": "Uma",
+      "backup_owner": "Figma",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "creative",
+        "uiux"
+      ],
+      "agent_count": 5,
+      "agents": [
+        "Mystique",
+        "Quicksilver",
+        "Figma",
+        "Nova",
+        "Uma"
+      ]
+    },
+    {
+      "slug": "marketing",
+      "display_name": "Marketing",
+      "owner": "Maya",
+      "backup_owner": "Neil",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "content",
+        "marketing",
+        "seo"
+      ],
+      "agent_count": 15,
+      "agents": [
+        "Blake",
+        "Copy",
+        "Natasha",
+        "Script",
+        "Tamil",
+        "LinkedIn",
+        "Maya",
+        "Meta",
+        "Tiktok",
+        "Xavier",
+        "YouTube",
+        "Link",
+        "Local",
+        "Neil",
+        "Serena"
+      ]
+    },
+    {
+      "slug": "sales",
+      "display_name": "Sales",
+      "owner": "Sasha",
+      "backup_owner": "Maya",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "sales"
+      ],
+      "agent_count": 1,
+      "agents": [
+        "Sasha"
+      ]
+    },
+    {
+      "slug": "finance",
+      "display_name": "Finance",
+      "owner": "Morgan",
+      "backup_owner": "Ledger",
+      "executive_sponsor": "Jarvis",
+      "teams": [
+        "finance"
+      ],
+      "agent_count": 3,
+      "agents": [
+        "Ledger",
+        "Morgan",
+        "Renewal"
+      ]
+    },
+    {
+      "slug": "legal",
+      "display_name": "Legal",
+      "owner": "Lawrence",
+      "backup_owner": "Hill",
+      "executive_sponsor": "Jarvis",
+      "teams": [
+        "legal"
+      ],
+      "agent_count": 2,
+      "agents": [
+        "Hill",
+        "Lawrence"
+      ]
+    },
+    {
+      "slug": "hr",
+      "display_name": "HR",
+      "owner": "Moira",
+      "backup_owner": "Coulson",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "administration",
+        "hr"
+      ],
+      "agent_count": 2,
+      "agents": [
+        "Coulson",
+        "Moira"
+      ]
+    },
+    {
+      "slug": "support",
+      "display_name": "Support",
+      "owner": "Pepper",
+      "backup_owner": "Friday",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "customer_support"
+      ],
+      "agent_count": 1,
+      "agents": [
+        "Pepper"
+      ]
+    },
+    {
+      "slug": "security",
+      "display_name": "Security",
+      "owner": "VictorSec",
+      "backup_owner": "Gatekeeper",
+      "executive_sponsor": "Jarvis",
+      "teams": [
+        "security"
+      ],
+      "agent_count": 4,
+      "agents": [
+        "Gatekeeper",
+        "Shield",
+        "Vault",
+        "VictorSec"
+      ]
+    },
+    {
+      "slug": "infrastructure",
+      "display_name": "Infrastructure",
+      "owner": "Rhodes",
+      "backup_owner": "Atlas",
+      "executive_sponsor": "Jarvis",
+      "teams": [
+        "devops",
+        "infrastructure"
+      ],
+      "agent_count": 9,
+      "agents": [
+        "Atlas",
+        "Docker",
+        "Kube",
+        "Nginx",
+        "Rhodes",
+        "Sentinel",
+        "Bishop",
+        "Cloudflare",
+        "Constantine"
+      ]
+    },
+    {
+      "slug": "research",
+      "display_name": "Research",
+      "owner": "Aiden",
+      "backup_owner": "Vision",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "ai",
+        "data",
+        "research"
+      ],
+      "agent_count": 6,
+      "agents": [
+        "Aiden",
+        "Rag",
+        "Strange",
+        "Wanda",
+        "Cypher",
+        "Vision"
+      ]
+    },
+    {
+      "slug": "documentation",
+      "display_name": "Documentation",
+      "owner": "Lois",
+      "backup_owner": "Tutor",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "documentation",
+        "training"
+      ],
+      "agent_count": 2,
+      "agents": [
+        "Lois",
+        "Tutor"
+      ]
+    },
+    {
+      "slug": "automation",
+      "display_name": "Automation",
+      "owner": "Cisco",
+      "backup_owner": "Tempus",
+      "executive_sponsor": "Athena",
+      "teams": [
+        "automation"
+      ],
+      "agent_count": 3,
+      "agents": [
+        "Cisco",
+        "Fury",
+        "Tempus"
+      ]
+    }
+  ],
   "agents": [
     {
       "name": "Jarvis",
@@ -18,7 +339,39 @@
         "approval_records",
         "operational_reports"
       ],
-      "authority_scope": "May coordinate and review central orchestrator work within approved company operations but must preserve approval gates for dangerous actions."
+      "authority_scope": "May coordinate and review central orchestrator work within approved company operations but must preserve approval gates for dangerous actions.",
+      "slug": "jarvis",
+      "display_name": "Jarvis",
+      "position": "Chief Executive Intelligence Officer (CEIO)",
+      "company_department": "executive",
+      "team": "executive",
+      "team_display_name": "Executive Command",
+      "seniority": "executive_command",
+      "knowledge_domains": [
+        "`data/knowledge/lkp`",
+        "`docs/company-structure.md`",
+        "`docs/vision.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, agent, and user preference memory.",
+        "Write decision memory for company direction and agent memory for orchestration improvements.",
+        "Do not overwrite sensitive records outside approval-aware workflows."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Athena",
+      "collaboration_partners": [
+        "Athena",
+        "Janon"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Athena",
@@ -38,7 +391,40 @@
         "approval_records",
         "operational_reports"
       ],
-      "authority_scope": "May coordinate and review chief strategy agent work within approved company operations but must preserve approval gates for dangerous actions."
+      "authority_scope": "May coordinate and review chief strategy agent work within approved company operations but must preserve approval gates for dangerous actions.",
+      "slug": "athena",
+      "display_name": "Athena",
+      "position": "Chief Operations Officer",
+      "company_department": "executive",
+      "team": "executive",
+      "team_display_name": "Executive Command",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/lkp`",
+        "`docs/company-structure.md`",
+        "`docs/vision.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, agent, and user preference memory.",
+        "Write decision memory for company direction and agent memory for orchestration improvements.",
+        "Do not overwrite sensitive records outside approval-aware workflows."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Jarvis",
+      "collaboration_partners": [
+        "Jarvis",
+        "Alfred",
+        "Janon"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Alfred",
@@ -58,7 +444,39 @@
         "memory_lookup",
         "approval_records"
       ],
-      "authority_scope": "May coordinate and review operations manager work within approved company operations but must preserve approval gates for dangerous actions."
+      "authority_scope": "May coordinate and review operations manager work within approved company operations but must preserve approval gates for dangerous actions.",
+      "slug": "alfred",
+      "display_name": "Alfred",
+      "position": "Executive Administrative & Intelligence Coordinator",
+      "company_department": "operations",
+      "team": "operations",
+      "team_display_name": "Operations Office",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Friday",
+      "collaboration_partners": [
+        "Friday",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Friday",
@@ -78,7 +496,40 @@
         "memory_lookup",
         "approval_records"
       ],
-      "authority_scope": "May coordinate and review reporting officer work within approved company operations but must preserve approval gates for dangerous actions."
+      "authority_scope": "May coordinate and review reporting officer work within approved company operations but must preserve approval gates for dangerous actions.",
+      "slug": "friday",
+      "display_name": "Friday",
+      "position": "Personal Executive AI Companion & Real-Time Interaction Specialist",
+      "company_department": "operations",
+      "team": "operations",
+      "team_display_name": "Operations Office",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Alfred",
+      "collaboration_partners": [
+        "Alfred",
+        "Oracle",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Oracle",
@@ -98,7 +549,40 @@
         "memory_lookup",
         "approval_records"
       ],
-      "authority_scope": "May coordinate and review decision memory keeper work within approved company operations but must preserve approval gates for dangerous actions."
+      "authority_scope": "May coordinate and review decision memory keeper work within approved company operations but must preserve approval gates for dangerous actions.",
+      "slug": "oracle",
+      "display_name": "Oracle",
+      "position": "Predictive Strategy & Foresight Intelligence Core",
+      "company_department": "operations",
+      "team": "operations",
+      "team_display_name": "Operations Office",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Friday",
+      "collaboration_partners": [
+        "Friday",
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Peter",
@@ -118,7 +602,39 @@
         "doc_generator",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine full stack developer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine full stack developer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "peter",
+      "display_name": "Peter",
+      "position": "Frontend Engineering & User Interface Director",
+      "company_department": "development",
+      "team": "development",
+      "team_display_name": "Software Architecture",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Tony",
@@ -138,7 +654,40 @@
         "doc_generator",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine software architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine software architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "tony",
+      "display_name": "Tony",
+      "position": "Chief Technology Architect & Engineering Intelligence Director",
+      "company_department": "development",
+      "team": "development",
+      "team_display_name": "Software Architecture",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Peter",
+      "collaboration_partners": [
+        "Peter",
+        "Linus",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Ada",
@@ -158,7 +707,39 @@
         "doc_generator",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine algorithm engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine algorithm engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "ada",
+      "display_name": "Ada",
+      "position": "Chief Artificial Intelligence Officer",
+      "company_department": "development",
+      "team": "development",
+      "team_display_name": "Software Architecture",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Linus",
@@ -178,7 +759,39 @@
         "doc_generator",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine code review engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine code review engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "linus",
+      "display_name": "Linus",
+      "position": "Systems Kernel & Performance Engineering Director",
+      "company_department": "development",
+      "team": "development",
+      "team_display_name": "Software Architecture",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Dennis",
@@ -198,7 +811,39 @@
         "doc_generator",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine systems programmer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine systems programmer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "dennis",
+      "display_name": "Dennis",
+      "position": "Senior Desktop Application Engineer",
+      "company_department": "development",
+      "team": "development",
+      "team_display_name": "Software Architecture",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Taylor",
@@ -218,7 +863,40 @@
         "accessibility_checklist",
         "code_reviewer"
       ],
-      "authority_scope": "May execute routine frontend engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine frontend engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "taylor",
+      "display_name": "Taylor",
+      "position": "Frontend Engineer",
+      "company_department": "development",
+      "team": "frontend",
+      "team_display_name": "Frontend Engineering",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Victor",
@@ -238,7 +916,40 @@
         "accessibility_checklist",
         "code_reviewer"
       ],
-      "authority_scope": "May execute routine vue engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine vue engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "victor",
+      "display_name": "Victor",
+      "position": "Strategic Operations & Mission Control Director",
+      "company_department": "development",
+      "team": "frontend",
+      "team_display_name": "Frontend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Taylor",
+      "collaboration_partners": [
+        "Taylor",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Rhea",
@@ -258,7 +969,40 @@
         "accessibility_checklist",
         "code_reviewer"
       ],
-      "authority_scope": "May execute routine react engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine react engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "rhea",
+      "display_name": "Rhea",
+      "position": "Organizational Wellness & Sustainability Director",
+      "company_department": "development",
+      "team": "frontend",
+      "team_display_name": "Frontend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Taylor",
+      "collaboration_partners": [
+        "Taylor",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Mason",
@@ -278,7 +1022,40 @@
         "accessibility_checklist",
         "code_reviewer"
       ],
-      "authority_scope": "May execute routine ui component engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine ui component engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "mason",
+      "display_name": "Mason",
+      "position": "Senior Systems Implementation Engineer",
+      "company_department": "development",
+      "team": "frontend",
+      "team_display_name": "Frontend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Taylor",
+      "collaboration_partners": [
+        "Taylor",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Iris",
@@ -298,7 +1075,40 @@
         "accessibility_checklist",
         "code_reviewer"
       ],
-      "authority_scope": "May execute routine accessibility engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine accessibility engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "iris",
+      "display_name": "Iris",
+      "position": "Strategic Intelligence & Insight Analyst",
+      "company_department": "development",
+      "team": "frontend",
+      "team_display_name": "Frontend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Taylor",
+      "collaboration_partners": [
+        "Taylor",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Bruno",
@@ -318,7 +1128,40 @@
         "code_reviewer",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine backend engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine backend engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "bruno",
+      "display_name": "Bruno",
+      "position": "Senior Backend Systems Engineer",
+      "company_department": "development",
+      "team": "backend",
+      "team_display_name": "Backend Engineering",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Lara",
@@ -338,7 +1181,40 @@
         "code_reviewer",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine laravel engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine laravel engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "lara",
+      "display_name": "Lara",
+      "position": "Enterprise Application Architecture Director",
+      "company_department": "development",
+      "team": "backend",
+      "team_display_name": "Backend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Bruno",
+      "collaboration_partners": [
+        "Bruno",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Django",
@@ -358,7 +1234,40 @@
         "code_reviewer",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine django engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine django engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "django",
+      "display_name": "Django",
+      "position": "Python Web Application Engineering Specialist",
+      "company_department": "development",
+      "team": "backend",
+      "team_display_name": "Backend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Bruno",
+      "collaboration_partners": [
+        "Bruno",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Felix",
@@ -378,7 +1287,40 @@
         "code_reviewer",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine fastapi engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine fastapi engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "felix",
+      "display_name": "Felix",
+      "position": "Senior Financial Operations & Business Intelligence Strategist",
+      "company_department": "development",
+      "team": "backend",
+      "team_display_name": "Backend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Bruno",
+      "collaboration_partners": [
+        "Bruno",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Nolan",
@@ -398,7 +1340,40 @@
         "code_reviewer",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine nodejs engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine nodejs engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "nolan",
+      "display_name": "Nolan",
+      "position": "Strategic Systems Planning & Orchestration Director",
+      "company_department": "development",
+      "team": "backend",
+      "team_display_name": "Backend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Bruno",
+      "collaboration_partners": [
+        "Bruno",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Gordon",
@@ -418,7 +1393,40 @@
         "code_reviewer",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine go engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine go engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "gordon",
+      "display_name": "Gordon",
+      "position": "Chief Delivery & Execution Officer (CDEO)",
+      "company_department": "development",
+      "team": "backend",
+      "team_display_name": "Backend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Bruno",
+      "collaboration_partners": [
+        "Bruno",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Rusty",
@@ -438,7 +1446,40 @@
         "code_reviewer",
         "safe_shell_plan"
       ],
-      "authority_scope": "May execute routine rust engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine rust engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "rusty",
+      "display_name": "Rusty",
+      "position": "Rust Systems Engineer & Performance Infrastructure Specialist",
+      "company_department": "development",
+      "team": "backend",
+      "team_display_name": "Backend Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Bruno",
+      "collaboration_partners": [
+        "Bruno",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Mia",
@@ -458,7 +1499,40 @@
         "code_reviewer",
         "testing_notes"
       ],
-      "authority_scope": "May execute routine mobile app engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine mobile app engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "mia",
+      "display_name": "Mia",
+      "position": "Human Relations & Communication Director",
+      "company_department": "development",
+      "team": "mobile",
+      "team_display_name": "Mobile Engineering",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Flutter",
@@ -478,7 +1552,40 @@
         "code_reviewer",
         "testing_notes"
       ],
-      "authority_scope": "May execute routine flutter engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine flutter engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "flutter",
+      "display_name": "Flutter",
+      "position": "Cross-Platform Mobile Application Architect",
+      "company_department": "development",
+      "team": "mobile",
+      "team_display_name": "Mobile Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Mia",
+      "collaboration_partners": [
+        "Mia",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Kara",
@@ -498,7 +1605,40 @@
         "code_reviewer",
         "testing_notes"
       ],
-      "authority_scope": "May execute routine kotlin android engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine kotlin android engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "kara",
+      "display_name": "Kara",
+      "position": "Cybersecurity & Threat Defense Director",
+      "company_department": "development",
+      "team": "mobile",
+      "team_display_name": "Mobile Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Mia",
+      "collaboration_partners": [
+        "Mia",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Sofia",
@@ -518,7 +1658,40 @@
         "code_reviewer",
         "testing_notes"
       ],
-      "authority_scope": "May execute routine swift ios engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine swift ios engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "sofia",
+      "display_name": "Sofia",
+      "position": "Human Relations & Client Experience Director",
+      "company_department": "development",
+      "team": "mobile",
+      "team_display_name": "Mobile Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Mia",
+      "collaboration_partners": [
+        "Mia",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Riley",
@@ -538,7 +1711,40 @@
         "code_reviewer",
         "testing_notes"
       ],
-      "authority_scope": "May execute routine react native engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine react native engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "riley",
+      "display_name": "Riley",
+      "position": "Research Intelligence & Knowledge Systems Analyst",
+      "company_department": "development",
+      "team": "mobile",
+      "team_display_name": "Mobile Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Mia",
+      "collaboration_partners": [
+        "Mia",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Edison",
@@ -558,7 +1764,40 @@
         "logging_tools",
         "release_notes"
       ],
-      "authority_scope": "May execute routine desktop app engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine desktop app engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "edison",
+      "display_name": "Edison",
+      "position": "Senior Research & Innovation Engineer",
+      "company_department": "development",
+      "team": "desktop",
+      "team_display_name": "Desktop Engineering",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Electron",
@@ -578,7 +1817,40 @@
         "logging_tools",
         "release_notes"
       ],
-      "authority_scope": "May execute routine electron engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine electron engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "electron",
+      "display_name": "Electron",
+      "position": "Desktop Application Systems Engineer",
+      "company_department": "development",
+      "team": "desktop",
+      "team_display_name": "Desktop Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Edison",
+      "collaboration_partners": [
+        "Edison",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Tauri",
@@ -598,7 +1870,40 @@
         "logging_tools",
         "release_notes"
       ],
-      "authority_scope": "May execute routine tauri engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine tauri engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "tauri",
+      "display_name": "Tauri",
+      "position": "Cross-Platform Desktop Systems Engineer",
+      "company_department": "development",
+      "team": "desktop",
+      "team_display_name": "Desktop Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Edison",
+      "collaboration_partners": [
+        "Edison",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Diana",
@@ -618,7 +1923,40 @@
         "query_review",
         "integrity_checks"
       ],
-      "authority_scope": "May execute routine database architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine database architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "diana",
+      "display_name": "Diana",
+      "position": "Chief Database & Cypher Architecture Officer",
+      "company_department": "development",
+      "team": "database",
+      "team_display_name": "Database Engineering",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Postgres",
@@ -638,7 +1976,40 @@
         "query_review",
         "integrity_checks"
       ],
-      "authority_scope": "May execute routine postgresql specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine postgresql specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "postgres",
+      "display_name": "Postgres",
+      "position": "PostgreSQL Database Architecture & Cypher Engineering Specialist",
+      "company_department": "development",
+      "team": "database",
+      "team_display_name": "Database Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Diana",
+      "collaboration_partners": [
+        "Diana",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Myra",
@@ -658,7 +2029,40 @@
         "query_review",
         "integrity_checks"
       ],
-      "authority_scope": "May execute routine mysql specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine mysql specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "myra",
+      "display_name": "Myra",
+      "position": "Advanced Research & Knowledge Intelligence Director",
+      "company_department": "development",
+      "team": "database",
+      "team_display_name": "Database Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Diana",
+      "collaboration_partners": [
+        "Diana",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Vector",
@@ -678,7 +2082,40 @@
         "query_review",
         "integrity_checks"
       ],
-      "authority_scope": "May execute routine vector database specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine vector database specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "vector",
+      "display_name": "Vector",
+      "position": "Semantic Intelligence & Retrieval Infrastructure Director",
+      "company_department": "development",
+      "team": "database",
+      "team_display_name": "Database Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Diana",
+      "collaboration_partners": [
+        "Diana",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Rhodes",
@@ -698,7 +2135,40 @@
         "approval_records",
         "infrastructure_notes"
       ],
-      "authority_scope": "May execute routine devops engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine devops engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "rhodes",
+      "display_name": "Rhodes",
+      "position": "Risk Management & Strategic Security Advisor",
+      "company_department": "infrastructure",
+      "team": "devops",
+      "team_display_name": "DevOps",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Atlas",
+      "collaboration_partners": [
+        "Atlas",
+        "Nginx",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Kube",
@@ -718,7 +2188,39 @@
         "approval_records",
         "infrastructure_notes"
       ],
-      "authority_scope": "May execute routine kubernetes engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine kubernetes engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "kube",
+      "display_name": "Kube",
+      "position": "Infrastructure & Cloud Orchestration Architect",
+      "company_department": "infrastructure",
+      "team": "devops",
+      "team_display_name": "DevOps",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Docker",
@@ -738,7 +2240,39 @@
         "approval_records",
         "infrastructure_notes"
       ],
-      "authority_scope": "May execute routine docker engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine docker engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "docker",
+      "display_name": "Docker",
+      "position": "Container Infrastructure & Deployment Automation Architect",
+      "company_department": "infrastructure",
+      "team": "devops",
+      "team_display_name": "DevOps",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Nginx",
@@ -758,7 +2292,39 @@
         "approval_records",
         "infrastructure_notes"
       ],
-      "authority_scope": "May execute routine nginx engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine nginx engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "nginx",
+      "display_name": "Nginx",
+      "position": "Web Server, Reverse Proxy & Traffic Infrastructure Specialist",
+      "company_department": "infrastructure",
+      "team": "devops",
+      "team_display_name": "DevOps",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Atlas",
@@ -778,7 +2344,39 @@
         "approval_records",
         "infrastructure_notes"
       ],
-      "authority_scope": "May execute routine backup engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine backup engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "atlas",
+      "display_name": "Atlas",
+      "position": "Senior Cloud Infrastructure & Distributed Systems Architect",
+      "company_department": "infrastructure",
+      "team": "devops",
+      "team_display_name": "DevOps",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Sentinel",
@@ -798,7 +2396,39 @@
         "approval_records",
         "infrastructure_notes"
       ],
-      "authority_scope": "May execute routine monitoring engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine monitoring engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "sentinel",
+      "display_name": "Sentinel",
+      "position": "Cybersecurity Watchtower & Incident Response Guardian",
+      "company_department": "infrastructure",
+      "team": "devops",
+      "team_display_name": "DevOps",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Bruce",
@@ -818,7 +2448,41 @@
         "bug_reporting",
         "release_readiness"
       ],
-      "authority_scope": "May execute routine qa engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine qa engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "bruce",
+      "display_name": "Bruce",
+      "position": "Senior Business Strategy & Growth Consultant",
+      "company_department": "development",
+      "team": "qa",
+      "team_display_name": "Quality Engineering",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Cypress",
@@ -838,7 +2502,41 @@
         "bug_reporting",
         "release_readiness"
       ],
-      "authority_scope": "May execute routine e2e testing engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine e2e testing engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "cypress",
+      "display_name": "Cypress",
+      "position": "Senior End-to-End QA Automation Engineer",
+      "company_department": "development",
+      "team": "qa",
+      "team_display_name": "Quality Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Bruce",
+      "collaboration_partners": [
+        "Bruce",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Percy",
@@ -858,7 +2556,41 @@
         "bug_reporting",
         "release_readiness"
       ],
-      "authority_scope": "May execute routine performance tester tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine performance tester tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "percy",
+      "display_name": "Percy",
+      "position": "Logistics & Operational Support Director",
+      "company_department": "development",
+      "team": "qa",
+      "team_display_name": "Quality Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Bruce",
+      "collaboration_partners": [
+        "Bruce",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Quinn",
@@ -878,7 +2610,41 @@
         "bug_reporting",
         "release_readiness"
       ],
-      "authority_scope": "May execute routine quality auditor tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine quality auditor tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "quinn",
+      "display_name": "Quinn",
+      "position": "Quality Assurance & Systems Validation Director",
+      "company_department": "development",
+      "team": "qa",
+      "team_display_name": "Quality Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Bruce",
+      "collaboration_partners": [
+        "Bruce",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "VictorSec",
@@ -898,7 +2664,40 @@
         "approval_records",
         "security_review"
       ],
-      "authority_scope": "May assess and prepare cybersecurity specialist outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare cybersecurity specialist outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "victorsec",
+      "display_name": "VictorSec",
+      "position": "Cybersecurity Operations & Defensive Intelligence Director",
+      "company_department": "security",
+      "team": "security",
+      "team_display_name": "Security",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`docs/security.md`",
+        "`docs/approval-system.md`",
+        "`data/knowledge/backend`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, and agent memory for risk assessment.",
+        "Write decision and mistake memory for security findings, guardrails, and remediation outcomes.",
+        "Never disclose secrets or sensitive findings in broadly accessible memory scopes."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Gatekeeper",
+      "collaboration_partners": [
+        "Gatekeeper",
+        "Shield",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Vault",
@@ -918,7 +2717,40 @@
         "approval_records",
         "security_review"
       ],
-      "authority_scope": "May assess and prepare secrets manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare secrets manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "vault",
+      "display_name": "Vault",
+      "position": "Secure Cypher Governance & Digital Asset Protection Director",
+      "company_department": "security",
+      "team": "security",
+      "team_display_name": "Security",
+      "seniority": "senior",
+      "knowledge_domains": [
+        "`docs/security.md`",
+        "`docs/approval-system.md`",
+        "`data/knowledge/backend`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, and agent memory for risk assessment.",
+        "Write decision and mistake memory for security findings, guardrails, and remediation outcomes.",
+        "Never disclose secrets or sensitive findings in broadly accessible memory scopes."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "VictorSec",
+      "collaboration_partners": [
+        "VictorSec",
+        "Gatekeeper",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Shield",
@@ -938,7 +2770,39 @@
         "approval_records",
         "security_review"
       ],
-      "authority_scope": "May assess and prepare application security engineer outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare application security engineer outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "shield",
+      "display_name": "Shield",
+      "position": "Defensive Security & Protection Intelligence Director",
+      "company_department": "security",
+      "team": "security",
+      "team_display_name": "Security",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`docs/security.md`",
+        "`docs/approval-system.md`",
+        "`data/knowledge/backend`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, and agent memory for risk assessment.",
+        "Write decision and mistake memory for security findings, guardrails, and remediation outcomes.",
+        "Never disclose secrets or sensitive findings in broadly accessible memory scopes."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "VictorSec",
+      "collaboration_partners": [
+        "VictorSec",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Gatekeeper",
@@ -958,7 +2822,40 @@
         "approval_records",
         "security_review"
       ],
-      "authority_scope": "May assess and prepare approval security guard outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare approval security guard outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "gatekeeper",
+      "display_name": "Gatekeeper",
+      "position": "AI Governance & Operational Control Authority",
+      "company_department": "security",
+      "team": "security",
+      "team_display_name": "Security",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`docs/security.md`",
+        "`docs/approval-system.md`",
+        "`data/knowledge/backend`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, and agent memory for risk assessment.",
+        "Write decision and mistake memory for security findings, guardrails, and remediation outcomes.",
+        "Never disclose secrets or sensitive findings in broadly accessible memory scopes."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "VictorSec",
+      "collaboration_partners": [
+        "VictorSec",
+        "Vault",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Uma",
@@ -978,7 +2875,41 @@
         "accessibility_checklist",
         "handoff_notes"
       ],
-      "authority_scope": "May execute routine uiux designer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine uiux designer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "uma",
+      "display_name": "Uma",
+      "position": "Human Experience & Emotional Intelligence Director",
+      "company_department": "design",
+      "team": "uiux",
+      "team_display_name": "Product Design",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/frontend`",
+        "`data/knowledge/marketing`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, agent, and user preference memory for design context.",
+        "Write project and user preference memory when brand or UX preferences are clarified.",
+        "Avoid changing decision memory unless the change affects cross-department delivery."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Figma",
+      "collaboration_partners": [
+        "Figma",
+        "Nova",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Figma",
@@ -998,7 +2929,41 @@
         "accessibility_checklist",
         "handoff_notes"
       ],
-      "authority_scope": "May execute routine design system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine design system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "figma",
+      "display_name": "Figma",
+      "position": "UI/UX Design Systems Architect",
+      "company_department": "design",
+      "team": "uiux",
+      "team_display_name": "Product Design",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/frontend`",
+        "`data/knowledge/marketing`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, agent, and user preference memory for design context.",
+        "Write project and user preference memory when brand or UX preferences are clarified.",
+        "Avoid changing decision memory unless the change affects cross-department delivery."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Uma",
+      "collaboration_partners": [
+        "Uma",
+        "Mason",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Nova",
@@ -1018,7 +2983,41 @@
         "accessibility_checklist",
         "handoff_notes"
       ],
-      "authority_scope": "May execute routine brand designer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine brand designer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "nova",
+      "display_name": "Nova",
+      "position": "Artificial Intelligence Evolution Director",
+      "company_department": "design",
+      "team": "uiux",
+      "team_display_name": "Product Design",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/frontend`",
+        "`data/knowledge/marketing`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, agent, and user preference memory for design context.",
+        "Write project and user preference memory when brand or UX preferences are clarified.",
+        "Avoid changing decision memory unless the change affects cross-department delivery."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Uma",
+      "collaboration_partners": [
+        "Uma",
+        "Mystique",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Neil",
@@ -1038,7 +3037,40 @@
         "report_templates",
         "structured_data_notes"
       ],
-      "authority_scope": "May execute routine seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "neil",
+      "display_name": "Neil",
+      "position": "Digital Growth & Search Intelligence Director",
+      "company_department": "marketing",
+      "team": "seo",
+      "team_display_name": "Search & SEO",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Serena",
@@ -1058,7 +3090,41 @@
         "report_templates",
         "structured_data_notes"
       ],
-      "authority_scope": "May execute routine technical seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine technical seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "serena",
+      "display_name": "Serena",
+      "position": "Strategic Communications & Executive Presence Director",
+      "company_department": "marketing",
+      "team": "seo",
+      "team_display_name": "Search & SEO",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Neil",
+      "collaboration_partners": [
+        "Neil",
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Link",
@@ -1078,7 +3144,41 @@
         "report_templates",
         "structured_data_notes"
       ],
-      "authority_scope": "May execute routine backlink researcher tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine backlink researcher tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "link",
+      "display_name": "Link",
+      "position": "Systems Integration & Connectivity Architect",
+      "company_department": "marketing",
+      "team": "seo",
+      "team_display_name": "Search & SEO",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Neil",
+      "collaboration_partners": [
+        "Neil",
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Local",
@@ -1098,7 +3198,41 @@
         "report_templates",
         "structured_data_notes"
       ],
-      "authority_scope": "May execute routine local seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine local seo specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "local",
+      "display_name": "Local",
+      "position": "Local Infrastructure, Offline Systems & Edge Computing Specialist",
+      "company_department": "marketing",
+      "team": "seo",
+      "team_display_name": "Search & SEO",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Neil",
+      "collaboration_partners": [
+        "Neil",
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Natasha",
@@ -1118,7 +3252,41 @@
         "review_checklist",
         "publishing_plans"
       ],
-      "authority_scope": "May execute routine content creator tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine content creator tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "natasha",
+      "display_name": "Natasha",
+      "position": "Strategic Operations & Crisis Coordination Director",
+      "company_department": "marketing",
+      "team": "content",
+      "team_display_name": "Content Studio",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Neil",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Blake",
@@ -1138,7 +3306,41 @@
         "review_checklist",
         "publishing_plans"
       ],
-      "authority_scope": "May execute routine blog writer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine blog writer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "blake",
+      "display_name": "Blake",
+      "position": "Senior Blog & Editorial Content Strategist",
+      "company_department": "marketing",
+      "team": "content",
+      "team_display_name": "Content Studio",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Natasha",
+      "collaboration_partners": [
+        "Natasha",
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Copy",
@@ -1158,7 +3360,41 @@
         "review_checklist",
         "publishing_plans"
       ],
-      "authority_scope": "May execute routine copywriter tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine copywriter tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "copy",
+      "display_name": "Copy",
+      "position": "Strategic Copywriting & Persuasion Intelligence Director",
+      "company_department": "marketing",
+      "team": "content",
+      "team_display_name": "Content Studio",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Natasha",
+      "collaboration_partners": [
+        "Natasha",
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Script",
@@ -1178,7 +3414,41 @@
         "review_checklist",
         "publishing_plans"
       ],
-      "authority_scope": "May execute routine video script writer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine video script writer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "script",
+      "display_name": "Script",
+      "position": "Senior Scriptwriter & Storytelling Strategist",
+      "company_department": "marketing",
+      "team": "content",
+      "team_display_name": "Content Studio",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Natasha",
+      "collaboration_partners": [
+        "Natasha",
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Tamil",
@@ -1198,7 +3468,41 @@
         "review_checklist",
         "publishing_plans"
       ],
-      "authority_scope": "May execute routine tamil content specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine tamil content specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "tamil",
+      "display_name": "Tamil",
+      "position": "Tamil Language & Cultural Intelligence Director",
+      "company_department": "marketing",
+      "team": "content",
+      "team_display_name": "Content Studio",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Natasha",
+      "collaboration_partners": [
+        "Natasha",
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Maya",
@@ -1218,7 +3522,41 @@
         "performance_reports",
         "audience_notes"
       ],
-      "authority_scope": "May execute routine digital marketing manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine digital marketing manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "maya",
+      "display_name": "Maya",
+      "position": "Creative Strategy & Brand Experience Director",
+      "company_department": "marketing",
+      "team": "marketing",
+      "team_display_name": "Growth Marketing",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Neil",
+      "collaboration_partners": [
+        "Neil",
+        "Copy",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Meta",
@@ -1238,7 +3576,40 @@
         "performance_reports",
         "audience_notes"
       ],
-      "authority_scope": "May execute routine meta ads specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine meta ads specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "meta",
+      "display_name": "Meta",
+      "position": "Metadata, SEO Structure & Semantic Intelligence Specialist",
+      "company_department": "marketing",
+      "team": "marketing",
+      "team_display_name": "Growth Marketing",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "LinkedIn",
@@ -1258,7 +3629,40 @@
         "performance_reports",
         "audience_notes"
       ],
-      "authority_scope": "May execute routine linkedin marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine linkedin marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "linkedin",
+      "display_name": "LinkedIn",
+      "position": "Professional Brand Positioning & B2B Growth Strategist",
+      "company_department": "marketing",
+      "team": "marketing",
+      "team_display_name": "Growth Marketing",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Xavier",
@@ -1278,7 +3682,40 @@
         "performance_reports",
         "audience_notes"
       ],
-      "authority_scope": "May execute routine x marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine x marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "xavier",
+      "display_name": "Xavier",
+      "position": "Autonomous Intelligence Systems Architect",
+      "company_department": "marketing",
+      "team": "marketing",
+      "team_display_name": "Growth Marketing",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Tiktok",
@@ -1298,7 +3735,40 @@
         "performance_reports",
         "audience_notes"
       ],
-      "authority_scope": "May execute routine tiktok marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine tiktok marketing specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "tiktok",
+      "display_name": "Tiktok",
+      "position": "Short-Form Viral Growth Intelligence Director",
+      "company_department": "marketing",
+      "team": "marketing",
+      "team_display_name": "Growth Marketing",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "YouTube",
@@ -1318,7 +3788,40 @@
         "performance_reports",
         "audience_notes"
       ],
-      "authority_scope": "May execute routine youtube strategy specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine youtube strategy specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "youtube",
+      "display_name": "YouTube",
+      "position": "Quicksilver Intelligence & Growth Operations Director",
+      "company_department": "marketing",
+      "team": "marketing",
+      "team_display_name": "Growth Marketing",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/marketing`",
+        "`data/knowledge/seo`",
+        "`data/knowledge/clients`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and user preference memory for campaign context.",
+        "Write campaign-related project memory and preference memory when brand choices are confirmed.",
+        "Do not edit finance or legal memory without escalation."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Sasha",
@@ -1338,7 +3841,39 @@
         "followup_plans",
         "client_notes"
       ],
-      "authority_scope": "May execute routine sales manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine sales manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "sasha",
+      "display_name": "Sasha",
+      "position": "Human Resources & Talent Development Director",
+      "company_department": "sales",
+      "team": "sales",
+      "team_display_name": "Sales",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/clients`",
+        "`data/knowledge/operations`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, company, and project memory for lead and proposal context.",
+        "Write client and project memory when scope, stage, or handoff facts change.",
+        "Escalate any billing or legal memory updates to the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Maya",
+      "collaboration_partners": [
+        "Maya",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Pepper",
@@ -1358,7 +3893,40 @@
         "task_routing",
         "escalation_records"
       ],
-      "authority_scope": "May execute routine customer care agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine customer care agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "pepper",
+      "display_name": "Pepper",
+      "position": "Social Engagement & Community Growth Director",
+      "company_department": "support",
+      "team": "customer_support",
+      "team_display_name": "Customer Support",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/clients`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, company, and agent memory needed to resolve support issues.",
+        "Write client and project memory when a case outcome changes status or next steps.",
+        "Escalate sensitive finance, legal, or security memory updates immediately."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Friday",
+      "collaboration_partners": [
+        "Friday",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Morgan",
@@ -1378,7 +3946,40 @@
         "approval_records",
         "financial_summaries"
       ],
-      "authority_scope": "May assess and prepare finance quotation manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare finance quotation manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "morgan",
+      "display_name": "Morgan",
+      "position": "Chief Financial Strategy Officer",
+      "company_department": "finance",
+      "team": "finance",
+      "team_display_name": "Finance",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/finance`",
+        "`data/knowledge/clients`",
+        "`docs/approval-system.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, decision, and company memory for pricing and billing context.",
+        "Write decision memory for approved commercial changes and client memory for billing-state updates.",
+        "Treat all finance-related memory as approval-sensitive and auditable."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Ledger",
+      "collaboration_partners": [
+        "Ledger",
+        "Renewal",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Ledger",
@@ -1398,7 +3999,39 @@
         "approval_records",
         "financial_summaries"
       ],
-      "authority_scope": "May assess and prepare accounting agent outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare accounting agent outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "ledger",
+      "display_name": "Ledger",
+      "position": "Financial Ledger & Accounting Integrity Architect",
+      "company_department": "finance",
+      "team": "finance",
+      "team_display_name": "Finance",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/finance`",
+        "`data/knowledge/clients`",
+        "`docs/approval-system.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, decision, and company memory for pricing and billing context.",
+        "Write decision memory for approved commercial changes and client memory for billing-state updates.",
+        "Treat all finance-related memory as approval-sensitive and auditable."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Morgan",
+      "collaboration_partners": [
+        "Morgan",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Renewal",
@@ -1418,7 +4051,39 @@
         "approval_records",
         "financial_summaries"
       ],
-      "authority_scope": "May assess and prepare renewal manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare renewal manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "renewal",
+      "display_name": "Renewal",
+      "position": "Subscription, Renewal & Retention Operations Agent",
+      "company_department": "finance",
+      "team": "finance",
+      "team_display_name": "Finance",
+      "seniority": "senior",
+      "knowledge_domains": [
+        "`data/knowledge/finance`",
+        "`data/knowledge/clients`",
+        "`docs/approval-system.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, decision, and company memory for pricing and billing context.",
+        "Write decision memory for approved commercial changes and client memory for billing-state updates.",
+        "Treat all finance-related memory as approval-sensitive and auditable."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Morgan",
+      "collaboration_partners": [
+        "Morgan",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Lawrence",
@@ -1438,7 +4103,39 @@
         "contract_review",
         "risk_summaries"
       ],
-      "authority_scope": "May assess and prepare contract manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare contract manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "lawrence",
+      "display_name": "Lawrence",
+      "position": "Chief Legal & Compliance Officer",
+      "company_department": "legal",
+      "team": "legal",
+      "team_display_name": "Legal",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/legal`",
+        "`docs/security.md`",
+        "`docs/approval-system.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, and decision memory when wording or obligations are involved.",
+        "Write decision memory only for approved policy or contract interpretations.",
+        "Do not alter commercial or personnel memory beyond legal-review notes."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Hill",
+      "collaboration_partners": [
+        "Hill",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Hill",
@@ -1458,7 +4155,39 @@
         "contract_review",
         "risk_summaries"
       ],
-      "authority_scope": "May assess and prepare policy manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare policy manager outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "hill",
+      "display_name": "Hill",
+      "position": "Governance, Compliance & Organizational Policy Specialist",
+      "company_department": "legal",
+      "team": "legal",
+      "team_display_name": "Legal",
+      "seniority": "senior",
+      "knowledge_domains": [
+        "`data/knowledge/legal`",
+        "`docs/security.md`",
+        "`docs/approval-system.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, and decision memory when wording or obligations are involved.",
+        "Write decision memory only for approved policy or contract interpretations.",
+        "Do not alter commercial or personnel memory beyond legal-review notes."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Lawrence",
+      "collaboration_partners": [
+        "Lawrence",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Vision",
@@ -1478,7 +4207,40 @@
         "summary_templates",
         "risk_notes"
       ],
-      "authority_scope": "May execute routine research agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine research agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "vision",
+      "display_name": "Vision",
+      "position": "Computer Vision & Visual Intelligence Director",
+      "company_department": "research",
+      "team": "research",
+      "team_display_name": "Research Office",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/ai`",
+        "`data/knowledge/backend`",
+        "`data/knowledge/projects`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, and mistake memory to avoid repeating failed experiments.",
+        "Write decision and mistake memory for validated findings and important experiment outcomes.",
+        "Do not treat exploratory notes as production-ready commitments."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Aiden",
+      "collaboration_partners": [
+        "Aiden",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Lois",
@@ -1498,7 +4260,40 @@
         "knowledge_base",
         "task_records"
       ],
-      "authority_scope": "May execute routine documentation specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine documentation specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "lois",
+      "display_name": "Lois",
+      "position": "Documentation Architecture & Knowledge Systems Director",
+      "company_department": "documentation",
+      "team": "documentation",
+      "team_display_name": "Documentation",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`docs/architecture.md`",
+        "`docs/setup.md`",
+        "`data/knowledge/lkp`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, agent, and user preference memory to keep docs aligned.",
+        "Write agent, project, and decision memory when documentation clarifies system behavior.",
+        "Do not rewrite source-of-truth decisions without checking the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Tutor",
+      "collaboration_partners": [
+        "Tutor",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Tutor",
@@ -1518,7 +4313,40 @@
         "training_outlines",
         "task_summaries"
       ],
-      "authority_scope": "May execute routine training agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine training agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "tutor",
+      "display_name": "Tutor",
+      "position": "Adaptive Learning & Knowledge Transfer Director",
+      "company_department": "documentation",
+      "team": "training",
+      "team_display_name": "Training",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`docs/architecture.md`",
+        "`docs/setup.md`",
+        "`data/knowledge/lkp`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, agent, and user preference memory to keep docs aligned.",
+        "Write agent, project, and decision memory when documentation clarifies system behavior.",
+        "Do not rewrite source-of-truth decisions without checking the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Lois",
+      "collaboration_partners": [
+        "Lois",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Cisco",
@@ -1538,7 +4366,40 @@
         "safe_shell_plan",
         "execution_logs"
       ],
-      "authority_scope": "May execute routine browser automation engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine browser automation engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "cisco",
+      "display_name": "Cisco",
+      "position": "Advanced Prototype & Innovation Engineer",
+      "company_department": "automation",
+      "team": "automation",
+      "team_display_name": "Automation Engineering",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`docs/tool-system.md`",
+        "`data/knowledge/operations`",
+        "`data/knowledge/backend`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, and agent memory before planning automation.",
+        "Write decision and mistake memory for automation design, rollbacks, and safety learnings.",
+        "Do not persist secrets or unsafe execution details in shared memory."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Tempus",
+      "collaboration_partners": [
+        "Tempus",
+        "Fury",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Fury",
@@ -1558,7 +4419,39 @@
         "safe_shell_plan",
         "execution_logs"
       ],
-      "authority_scope": "May execute routine api integration specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine api integration specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "fury",
+      "display_name": "Fury",
+      "position": "Enterprise Integration & Service Gateway Architect",
+      "company_department": "automation",
+      "team": "automation",
+      "team_display_name": "Automation Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`docs/tool-system.md`",
+        "`data/knowledge/operations`",
+        "`data/knowledge/backend`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, and agent memory before planning automation.",
+        "Write decision and mistake memory for automation design, rollbacks, and safety learnings.",
+        "Do not persist secrets or unsafe execution details in shared memory."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Cisco",
+      "collaboration_partners": [
+        "Cisco",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Tempus",
@@ -1578,7 +4471,39 @@
         "safe_shell_plan",
         "execution_logs"
       ],
-      "authority_scope": "May execute routine task scheduler agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine task scheduler agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "tempus",
+      "display_name": "Tempus",
+      "position": "Operations Scheduling & Calendar Coordination Agent",
+      "company_department": "automation",
+      "team": "automation",
+      "team_display_name": "Automation Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`docs/tool-system.md`",
+        "`data/knowledge/operations`",
+        "`data/knowledge/backend`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, mistake, and agent memory before planning automation.",
+        "Write decision and mistake memory for automation design, rollbacks, and safety learnings.",
+        "Do not persist secrets or unsafe execution details in shared memory."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Cisco",
+      "collaboration_partners": [
+        "Cisco",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Cypher",
@@ -1598,7 +4523,41 @@
         "data_validation",
         "report_templates"
       ],
-      "authority_scope": "May execute routine data engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine data engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "cypher",
+      "display_name": "Cypher",
+      "position": "Enterprise Data Architecture & Information Intelligence Director",
+      "company_department": "research",
+      "team": "data",
+      "team_display_name": "Data Engineering",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/ai`",
+        "`data/knowledge/backend`",
+        "`data/knowledge/projects`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, and mistake memory to avoid repeating failed experiments.",
+        "Write decision and mistake memory for validated findings and important experiment outcomes.",
+        "Do not treat exploratory notes as production-ready commitments."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Aiden",
+      "collaboration_partners": [
+        "Aiden",
+        "Vision",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Analyst",
@@ -1618,7 +4577,41 @@
         "data_summaries",
         "chart_notes"
       ],
-      "authority_scope": "May execute routine business analyst tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine business analyst tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "analyst",
+      "display_name": "Analyst",
+      "position": "Strategic Intelligence & Cypher Analysis Officer",
+      "company_department": "operations",
+      "team": "analytics",
+      "team_display_name": "Business Intelligence",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Friday",
+      "collaboration_partners": [
+        "Friday",
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Metric",
@@ -1638,7 +4631,41 @@
         "data_summaries",
         "chart_notes"
       ],
-      "authority_scope": "May execute routine analytics dashboard specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine analytics dashboard specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "metric",
+      "display_name": "Metric",
+      "position": "Analytics, KPIs & Performance Intelligence Specialist",
+      "company_department": "operations",
+      "team": "analytics",
+      "team_display_name": "Business Intelligence",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Friday",
+      "collaboration_partners": [
+        "Friday",
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Aiden",
@@ -1658,7 +4685,40 @@
         "knowledge_base",
         "workflow_planner"
       ],
-      "authority_scope": "May execute routine ai engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine ai engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "aiden",
+      "display_name": "Aiden",
+      "position": "Senior AI Automation & Workflow Engineer",
+      "company_department": "research",
+      "team": "ai",
+      "team_display_name": "AI Engineering",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/ai`",
+        "`data/knowledge/backend`",
+        "`data/knowledge/projects`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, and mistake memory to avoid repeating failed experiments.",
+        "Write decision and mistake memory for validated findings and important experiment outcomes.",
+        "Do not treat exploratory notes as production-ready commitments."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Vision",
+      "collaboration_partners": [
+        "Vision",
+        "Cypher",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Wanda",
@@ -1678,7 +4738,39 @@
         "knowledge_base",
         "workflow_planner"
       ],
-      "authority_scope": "May execute routine prompt engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine prompt engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "wanda",
+      "display_name": "Wanda",
+      "position": "AI Prompt Engineering & Instruction Architecture Specialist",
+      "company_department": "research",
+      "team": "ai",
+      "team_display_name": "AI Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/ai`",
+        "`data/knowledge/backend`",
+        "`data/knowledge/projects`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, and mistake memory to avoid repeating failed experiments.",
+        "Write decision and mistake memory for validated findings and important experiment outcomes.",
+        "Do not treat exploratory notes as production-ready commitments."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Aiden",
+      "collaboration_partners": [
+        "Aiden",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Rag",
@@ -1698,7 +4790,39 @@
         "knowledge_base",
         "workflow_planner"
       ],
-      "authority_scope": "May execute routine rag engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine rag engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "rag",
+      "display_name": "Rag",
+      "position": "Retrieval & Knowledge Continuity Core",
+      "company_department": "research",
+      "team": "ai",
+      "team_display_name": "AI Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/ai`",
+        "`data/knowledge/backend`",
+        "`data/knowledge/projects`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, and mistake memory to avoid repeating failed experiments.",
+        "Write decision and mistake memory for validated findings and important experiment outcomes.",
+        "Do not treat exploratory notes as production-ready commitments."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Aiden",
+      "collaboration_partners": [
+        "Aiden",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Strange",
@@ -1718,7 +4842,39 @@
         "knowledge_base",
         "workflow_planner"
       ],
-      "authority_scope": "May execute routine model router tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine model router tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "strange",
+      "display_name": "Strange",
+      "position": "AI Model Architecture & Intelligence Systems Specialist",
+      "company_department": "research",
+      "team": "ai",
+      "team_display_name": "AI Engineering",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/ai`",
+        "`data/knowledge/backend`",
+        "`data/knowledge/projects`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, decision, and mistake memory to avoid repeating failed experiments.",
+        "Write decision and mistake memory for validated findings and important experiment outcomes.",
+        "Do not treat exploratory notes as production-ready commitments."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Aiden",
+      "collaboration_partners": [
+        "Aiden",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Wordpress",
@@ -1738,7 +4894,41 @@
         "plugin_review",
         "content_workflows"
       ],
-      "authority_scope": "May execute routine wordpress engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine wordpress engineer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "wordpress",
+      "display_name": "Wordpress",
+      "position": "CMS Infrastructure & Web Operations Director",
+      "company_department": "development",
+      "team": "cms",
+      "team_display_name": "CMS Platforms",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Shopify",
@@ -1758,7 +4948,41 @@
         "order_checklist",
         "report_templates"
       ],
-      "authority_scope": "May execute routine shopify specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine shopify specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "shopify",
+      "display_name": "Shopify",
+      "position": "E-Commerce Platform & Store Growth Director",
+      "company_department": "development",
+      "team": "ecommerce",
+      "team_display_name": "E-Commerce Platforms",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Commerce",
+      "collaboration_partners": [
+        "Commerce",
+        "Tony",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Commerce",
@@ -1778,7 +5002,41 @@
         "order_checklist",
         "report_templates"
       ],
-      "authority_scope": "May execute routine ecommerce architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine ecommerce architect tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "commerce",
+      "display_name": "Commerce",
+      "position": "Digital Commerce & Revenue Operations Director",
+      "company_department": "development",
+      "team": "ecommerce",
+      "team_display_name": "E-Commerce Platforms",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/frontend`",
+        "`docs/architecture.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, mistake, and agent memory tied to implementation work.",
+        "Write decision and mistake memory when engineering tradeoffs or failures should be preserved.",
+        "Use client memory only when the request has direct delivery context."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Tony",
+      "collaboration_partners": [
+        "Tony",
+        "Peter",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Gambit",
@@ -1798,7 +5056,39 @@
         "schema_tools",
         "ops_reports"
       ],
-      "authority_scope": "May execute routine pos system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine pos system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "gambit",
+      "display_name": "Gambit",
+      "position": "Point of Sale Systems & Retail Operations Specialist",
+      "company_department": "operations",
+      "team": "business_systems",
+      "team_display_name": "Business Systems",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Alfred",
+      "collaboration_partners": [
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Forge",
@@ -1818,7 +5108,39 @@
         "schema_tools",
         "ops_reports"
       ],
-      "authority_scope": "May execute routine erp system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine erp system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "forge",
+      "display_name": "Forge",
+      "position": "Enterprise Resource Planning Systems Architect",
+      "company_department": "operations",
+      "team": "business_systems",
+      "team_display_name": "Business Systems",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Alfred",
+      "collaboration_partners": [
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Mantis",
@@ -1838,7 +5160,39 @@
         "schema_tools",
         "ops_reports"
       ],
-      "authority_scope": "May execute routine crm specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine crm specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "mantis",
+      "display_name": "Mantis",
+      "position": "Customer Relationship & Client Lifecycle Intelligence Director",
+      "company_department": "operations",
+      "team": "business_systems",
+      "team_display_name": "Business Systems",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Alfred",
+      "collaboration_partners": [
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Raven",
@@ -1858,7 +5212,39 @@
         "audit_logs",
         "workflow_plans"
       ],
-      "authority_scope": "May execute routine email system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine email system specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "raven",
+      "display_name": "Raven",
+      "position": "Email Systems & Communication Operations Specialist",
+      "company_department": "operations",
+      "team": "communication",
+      "team_display_name": "Communication Systems",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Alfred",
+      "collaboration_partners": [
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "WhatsApp",
@@ -1878,7 +5264,39 @@
         "audit_logs",
         "workflow_plans"
       ],
-      "authority_scope": "May execute routine whatsapp cloud api specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine whatsapp cloud api specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "whatsapp",
+      "display_name": "WhatsApp",
+      "position": "Conversational Communication & Messaging Operations Director",
+      "company_department": "operations",
+      "team": "communication",
+      "team_display_name": "Communication Systems",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Alfred",
+      "collaboration_partners": [
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Canary",
@@ -1898,7 +5316,39 @@
         "audit_logs",
         "workflow_plans"
       ],
-      "authority_scope": "May execute routine voice assistant specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine voice assistant specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "canary",
+      "display_name": "Canary",
+      "position": "Conversational Audio & Voice Intelligence Director",
+      "company_department": "operations",
+      "team": "communication",
+      "team_display_name": "Communication Systems",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/projects`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, client, project, decision, and agent memory relevant to active operations.",
+        "Write decision and project memory when coordination outcomes change delivery state.",
+        "Avoid editing finance, legal, or HR-sensitive memory without the owning department."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Alfred",
+      "collaboration_partners": [
+        "Alfred",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Constantine",
@@ -1918,7 +5368,39 @@
         "approval_records",
         "audit_logs"
       ],
-      "authority_scope": "May execute routine domain management agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine domain management agent tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "constantine",
+      "display_name": "Constantine",
+      "position": "Domain & DNS Operations Specialist",
+      "company_department": "infrastructure",
+      "team": "infrastructure",
+      "team_display_name": "Infrastructure Services",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Cloudflare",
@@ -1938,7 +5420,39 @@
         "approval_records",
         "audit_logs"
       ],
-      "authority_scope": "May execute routine dns cloudflare specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine dns cloudflare specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "cloudflare",
+      "display_name": "Cloudflare",
+      "position": "Edge Infrastructure & Internet Security Architect",
+      "company_department": "infrastructure",
+      "team": "infrastructure",
+      "team_display_name": "Infrastructure Services",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Bishop",
@@ -1958,7 +5472,39 @@
         "approval_records",
         "audit_logs"
       ],
-      "authority_scope": "May execute routine git repository manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine git repository manager tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "bishop",
+      "display_name": "Bishop",
+      "position": "Version Control & Source Collaboration Architect",
+      "company_department": "infrastructure",
+      "team": "infrastructure",
+      "team_display_name": "Infrastructure Services",
+      "seniority": "senior",
+      "knowledge_domains": [
+        "`data/knowledge/backend`",
+        "`data/knowledge/web`",
+        "`docs/deployment.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read project, decision, company, and mistake memory for platform operations.",
+        "Write decision and mistake memory for deployment, DNS, backup, and incident handling outcomes.",
+        "Keep credential or secret details out of general memory entries."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Rhodes",
+      "collaboration_partners": [
+        "Rhodes",
+        "Jarvis"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Mystique",
@@ -1978,7 +5524,42 @@
         "review_notes",
         "campaign_references"
       ],
-      "authority_scope": "May execute routine image generation specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine image generation specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "mystique",
+      "display_name": "Mystique",
+      "position": "Visual Media Engineering & Imaging Intelligence Specialist",
+      "company_department": "design",
+      "team": "creative",
+      "team_display_name": "Creative Production",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/frontend`",
+        "`data/knowledge/marketing`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, agent, and user preference memory for design context.",
+        "Write project and user preference memory when brand or UX preferences are clarified.",
+        "Avoid changing decision memory unless the change affects cross-department delivery."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Nova",
+      "collaboration_partners": [
+        "Nova",
+        "Quicksilver",
+        "Uma",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Quicksilver",
@@ -1998,7 +5579,42 @@
         "review_notes",
         "campaign_references"
       ],
-      "authority_scope": "May execute routine video production specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine video production specialist tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "quicksilver",
+      "display_name": "Quicksilver",
+      "position": "Visual Media Production & Cinematic Intelligence Director",
+      "company_department": "design",
+      "team": "creative",
+      "team_display_name": "Creative Production",
+      "seniority": "specialist",
+      "knowledge_domains": [
+        "`data/knowledge/frontend`",
+        "`data/knowledge/marketing`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read client, project, agent, and user preference memory for design context.",
+        "Write project and user preference memory when brand or UX preferences are clarified.",
+        "Avoid changing decision memory unless the change affects cross-department delivery."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Mystique",
+      "collaboration_partners": [
+        "Mystique",
+        "Nova",
+        "Uma",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Moira",
@@ -2018,7 +5634,39 @@
         "approval_records",
         "onboarding_notes"
       ],
-      "authority_scope": "May assess and prepare hr recruitment agent outputs, but irreversible, external, or compliance-sensitive actions require explicit approval."
+      "authority_scope": "May assess and prepare hr recruitment agent outputs, but irreversible, external, or compliance-sensitive actions require explicit approval.",
+      "slug": "moira",
+      "display_name": "Moira",
+      "position": "Talent Acquisition & Hiring Intelligence Agent",
+      "company_department": "hr",
+      "team": "hr",
+      "team_display_name": "Human Resources",
+      "seniority": "department_owner",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/lkp`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, and limited client memory only when people operations require it.",
+        "Write agent and project memory for onboarding and internal process continuity.",
+        "Treat candidate, staff, and personnel-related context as highly restricted."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval"
+      ],
+      "fallback_agent": "Coulson",
+      "collaboration_partners": [
+        "Coulson",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     },
     {
       "name": "Coulson",
@@ -2038,7 +5686,40 @@
         "task_records",
         "ops_checklists"
       ],
-      "authority_scope": "May execute routine admin officer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits."
+      "authority_scope": "May execute routine admin officer tasks within approved scope and escalate when the request crosses risk, budget, policy, or authority limits.",
+      "slug": "coulson",
+      "display_name": "Coulson",
+      "position": "Central Administrative Operations Controller",
+      "company_department": "hr",
+      "team": "administration",
+      "team_display_name": "Administration",
+      "seniority": "team_lead",
+      "knowledge_domains": [
+        "`data/knowledge/operations`",
+        "`data/knowledge/lkp`",
+        "`docs/company-structure.md`",
+        "`packages/agents/registry.json`",
+        "`packages/agents/company-structure.json`"
+      ],
+      "memory_permissions": [
+        "Read company, project, and limited client memory only when people operations require it.",
+        "Write agent and project memory for onboarding and internal process continuity.",
+        "Treat candidate, staff, and personnel-related context as highly restricted."
+      ],
+      "execution_permissions": [
+        "plan",
+        "review",
+        "execute_with_approval",
+        "auto_execute_low_risk"
+      ],
+      "fallback_agent": "Moira",
+      "collaboration_partners": [
+        "Moira",
+        "Athena"
+      ],
+      "status": "active",
+      "version": "2.0.0",
+      "last_updated": "2026-06-06"
     }
   ]
 }

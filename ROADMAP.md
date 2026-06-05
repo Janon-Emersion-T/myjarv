@@ -195,35 +195,35 @@ Example:
 }
 
 Extra Phase 5 Enhancements:
-`[NOT DONE]` Create packages/agents/schema.json
-`[NOT DONE]` Validate registry.json against schema
-`[NOT DONE]` Add agent slug
-`[NOT DONE]` Add agent display name
-`[NOT DONE]` Add agent department
-`[NOT DONE]` Add agent position
-`[NOT DONE]` Add agent seniority
-`[NOT DONE]` Add agent priority
-`[NOT DONE]` Add agent risk level
-`[NOT DONE]` Add agent approval level
-`[NOT DONE]` Add agent tools list
-`[NOT DONE]` Add agent knowledge domains
-`[NOT DONE]` Add agent memory permissions
-`[NOT DONE]` Add agent execution permissions
-`[NOT DONE]` Add agent fallback agent
-`[NOT DONE]` Add agent collaboration partners
-`[NOT DONE]` Add agent status: active, inactive, deprecated, experimental
-`[NOT DONE]` Add agent version
-`[NOT DONE]` Add last updated timestamp
-`[NOT DONE]` Add registry validation script
-`[NOT DONE]` Add missing profile detector
-`[NOT DONE]` Add duplicate role detector
-`[NOT DONE]` Add orphan profile detector
-`[NOT DONE]` Add registry README
-`[NOT DONE]` Add department-level registry grouping
-`[NOT DONE]` Add API support to expose registry data
-`[NOT DONE]` Add CLI command to list agents
-`[NOT DONE]` Add CLI command to validate agents
-`[NOT DONE]` Add CLI command to show one agent profile
+`[FULL]` Create packages/agents/schema.json
+`[FULL]` Validate registry.json against schema
+`[FULL]` Add agent slug
+`[FULL]` Add agent display name
+`[FULL]` Add agent department
+`[FULL]` Add agent position
+`[FULL]` Add agent seniority
+`[FULL]` Add agent priority
+`[FULL]` Add agent risk level
+`[FULL]` Add agent approval level
+`[FULL]` Add agent tools list
+`[FULL]` Add agent knowledge domains
+`[FULL]` Add agent memory permissions
+`[FULL]` Add agent execution permissions
+`[FULL]` Add agent fallback agent
+`[FULL]` Add agent collaboration partners
+`[FULL]` Add agent status: active, inactive, deprecated, experimental
+`[FULL]` Add agent version
+`[FULL]` Add last updated timestamp
+`[FULL]` Add registry validation script
+`[FULL]` Add missing profile detector
+`[FULL]` Add duplicate role detector
+`[FULL]` Add orphan profile detector
+`[FULL]` Add registry README
+`[FULL]` Add department-level registry grouping
+`[FULL]` Add API support to expose registry data
+`[FULL]` Add CLI command to list agents
+`[FULL]` Add CLI command to validate agents
+`[FULL]` Add CLI command to show one agent profile
 ```
 
 

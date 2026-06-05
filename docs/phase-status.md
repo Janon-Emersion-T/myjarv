@@ -11,6 +11,7 @@ Roadmap-specific completion update:
 * Roadmap Phase 2, `Build the Company Structure`, is now complete through a generated and validated company operating model in [docs/company-structure.md](/var/www/jarvis/docs/company-structure.md) and [packages/agents/company-structure.json](/var/www/jarvis/packages/agents/company-structure.json).
 * Roadmap Phase 3, `Standardize Agent Profiles`, is now complete with all 102 agent prompts regenerated to the expanded canonical standard and enforced by [scripts/validate_agent_profile_sections.py](/var/www/jarvis/scripts/validate_agent_profile_sections.py).
 * Roadmap Phase 4, `Create Jarvis Brain`, is now complete with end-to-end task intake, approval-aware execution, result review, lifecycle history, wrapper modules at `apps/brain/*`, and API-level tests in [apps/brain/tests/test_phase4.py](/var/www/jarvis/apps/brain/tests/test_phase4.py).
+* Roadmap Phase 5, `Build Agent Registry`, is now complete with enriched agent metadata, department grouping, detector-backed validation, registry CLI commands, runtime registry APIs, and tests in [apps/brain/tests/test_phase5_registry.py](/var/www/jarvis/apps/brain/tests/test_phase5_registry.py).
 
 Current useful assets preserved:
 

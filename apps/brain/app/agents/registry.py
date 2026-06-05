@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from app.agents.schema import Agent, AgentRegistry
+from app.agents.schema import Agent, AgentRegistry, RegistryDepartmentGroup
 
 
 ROOT_DIR = Path(__file__).resolve().parents[4]
@@ -40,13 +40,26 @@ def list_agents() -> list[Agent]:
     return load_registry().agents
 
 
+def list_department_groups() -> list[RegistryDepartmentGroup]:
+    return load_registry().departments
+
+
+def get_registry_snapshot() -> dict:
+    registry = load_registry()
+    return registry.model_dump()
+
+
 def get_agent_by_name(name: str) -> Agent:
     lowered = name.lower()
     resolved = LEGACY_AGENT_ALIASES.get(lowered, name)
     resolved_lowered = resolved.lower()
 
     for agent in list_agents():
-        if agent.name.lower() == resolved_lowered or agent.role.lower() == resolved_lowered:
+        if (
+            agent.name.lower() == resolved_lowered
+            or agent.role.lower() == resolved_lowered
+            or agent.slug == resolved_lowered
+        ):
             return agent
 
     raise ValueError(f"Agent not found: {name}")

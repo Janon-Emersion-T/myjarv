@@ -5,9 +5,85 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "version",
+    "generated_on",
+    "source_company_structure",
+    "departments",
     "agents"
   ],
   "properties": {
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_on": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_company_structure": {
+      "type": "string",
+      "minLength": 1
+    },
+    "departments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "slug",
+          "display_name",
+          "owner",
+          "backup_owner",
+          "executive_sponsor",
+          "teams",
+          "agent_count",
+          "agents"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "backup_owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "executive_sponsor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "teams": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "agent_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "agents": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
     "agents": {
       "type": "array",
       "minItems": 1,
@@ -16,21 +92,44 @@
         "additionalProperties": false,
         "required": [
           "name",
+          "slug",
+          "display_name",
           "role",
+          "position",
           "department",
+          "company_department",
+          "team",
+          "team_display_name",
           "model_role",
           "prompt_file",
           "profile_path",
           "description",
           "responsibility",
           "priority",
+          "seniority",
           "risk_level",
           "approval_level",
           "tools",
-          "authority_scope"
+          "knowledge_domains",
+          "memory_permissions",
+          "execution_permissions",
+          "authority_scope",
+          "fallback_agent",
+          "collaboration_partners",
+          "status",
+          "version",
+          "last_updated"
         ],
         "properties": {
           "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display_name": {
             "type": "string",
             "minLength": 1
           },
@@ -38,7 +137,23 @@
             "type": "string",
             "minLength": 1
           },
+          "position": {
+            "type": "string",
+            "minLength": 1
+          },
           "department": {
+            "type": "string",
+            "minLength": 1
+          },
+          "company_department": {
+            "type": "string",
+            "minLength": 1
+          },
+          "team": {
+            "type": "string",
+            "minLength": 1
+          },
+          "team_display_name": {
             "type": "string",
             "minLength": 1
           },
@@ -73,6 +188,10 @@
             "minimum": 1,
             "maximum": 5
           },
+          "seniority": {
+            "type": "string",
+            "minLength": 1
+          },
           "risk_level": {
             "type": "string",
             "enum": [
@@ -99,7 +218,60 @@
               "minLength": 1
             }
           },
+          "knowledge_domains": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "memory_permissions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "execution_permissions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
           "authority_scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fallback_agent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "collaboration_partners": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "inactive",
+              "deprecated",
+              "experimental"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "last_updated": {
             "type": "string",
             "minLength": 1
           }

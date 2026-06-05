@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.agents.registry import list_agents, get_agent_by_name
+from app.agents.registry import get_agent_by_name, get_registry_snapshot, list_agents
 from app.agents.loader import load_agent_prompt
 from app.agents.schema import AgentRunRequest
 from app.services.agent_service import prepare_agent_response
@@ -10,7 +10,18 @@ router = APIRouter(prefix="/agents", tags=["Agents"])
 
 @router.get("")
 def get_agents():
-    return {"agents": list_agents()}
+    snapshot = get_registry_snapshot()
+    return {
+        "version": snapshot["version"],
+        "generated_on": snapshot["generated_on"],
+        "departments": snapshot["departments"],
+        "agents": list_agents(),
+    }
+
+
+@router.get("/registry")
+def get_registry():
+    return get_registry_snapshot()
 
 
 @router.get("/{name}")
