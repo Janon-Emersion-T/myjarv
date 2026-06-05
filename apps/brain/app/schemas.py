@@ -5,7 +5,16 @@ from pydantic import BaseModel, Field
 
 
 RiskLevel = Literal["LOW", "MEDIUM", "HIGH", "CRITICAL"]
-TaskStatus = Literal["queued", "planned", "pending_approval", "approved", "rejected", "blocked"]
+TaskStatus = Literal[
+    "received",
+    "routed",
+    "waiting_approval",
+    "approved",
+    "rejected",
+    "executing",
+    "completed",
+    "failed",
+]
 IntentCategory = Literal[
     "development",
     "marketing",
@@ -40,6 +49,43 @@ class TaskCreateRequest(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
+class TaskExecutionRequest(BaseModel):
+    executor: str = Field(default="Jarvis", min_length=1)
+    force_retry: bool = False
+
+
+class TaskHistoryEntry(BaseModel):
+    id: str
+    task_id: str
+    status: TaskStatus
+    message: str
+    actor: str
+    created_at: datetime
+    payload: dict[str, Any] = Field(default_factory=dict)
+
+
+class AgentExecutionResponse(BaseModel):
+    primary_agent: str
+    collaborators: list[str] = Field(default_factory=list)
+    summary: str
+    deliverables: list[str] = Field(default_factory=list)
+    next_steps: list[str] = Field(default_factory=list)
+    escalations: list[str] = Field(default_factory=list)
+    tool_plans: list[str] = Field(default_factory=list)
+    knowledge_used: list[str] = Field(default_factory=list)
+    context_notes: list[str] = Field(default_factory=list)
+    status: Literal["completed", "needs_approval", "blocked", "failed"]
+
+
+class ReviewResult(BaseModel):
+    reviewer: str
+    score: int = Field(..., ge=0, le=100)
+    verdict: Literal["approved", "needs_revision", "blocked"]
+    findings: list[str] = Field(default_factory=list)
+    recommended_status: TaskStatus
+    created_at: datetime
+
+
 class TaskRecord(BaseModel):
     id: str
     created_at: datetime
@@ -56,6 +102,11 @@ class TaskRecord(BaseModel):
     status: TaskStatus
     metadata: dict[str, Any] = Field(default_factory=dict)
     reasoning: str
+    history: list[TaskHistoryEntry] = Field(default_factory=list)
+    execution_result: AgentExecutionResponse | None = None
+    review_result: ReviewResult | None = None
+    retry_count: int = 0
+    last_error: str | None = None
 
 
 class ApprovalDecisionRequest(BaseModel):

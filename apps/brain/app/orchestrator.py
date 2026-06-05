@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 from app.agents.router import classify_intent, classify_priority, select_agent, supporting_agents_for_intent
 from app.approval_gate import approval_gate
 from app.schemas import AgentSummary, TaskCreateRequest
@@ -29,12 +31,13 @@ def orchestrate_task(request: TaskCreateRequest) -> dict:
         agent.approval_level,
         request.requested_action,
     )
-    status = "pending_approval" if approval_level != "LOW" else "planned"
+    status = "waiting_approval" if approval_level != "LOW" else "routed"
     reasoning = (
         f"Selected {agent.name} as the primary agent for the {intent_category} intent category. "
         f"Supporting agents: {', '.join(agent.name for agent in supporting_agents) or 'none'}. "
         f"Task priority classified as {priority}, risk as {risk_level}, and approval requirement as {approval_level}."
     )
+    now = datetime.now(UTC).isoformat()
     return {
         "message": request.message,
         "intent_category": intent_category,
@@ -48,4 +51,26 @@ def orchestrate_task(request: TaskCreateRequest) -> dict:
         "status": status,
         "metadata": request.metadata,
         "reasoning": reasoning,
+        "history": [
+            {
+                "created_at": now,
+                "status": "received",
+                "actor": "api",
+                "message": "Task received by Jarvis Brain.",
+                "payload": {"preferred_agent": request.preferred_agent, "requested_action": request.requested_action},
+            },
+            {
+                "created_at": now,
+                "status": "routed",
+                "actor": "Jarvis",
+                "message": f"Task routed to {agent.name} for {intent_category}.",
+                "payload": {
+                    "selected_agent": agent.name,
+                    "supporting_agents": [item.name for item in supporting_agents],
+                    "priority": priority,
+                    "risk_level": risk_level,
+                    "approval_level": approval_level,
+                },
+            },
+        ],
     }

@@ -3,12 +3,13 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from app.agent_loader import get_agent_detail, get_all_agents
 from app.browser.planner import browser_planner
 from app.config import settings
+from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.knowledge.loader import knowledge_loader
 from app.logger import logger
 from app.memory import memory_store
 from app.orchestrator import orchestrate_task
 from app.security import enforce_local_auth
-from app.schemas import ApprovalDecisionRequest, MemoryCreateRequest, TaskCreateRequest
+from app.schemas import ApprovalDecisionRequest, MemoryCreateRequest, TaskCreateRequest, TaskExecutionRequest
 from app.task_manager import task_manager
 from app.tools.registry import tool_registry
 from app.workflows.business import BUSINESS_WORKFLOWS
@@ -20,7 +21,7 @@ router = APIRouter(dependencies=[Depends(enforce_local_auth)])
 
 @router.get("/health")
 def health() -> dict:
-    return {"status": "ok", "service": "Jarvis Brain", "version": "0.2.0"}
+    return {"status": "ok", "service": "Jarvis Brain", "version": "0.3.0"}
 
 
 @router.get("/agents")
@@ -74,6 +75,19 @@ def reject_task(task_id: str, request: ApprovalDecisionRequest) -> dict:
         return task_manager.reject_task(task_id, request.reviewer, request.notes)
     except Exception as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.post("/tasks/{task_id}/execute")
+def execute_task(task_id: str, request: TaskExecutionRequest) -> dict:
+    try:
+        return task_manager.execute_task(task_id, executor=request.executor, force_retry=request.force_retry)
+    except ApprovalRequiredError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except (TaskStateError, TaskExecutionError) as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except Exception as exc:
+        logger.log("ERROR", "api.tasks.execute_failed", "Failed to execute task.", {"task_id": task_id, "error": str(exc)})
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
 @router.get("/memory")
