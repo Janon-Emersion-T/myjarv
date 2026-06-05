@@ -3,11 +3,10 @@ from fastapi import FastAPI
 from app.api.health import router as health_router
 from app.api.agents import router as agents_router
 
-
 app = FastAPI(
     title="Jarvis Brain",
     version="0.1.0",
-    description="Local-first autonomous business operating system"
+    description="Local-first autonomous business operating system for LKProfessionals (Pvt) Ltd.",
 )
 
 app.include_router(health_router)

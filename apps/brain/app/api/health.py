@@ -4,8 +4,9 @@ router = APIRouter(prefix="/health", tags=["Health"])
 
 
 @router.get("")
-async def health():
+def health_check():
     return {
         "status": "ok",
-        "service": "jarvis-brain"
+        "service": "Jarvis Brain",
+        "version": "0.1.0",
     }
