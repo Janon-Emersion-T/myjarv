@@ -7,6 +7,16 @@ from pathlib import Path
 from app.config import settings
 from app.logger import logger
 
+VALID_SCOPES = {
+    "company",
+    "client",
+    "project",
+    "decision",
+    "mistake",
+    "agent",
+    "user_preference",
+}
+
 
 class MemoryStore:
     def __init__(self, database_path: str) -> None:
@@ -38,6 +48,8 @@ class MemoryStore:
             )
 
     def create(self, scope: str, key: str, value: str, tags: list[str], source: str | None, task_id: str | None) -> dict:
+        if scope not in VALID_SCOPES:
+            raise ValueError(f"Invalid memory scope: {scope}")
         now = datetime.now(UTC).isoformat()
         record = {
             "id": str(uuid.uuid4()),

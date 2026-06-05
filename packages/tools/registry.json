@@ -1,0 +1,85 @@
+{
+  "tools": [
+    {
+      "name": "file_read",
+      "description": "Read local project files safely.",
+      "input_schema": {"path": "string"},
+      "output_schema": {"content": "string"},
+      "risk_level": "LOW",
+      "approval_requirement": "LOW",
+      "mode": "read"
+    },
+    {
+      "name": "file_write",
+      "description": "Write or update local files through approved workflows.",
+      "input_schema": {"path": "string", "content": "string"},
+      "output_schema": {"written": "boolean"},
+      "risk_level": "MEDIUM",
+      "approval_requirement": "MEDIUM",
+      "mode": "write"
+    },
+    {
+      "name": "safe_shell_plan",
+      "description": "Plan shell command sequences without executing them automatically.",
+      "input_schema": {"goal": "string"},
+      "output_schema": {"plan": "string"},
+      "risk_level": "HIGH",
+      "approval_requirement": "HIGH",
+      "mode": "plan"
+    },
+    {
+      "name": "git_status",
+      "description": "Inspect repository status and summarize changes.",
+      "input_schema": {"path": "string"},
+      "output_schema": {"summary": "string"},
+      "risk_level": "LOW",
+      "approval_requirement": "LOW",
+      "mode": "read"
+    },
+    {
+      "name": "project_scanner",
+      "description": "Scan a repository for stack, folders, and implementation clues.",
+      "input_schema": {"path": "string"},
+      "output_schema": {"report": "string"},
+      "risk_level": "LOW",
+      "approval_requirement": "LOW",
+      "mode": "read"
+    },
+    {
+      "name": "documentation_generator",
+      "description": "Prepare documentation drafts for reviewed modules or workflows.",
+      "input_schema": {"topic": "string"},
+      "output_schema": {"document": "string"},
+      "risk_level": "LOW",
+      "approval_requirement": "LOW",
+      "mode": "write"
+    },
+    {
+      "name": "code_reviewer",
+      "description": "Generate structured code review findings and risks.",
+      "input_schema": {"paths": "array"},
+      "output_schema": {"findings": "array"},
+      "risk_level": "LOW",
+      "approval_requirement": "LOW",
+      "mode": "read"
+    },
+    {
+      "name": "website_project_planner",
+      "description": "Build website implementation plans from client requirements.",
+      "input_schema": {"brief": "string"},
+      "output_schema": {"plan": "string"},
+      "risk_level": "LOW",
+      "approval_requirement": "LOW",
+      "mode": "plan"
+    },
+    {
+      "name": "seo_checklist_generator",
+      "description": "Generate SEO checklists for sites and campaigns.",
+      "input_schema": {"target": "string"},
+      "output_schema": {"checklist": "array"},
+      "risk_level": "LOW",
+      "approval_requirement": "LOW",
+      "mode": "plan"
+    }
+  ]
+}

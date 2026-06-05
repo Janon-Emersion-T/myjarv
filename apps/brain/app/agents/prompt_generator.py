@@ -1,9 +1,12 @@
 from app.agents.schema import Agent
 from app.agents.loader import load_agent_prompt
+from app.personality import apply_personality
 
 
 def build_system_prompt(agent: Agent) -> str:
     base_prompt = load_agent_prompt(agent)
+    if agent.name == "Jarvis":
+        base_prompt = apply_personality(base_prompt)
 
     return f"""
 {base_prompt}

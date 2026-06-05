@@ -29,9 +29,12 @@ class TaskManager:
                     created_at TEXT NOT NULL,
                     updated_at TEXT NOT NULL,
                     message TEXT NOT NULL,
+                    intent_category TEXT NOT NULL DEFAULT 'general',
                     preferred_agent TEXT,
                     selected_agent_json TEXT NOT NULL,
+                    supporting_agents_json TEXT NOT NULL DEFAULT '[]',
                     requested_action TEXT,
+                    priority INTEGER NOT NULL DEFAULT 3,
                     risk_level TEXT NOT NULL,
                     approval_level TEXT NOT NULL,
                     status TEXT NOT NULL,
@@ -40,6 +43,9 @@ class TaskManager:
                 )
                 """
             )
+            self._ensure_column(connection, "tasks", "intent_category", "TEXT NOT NULL DEFAULT 'general'")
+            self._ensure_column(connection, "tasks", "supporting_agents_json", "TEXT NOT NULL DEFAULT '[]'")
+            self._ensure_column(connection, "tasks", "priority", "INTEGER NOT NULL DEFAULT 3")
             connection.execute(
                 """
                 CREATE TABLE IF NOT EXISTS approvals (
@@ -54,6 +60,11 @@ class TaskManager:
                 """
             )
 
+    def _ensure_column(self, connection: sqlite3.Connection, table: str, column: str, definition: str) -> None:
+        columns = {row["name"] for row in connection.execute(f"PRAGMA table_info({table})").fetchall()}
+        if column not in columns:
+            connection.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
+
     def create_task(self, task: dict[str, Any]) -> dict[str, Any]:
         now = datetime.now(UTC).isoformat()
         record = {
@@ -66,18 +77,21 @@ class TaskManager:
             connection.execute(
                 """
                 INSERT INTO tasks (
-                    id, created_at, updated_at, message, preferred_agent, selected_agent_json,
-                    requested_action, risk_level, approval_level, status, metadata_json, reasoning
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    id, created_at, updated_at, message, intent_category, preferred_agent, selected_agent_json,
+                    supporting_agents_json, requested_action, priority, risk_level, approval_level, status, metadata_json, reasoning
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     record["id"],
                     record["created_at"],
                     record["updated_at"],
                     record["message"],
+                    record["intent_category"],
                     record.get("preferred_agent"),
                     json.dumps(record["selected_agent"]),
+                    json.dumps(record.get("supporting_agents", [])),
                     record.get("requested_action"),
+                    record["priority"],
                     record["risk_level"],
                     record["approval_level"],
                     record["status"],
@@ -143,9 +157,12 @@ class TaskManager:
             "created_at": row["created_at"],
             "updated_at": row["updated_at"],
             "message": row["message"],
+            "intent_category": row["intent_category"],
             "preferred_agent": row["preferred_agent"],
             "selected_agent": json.loads(row["selected_agent_json"]),
+            "supporting_agents": json.loads(row["supporting_agents_json"]),
             "requested_action": row["requested_action"],
+            "priority": row["priority"],
             "risk_level": row["risk_level"],
             "approval_level": row["approval_level"],
             "status": row["status"],

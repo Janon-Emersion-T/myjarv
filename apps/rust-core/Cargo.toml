@@ -1,0 +1,15 @@
+[workspace]
+members = [
+  "jarvis_file_guard",
+  "jarvis_command_guard",
+  "jarvis_logger",
+  "jarvis_system_info",
+  "jarvis_text_utils"
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+version = "0.1.0"
+

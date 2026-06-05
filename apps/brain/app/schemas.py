@@ -5,7 +5,19 @@ from pydantic import BaseModel, Field
 
 
 RiskLevel = Literal["LOW", "MEDIUM", "HIGH", "CRITICAL"]
-TaskStatus = Literal["queued", "pending_approval", "approved", "rejected"]
+TaskStatus = Literal["queued", "planned", "pending_approval", "approved", "rejected", "blocked"]
+IntentCategory = Literal[
+    "development",
+    "marketing",
+    "finance",
+    "legal",
+    "operations",
+    "support",
+    "research",
+    "creative",
+    "infrastructure",
+    "general",
+]
 
 
 class AgentSummary(BaseModel):
@@ -33,9 +45,12 @@ class TaskRecord(BaseModel):
     created_at: datetime
     updated_at: datetime
     message: str
+    intent_category: IntentCategory
     preferred_agent: str | None = None
     selected_agent: AgentSummary
+    supporting_agents: list[AgentSummary] = Field(default_factory=list)
     requested_action: str | None = None
+    priority: int = Field(..., ge=1, le=5)
     risk_level: RiskLevel
     approval_level: RiskLevel
     status: TaskStatus
@@ -58,7 +73,15 @@ class ApprovalRecord(BaseModel):
 
 
 class MemoryCreateRequest(BaseModel):
-    scope: str = Field(..., min_length=1)
+    scope: Literal[
+        "company",
+        "client",
+        "project",
+        "decision",
+        "mistake",
+        "agent",
+        "user_preference",
+    ]
     key: str = Field(..., min_length=1)
     value: str = Field(..., min_length=1)
     tags: list[str] = Field(default_factory=list)
@@ -76,6 +99,22 @@ class MemoryRecord(BaseModel):
     task_id: str | None = None
     created_at: datetime
     updated_at: datetime
+
+
+class KnowledgeRecord(BaseModel):
+    path: str
+    category: str
+    content: str
+
+
+class ToolDefinition(BaseModel):
+    name: str
+    description: str
+    input_schema: dict[str, Any]
+    output_schema: dict[str, Any]
+    risk_level: RiskLevel
+    approval_requirement: RiskLevel
+    mode: Literal["plan", "read", "write"]
 
 
 class LogRecord(BaseModel):

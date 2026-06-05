@@ -11,12 +11,16 @@ class Settings(BaseSettings):
     APP_ENV: str = "development"
     API_HOST: str = "0.0.0.0"
     API_PORT: int = 8000
+    DATABASE_BACKEND: str = "sqlite"
     DATABASE_PATH: str = str(ROOT_DIR / "data" / "jarvis.sqlite3")
+    POSTGRES_DSN: str | None = None
     LOG_FILE_PATH: str = str(ROOT_DIR / "data" / "logs" / "jarvis.jsonl")
     TASKS_DIR: str = str(ROOT_DIR / "data" / "tasks")
     APPROVALS_DIR: str = str(ROOT_DIR / "data" / "approvals")
     MEMORY_DIR: str = str(ROOT_DIR / "data" / "memory")
     KNOWLEDGE_DIR: str = str(ROOT_DIR / "data" / "knowledge")
+    PRODUCTION_LOCK_MODE: bool = False
+    LOCAL_AUTH_TOKEN: str | None = None
     DEFAULT_LOG_LIMIT: int = 100
 
     model_config = SettingsConfigDict(

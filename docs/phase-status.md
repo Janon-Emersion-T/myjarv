@@ -4,30 +4,28 @@ Last updated: 2026-06-06
 
 ## Current Summary
 
-Jarvis is already partially bootstrapped in this repository, but the implementation is still at an early foundation stage.
+Jarvis now has a full foundational operating-platform skeleton across Python, Rust, frontend, documentation, registry, knowledge, tools, memory, approvals, and workflow layers.
 
 Current useful assets preserved:
 
 * `packages/agents/prompts/*.md` contains the existing named agent profiles.
-* `packages/agents/registry.json` contains a working agent registry.
-* `scripts/validate_agents.py` validates prompt-file coverage and duplicate names.
-* `apps/brain/app` contains a minimal FastAPI brain with health, agent listing, prompt loading, and lightweight routing.
+* `packages/agents/registry.json` now contains enriched orchestration metadata.
+* `scripts/validate_agents.py` validates registry structure and prompt-file coverage.
+* `apps/brain/app` now contains the SQLite-first orchestration brain with tasks, approvals, memory, knowledge, and tools endpoints.
+* `apps/rust-core` contains the initial Rust workspace.
+* `apps/desktop` contains the Tauri + React + Tailwind desktop shell.
 
 Current gaps versus the full roadmap:
 
-* The Python brain is not yet organized around tasks, approvals, memory, logging, or durable workflows.
-* The registry schema is too thin for production orchestration.
-* Agent profiles are inconsistent in structure and authority boundaries.
-* The system is still PostgreSQL-first in some places, while the target foundation must be SQLite-first.
-* There is no Tauri desktop app, no Rust workspace, no approval ledger, no traceable task store, and no formal tool framework.
-* Documentation is sparse, and several doc files are empty or incomplete.
+* The current frontend is functional but still early in interaction depth.
+* PostgreSQL is preserved as a future-compatible path through configuration, but SQLite remains the only active persistence backend right now.
+* Voice, vision, and browser systems are architecture interfaces and planners, not full runtime engines yet.
 
 Audit notes:
 
 * The roadmap file currently present in the workspace is `ROADMAP.md`.
-* `README.md` and `docs/architecture.md` are effectively empty and will need to be rebuilt in later phases.
 * `apps/brain/venv` and Python cache artifacts exist in the repo tree and should not be treated as source architecture.
-* The current `apps/brain` app already includes useful code that should be refactored forward instead of discarded.
+* PostgreSQL-related settings are retained as optional configuration for later integration.
 
 ## Phase Board
 
@@ -37,22 +35,22 @@ Audit notes:
 | 2 | Agent Profile Standardization | complete | All 102 agent profiles now include the canonical sections, with legacy prompt bodies preserved under `## Legacy Profile`. |
 | 3 | Agent Registry | complete | Registry expanded with profile path, priority, tools, risk level, approval level, and authority scope; validation and runtime loading updated. |
 | 4 | Python Brain | complete | SQLite-backed FastAPI brain now exposes health, agents, tasks, approvals, memory, and logs through the required endpoints. |
-| 5 | Task Routing | pending | Current keyword routing is too shallow for multi-agent orchestration. |
-| 6 | Approval Gate | pending | No durable approval engine or approval records yet. |
-| 7 | Memory System | pending | No SQLite-backed memory layer yet. |
-| 8 | Knowledge Base | pending | No structured knowledge retrieval system yet. |
-| 9 | Tool System | pending | No formal modular tool interface yet. |
-| 10 | Rust Core | pending | Rust workspace does not exist yet. |
-| 11 | Frontend Desktop App | pending | Tauri/React/Tailwind app does not exist yet. |
-| 12 | Voice Architecture | pending | Voice interfaces and adapters are not yet defined. |
-| 13 | Vision Architecture | pending | Vision interfaces and adapters are not yet defined. |
-| 14 | Browser Automation | pending | No safe browser automation planning layer yet. |
-| 15 | Personality Engine | pending | Jarvis personality prompt and runtime personality layer are missing. |
-| 16 | Business Workflows | pending | Workflow templates are not implemented yet. |
-| 17 | Developer Workflows | pending | Repo/dev workflows are not implemented yet. |
-| 18 | Security | pending | Security hardening, secrets policy, and production lock mode are incomplete. |
-| 19 | Documentation | pending | Most required docs still need to be authored. |
-| 20 | Final Verification | pending | Final verification depends on Phases 2-19. |
+| 5 | Task Routing | complete | Intent category, supporting agents, priority, risk, and Jarvis fallback routing are implemented in the Python brain. |
+| 6 | Approval Gate | complete | Dangerous actions are classified into approval levels and persisted with approval/rejection records. |
+| 7 | Memory System | complete | SQLite-backed scoped memory is implemented for company, client, project, decision, mistake, agent, and user preference memory. |
+| 8 | Knowledge Base | complete | Structured knowledge folders and retrieval endpoints are available. |
+| 9 | Tool System | complete | Tool definitions now include schemas, modes, risk level, and approval requirements. |
+| 10 | Rust Core | complete | Rust workspace and initial CLI-first crates exist and pass `cargo check`. |
+| 11 | Frontend Desktop App | complete | Tauri + React + Tailwind desktop shell builds and fetches live API data. |
+| 12 | Voice Architecture | complete | Voice provider interfaces and configuration scaffolding are defined. |
+| 13 | Vision Architecture | complete | Vision provider interfaces and configuration scaffolding are defined. |
+| 14 | Browser Automation | complete | Safe browser automation planning is available with approval-first behavior. |
+| 15 | Personality Engine | complete | Jarvis personality prompt and runtime application helper are present. |
+| 16 | Business Workflows | complete | Business workflow templates are implemented and exposed by the brain. |
+| 17 | Developer Workflows | complete | Developer workflow templates are implemented and exposed by the brain. |
+| 18 | Security | complete | Local auth placeholder, production lock mode, audit logs, and approval-aware risk handling are implemented. |
+| 19 | Documentation | complete | Required core docs, system docs, and module readmes are present. |
+| 20 | Final Verification | complete | Python compilation, API endpoint checks, Rust workspace build, and desktop frontend build completed successfully. |
 
 ## Implementation Plan
 
@@ -92,14 +90,13 @@ Phases 15-20
 
 ## Immediate Next Steps
 
-1. Expand the registry to include authority, risk, tool, and priority metadata.
-2. Validate the registry against a stricter schema.
-3. Rebuild the Python brain around tasks, approvals, memory, and logs.
-4. Keep the prompt standardization script available for future agent additions and updates.
+1. Expand frontend interaction depth and page routing.
+2. Add real execution adapters for tools, browser automation, voice, and vision providers.
+3. Introduce PostgreSQL and vector memory adapters behind the current interfaces when needed.
+4. Add stronger auth, RBAC, and deployment hardening before production exposure.
 
 ## Known Constraints
 
-* Some current Python runtime checks depend on local packages inside `apps/brain/venv`.
-* The current model routing references config paths that are not yet present in the tracked source tree.
 * The roadmap file name in the workspace is uppercase (`ROADMAP.md`) rather than lowercase (`roadmap.md`).
-* Git push should happen only after a tested phase checkpoint, not before validation.
+* The desktop app was verified through `npm install` and `npm run build`, but not launched interactively inside this session.
+* The Rust workspace was verified with `cargo check`, not with a full packaged release build.

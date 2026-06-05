@@ -1,14 +1,21 @@
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.agent_loader import get_agent_detail, get_all_agents
+from app.browser.planner import browser_planner
+from app.config import settings
+from app.knowledge.loader import knowledge_loader
 from app.logger import logger
 from app.memory import memory_store
 from app.orchestrator import orchestrate_task
+from app.security import enforce_local_auth
 from app.schemas import ApprovalDecisionRequest, MemoryCreateRequest, TaskCreateRequest
 from app.task_manager import task_manager
+from app.tools.registry import tool_registry
+from app.workflows.business import BUSINESS_WORKFLOWS
+from app.workflows.developer import DEVELOPER_WORKFLOWS
 
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(enforce_local_auth)])
 
 
 @router.get("/health")
@@ -89,3 +96,41 @@ def create_memory(request: MemoryCreateRequest) -> dict:
 @router.get("/logs")
 def get_logs(limit: int = Query(default=100, ge=1, le=500)) -> dict:
     return {"logs": logger.read_recent(limit=limit)}
+
+
+@router.get("/knowledge")
+def get_knowledge(category: str | None = Query(default=None), query: str | None = Query(default=None)) -> dict:
+    if query:
+        return {"knowledge": knowledge_loader.retrieve_relevant(query)}
+    return {"knowledge": knowledge_loader.list_entries(category=category)}
+
+
+@router.get("/tools")
+def get_tools() -> dict:
+    return {"tools": tool_registry.list_tools()}
+
+
+@router.get("/settings")
+def get_settings() -> dict:
+    return {
+        "app_name": settings.APP_NAME,
+        "app_env": settings.APP_ENV,
+        "database_backend": settings.DATABASE_BACKEND,
+        "postgres_configured": bool(settings.POSTGRES_DSN),
+        "production_lock_mode": settings.PRODUCTION_LOCK_MODE,
+    }
+
+
+@router.get("/browser/plan")
+def plan_browser_task(goal: str = Query(..., min_length=1)) -> dict:
+    return browser_planner.create_plan(goal)
+
+
+@router.get("/workflows/business")
+def get_business_workflows() -> dict:
+    return {"workflows": BUSINESS_WORKFLOWS}
+
+
+@router.get("/workflows/developer")
+def get_developer_workflows() -> dict:
+    return {"workflows": DEVELOPER_WORKFLOWS}
