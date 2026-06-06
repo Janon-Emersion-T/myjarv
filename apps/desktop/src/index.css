@@ -7,10 +7,54 @@
   background:
     radial-gradient(circle at top left, rgba(195, 79, 45, 0.16), transparent 28%),
     linear-gradient(135deg, #f5efe1 0%, #f6f0e6 45%, #e3ebdf 100%);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color: #e8edf2;
+  background:
+    radial-gradient(circle at top left, rgba(195, 79, 45, 0.18), transparent 24%),
+    linear-gradient(135deg, #0f1720 0%, #15202a 50%, #1a2b22 100%);
+  color-scheme: dark;
 }
 
 body {
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   min-height: 100vh;
+  background: inherit;
 }
 
+#root {
+  min-height: 100vh;
+}
+
+:root[data-theme="dark"] .bg-white\/80,
+:root[data-theme="dark"] .bg-white\/70,
+:root[data-theme="dark"] .bg-white\/5,
+:root[data-theme="dark"] .bg-white {
+  background-color: rgba(15, 23, 32, 0.82) !important;
+}
+
+:root[data-theme="dark"] .bg-sand\/55,
+:root[data-theme="dark"] .bg-sand\/60 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+:root[data-theme="dark"] .text-slate-900,
+:root[data-theme="dark"] .text-slate-700,
+:root[data-theme="dark"] .text-slate-600,
+:root[data-theme="dark"] .text-slate-500 {
+  color: #e7edf4 !important;
+}
+
+:root[data-theme="dark"] .border-black\/10,
+:root[data-theme="dark"] .border-black\/5 {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

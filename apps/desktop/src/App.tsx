@@ -1,86 +1,180 @@
-import { useEffect, useState } from "react";
-import { getJson } from "./lib/api";
+import { useEffect, useMemo, useState } from "react";
 
-type Agent = { name: string; department: string; role: string };
-type Task = { id: string; message: string; status: string; selected_agent: { name: string } };
+import { CommandPalette } from "./components/CommandPalette";
+import { Sidebar } from "./components/Sidebar";
+import { Topbar } from "./components/Topbar";
+import { useDesktopState } from "./hooks/useDesktopState";
+import { useHashRoute } from "./hooks/useHashRoute";
+import { t, type Locale } from "./lib/i18n";
+import type { NavKey } from "./lib/types";
+import { AgentsPage } from "./pages/AgentsPage";
+import { ApprovalsPage } from "./pages/ApprovalsPage";
+import { CollaborationPage } from "./pages/CollaborationPage";
+import { DashboardPage } from "./pages/DashboardPage";
+import { KnowledgePage } from "./pages/KnowledgePage";
+import { LogsPage } from "./pages/LogsPage";
+import { MemoryPage } from "./pages/MemoryPage";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { ReportsPage } from "./pages/ReportsPage";
+import { SettingsPage } from "./pages/SettingsPage";
+import { TasksPage } from "./pages/TasksPage";
 
-const sections = ["Dashboard", "Agents", "Tasks", "Approvals", "Memory", "Knowledge", "Logs", "Settings"];
+type ThemeMode = "light" | "dark";
+type Operator = {
+  label: string;
+  routes: NavKey[];
+};
+
+const operators: Operator[] = [
+  { label: "CEO", routes: ["dashboard", "approvals", "projects", "reports", "collaboration", "settings"] },
+  { label: "Operations", routes: ["dashboard", "tasks", "approvals", "projects", "logs", "collaboration", "settings"] },
+  { label: "Developer", routes: ["dashboard", "agents", "tasks", "knowledge", "logs", "collaboration", "settings"] },
+  { label: "Finance", routes: ["dashboard", "approvals", "projects", "reports", "memory", "settings"] },
+];
 
 export default function App() {
-  const [agents, setAgents] = useState<Agent[]>([]);
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [health, setHealth] = useState("loading");
+  const [route, navigate] = useHashRoute();
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const [theme, setTheme] = useState<ThemeMode>(() => (window.localStorage.getItem("jarvis-theme") as ThemeMode) || "light");
+  const [locale, setLocale] = useState<Locale>(() => (window.localStorage.getItem("jarvis-locale") as Locale) || "en");
+  const [operatorIndex, setOperatorIndex] = useState<number>(() => Number(window.localStorage.getItem("jarvis-operator-index") ?? "0"));
+  const [query, setQuery] = useState("");
+  const { state, runSearch, approveTask, rejectTask, executeTask, planCollaboration, requestDesktopNotifications } = useDesktopState();
+  const copy = t(locale);
+  const operator = operators[operatorIndex % operators.length];
+
+  const sections = useMemo(
+    () => {
+      const allRoutes = [
+        "dashboard",
+        "agents",
+        "tasks",
+        "approvals",
+        "projects",
+        "memory",
+        "knowledge",
+        "logs",
+        "reports",
+        "collaboration",
+        "settings",
+      ] as NavKey[];
+      return allRoutes
+        .filter((key) => operator.routes.includes(key))
+        .map((key) => ({ key, label: copy.pages[key] }));
+    },
+    [copy, operator],
+  );
 
   useEffect(() => {
-    getJson<{ status: string }>("/health").then((data) => setHealth(data.status)).catch(() => setHealth("offline"));
-    getJson<{ agents: Agent[] }>("/agents").then((data) => setAgents(data.agents.slice(0, 8))).catch(() => setAgents([]));
-    getJson<{ tasks: Task[] }>("/tasks").then((data) => setTasks(data.tasks.slice(0, 8))).catch(() => setTasks([]));
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("jarvis-theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    window.localStorage.setItem("jarvis-locale", locale);
+  }, [locale]);
+
+  useEffect(() => {
+    window.localStorage.setItem("jarvis-operator-index", String(operatorIndex));
+    if (!operator.routes.includes(route)) {
+      navigate(operator.routes[0]);
+    }
+  }, [operatorIndex, operator, route, navigate]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setPaletteOpen(true);
+      }
+      if (event.key === "Escape") {
+        setPaletteOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  useEffect(() => {
+    const timeout = window.setTimeout(() => void runSearch(query), 220);
+    return () => window.clearTimeout(timeout);
+  }, [query, runSearch]);
+
   return (
-    <div className="min-h-screen text-ink">
-      <div className="mx-auto flex max-w-7xl gap-6 px-6 py-8">
-        <aside className="w-72 rounded-3xl border border-black/10 bg-white/70 p-6 shadow-sm backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.3em] text-ember">Jarvis Desktop</p>
-          <h1 className="mt-3 text-3xl font-semibold">LKP Command Layer</h1>
-          <p className="mt-2 text-sm text-black/65">Tauri + React frontend connected to the local-first Python brain.</p>
-          <nav className="mt-8 space-y-2">
-            {sections.map((section) => (
-              <div key={section} className="rounded-2xl border border-black/5 bg-sand/60 px-4 py-3 text-sm font-medium">
-                {section}
-              </div>
-            ))}
-          </nav>
-        </aside>
-        <main className="flex-1 space-y-6">
-          <section className="grid gap-4 md:grid-cols-3">
-            <Card title="Brain Health" value={health} accent="bg-moss" />
-            <Card title="Visible Agents" value={String(agents.length)} accent="bg-ember" />
-            <Card title="Recent Tasks" value={String(tasks.length)} accent="bg-ink" />
-          </section>
-          <section className="grid gap-6 lg:grid-cols-2">
-            <Panel title="Agents">
-              {agents.map((agent) => (
-                <Row key={agent.name} title={agent.name} subtitle={`${agent.department} • ${agent.role}`} />
-              ))}
-            </Panel>
-            <Panel title="Tasks">
-              {tasks.map((task) => (
-                <Row key={task.id} title={task.selected_agent.name} subtitle={`${task.status} • ${task.message}`} />
-              ))}
-            </Panel>
-          </section>
+    <div className="min-h-screen text-slate-900">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:rounded-xl focus:bg-white focus:px-4 focus:py-3">
+        Skip to content
+      </a>
+      <div className="mx-auto flex max-w-[1600px] flex-col gap-6 px-4 py-6 lg:flex-row lg:px-6">
+        <Sidebar sections={sections} current={route} onNavigate={navigate} title={copy.appTitle} subtitle={copy.appSubtitle} />
+        <main id="main-content" className="flex-1 space-y-6">
+          <Topbar
+            query={query}
+            onQueryChange={setQuery}
+            onOpenPalette={() => setPaletteOpen(true)}
+            onToggleTheme={() => setTheme((current) => (current === "light" ? "dark" : "light"))}
+            onToggleLocale={() => setLocale((current) => (current === "en" ? "si" : "en"))}
+            onSwitchOperator={() => setOperatorIndex((current) => (current + 1) % operators.length)}
+            onRequestNotifications={() => void requestDesktopNotifications()}
+            websocketConnected={state.websocketConnected}
+            offline={state.offline}
+            operator={operator.label}
+          />
+          {renderPage(route, state, {
+            approveTask: (taskId: string) => approveTask(taskId, "Desktop", "Approved from Jarvis desktop."),
+            rejectTask: (taskId: string) => rejectTask(taskId, "Desktop", "Rejected from Jarvis desktop."),
+            executeTask,
+            planCollaboration,
+          })}
         </main>
       </div>
+      <CommandPalette
+        open={paletteOpen}
+        onClose={() => setPaletteOpen(false)}
+        query={query}
+        onQueryChange={setQuery}
+        results={state.searchResults}
+        pages={sections}
+        onNavigate={navigate}
+      />
     </div>
   );
 }
 
-function Card({ title, value, accent }: { title: string; value: string; accent: string }) {
-  return (
-    <div className="rounded-3xl border border-black/10 bg-white/75 p-5 shadow-sm">
-      <div className={`h-2 w-16 rounded-full ${accent}`} />
-      <p className="mt-4 text-sm uppercase tracking-[0.2em] text-black/45">{title}</p>
-      <p className="mt-2 text-3xl font-semibold">{value}</p>
-    </div>
-  );
+function renderPage(
+  route: NavKey,
+  state: ReturnType<typeof useDesktopState>["state"],
+  actions: {
+    approveTask?: (taskId: string) => Promise<void>;
+    rejectTask?: (taskId: string) => Promise<void>;
+    executeTask?: (taskId: string) => Promise<void>;
+    planCollaboration?: (taskId: string) => Promise<void>;
+  },
+) {
+  switch (route) {
+    case "dashboard":
+      return <DashboardPage state={state} />;
+    case "agents":
+      return <AgentsPage agents={state.agents} />;
+    case "tasks":
+      return <TasksPage tasks={state.tasks} onExecute={actions.executeTask ?? (async () => undefined)} onPlanCollaboration={actions.planCollaboration ?? (async () => undefined)} />;
+    case "approvals":
+      return <ApprovalsPage approvals={state.approvals} onApprove={actions.approveTask ?? (async () => undefined)} onReject={actions.rejectTask ?? (async () => undefined)} />;
+    case "projects":
+      return <ProjectsPage pipeline={state.pipeline} />;
+    case "memory":
+      return <MemoryPage memory={state.memory} />;
+    case "knowledge":
+      return <KnowledgePage knowledge={state.knowledge} />;
+    case "logs":
+      return <LogsPage logs={state.logs} errors={state.errors} />;
+    case "reports":
+      return <ReportsPage reports={state.reports} />;
+    case "collaboration":
+      return <CollaborationPage sessions={state.collaborationSessions} />;
+    case "settings":
+      return <SettingsPage settings={state.settings} tools={state.tools} />;
+    default:
+      return <DashboardPage state={state} />;
+  }
 }
-
-function Panel({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-sm">
-      <h2 className="text-xl font-semibold">{title}</h2>
-      <div className="mt-4 space-y-3">{children}</div>
-    </div>
-  );
-}
-
-function Row({ title, subtitle }: { title: string; subtitle: string }) {
-  return (
-    <div className="rounded-2xl border border-black/10 bg-sand/60 px-4 py-3">
-      <p className="font-medium">{title}</p>
-      <p className="text-sm text-black/60">{subtitle}</p>
-    </div>
-  );
-}
-

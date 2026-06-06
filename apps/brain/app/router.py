@@ -6,6 +6,15 @@ from app.agent_loader import get_agent_detail, get_all_agents, get_department_gr
 from app.browser.planner import browser_planner
 from app.collaboration import collaboration_bus, collaboration_engine, collaboration_store
 from app.config import settings
+from app.dashboard import (
+    get_dashboard_activity,
+    get_dashboard_errors,
+    get_dashboard_kpis,
+    get_dashboard_pipeline,
+    get_dashboard_reports,
+    get_dashboard_summary,
+    search_dashboard,
+)
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.knowledge.loader import knowledge_loader
 from app.logger import logger
@@ -158,6 +167,41 @@ def get_logs(limit: int = Query(default=100, ge=1, le=500)) -> dict:
     return {"logs": logger.read_recent(limit=limit)}
 
 
+@router.get("/dashboard/summary")
+def dashboard_summary() -> dict:
+    return get_dashboard_summary()
+
+
+@router.get("/dashboard/errors")
+def dashboard_errors() -> dict:
+    return get_dashboard_errors()
+
+
+@router.get("/dashboard/activity")
+def dashboard_activity() -> dict:
+    return get_dashboard_activity()
+
+
+@router.get("/dashboard/reports")
+def dashboard_reports() -> dict:
+    return get_dashboard_reports()
+
+
+@router.get("/dashboard/kpis")
+def dashboard_kpis() -> dict:
+    return get_dashboard_kpis()
+
+
+@router.get("/dashboard/pipeline")
+def dashboard_pipeline() -> dict:
+    return get_dashboard_pipeline()
+
+
+@router.get("/dashboard/search")
+def dashboard_search(query: str = Query(..., min_length=1)) -> dict:
+    return search_dashboard(query)
+
+
 @router.post("/routing/simulate")
 def simulate_routing(request: RoutingSimulationRequest) -> dict:
     return routing_engine.route(
@@ -265,6 +309,27 @@ async def collaboration_stream(session_id: str, websocket: WebSocket) -> None:
             await websocket.send_json(message)
     except (WebSocketDisconnect, asyncio.TimeoutError):
         collaboration_bus.unsubscribe(session_id, queue)
+        await websocket.close()
+
+
+@router.websocket("/ws/dashboard")
+async def dashboard_stream(websocket: WebSocket) -> None:
+    await websocket.accept()
+    try:
+        while True:
+            await websocket.send_json(
+                {
+                    "type": "dashboard_snapshot",
+                    "payload": {
+                        "summary": get_dashboard_summary(),
+                        "activity": get_dashboard_activity(),
+                        "errors": get_dashboard_errors(),
+                        "kpis": get_dashboard_kpis(),
+                    },
+                }
+            )
+            await asyncio.sleep(10)
+    except (WebSocketDisconnect, RuntimeError):
         await websocket.close()
 
 

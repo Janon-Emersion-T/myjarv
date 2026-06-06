@@ -1,12 +1,37 @@
 # Jarvis Desktop
 
-This is the Tauri + React + Tailwind desktop shell for Jarvis.
+This is the Tauri + React + Tailwind desktop operations console for Jarvis.
 
-It currently connects to the Python brain API for:
+## Current Coverage
 
-* health
-* agent list
-* task list
+* routed desktop dashboard
+* agent directory
+* task management
+* approval management
+* project pipeline and timeline views
+* memory browser
+* knowledge browser
+* realtime logs and error views
+* reports and KPI views
+* collaboration session views
+* settings and tool management views
+* command palette and global search
+* websocket dashboard feed
+* offline cache hydration
+* local operator switching
+* dark/light theme and locale toggle
 
-The UI is intentionally lightweight but real, with live fetches rather than static mock buttons.
+## Backend Dependencies
 
+The desktop app reads live data from the Python brain API, including:
+
+* `/dashboard/*`
+* `/agents`
+* `/tasks`
+* `/memory`
+* `/knowledge`
+* `/logs`
+* `/routing/*`
+* `/collaboration/*`
+* `/tools`
+* `/settings`

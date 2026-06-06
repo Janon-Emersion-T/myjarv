@@ -14,6 +14,7 @@ Roadmap-specific completion update:
 * Roadmap Phase 5, `Build Agent Registry`, is now complete with enriched agent metadata, department grouping, detector-backed validation, registry CLI commands, runtime registry APIs, and tests in [apps/brain/tests/test_phase5_registry.py](/var/www/jarvis/apps/brain/tests/test_phase5_registry.py).
 * Roadmap Phase 6, `Build Task Routing`, is now complete with a configurable routing engine, confidence scoring, multi-agent plans, reassignment, trace persistence, replay, analytics, CLI verification, and stress-tested API coverage in [apps/brain/tests/test_phase6_routing.py](/var/www/jarvis/apps/brain/tests/test_phase6_routing.py).
 * Roadmap Phase 15, `Add Multi-Agent Collaboration`, is now complete with a collaboration engine, agent messaging protocol, event bus, contribution tracking, replayable sessions, websocket streaming, analytics, CLI verification, and API tests in [apps/brain/tests/test_phase15_collaboration.py](/var/www/jarvis/apps/brain/tests/test_phase15_collaboration.py).
+* Roadmap Phase 16, `Add UI Dashboard`, is now complete with a routed Tauri + React + Tailwind operations console, dashboard APIs, websocket snapshots, role-aware navigation, command palette search, approvals/tasks/projects/memory/knowledge/logs/reports/collaboration/settings pages, and verification in [apps/brain/tests/test_phase16_dashboard.py](/var/www/jarvis/apps/brain/tests/test_phase16_dashboard.py) plus the desktop build/test scripts in [apps/desktop](/var/www/jarvis/apps/desktop/README.md).
 
 Current useful assets preserved:
 
@@ -55,7 +56,7 @@ Audit notes:
 | 13 | Vision Architecture | complete | Vision provider interfaces and configuration scaffolding are defined. |
 | 14 | Browser Automation | complete | Safe browser automation planning is available with approval-first behavior. |
 | 15 | Multi-Agent Collaboration | complete | Tasks now generate collaboration sessions with messages, events, contributions, replay, analytics, websocket streaming, and CLI/API verification. |
-| 16 | Business Workflows | complete | Business workflow templates are implemented and exposed by the brain. |
+| 16 | UI Dashboard | complete | The desktop operations console now includes routed pages, realtime dashboard snapshots, approvals, tasks, reports, search, themes, offline cache, and frontend validation scripts. |
 | 17 | Developer Workflows | complete | Developer workflow templates are implemented and exposed by the brain. |
 | 18 | Security | complete | Local auth placeholder, production lock mode, audit logs, and approval-aware risk handling are implemented. |
 | 19 | Documentation | complete | Required core docs, system docs, and module readmes are present. |
