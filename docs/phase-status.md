@@ -16,6 +16,7 @@ Roadmap-specific completion update:
 * Roadmap Phase 15, `Add Multi-Agent Collaboration`, is now complete with a collaboration engine, agent messaging protocol, event bus, contribution tracking, replayable sessions, websocket streaming, analytics, CLI verification, and API tests in [apps/brain/tests/test_phase15_collaboration.py](/var/www/jarvis/apps/brain/tests/test_phase15_collaboration.py).
 * Roadmap Phase 16, `Add UI Dashboard`, is now complete with a routed Tauri + React + Tailwind operations console, dashboard APIs, websocket snapshots, role-aware navigation, command palette search, approvals/tasks/projects/memory/knowledge/logs/reports/collaboration/settings pages, and verification in [apps/brain/tests/test_phase16_dashboard.py](/var/www/jarvis/apps/brain/tests/test_phase16_dashboard.py) plus the desktop build/test scripts in [apps/desktop](/var/www/jarvis/apps/desktop/README.md).
 * Roadmap Phase 17, `Add Voice / Jarvis Feel`, is now complete with a session-based voice engine, command/conversation/desktop/emergency modes, speaker authorization, wake-word detection, replayable voice sessions, websocket streaming, desktop voice controls, CLI verification, and tests in [apps/brain/tests/test_phase17_voice.py](/var/www/jarvis/apps/brain/tests/test_phase17_voice.py).
+* Roadmap Phase 18, `Add Security`, is now complete at the core platform level with a centralized security engine, signed session auth, RBAC/ABAC enforcement, API keys, encrypted local secret vault, encrypted backups, restore testing, audit-log integrity validation, emergency lockdown/offline modes, replayable security events, security metrics, compliance reporting, CLI verification, and tests in [apps/brain/tests/test_phase18_security.py](/var/www/jarvis/apps/brain/tests/test_phase18_security.py).
 
 Current useful assets preserved:
 
@@ -59,7 +60,7 @@ Audit notes:
 | 15 | Multi-Agent Collaboration | complete | Tasks now generate collaboration sessions with messages, events, contributions, replay, analytics, websocket streaming, and CLI/API verification. |
 | 16 | UI Dashboard | complete | The desktop operations console now includes routed pages, realtime dashboard snapshots, approvals, tasks, reports, search, themes, offline cache, and frontend validation scripts. |
 | 17 | Voice / Jarvis Feel | complete | Voice sessions, command and conversation modes, emergency handling, desktop controls, websocket updates, and benchmark/test coverage are implemented. |
-| 18 | Security | complete | Local auth placeholder, production lock mode, audit logs, and approval-aware risk handling are implemented. |
+| 18 | Security | complete | Central security engine, signed auth, RBAC/ABAC, API keys, encrypted secrets/backups, recovery testing, audit integrity, lockdown/offline controls, metrics, and security tests are implemented. |
 | 19 | Documentation | complete | Required core docs, system docs, and module readmes are present. |
 | 20 | Final Verification | complete | Python compilation, API endpoint checks, Rust workspace build, and desktop frontend build completed successfully. |
 
@@ -104,7 +105,7 @@ Phases 15-20
 1. Expand frontend interaction depth and page routing.
 2. Add real execution adapters for tools, browser automation, voice, and vision providers.
 3. Introduce PostgreSQL and vector memory adapters behind the current interfaces when needed.
-4. Add stronger auth, RBAC, and deployment hardening before production exposure.
+4. Finish the remaining external-facing security integrations such as OAuth, secret-manager backends, deployment signing, and notification channels before production exposure.
 
 ## Known Constraints
 

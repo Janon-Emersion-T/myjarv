@@ -378,3 +378,58 @@ class VoiceSessionRecord(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
     created_at: datetime
     updated_at: datetime
+
+
+class AuthLoginRequest(BaseModel):
+    username: str = Field(..., min_length=1)
+    password: str = Field(..., min_length=1)
+    mfa_code: str | None = None
+
+
+class AuthLogoutRequest(BaseModel):
+    token: str = Field(..., min_length=1)
+
+
+class AuthMfaVerifyRequest(BaseModel):
+    username: str = Field(..., min_length=1)
+    code: str = Field(..., min_length=6, max_length=12)
+
+
+class ApiKeyCreateRequest(BaseModel):
+    owner: str = Field(..., min_length=1)
+    label: str = Field(..., min_length=1)
+    role_scope: str = Field(default="viewer", min_length=1)
+    attributes: dict[str, Any] = Field(default_factory=dict)
+
+
+class SecretCreateRequest(BaseModel):
+    name: str = Field(..., min_length=1)
+    value: str = Field(..., min_length=1)
+    provider: str = Field(default="local_vault", min_length=1)
+
+
+class BackupCreateRequest(BaseModel):
+    label: str = Field(default="manual", min_length=1)
+
+
+class BackupRestoreRequest(BaseModel):
+    backup_id: str = Field(..., min_length=1)
+
+
+class ScanRunRequest(BaseModel):
+    scan_type: str = Field(default="full", min_length=1)
+
+
+class IncidentCreateRequest(BaseModel):
+    title: str = Field(..., min_length=1)
+    details: str = Field(..., min_length=1)
+    severity: Literal["LOW", "MEDIUM", "HIGH", "CRITICAL"] = "HIGH"
+
+
+class LockdownRequest(BaseModel):
+    reason: str = Field(..., min_length=1)
+
+
+class OfflineModeRequest(BaseModel):
+    enabled: bool
+    reason: str = Field(..., min_length=1)

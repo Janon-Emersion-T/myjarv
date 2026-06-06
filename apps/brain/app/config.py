@@ -23,6 +23,15 @@ class Settings(BaseSettings):
     VOICE_ALLOWED_SPEAKERS: str = "janon,lkp-admin"
     VOICE_EMERGENCY_CONTACT: str = "Janon"
     VOICE_SESSION_TIMEOUT_SECONDS: int = 900
+    SECURITY_SECRET_KEY: str = "jarvis-dev-secret-key"
+    SECURITY_BOOTSTRAP_ADMIN: str = "janon"
+    SECURITY_BOOTSTRAP_PASSWORD: str = "change-me-now"
+    SECURITY_REQUIRE_AUTH: bool = False
+    SECURITY_RATE_LIMIT_WINDOW_SECONDS: int = 60
+    SECURITY_RATE_LIMIT_MAX_REQUESTS: int = 240
+    HASHICORP_VAULT_ADDR: str | None = None
+    CLOUD_SECRET_MANAGER_ENDPOINT: str | None = None
+    BACKUP_DIR: str = str(ROOT_DIR / "data" / "backups")
     PRODUCTION_LOCK_MODE: bool = False
     LOCAL_AUTH_TOKEN: str | None = None
     DEFAULT_LOG_LIMIT: int = 100
@@ -40,6 +49,7 @@ class Settings(BaseSettings):
         Path(self.APPROVALS_DIR).mkdir(parents=True, exist_ok=True)
         Path(self.MEMORY_DIR).mkdir(parents=True, exist_ok=True)
         Path(self.KNOWLEDGE_DIR).mkdir(parents=True, exist_ok=True)
+        Path(self.BACKUP_DIR).mkdir(parents=True, exist_ok=True)
 
 
 settings = Settings()

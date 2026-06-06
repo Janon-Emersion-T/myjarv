@@ -1,6 +1,6 @@
 import asyncio
 
-from fastapi import APIRouter, Depends, HTTPException, Query, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response, WebSocket, WebSocketDisconnect
 
 from app.agent_loader import get_agent_detail, get_all_agents, get_department_groups, get_registry_data
 from app.browser.planner import browser_planner
@@ -22,11 +22,23 @@ from app.memory import memory_store
 from app.orchestrator import orchestrate_task
 from app.routing import routing_engine, routing_store
 from app.routing.rules import routing_rules
+from app.secops import security_engine
 from app.security import enforce_local_auth
 from app.schemas import (
+    ApiKeyCreateRequest,
+    AuthLoginRequest,
+    AuthMfaVerifyRequest,
+    AuthLogoutRequest,
+    BackupCreateRequest,
+    BackupRestoreRequest,
     ApprovalDecisionRequest,
+    IncidentCreateRequest,
+    LockdownRequest,
     MemoryCreateRequest,
+    OfflineModeRequest,
     RoutingSimulationRequest,
+    ScanRunRequest,
+    SecretCreateRequest,
     TaskCreateRequest,
     TaskExecutionRequest,
     TaskReassignmentRequest,
@@ -43,12 +55,42 @@ from app.workflows.business import BUSINESS_WORKFLOWS
 from app.workflows.developer import DEVELOPER_WORKFLOWS
 
 
+public_router = APIRouter()
 router = APIRouter(dependencies=[Depends(enforce_local_auth)])
 
 
-@router.get("/health")
+@public_router.post("/auth/login")
+def auth_login(request: AuthLoginRequest) -> dict:
+    session = security_engine.login(request.username, request.password)
+    if request.mfa_code:
+        security_engine.verify_mfa(request.username, request.mfa_code)
+    return session
+
+
+@public_router.post("/auth/logout")
+def auth_logout(request: AuthLogoutRequest) -> dict:
+    return security_engine.logout(request.token)
+
+
+@public_router.post("/auth/mfa/verify")
+def auth_mfa_verify(request: AuthMfaVerifyRequest) -> dict:
+    return security_engine.verify_mfa(request.username, request.code)
+
+
+@public_router.get("/health")
 def health() -> dict:
-    return {"status": "ok", "service": "Jarvis Brain", "version": "0.4.0"}
+    return {
+        "status": "ok",
+        "service": "Jarvis Brain",
+        "version": "0.4.0",
+        "lockdown_active": security_engine.is_lockdown_active(),
+        "offline_mode": security_engine.is_offline_mode(),
+    }
+
+
+@router.get("/auth/me")
+def auth_me(request: Request) -> dict:
+    return {"subject": getattr(request.state, "security_subject", None)}
 
 
 @router.get("/agents")
@@ -171,6 +213,131 @@ def create_memory(request: MemoryCreateRequest) -> dict:
 @router.get("/logs")
 def get_logs(limit: int = Query(default=100, ge=1, le=500)) -> dict:
     return {"logs": logger.read_recent(limit=limit)}
+
+
+@router.get("/security/dashboard")
+def get_security_dashboard() -> dict:
+    return security_engine.dashboard()
+
+
+@router.get("/security/events")
+def get_security_events(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"events": security_engine.list_events(limit=limit)}
+
+
+@router.get("/security/events/{event_id}")
+def replay_security_event(event_id: str) -> dict:
+    try:
+        return security_engine.replay_event(event_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.get("/security/users")
+def list_security_users() -> dict:
+    return {"users": security_engine.list_users()}
+
+
+@router.get("/security/compliance")
+def get_security_compliance() -> dict:
+    return security_engine.compliance_report()
+
+
+@router.get("/security/api-keys")
+def list_security_api_keys() -> dict:
+    return {"api_keys": security_engine.list_api_keys()}
+
+
+@router.post("/security/api-keys")
+def create_security_api_key(request: ApiKeyCreateRequest) -> dict:
+    return security_engine.create_api_key(request.owner, request.label, request.role_scope, request.attributes)
+
+
+@router.get("/security/secrets")
+def list_security_secrets() -> dict:
+    return {"secrets": security_engine.list_secrets()}
+
+
+@router.post("/security/secrets")
+def create_security_secret(request: SecretCreateRequest) -> dict:
+    return security_engine.put_secret(request.name, request.value, request.provider)
+
+
+@router.get("/security/agent-permissions/{agent_name}")
+def get_agent_permissions(agent_name: str, requested_action: str | None = Query(default=None)) -> dict:
+    return security_engine.check_agent_permissions(agent_name, requested_action)
+
+
+@router.get("/security/backups")
+def list_security_backups() -> dict:
+    return {"backups": security_engine.list_backups()}
+
+
+@router.post("/security/backups")
+def create_security_backup(request: BackupCreateRequest) -> dict:
+    return security_engine.create_backup(request.label)
+
+
+@router.post("/security/backups/restore")
+def restore_security_backup(request: BackupRestoreRequest) -> dict:
+    return security_engine.restore_backup(request.backup_id)
+
+
+@router.get("/security/scans")
+def list_security_scans() -> dict:
+    return {"scans": security_engine.list_scans()}
+
+
+@router.post("/security/scans")
+def run_security_scan(request: ScanRunRequest) -> dict:
+    return security_engine.run_scan(request.scan_type)
+
+
+@router.get("/security/incidents")
+def list_security_incidents() -> dict:
+    return {"incidents": security_engine.list_incidents()}
+
+
+@router.post("/security/incidents")
+def create_security_incident(request: IncidentCreateRequest) -> dict:
+    return security_engine.create_incident(request.title, request.details, request.severity)
+
+
+@router.post("/security/lockdown")
+def activate_security_lockdown(request: LockdownRequest) -> dict:
+    return security_engine.lockdown(request.reason)
+
+
+@router.post("/security/unlock")
+def release_security_lockdown(request: LockdownRequest) -> dict:
+    return security_engine.unlock(request.reason)
+
+
+@router.post("/security/offline-mode")
+def set_security_offline_mode(request: OfflineModeRequest) -> dict:
+    return security_engine.set_offline_mode(request.enabled, request.reason)
+
+
+@router.get("/security/metrics", response_model=None)
+def get_security_metrics(format: str = Query(default="json")):
+    if format == "prometheus":
+        return Response(content=security_engine.prometheus_metrics(), media_type="text/plain; version=0.0.4")
+    return security_engine.metrics()
+
+
+@router.get("/security/audit-integrity")
+def get_security_audit_integrity() -> dict:
+    return security_engine.verify_audit_log_integrity()
+
+
+@router.get("/security/vault/providers")
+def get_security_vault_providers() -> dict:
+    return {"providers": security_engine.list_vault_providers()}
+
+
+@router.post("/security/backups/{backup_id}/test-restore")
+def test_security_backup_restore(backup_id: str) -> dict:
+    return security_engine.test_backup_restore(backup_id)
 
 
 @router.get("/voice/config")

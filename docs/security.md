@@ -2,19 +2,37 @@
 
 ## Current Security Foundations
 
-* approval classification with explicit levels
-* persistent approval history
-* persistent audit-style JSONL logs
-* local auth placeholder through `X-Jarvis-Token`
-* production lock mode flag
-* registry-level authority and risk metadata
+* multi-user authentication with signed bearer sessions
+* optional local token fallback through `X-Jarvis-Token`
+* role-based and attribute-aware authorization checks
+* API key management with scoped roles
+* encrypted local secret vault
+* encrypted backup and recovery workflows
+* audit-style JSONL logs plus replayable security event history
+* rate limiting and request inspection for suspicious input
+* emergency lockdown mode and secure offline mode
+* security scans, incidents, compliance reporting, and metrics
+* agent-level permission inspection against risk and approval metadata
 
-## Current Gaps
+## Main Endpoints
 
-* no full user account system yet
-* no secret vault yet
-* no encryption-at-rest yet
-* no full RBAC matrix yet
+* `POST /auth/login`
+* `POST /auth/logout`
+* `POST /auth/mfa/verify`
+* `GET /auth/me`
+* `GET /security/dashboard`
+* `GET /security/events`
+* `GET /security/audit-integrity`
+* `GET /security/metrics`
+* `GET /security/vault/providers`
+* `POST /security/api-keys`
+* `POST /security/secrets`
+* `POST /security/backups`
+* `POST /security/backups/{backup_id}/test-restore`
+* `POST /security/scans`
+* `POST /security/lockdown`
+* `POST /security/unlock`
+* `POST /security/offline-mode`
 
 ## Dangerous Actions
 
@@ -28,3 +46,7 @@ These actions are treated as high-risk or critical:
 * shell command execution
 * secret or credential use
 
+## Notes
+
+* SQLite remains the active local-first backend, but the security layer is structured so PostgreSQL-backed persistence can be added later.
+* HashiCorp Vault and cloud secret manager support are exposed as provider-ready configuration points, without making paid infrastructure mandatory.
