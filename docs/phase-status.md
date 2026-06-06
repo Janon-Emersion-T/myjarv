@@ -13,6 +13,7 @@ Roadmap-specific completion update:
 * Roadmap Phase 4, `Create Jarvis Brain`, is now complete with end-to-end task intake, approval-aware execution, result review, lifecycle history, wrapper modules at `apps/brain/*`, and API-level tests in [apps/brain/tests/test_phase4.py](/var/www/jarvis/apps/brain/tests/test_phase4.py).
 * Roadmap Phase 5, `Build Agent Registry`, is now complete with enriched agent metadata, department grouping, detector-backed validation, registry CLI commands, runtime registry APIs, and tests in [apps/brain/tests/test_phase5_registry.py](/var/www/jarvis/apps/brain/tests/test_phase5_registry.py).
 * Roadmap Phase 6, `Build Task Routing`, is now complete with a configurable routing engine, confidence scoring, multi-agent plans, reassignment, trace persistence, replay, analytics, CLI verification, and stress-tested API coverage in [apps/brain/tests/test_phase6_routing.py](/var/www/jarvis/apps/brain/tests/test_phase6_routing.py).
+* Roadmap Phase 15, `Add Multi-Agent Collaboration`, is now complete with a collaboration engine, agent messaging protocol, event bus, contribution tracking, replayable sessions, websocket streaming, analytics, CLI verification, and API tests in [apps/brain/tests/test_phase15_collaboration.py](/var/www/jarvis/apps/brain/tests/test_phase15_collaboration.py).
 
 Current useful assets preserved:
 
@@ -53,7 +54,7 @@ Audit notes:
 | 12 | Voice Architecture | complete | Voice provider interfaces and configuration scaffolding are defined. |
 | 13 | Vision Architecture | complete | Vision provider interfaces and configuration scaffolding are defined. |
 | 14 | Browser Automation | complete | Safe browser automation planning is available with approval-first behavior. |
-| 15 | Personality Engine | complete | Jarvis personality prompt and runtime application helper are present. |
+| 15 | Multi-Agent Collaboration | complete | Tasks now generate collaboration sessions with messages, events, contributions, replay, analytics, websocket streaming, and CLI/API verification. |
 | 16 | Business Workflows | complete | Business workflow templates are implemented and exposed by the brain. |
 | 17 | Developer Workflows | complete | Developer workflow templates are implemented and exposed by the brain. |
 | 18 | Security | complete | Local auth placeholder, production lock mode, audit logs, and approval-aware risk handling are implemented. |

@@ -8,6 +8,7 @@ from typing import Any
 from app.agent_executor import agent_executor
 from app.agents.registry import get_agent_by_name
 from app.audit_logger import audit_logger
+from app.collaboration import collaboration_store
 from app.config import settings
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.logger import logger
@@ -171,6 +172,9 @@ class TaskManager:
         task["history"] = self.list_history(task_id)
         if task.get("routing", {}).get("trace_id"):
             task["route_trace"] = routing_store.get_trace(task["routing"]["trace_id"])
+        collaboration_session = collaboration_store.get_latest_session_for_task(task_id)
+        if collaboration_session is not None:
+            task["collaboration"] = collaboration_session
         return task
 
     def _decide(self, task_id: str, decision: str, reviewer: str, notes: str | None) -> dict[str, Any]:

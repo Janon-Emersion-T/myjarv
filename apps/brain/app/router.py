@@ -1,7 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+import asyncio
+
+from fastapi import APIRouter, Depends, HTTPException, Query, WebSocket, WebSocketDisconnect
 
 from app.agent_loader import get_agent_detail, get_all_agents, get_department_groups, get_registry_data
 from app.browser.planner import browser_planner
+from app.collaboration import collaboration_bus, collaboration_engine, collaboration_store
 from app.config import settings
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.knowledge.loader import knowledge_loader
@@ -125,6 +128,14 @@ def get_task_route_trace(task_id: str) -> dict:
     return trace
 
 
+@router.get("/tasks/{task_id}/collaboration")
+def get_task_collaboration(task_id: str) -> dict:
+    session = collaboration_store.get_latest_session_for_task(task_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail=f"No collaboration session found for task {task_id}")
+    return session
+
+
 @router.get("/memory")
 def list_memory(scope: str | None = Query(default=None), limit: int = Query(default=100, ge=1, le=500)) -> dict:
     return {"memory": memory_store.list(scope=scope, limit=limit)}
@@ -201,6 +212,60 @@ def get_routing_map() -> dict:
         "nodes": sorted({node for edge in edges for node in edge["agents"]}),
         "edges": edges,
     }
+
+
+@router.get("/collaboration/sessions")
+def list_collaboration_sessions(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"sessions": collaboration_store.list_sessions(limit=limit)}
+
+
+@router.get("/collaboration/sessions/{session_id}")
+def get_collaboration_session(session_id: str) -> dict:
+    try:
+        return collaboration_store.get_session(session_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/collaboration/sessions/{session_id}/replay")
+def replay_collaboration_session(session_id: str) -> dict:
+    try:
+        return collaboration_engine.replay(session_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.get("/collaboration/analytics")
+def get_collaboration_analytics() -> dict:
+    return collaboration_store.analytics()
+
+
+@router.post("/tasks/{task_id}/collaboration/plan")
+def create_task_collaboration_plan(task_id: str) -> dict:
+    try:
+        task = task_manager.get_task(task_id)
+        return collaboration_engine.plan(task, mode="simulation")
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.websocket("/ws/collaboration/{session_id}")
+async def collaboration_stream(session_id: str, websocket: WebSocket) -> None:
+    await websocket.accept()
+    queue = collaboration_bus.subscribe(session_id)
+    try:
+        await websocket.send_json({"type": "connected", "session_id": session_id})
+        try:
+            session = collaboration_store.get_session(session_id)
+            await websocket.send_json({"type": "snapshot", "payload": session})
+        except Exception:
+            pass
+        while True:
+            message = await asyncio.wait_for(queue.get(), timeout=30)
+            await websocket.send_json(message)
+    except (WebSocketDisconnect, asyncio.TimeoutError):
+        collaboration_bus.unsubscribe(session_id, queue)
+        await websocket.close()
 
 
 @router.get("/knowledge")

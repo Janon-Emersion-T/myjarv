@@ -20,6 +20,12 @@ class ResultReviewer:
         if task["supporting_agents"] and not response.collaborators:
             findings.append("Task planned with supporting agents but execution omitted collaborators.")
             score -= 10
+        if task.get("supporting_agents") and response.contribution_count < len(task["supporting_agents"]) + 1:
+            findings.append("Collaboration session did not capture all expected agent contributions.")
+            score -= 15
+        if task.get("routing", {}).get("review_chain") and not response.review_chain_results:
+            findings.append("Review chain was planned but no collaborative review results were captured.")
+            score -= 10
 
         verdict = "approved"
         recommended_status = "completed"

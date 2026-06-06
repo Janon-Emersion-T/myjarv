@@ -134,9 +134,74 @@ class TaskHistoryEntry(BaseModel):
     payload: dict[str, Any] = Field(default_factory=dict)
 
 
+class CollaborationMessage(BaseModel):
+    id: str
+    session_id: str
+    task_id: str
+    sender: str
+    recipient: str
+    kind: Literal["instruction", "handoff", "review", "approval", "escalation", "memory_ref", "knowledge_ref"]
+    content: str
+    related_stage: str | None = None
+    created_at: datetime
+
+
+class CollaborationEvent(BaseModel):
+    id: str
+    session_id: str
+    task_id: str
+    event_type: str
+    actor: str
+    stage: str
+    message: str
+    payload: dict[str, Any] = Field(default_factory=dict)
+    created_at: datetime
+
+
+class AgentContribution(BaseModel):
+    id: str
+    session_id: str
+    task_id: str
+    agent: str
+    role: str
+    stage: str
+    status: Literal["planned", "in_progress", "completed", "blocked", "failed", "reviewed"]
+    summary: str
+    deliverables: list[str] = Field(default_factory=list)
+    quality_score: int = Field(..., ge=0, le=100)
+    references: list[str] = Field(default_factory=list)
+    fallback_used: str | None = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class CollaborationSession(BaseModel):
+    id: str
+    task_id: str
+    mode: Literal["simulation", "execution", "replay"]
+    strategy: Literal["single", "sequential", "parallel"]
+    coordinator: str
+    primary_agent: str
+    participants: list[str] = Field(default_factory=list)
+    reviewers: list[str] = Field(default_factory=list)
+    fallback_agents: list[str] = Field(default_factory=list)
+    approval_required: RiskLevel
+    status: Literal["planned", "running", "completed", "blocked", "failed"]
+    shared_workspace: dict[str, Any] = Field(default_factory=dict)
+    analytics: dict[str, Any] = Field(default_factory=dict)
+    created_at: datetime
+    updated_at: datetime
+
+
 class AgentExecutionResponse(BaseModel):
     primary_agent: str
     collaborators: list[str] = Field(default_factory=list)
+    collaboration_session_id: str | None = None
+    collaboration_strategy: Literal["single", "sequential", "parallel"] | None = None
+    contributions: list[AgentContribution] = Field(default_factory=list)
+    contribution_count: int = 0
+    collaboration_timeline: list[CollaborationEvent] = Field(default_factory=list)
+    review_chain_results: list[str] = Field(default_factory=list)
     summary: str
     deliverables: list[str] = Field(default_factory=list)
     next_steps: list[str] = Field(default_factory=list)
