@@ -33,6 +33,7 @@ function readRoute(): NavKey {
     "logs",
     "reports",
     "collaboration",
+    "voice",
     "settings",
   ];
   return routes.includes(hash as NavKey) ? (hash as NavKey) : DEFAULT_ROUTE;

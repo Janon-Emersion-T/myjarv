@@ -154,6 +154,61 @@ export type ToolRecord = {
   mode: string;
 };
 
+export type VoiceSession = {
+  id: string;
+  mode: string;
+  locale: string;
+  speaker_id: string;
+  speaker_authorized: boolean;
+  wake_word_detected: boolean;
+  wake_word: string;
+  transport: string;
+  stt_provider: string;
+  tts_provider: string;
+  noise_reduction: string;
+  input_device?: string | null;
+  output_device?: string | null;
+  status: string;
+  last_transcript?: string | null;
+  last_response_text?: string | null;
+  analytics: Record<string, unknown>;
+  interactions?: VoiceInteraction[];
+  events?: VoiceEvent[];
+};
+
+export type VoiceInteraction = {
+  id: string;
+  input_text: string;
+  intent: string;
+  confidence: number;
+  risk_level: string;
+  approval_level: string;
+  response_text: string;
+  interruption_handled: boolean;
+  created_at: string;
+};
+
+export type VoiceEvent = {
+  id: string;
+  event_type: string;
+  message: string;
+  payload: Record<string, unknown>;
+  created_at: string;
+};
+
+export type VoiceDeviceGroup = {
+  inputs: Array<Record<string, unknown>>;
+  outputs: Array<Record<string, unknown>>;
+};
+
+export type VoiceDashboard = {
+  config: Record<string, unknown>;
+  devices: VoiceDeviceGroup;
+  analytics: Record<string, unknown>;
+  sessions: VoiceSession[];
+  modes: string[];
+};
+
 export type NotificationItem = {
   id: string;
   title: string;
@@ -177,6 +232,8 @@ export type DesktopState = {
   reports: DashboardReport | null;
   pipeline: DashboardPipeline | null;
   errors: DashboardErrors | null;
+  voiceDashboard: VoiceDashboard | null;
+  voiceSessions: VoiceSession[];
   searchResults: SearchResults | null;
   notifications: NotificationItem[];
   offline: boolean;
@@ -195,4 +252,5 @@ export type NavKey =
   | "logs"
   | "reports"
   | "collaboration"
+  | "voice"
   | "settings";

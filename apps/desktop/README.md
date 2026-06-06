@@ -14,6 +14,7 @@ This is the Tauri + React + Tailwind desktop operations console for Jarvis.
 * realtime logs and error views
 * reports and KPI views
 * collaboration session views
+* voice session and STT/TTS control views
 * settings and tool management views
 * command palette and global search
 * websocket dashboard feed
@@ -33,5 +34,6 @@ The desktop app reads live data from the Python brain API, including:
 * `/logs`
 * `/routing/*`
 * `/collaboration/*`
+* `/voice/*`
 * `/tools`
 * `/settings`

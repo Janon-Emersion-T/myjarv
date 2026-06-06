@@ -18,6 +18,7 @@ import { ProjectsPage } from "./pages/ProjectsPage";
 import { ReportsPage } from "./pages/ReportsPage";
 import { SettingsPage } from "./pages/SettingsPage";
 import { TasksPage } from "./pages/TasksPage";
+import { VoicePage } from "./pages/VoicePage";
 
 type ThemeMode = "light" | "dark";
 type Operator = {
@@ -26,10 +27,10 @@ type Operator = {
 };
 
 const operators: Operator[] = [
-  { label: "CEO", routes: ["dashboard", "approvals", "projects", "reports", "collaboration", "settings"] },
-  { label: "Operations", routes: ["dashboard", "tasks", "approvals", "projects", "logs", "collaboration", "settings"] },
-  { label: "Developer", routes: ["dashboard", "agents", "tasks", "knowledge", "logs", "collaboration", "settings"] },
-  { label: "Finance", routes: ["dashboard", "approvals", "projects", "reports", "memory", "settings"] },
+  { label: "CEO", routes: ["dashboard", "approvals", "projects", "reports", "collaboration", "voice", "settings"] },
+  { label: "Operations", routes: ["dashboard", "tasks", "approvals", "projects", "logs", "collaboration", "voice", "settings"] },
+  { label: "Developer", routes: ["dashboard", "agents", "tasks", "knowledge", "logs", "collaboration", "voice", "settings"] },
+  { label: "Finance", routes: ["dashboard", "approvals", "projects", "reports", "memory", "voice", "settings"] },
 ];
 
 export default function App() {
@@ -39,7 +40,20 @@ export default function App() {
   const [locale, setLocale] = useState<Locale>(() => (window.localStorage.getItem("jarvis-locale") as Locale) || "en");
   const [operatorIndex, setOperatorIndex] = useState<number>(() => Number(window.localStorage.getItem("jarvis-operator-index") ?? "0"));
   const [query, setQuery] = useState("");
-  const { state, runSearch, approveTask, rejectTask, executeTask, planCollaboration, requestDesktopNotifications } = useDesktopState();
+  const {
+    state,
+    runSearch,
+    approveTask,
+    rejectTask,
+    executeTask,
+    planCollaboration,
+    requestDesktopNotifications,
+    createVoiceSession,
+    sendVoiceCommand,
+    interruptVoiceSession,
+    resumeVoiceSession,
+    replayVoiceSession,
+  } = useDesktopState();
   const copy = t(locale);
   const operator = operators[operatorIndex % operators.length];
 
@@ -56,6 +70,7 @@ export default function App() {
         "logs",
         "reports",
         "collaboration",
+        "voice",
         "settings",
       ] as NavKey[];
       return allRoutes
@@ -125,6 +140,11 @@ export default function App() {
             rejectTask: (taskId: string) => rejectTask(taskId, "Desktop", "Rejected from Jarvis desktop."),
             executeTask,
             planCollaboration,
+            createVoiceSession,
+            sendVoiceCommand,
+            interruptVoiceSession,
+            resumeVoiceSession,
+            replayVoiceSession,
           })}
         </main>
       </div>
@@ -149,6 +169,11 @@ function renderPage(
     rejectTask?: (taskId: string) => Promise<void>;
     executeTask?: (taskId: string) => Promise<void>;
     planCollaboration?: (taskId: string) => Promise<void>;
+    createVoiceSession?: (payload: { mode: string; text?: string; locale?: string; speaker_id?: string }) => Promise<any>;
+    sendVoiceCommand?: (sessionId: string, payload: { text: string; requested_action?: string; locale?: string; speaker_id?: string }) => Promise<unknown>;
+    interruptVoiceSession?: (sessionId: string) => Promise<void>;
+    resumeVoiceSession?: (sessionId: string) => Promise<void>;
+    replayVoiceSession?: (sessionId: string) => Promise<void>;
   },
 ) {
   switch (route) {
@@ -172,6 +197,18 @@ function renderPage(
       return <ReportsPage reports={state.reports} />;
     case "collaboration":
       return <CollaborationPage sessions={state.collaborationSessions} />;
+    case "voice":
+      return (
+        <VoicePage
+          dashboard={state.voiceDashboard}
+          sessions={state.voiceSessions}
+          onCreateSession={actions.createVoiceSession ?? (async () => ({ id: "" }))}
+          onSendCommand={actions.sendVoiceCommand ?? (async () => undefined)}
+          onInterrupt={actions.interruptVoiceSession ?? (async () => undefined)}
+          onResume={actions.resumeVoiceSession ?? (async () => undefined)}
+          onReplay={actions.replayVoiceSession ?? (async () => undefined)}
+        />
+      );
     case "settings":
       return <SettingsPage settings={state.settings} tools={state.tools} />;
     default:

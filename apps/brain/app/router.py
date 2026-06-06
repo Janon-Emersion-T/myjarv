@@ -30,9 +30,15 @@ from app.schemas import (
     TaskCreateRequest,
     TaskExecutionRequest,
     TaskReassignmentRequest,
+    VoiceCommandRequest,
+    VoiceSessionCreateRequest,
 )
 from app.task_manager import task_manager
 from app.tools.registry import tool_registry
+from app.voice.bus import voice_bus
+from app.voice.devices import voice_device_manager
+from app.voice.engine import voice_engine
+from app.voice.store import voice_store
 from app.workflows.business import BUSINESS_WORKFLOWS
 from app.workflows.developer import DEVELOPER_WORKFLOWS
 
@@ -165,6 +171,92 @@ def create_memory(request: MemoryCreateRequest) -> dict:
 @router.get("/logs")
 def get_logs(limit: int = Query(default=100, ge=1, le=500)) -> dict:
     return {"logs": logger.read_recent(limit=limit)}
+
+
+@router.get("/voice/config")
+def get_voice_config() -> dict:
+    return voice_engine.dashboard()["config"]
+
+
+@router.get("/voice/devices")
+def get_voice_devices() -> dict:
+    return voice_device_manager.list_devices()
+
+
+@router.get("/voice/analytics")
+def get_voice_analytics() -> dict:
+    return voice_store.analytics()
+
+
+@router.get("/voice/dashboard")
+def get_voice_dashboard() -> dict:
+    return voice_engine.dashboard()
+
+
+@router.get("/voice/sessions")
+def list_voice_sessions(limit: int = Query(default=50, ge=1, le=200)) -> dict:
+    return {"sessions": voice_store.list_sessions(limit=limit)}
+
+
+@router.get("/voice/sessions/{session_id}")
+def get_voice_session(session_id: str) -> dict:
+    try:
+        return voice_store.get_session(session_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/voice/sessions")
+def create_voice_session(request: VoiceSessionCreateRequest) -> dict:
+    return voice_engine.create_session(
+        mode=request.mode,
+        locale=request.locale,
+        speaker_id=request.speaker_id,
+        text=request.text,
+        device_input=request.device_input,
+        device_output=request.device_output,
+        metadata=request.metadata,
+    )
+
+
+@router.post("/voice/sessions/{session_id}/command")
+def handle_voice_command(session_id: str, request: VoiceCommandRequest) -> dict:
+    try:
+        return voice_engine.handle_command(
+            session_id,
+            text=request.text,
+            requested_action=request.requested_action,
+            locale=request.locale,
+            speaker_id=request.speaker_id,
+            confidence=request.confidence,
+            metadata=request.metadata,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.post("/voice/sessions/{session_id}/interrupt")
+def interrupt_voice_session(session_id: str) -> dict:
+    try:
+        return voice_engine.interrupt(session_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/voice/sessions/{session_id}/resume")
+def resume_voice_session(session_id: str) -> dict:
+    try:
+        return voice_engine.resume(session_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/voice/sessions/{session_id}/replay")
+def replay_voice_session(session_id: str) -> dict:
+    try:
+        return voice_engine.replay(session_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
 
 
 @router.get("/dashboard/summary")
@@ -330,6 +422,24 @@ async def dashboard_stream(websocket: WebSocket) -> None:
             )
             await asyncio.sleep(10)
     except (WebSocketDisconnect, RuntimeError):
+        await websocket.close()
+
+
+@router.websocket("/ws/voice/{session_id}")
+async def voice_stream(session_id: str, websocket: WebSocket) -> None:
+    await websocket.accept()
+    queue = voice_bus.subscribe(session_id)
+    try:
+        await websocket.send_json({"type": "connected", "session_id": session_id})
+        try:
+            await websocket.send_json({"type": "snapshot", "payload": voice_store.get_session(session_id)})
+        except Exception:
+            pass
+        while True:
+            message = await asyncio.wait_for(queue.get(), timeout=30)
+            await websocket.send_json(message)
+    except (WebSocketDisconnect, asyncio.TimeoutError):
+        voice_bus.unsubscribe(session_id, queue)
         await websocket.close()
 
 

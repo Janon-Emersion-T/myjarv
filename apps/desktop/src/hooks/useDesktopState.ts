@@ -17,6 +17,8 @@ import type {
   SettingsRecord,
   Task,
   ToolRecord,
+  VoiceDashboard,
+  VoiceSession,
 } from "../lib/types";
 
 const CACHE_KEY = "jarvis-desktop-cache-v1";
@@ -52,6 +54,8 @@ const initialState: State = {
   reports: null,
   pipeline: null,
   errors: null,
+  voiceDashboard: null,
+  voiceSessions: [],
   searchResults: null,
   notifications: [],
   offline: false,
@@ -136,6 +140,8 @@ export function useDesktopState() {
         reports,
         pipeline,
         errors,
+        voiceDashboard,
+        voiceSessionsPayload,
       ] = await Promise.all([
         getJson<DashboardSummary>("/dashboard/summary"),
         getJson<{ agents: Agent[] }>("/agents"),
@@ -151,6 +157,8 @@ export function useDesktopState() {
         getJson<DashboardReport>("/dashboard/reports"),
         getJson<DashboardPipeline>("/dashboard/pipeline"),
         getJson<DashboardErrors>("/dashboard/errors"),
+        getJson<VoiceDashboard>("/voice/dashboard"),
+        getJson<{ sessions: VoiceSession[] }>("/voice/sessions?limit=40"),
       ]);
       const tasks = tasksPayload.tasks;
       const nextState: Partial<State> = {
@@ -169,6 +177,8 @@ export function useDesktopState() {
         reports,
         pipeline,
         errors,
+        voiceDashboard,
+        voiceSessions: voiceSessionsPayload.sessions,
         lastSync: new Date().toISOString(),
         offline: false,
       };
@@ -253,6 +263,58 @@ export function useDesktopState() {
     }
   }, []);
 
+  const createVoiceSession = useCallback(
+    async (payload: { mode: string; text?: string; locale?: string; speaker_id?: string }) => {
+      const session = await postJson<VoiceSession>("/voice/sessions", {
+        mode: payload.mode,
+        text: payload.text ?? "",
+        locale: payload.locale ?? "en",
+        speaker_id: payload.speaker_id ?? "janon",
+      });
+      await syncAll();
+      return session;
+    },
+    [syncAll],
+  );
+
+  const sendVoiceCommand = useCallback(
+    async (sessionId: string, payload: { text: string; requested_action?: string; locale?: string; speaker_id?: string }) => {
+      const result = await postJson<{ session: VoiceSession }>("/voice/sessions/" + sessionId + "/command", {
+        text: payload.text,
+        requested_action: payload.requested_action,
+        locale: payload.locale ?? "en",
+        speaker_id: payload.speaker_id ?? "janon",
+      });
+      await syncAll();
+      return result;
+    },
+    [syncAll],
+  );
+
+  const interruptVoiceSession = useCallback(
+    async (sessionId: string) => {
+      await postJson("/voice/sessions/" + sessionId + "/interrupt");
+      await syncAll();
+    },
+    [syncAll],
+  );
+
+  const resumeVoiceSession = useCallback(
+    async (sessionId: string) => {
+      await postJson("/voice/sessions/" + sessionId + "/resume");
+      await syncAll();
+    },
+    [syncAll],
+  );
+
+  const replayVoiceSession = useCallback(
+    async (sessionId: string) => {
+      await postJson("/voice/sessions/" + sessionId + "/replay");
+      await syncAll();
+    },
+    [syncAll],
+  );
+
   return {
     state,
     runSearch,
@@ -262,6 +324,11 @@ export function useDesktopState() {
     executeTask,
     planCollaboration,
     requestDesktopNotifications,
+    createVoiceSession,
+    sendVoiceCommand,
+    interruptVoiceSession,
+    resumeVoiceSession,
+    replayVoiceSession,
   };
 }
 
@@ -290,6 +357,14 @@ function deriveNotifications(state: Partial<State>): NotificationItem[] {
       id: "ops-summary",
       title: "Operations sync ready",
       body: `${state.summary?.tasks_total ?? 0} tasks and ${state.summary?.agents_total ?? 0} agents loaded.`,
+      severity: "info",
+    });
+  }
+  if ((state.voiceSessions?.length ?? 0) > 0) {
+    notifications.push({
+      id: "voice-ready",
+      title: "Voice assistant active",
+      body: `${state.voiceSessions?.length ?? 0} voice session${state.voiceSessions?.length === 1 ? "" : "s"} available.`,
       severity: "info",
     });
   }

@@ -310,3 +310,71 @@ class LogRecord(BaseModel):
     event: str
     message: str
     payload: dict[str, Any] = Field(default_factory=dict)
+
+
+class VoiceSessionCreateRequest(BaseModel):
+    mode: Literal["command", "conversation", "desktop_assistant", "emergency"]
+    text: str | None = None
+    locale: str = "en"
+    speaker_id: str = "janon"
+    device_input: str | None = None
+    device_output: str | None = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class VoiceCommandRequest(BaseModel):
+    text: str = Field(..., min_length=1)
+    requested_action: str | None = None
+    locale: str = "en"
+    speaker_id: str = "janon"
+    confidence: float | None = Field(default=None, ge=0.0, le=1.0)
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class VoiceDeviceRecord(BaseModel):
+    id: str
+    kind: Literal["microphone", "speaker"]
+    label: str
+    is_default: bool = False
+    is_available: bool = True
+
+
+class VoiceInteractionRecord(BaseModel):
+    id: str
+    session_id: str
+    speaker_id: str
+    input_text: str
+    normalized_text: str
+    detected_mode: str
+    intent: str
+    confidence: float = Field(..., ge=0.0, le=1.0)
+    risk_level: RiskLevel
+    approval_level: RiskLevel
+    response_text: str
+    interruption_handled: bool = False
+    created_at: datetime
+
+
+class VoiceSessionRecord(BaseModel):
+    id: str
+    mode: Literal["command", "conversation", "desktop_assistant", "emergency"]
+    locale: str
+    speaker_id: str
+    speaker_authorized: bool
+    wake_word_detected: bool
+    wake_word: str
+    transport: str
+    stt_provider: str
+    tts_provider: str
+    noise_reduction: str
+    input_device: str | None = None
+    output_device: str | None = None
+    status: Literal["planned", "listening", "responding", "interrupted", "completed", "blocked"]
+    current_task_id: str | None = None
+    last_transcript: str | None = None
+    last_response_text: str | None = None
+    conversation_memory: list[str] = Field(default_factory=list)
+    analytics: dict[str, Any] = Field(default_factory=dict)
+    metadata: dict[str, Any] = Field(default_factory=dict)
+    created_at: datetime
+    updated_at: datetime
