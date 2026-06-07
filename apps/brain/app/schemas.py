@@ -260,20 +260,22 @@ class ApprovalRecord(BaseModel):
 
 
 class MemoryCreateRequest(BaseModel):
-    scope: Literal[
-        "company",
-        "client",
-        "project",
-        "decision",
-        "mistake",
-        "agent",
-        "user_preference",
-    ]
+    scope: str = Field(..., min_length=1)
     key: str = Field(..., min_length=1)
     value: str = Field(..., min_length=1)
     tags: list[str] = Field(default_factory=list)
     source: str | None = None
     task_id: str | None = None
+    summary: str | None = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+    confidence_score: float = Field(default=0.7, ge=0.0, le=1.0)
+    importance_score: float | None = Field(default=None, ge=0.0, le=1.0)
+    access_level: Literal["private", "team", "department", "executive"] = "team"
+    sensitivity: Literal["normal", "restricted", "secret"] = "normal"
+    department: str | None = None
+    expires_at: str | None = None
+    encrypted: bool | None = None
+    status: Literal["active", "archived", "draft"] = "active"
 
 
 class MemoryRecord(BaseModel):
@@ -284,8 +286,27 @@ class MemoryRecord(BaseModel):
     tags: list[str]
     source: str | None = None
     task_id: str | None = None
+    summary: str | None = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
+    confidence_score: float = Field(default=0.0, ge=0.0, le=1.0)
+    importance_score: float = Field(default=0.0, ge=0.0, le=1.0)
+    access_level: str = "team"
+    sensitivity: str = "normal"
+    department: str | None = None
+    status: str = "active"
+    expires_at: str | None = None
+    encrypted: bool = False
     created_at: datetime
     updated_at: datetime
+
+
+class MemoryImportRequest(BaseModel):
+    records: list[MemoryCreateRequest] = Field(default_factory=list)
+    merge: bool = True
+
+
+class MemorySnapshotRequest(BaseModel):
+    label: str = Field(default="manual", min_length=1)
 
 
 class KnowledgeRecord(BaseModel):

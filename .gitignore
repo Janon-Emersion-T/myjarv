@@ -140,6 +140,7 @@ storage/memory/
 storage/cache/
 storage/vector/
 storage/embeddings/
+data/memory/
 
 # =========================
 # AI generated screenshots

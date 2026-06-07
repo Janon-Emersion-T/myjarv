@@ -35,6 +35,7 @@ def get_dashboard_summary() -> dict[str, Any]:
     failed = _failed_tasks(tasks)
     status_counts = Counter(task["status"] for task in tasks)
     department_counts = Counter(agent.company_department for agent in get_all_agents())
+    memory_analytics = memory_store.analytics()
     return {
         "generated_at": datetime.now(UTC).isoformat(),
         "health": "ok",
@@ -44,11 +45,12 @@ def get_dashboard_summary() -> dict[str, Any]:
         "tasks_failed": len(failed),
         "logs_total": len(logs),
         "error_logs": len([item for item in logs if item["level"] == "ERROR"]),
-        "memory_total": sum(len(memory_store.list(scope=scope, limit=500)) for scope in ("company", "client", "project", "decision", "mistake", "agent", "user_preference")),
+        "memory_total": memory_analytics["active_records"],
         "status_counts": dict(status_counts),
         "department_counts": dict(department_counts),
         "routing": routing_store.analytics(),
         "collaboration": collaboration_store.analytics(),
+        "memory": memory_analytics,
     }
 
 
@@ -142,6 +144,6 @@ def search_dashboard(query: str) -> dict[str, Any]:
     query_text = query.lower()
     agents = [agent.model_dump() for agent in get_all_agents() if query_text in f"{agent.name} {agent.role} {agent.department}".lower()]
     tasks = [task for task in _tasks() if query_text in f"{task['message']} {task['status']} {task['selected_agent']['name']}".lower()]
-    memory = [item for item in memory_store.list(limit=200) if query_text in f"{item['key']} {item['value']}".lower()]
+    memory = memory_store.search(query=query, limit=20, semantic=True)
     logs = [item for item in _recent_logs(150) if query_text in f"{item['event']} {item['message']}".lower()]
     return {"agents": agents[:20], "tasks": tasks[:20], "memory": memory[:20], "logs": logs[:20]}

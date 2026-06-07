@@ -18,6 +18,7 @@ from app.dashboard import (
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.knowledge.loader import knowledge_loader
 from app.logger import logger
+from app.memory_adapters import memory_adapter_registry
 from app.memory import memory_store
 from app.orchestrator import orchestrate_task
 from app.routing import routing_engine, routing_store
@@ -35,6 +36,8 @@ from app.schemas import (
     IncidentCreateRequest,
     LockdownRequest,
     MemoryCreateRequest,
+    MemoryImportRequest,
+    MemorySnapshotRequest,
     OfflineModeRequest,
     RoutingSimulationRequest,
     ScanRunRequest,
@@ -194,8 +197,12 @@ def get_task_collaboration(task_id: str) -> dict:
 
 
 @router.get("/memory")
-def list_memory(scope: str | None = Query(default=None), limit: int = Query(default=100, ge=1, le=500)) -> dict:
-    return {"memory": memory_store.list(scope=scope, limit=limit)}
+def list_memory(
+    scope: str | None = Query(default=None),
+    limit: int = Query(default=100, ge=1, le=500),
+    include_expired: bool = Query(default=False),
+) -> dict:
+    return {"memory": memory_store.list(scope=scope, limit=limit, include_expired=include_expired)}
 
 
 @router.post("/memory")
@@ -207,7 +214,101 @@ def create_memory(request: MemoryCreateRequest) -> dict:
         tags=request.tags,
         source=request.source,
         task_id=request.task_id,
+        summary=request.summary,
+        metadata=request.metadata,
+        confidence_score=request.confidence_score,
+        importance_score=request.importance_score,
+        access_level=request.access_level,
+        sensitivity=request.sensitivity,
+        department=request.department,
+        expires_at=request.expires_at,
+        encrypted=request.encrypted,
+        status=request.status,
     )
+
+
+@router.get("/memory/search")
+def search_memory(query: str = Query(..., min_length=1), scope: str | None = Query(default=None), semantic: bool = Query(default=True)) -> dict:
+    return {"memory": memory_store.search(query=query, scope=scope, semantic=semantic)}
+
+
+@router.get("/memory/summary")
+def summarize_memory(scope: str | None = Query(default=None), limit: int = Query(default=100, ge=1, le=1000)) -> dict:
+    return memory_store.summarize(scope=scope, limit=limit)
+
+
+@router.get("/memory/analytics")
+def memory_analytics() -> dict:
+    return memory_store.analytics()
+
+
+@router.get("/memory/adapters")
+def memory_adapters() -> dict:
+    return {"adapters": memory_adapter_registry.describe()}
+
+
+@router.get("/memory/export")
+def export_memory(scope: str | None = Query(default=None)) -> dict:
+    return memory_store.export_records(scope=scope)
+
+
+@router.post("/memory/import")
+def import_memory(request: MemoryImportRequest) -> dict:
+    records = [item.model_dump() for item in request.records]
+    return memory_store.import_records(records, merge=request.merge)
+
+
+@router.get("/memory/duplicates")
+def memory_duplicates() -> dict:
+    return {"duplicates": memory_store.detect_duplicates()}
+
+
+@router.get("/memory/{record_id}/related")
+def related_memory(record_id: str, limit: int = Query(default=10, ge=1, le=100)) -> dict:
+    try:
+        return {"memory": memory_store.related(record_id, limit=limit)}
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/memory/snapshots")
+def create_memory_snapshot(request: MemorySnapshotRequest) -> dict:
+    return memory_store.create_snapshot(request.label)
+
+
+@router.get("/memory/snapshots")
+def list_memory_snapshots() -> dict:
+    return {"snapshots": memory_store.list_snapshots()}
+
+
+@router.post("/memory/backups")
+def create_memory_backup(request: BackupCreateRequest) -> dict:
+    return memory_store.create_backup(request.label)
+
+
+@router.get("/memory/backups")
+def list_memory_backups() -> dict:
+    return {"backups": memory_store.list_backups()}
+
+
+@router.post("/memory/backups/restore")
+def restore_memory_backup(request: BackupRestoreRequest) -> dict:
+    return memory_store.restore_backup(request.backup_id)
+
+
+@router.post("/memory/cleanup")
+def cleanup_memory() -> dict:
+    return memory_store.cleanup_expired()
+
+
+@router.get("/memory/corrupted")
+def corrupted_memory() -> dict:
+    return {"corrupted": memory_store.detect_corrupted()}
+
+
+@router.post("/memory/repair")
+def repair_memory() -> dict:
+    return memory_store.repair()
 
 
 @router.get("/logs")

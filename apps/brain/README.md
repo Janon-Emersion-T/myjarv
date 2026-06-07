@@ -20,5 +20,6 @@ Phase 4 status:
 * wrapper modules now exist directly under `apps/brain/` for roadmap-level compatibility
 * the execution lifecycle supports `received -> routed -> waiting_approval/approved -> executing -> completed/failed`
 * tests for routing, approval, memory, and task flow live in `apps/brain/tests/test_phase4.py`
+* the memory manager now also supports richer Phase 7 workflows including search, summaries, snapshots, backups, reusable prompts/templates, and tests in `apps/brain/tests/test_phase7_memory.py`
 
 SQLite is the default local-first backend. PostgreSQL can be reintroduced later through the configured `POSTGRES_DSN` path without breaking the higher-level module boundaries.
