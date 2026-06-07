@@ -247,14 +247,21 @@ class VoiceStore:
                 "average_confidence": 0,
                 "emergency_sessions": 0,
                 "mode_counts": {},
+                "tone_counts": {},
+                "restricted_sessions": 0,
             }
         mode_counts: dict[str, int] = {}
+        tone_counts: dict[str, int] = {}
         authorized = 0
         emergency = 0
+        restricted = 0
         for session in sessions:
             mode_counts[session["mode"]] = mode_counts.get(session["mode"], 0) + 1
             authorized += 1 if session["speaker_authorized"] else 0
             emergency += 1 if session["mode"] == "emergency" else 0
+            restricted += 0 if session["speaker_authorized"] else 1
+            tone = str(session.get("analytics", {}).get("tone_profile", "unknown"))
+            tone_counts[tone] = tone_counts.get(tone, 0) + 1
         average_confidence = (
             round(sum(item["confidence"] for item in interactions) / len(interactions), 4)
             if interactions
@@ -266,6 +273,8 @@ class VoiceStore:
             "average_confidence": average_confidence,
             "emergency_sessions": emergency,
             "mode_counts": mode_counts,
+            "tone_counts": tone_counts,
+            "restricted_sessions": restricted,
         }
 
     def next_id(self) -> str:

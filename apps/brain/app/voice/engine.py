@@ -36,6 +36,14 @@ class VoiceEngine:
         metadata = metadata or {}
         now = voice_store.now()
         initial_text = text or ""
+        profile = self._voice_profile(
+            mode=mode,
+            text=initial_text,
+            confidence=0.88,
+            risk_level="LOW",
+            approval_level="NONE",
+            speaker_authorized=self._speaker_authorized(speaker_id),
+        )
         session = voice_store.create_session(
             {
                 "id": voice_store.next_id(),
@@ -63,8 +71,19 @@ class VoiceEngine:
                     "webrtc_ready": True,
                     "rnnoise_ready": True,
                     "multilingual": locale != "en",
+                    "tone_profile": profile["tone_profile"],
+                    "response_style": profile["response_style"],
+                    "pacing": profile["pacing"],
+                    "operator_trust": profile["operator_trust"],
+                    "relationship_mode": profile["relationship_mode"],
+                    "guardrail_state": profile["guardrail_state"],
                 },
-                "metadata": metadata | {"created_via": "api"},
+                "metadata": metadata
+                | {
+                    "created_via": "api",
+                    "personality_stance": apply_personality("Voice response")["stance"],
+                    "jarvis_signature": profile["jarvis_signature"],
+                },
                 "created_at": now,
                 "updated_at": now,
             }
@@ -92,6 +111,14 @@ class VoiceEngine:
         risk_level, approval_level = approval_gate.classify(normalized, "LOW", requested_action)
         if detected_mode == "emergency":
             risk_level, approval_level = "CRITICAL", "CRITICAL"
+        profile = self._voice_profile(
+            mode=detected_mode,
+            text=text,
+            confidence=transcript_confidence,
+            risk_level=risk_level,
+            approval_level=approval_level,
+            speaker_authorized=self._speaker_authorized(speaker_id),
+        )
         response = self._response_text(
             session=session,
             text=text,
@@ -100,6 +127,7 @@ class VoiceEngine:
             confidence=transcript_confidence,
             risk_level=risk_level,
             approval_level=approval_level,
+            profile=profile,
         )
         interruption_handled = "stop" in normalized or "interrupt" in normalized
         interaction = voice_store.add_interaction(
@@ -138,14 +166,26 @@ class VoiceEngine:
                 "accent_adaptation": locale != "en",
                 "risk_level": risk_level,
                 "approval_level": approval_level,
+                "tone_profile": profile["tone_profile"],
+                "response_style": profile["response_style"],
+                "pacing": profile["pacing"],
+                "operator_trust": profile["operator_trust"],
+                "relationship_mode": profile["relationship_mode"],
+                "guardrail_state": profile["guardrail_state"],
             },
-            metadata=session["metadata"] | metadata,
+            metadata=session["metadata"] | metadata | {"jarvis_signature": profile["jarvis_signature"]},
         )
         self._event(
             session_id,
             "voice_command",
             f"Voice command handled in {detected_mode} mode.",
-            {"intent": intent, "confidence": transcript_confidence, "risk_level": risk_level, "approval_level": approval_level},
+            {
+                "intent": intent,
+                "confidence": transcript_confidence,
+                "risk_level": risk_level,
+                "approval_level": approval_level,
+                "tone_profile": profile["tone_profile"],
+            },
         )
         if detected_mode == "emergency":
             self._event(
@@ -200,6 +240,12 @@ class VoiceEngine:
                 "wake_word_provider": self.voice_config.wake_word_provider,
                 "transport": self.voice_config.transport,
                 "noise_reduction": self.voice_config.noise_reduction,
+                "personality_engine": "jarvis-voice-signature-v1",
+                "personality_stance": apply_personality("Voice response")["stance"],
+                "response_contract": "calm, direct, approval-aware, and traceable",
+                "mobile_architecture": "transport-ready for desktop, Android, iOS, and Flutter clients",
+                "web_dashboard_ready": True,
+                "tone_profiles": ["assured", "conversational", "protective", "expedited"],
             },
             "devices": devices,
             "analytics": analytics,
@@ -264,28 +310,75 @@ class VoiceEngine:
         confidence: float,
         risk_level: str,
         approval_level: str,
+        profile: dict[str, str],
     ) -> str:
         personality = apply_personality("Voice response")
         intro = "Jarvis here."
         if detected_mode == "emergency":
             return (
                 f"{intro} Emergency mode engaged. I will prioritize safe shutdown guidance, alert {settings.VOICE_EMERGENCY_CONTACT}, "
-                f"and require manual confirmation for any destructive action."
+                f"and require manual confirmation for any destructive action. My tone is {profile['tone_profile']} and {profile['guardrail_state']}."
             )
         if detected_mode == "command":
             return (
                 f"{intro} Command received with {confidence:.0%} confidence. "
                 f"Intent is {intent}. Risk is {risk_level} and approval requirement is {approval_level}. "
-                f"I'll stay direct, approval-aware, and keep the action traceable."
+                f"I'll stay {profile['response_style']}, {profile['pacing']}, and keep the action traceable."
             )
         if detected_mode == "desktop_assistant":
             return (
-                f"{intro} Desktop assistant mode is active. I can guide workspace actions, surface reports, and help without blocking your flow."
+                f"{intro} Desktop assistant mode is active. I can guide workspace actions, surface reports, and help without blocking your flow. "
+                f"My tone is {profile['tone_profile']} with {profile['operator_trust']} operator trust."
             )
         return (
             f"{intro} Conversation mode is active. I understood '{text}'. "
-            f"My speaking style stays {personality['stance']} with memory-aware follow-up and calm pacing."
+            f"My speaking style stays {personality['stance']} with {profile['tone_profile']} delivery, memory-aware follow-up, and {profile['pacing']} pacing."
         )
+
+    def _voice_profile(
+        self,
+        *,
+        mode: str,
+        text: str,
+        confidence: float,
+        risk_level: str,
+        approval_level: str,
+        speaker_authorized: bool,
+    ) -> dict[str, str]:
+        if mode == "emergency" or risk_level == "CRITICAL":
+            tone = "protective"
+            style = "precise"
+            pacing = "urgent"
+            trust = "verified-only"
+            relationship = "guardian"
+        elif mode == "command":
+            tone = "assured" if confidence >= 0.8 else "confirming"
+            style = "directive"
+            pacing = "efficient"
+            trust = "full" if speaker_authorized else "limited"
+            relationship = "operator"
+        elif mode == "desktop_assistant":
+            tone = "expedited"
+            style = "guided"
+            pacing = "steady"
+            trust = "full" if speaker_authorized else "limited"
+            relationship = "copilot"
+        else:
+            tone = "conversational"
+            style = "warm"
+            pacing = "calm"
+            trust = "full" if speaker_authorized else "limited"
+            relationship = "advisor"
+        guardrail_state = "manual signoff enforced" if approval_level in {"HIGH", "CRITICAL"} else "autonomy available within policy"
+        return {
+            "tone_profile": tone,
+            "response_style": style,
+            "pacing": pacing,
+            "operator_trust": trust,
+            "relationship_mode": relationship,
+            "guardrail_state": guardrail_state,
+            "jarvis_signature": f"{tone}:{style}:{relationship}:{'authorized' if speaker_authorized else 'restricted'}:{text[:24].strip() or 'idle'}",
+        }
 
     def _normalize_text(self, text: str) -> str:
         return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]+", " ", text.lower())).strip()

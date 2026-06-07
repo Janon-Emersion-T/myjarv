@@ -22,8 +22,8 @@ Roadmap-specific completion update:
 * Roadmap Phase 13, `Add Business Automation`, is now complete with lead capture and qualification, proposal and quotation workflows, follow-up and invoice reminder generation, onboarding checklists, competitor snapshots, blog drafts, monthly reports, analytics, memory integration, dashboard/API/CLI access, and tests in [apps/brain/tests/test_phase13_business.py](/var/www/jarvis/apps/brain/tests/test_phase13_business.py).
 * Roadmap Phase 14, `Add LKP Staff Replacement Workflow`, is now complete with reusable workflow-replacement packs for receptionist/sales/project/dev/SEO/content/finance/support/documentation/QA roles, workflow scoring and approval mapping, SOP/documentation generation, simulation/replay, dashboard/API/CLI support, and tests in [apps/brain/tests/test_phase14_workflows.py](/var/www/jarvis/apps/brain/tests/test_phase14_workflows.py).
 * Roadmap Phase 15, `Add Multi-Agent Collaboration`, is now complete with a collaboration engine, agent messaging protocol, event bus, contribution tracking, replayable sessions, websocket streaming, analytics, CLI verification, and API tests in [apps/brain/tests/test_phase15_collaboration.py](/var/www/jarvis/apps/brain/tests/test_phase15_collaboration.py).
-* Roadmap Phase 16, `Add UI Dashboard`, is now complete with a routed Tauri + React + Tailwind operations console, dashboard APIs, websocket snapshots, role-aware navigation, command palette search, approvals/tasks/projects/memory/knowledge/logs/reports/collaboration/settings pages, and verification in [apps/brain/tests/test_phase16_dashboard.py](/var/www/jarvis/apps/brain/tests/test_phase16_dashboard.py) plus the desktop build/test scripts in [apps/desktop](/var/www/jarvis/apps/desktop/README.md).
-* Roadmap Phase 17, `Add Voice / Jarvis Feel`, is now complete with a session-based voice engine, command/conversation/desktop/emergency modes, speaker authorization, wake-word detection, replayable voice sessions, websocket streaming, desktop voice controls, CLI verification, and tests in [apps/brain/tests/test_phase17_voice.py](/var/www/jarvis/apps/brain/tests/test_phase17_voice.py).
+* Roadmap Phase 16, `Add UI Dashboard`, is now complete with a routed Tauri + React + Tailwind operations console, dashboard APIs, websocket snapshots, role-aware navigation, command palette search, approvals/tasks/projects/memory/knowledge/logs/reports/collaboration/settings pages, installable web-dashboard metadata, service-worker registration, and verification in [apps/brain/tests/test_phase16_dashboard.py](/var/www/jarvis/apps/brain/tests/test_phase16_dashboard.py) plus the desktop build/test scripts in [apps/desktop](/var/www/jarvis/apps/desktop/README.md).
+* Roadmap Phase 17, `Add Voice / Jarvis Feel`, is now complete with a session-based voice engine, command/conversation/desktop/emergency modes, speaker authorization, wake-word detection, replayable voice sessions, websocket streaming, explicit Jarvis tone/personality telemetry, desktop voice controls, CLI verification, and tests in [apps/brain/tests/test_phase17_voice.py](/var/www/jarvis/apps/brain/tests/test_phase17_voice.py).
 * Roadmap Phase 18, `Add Security`, is now complete at the core platform level with a centralized security engine, signed session auth, RBAC/ABAC enforcement, API keys, encrypted local secret vault, encrypted backups, restore testing, audit-log integrity validation, emergency lockdown/offline modes, replayable security events, security metrics, compliance reporting, CLI verification, and tests in [apps/brain/tests/test_phase18_security.py](/var/www/jarvis/apps/brain/tests/test_phase18_security.py).
 
 Current useful assets preserved:
@@ -37,7 +37,7 @@ Current useful assets preserved:
 
 Current gaps versus the full roadmap:
 
-* The current frontend is functional but still early in interaction depth.
+* The frontend is now a stronger operational shell, but still has room to deepen interactive workflows beyond the current console surfaces.
 * PostgreSQL is preserved as a future-compatible path through configuration, but SQLite remains the only active persistence backend right now.
 * Vision is still earlier than voice and dashboard in execution depth, while browser automation remains planning-first.
 
@@ -69,8 +69,8 @@ Audit notes:
 | 13 | Vision Architecture | complete | Vision provider interfaces and configuration scaffolding are defined. |
 | 14 | Browser Automation | complete | Safe browser automation planning is available with approval-first behavior. |
 | 15 | Multi-Agent Collaboration | complete | Tasks now generate collaboration sessions with messages, events, contributions, replay, analytics, websocket streaming, and CLI/API verification. |
-| 16 | UI Dashboard | complete | The desktop operations console now includes routed pages, realtime dashboard snapshots, approvals, tasks, reports, search, themes, offline cache, and frontend validation scripts. |
-| 17 | Voice / Jarvis Feel | complete | Voice sessions, command and conversation modes, emergency handling, desktop controls, websocket updates, and benchmark/test coverage are implemented. |
+| 16 | UI Dashboard | complete | The desktop operations console now includes routed pages, realtime dashboard snapshots, approvals, tasks, reports, search, themes, installable web-dashboard metadata, service-worker shell support, and frontend validation scripts. |
+| 17 | Voice / Jarvis Feel | complete | Voice sessions, command and conversation modes, emergency handling, Jarvis personality/tone telemetry, desktop controls, websocket updates, and benchmark/test coverage are implemented. |
 | 18 | Security | complete | Central security engine, signed auth, RBAC/ABAC, API keys, encrypted secrets/backups, recovery testing, audit integrity, lockdown/offline controls, metrics, and security tests are implemented. |
 | 19 | Documentation | complete | Required core docs, system docs, and module readmes are present. |
 | 20 | Final Verification | complete | Python compilation, API endpoint checks, Rust workspace build, and desktop frontend build completed successfully. |

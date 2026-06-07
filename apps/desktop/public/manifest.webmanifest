@@ -1,0 +1,17 @@
+{
+  "name": "Jarvis Command Center",
+  "short_name": "Jarvis",
+  "description": "Web and desktop operations dashboard for Jarvis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3ece3",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "/jarvis-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

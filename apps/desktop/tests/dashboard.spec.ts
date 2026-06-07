@@ -33,3 +33,9 @@ test("operations operator can open project portfolio", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Project Portfolio" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Active Projects" })).toBeVisible();
 });
+
+test("web dashboard exposes install metadata", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", "/manifest.webmanifest");
+  await expect(page.locator('meta[name="application-name"]')).toHaveAttribute("content", "Jarvis Command Center");
+});

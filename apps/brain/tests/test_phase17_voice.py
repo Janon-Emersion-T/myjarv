@@ -67,6 +67,11 @@ class VoicePhase17Tests(unittest.TestCase):
         voice_payload = dashboard.json()
         self.assertIn("analytics", voice_payload)
         self.assertIn("sessions", voice_payload)
+        self.assertEqual(voice_payload["config"]["personality_engine"], "jarvis-voice-signature-v1")
+        self.assertIn("tone_profiles", voice_payload["config"])
+        self.assertIn("tone_counts", voice_payload["analytics"])
+        self.assertIn("tone_profile", emergency.json()["session"]["analytics"])
+        self.assertIn("jarvis_signature", emergency.json()["session"]["metadata"])
 
     def test_voice_websocket_replay_and_stress(self):
         create = self.client.post(

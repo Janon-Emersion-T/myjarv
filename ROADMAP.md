@@ -1090,7 +1090,7 @@ Extra Phase 15 Enhancements:
 ```
 
 Phase 16 — Add UI Dashboard `[FULL]`
-`[PARTIAL]` Build web dashboard
+`[FULL]` Build web dashboard
 `[FULL]` Show all agents
 `[FULL]` Show active tasks
 `[FULL]` Show approvals

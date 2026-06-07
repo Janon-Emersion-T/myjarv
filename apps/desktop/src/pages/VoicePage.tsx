@@ -58,7 +58,7 @@ export function VoicePage({
           <Metric title="Sessions" value={String(dashboard?.analytics.total_sessions ?? sessions.length)} />
           <Metric title="Average Confidence" value={String(dashboard?.analytics.average_confidence ?? 0)} />
           <Metric title="Emergency Sessions" value={String(dashboard?.analytics.emergency_sessions ?? 0)} />
-          <Metric title="Wake Word" value={String(dashboard?.config.wake_word_provider ?? "porcupine")} />
+          <Metric title="Personality Engine" value={String(dashboard?.config.personality_engine ?? "jarvis")} />
         </div>
       </Panel>
 
@@ -129,7 +129,18 @@ export function VoicePage({
             <InfoRow title="Microphones" subtitle={(dashboard?.devices.inputs ?? []).map((item) => String(item["label"])).join(", ")} />
             <InfoRow title="Speakers" subtitle={(dashboard?.devices.outputs ?? []).map((item) => String(item["label"])).join(", ")} />
             <InfoRow title="Security" subtitle="Authorized speakers, voice risk scoring, and emergency command restrictions are active." />
-            <InfoRow title="Mobile Assistant Architecture" subtitle="Backend voice sessions are transport-ready for cross-device sync, Android/iOS integration, and Flutter clients." />
+            <InfoRow title="Wake Word Provider" subtitle={String(dashboard?.config.wake_word_provider ?? "porcupine")} />
+            <InfoRow title="Personality Stance" subtitle={String(dashboard?.config.personality_stance ?? "calm, direct, approval-aware")} />
+            <InfoRow title="Response Contract" subtitle={String(dashboard?.config.response_contract ?? "traceable operator support")} />
+            <InfoRow title="Mobile Assistant Architecture" subtitle={String(dashboard?.config.mobile_architecture ?? "transport-ready for cross-device sync, Android/iOS integration, and Flutter clients.")} />
+            <InfoRow
+              title="Tone Distribution"
+              subtitle={
+                Object.entries((dashboard?.analytics.tone_counts as Record<string, number> | undefined) ?? {})
+                  .map(([tone, count]) => `${tone}:${count}`)
+                  .join(" • ") || "No tone data yet"
+              }
+            />
           </div>
         </Panel>
       </div>
@@ -145,6 +156,10 @@ export function VoicePage({
                   </button>
                   <p className="mt-1 text-sm text-slate-600">
                     {session.stt_provider} → {session.tts_provider} • {session.transport} • wake word {session.wake_word}
+                  </p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-500">
+                    {String(session.analytics?.["tone_profile"] ?? "conversational")} tone • {String(session.analytics?.["response_style"] ?? "guided")} style •{" "}
+                    {String(session.analytics?.["guardrail_state"] ?? "policy active")}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
