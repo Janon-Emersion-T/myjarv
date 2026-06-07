@@ -83,6 +83,10 @@ Business automation now persists leads, proposals, quotations, follow-ups, invoi
 
 Project manager mode now persists projects, milestones, blockers, dependencies, worklogs, reports, burndown/timeline views, and budget/invoice tracking under `data/projects`, with methodology-aware planning, report generation, dashboard summaries, desktop project views, and CLI/API access.
 
+### Workflow Replacement
+
+Workflow replacement now persists reusable staff-replacement workflows under `data/workflows`, with role catalogs, decomposition, scoring, approval mapping, SOP/documentation generation, simulation and replay, dashboard summaries, and API/CLI access that integrate with memory, knowledge, tools, browser planning, and project/business systems.
+
 ### Desktop
 
 The desktop app lives in `apps/desktop` and is configured for Tauri + React + Tailwind.

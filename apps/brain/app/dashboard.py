@@ -13,6 +13,7 @@ from app.memory import memory_store
 from app.project_manager import project_manager
 from app.routing import routing_store
 from app.task_manager import task_manager
+from app.workflow_replacement import workflow_replacement_engine
 
 
 def _recent_logs(limit: int = 200) -> list[dict[str, Any]]:
@@ -162,6 +163,10 @@ def get_dashboard_business() -> dict[str, Any]:
 
 def get_dashboard_projects() -> dict[str, Any]:
     return project_manager.dashboard()
+
+
+def get_dashboard_workflows() -> dict[str, Any]:
+    return workflow_replacement_engine.dashboard()
 
 
 def search_dashboard(query: str) -> dict[str, Any]:

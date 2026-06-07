@@ -116,6 +116,23 @@ class ProjectDependencyRequest(BaseModel):
     type_: Literal["task", "milestone", "approval", "release"] = "task"
 
 
+class WorkflowReplacementCreateRequest(BaseModel):
+    workflow_key: Literal[
+        "receptionist",
+        "sales_assistant",
+        "project_coordinator",
+        "junior_developer",
+        "seo_assistant",
+        "content_writer",
+        "finance_assistant",
+        "support_assistant",
+        "documentation_assistant",
+        "qa_tester",
+    ]
+    client_name: str | None = None
+    context: str | None = None
+
+
 class BusinessLeadCreateRequest(BaseModel):
     name: str = Field(..., min_length=1)
     company: str = Field(..., min_length=1)

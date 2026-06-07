@@ -80,6 +80,13 @@ Base service: `apps/brain/app/main.py`
 * `POST /projects/{project_id}/dependencies`
 * `POST /projects/{project_id}/worklogs`
 * `POST /projects/{project_id}/reports/{report_type}`
+* `GET /workflows/replacements`
+* `GET /workflows/replacements/catalog`
+* `POST /workflows/replacements`
+* `GET /workflows/replacements/{workflow_id}`
+* `GET /workflows/replacements/analytics`
+* `POST /workflows/replacements/{workflow_id}/simulate`
+* `POST /workflows/replacements/{workflow_id}/replay`
 * `GET /settings`
 * `GET /browser/plan`
 * `GET /workflows/business`
@@ -87,6 +94,7 @@ Base service: `apps/brain/app/main.py`
 * `GET /dashboard/developer`
 * `GET /dashboard/business`
 * `GET /dashboard/projects`
+* `GET /dashboard/workflows`
 * `WS /ws/approvals`
 
 ## Auth Placeholder

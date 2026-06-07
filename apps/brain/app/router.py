@@ -32,6 +32,7 @@ from app.routing.rules import routing_rules
 from app.secops import security_engine
 from app.security import enforce_local_auth
 from app.project_manager import project_manager
+from app.workflow_replacement import workflow_replacement_engine
 from app.schemas import (
     ApiKeyCreateRequest,
     ApprovalEmergencyShutdownRequest,
@@ -76,6 +77,7 @@ from app.schemas import (
     ToolWorkflowRequest,
     VoiceCommandRequest,
     VoiceSessionCreateRequest,
+    WorkflowReplacementCreateRequest,
 )
 from app.task_manager import task_manager
 from app.tools.adapters import tool_adapter_registry
@@ -684,6 +686,11 @@ def dashboard_projects() -> dict:
     return project_manager.dashboard()
 
 
+@router.get("/dashboard/workflows")
+def dashboard_workflows() -> dict:
+    return workflow_replacement_engine.dashboard()
+
+
 @router.post("/routing/simulate")
 def simulate_routing(request: RoutingSimulationRequest) -> dict:
     return routing_engine.route(
@@ -1097,6 +1104,54 @@ def create_project(request: ProjectCreateRequest) -> dict:
 @router.get("/projects/analytics")
 def project_analytics() -> dict:
     return project_manager.analytics()
+
+
+@router.get("/workflows/replacements")
+def list_workflow_replacements() -> dict:
+    return {"workflows": workflow_replacement_engine.list_workflows()}
+
+
+@router.get("/workflows/replacements/catalog")
+def get_workflow_replacement_catalog() -> dict:
+    return workflow_replacement_engine.cli_catalog()
+
+
+@router.post("/workflows/replacements")
+def create_workflow_replacement(request: WorkflowReplacementCreateRequest) -> dict:
+    return workflow_replacement_engine.create_workflow(
+        request.workflow_key,
+        client_name=request.client_name,
+        context=request.context,
+    )
+
+
+@router.get("/workflows/replacements/analytics")
+def workflow_replacement_analytics() -> dict:
+    return workflow_replacement_engine.analytics()
+
+
+@router.get("/workflows/replacements/{workflow_id}")
+def get_workflow_replacement(workflow_id: str) -> dict:
+    try:
+        return workflow_replacement_engine.get_workflow(workflow_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/workflows/replacements/{workflow_id}/simulate")
+def simulate_workflow_replacement(workflow_id: str) -> dict:
+    try:
+        return workflow_replacement_engine.simulate(workflow_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/workflows/replacements/{workflow_id}/replay")
+def replay_workflow_replacement(workflow_id: str) -> dict:
+    try:
+        return workflow_replacement_engine.replay(workflow_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
 
 
 @router.get("/projects/{project_id}")
