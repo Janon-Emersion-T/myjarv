@@ -18,7 +18,8 @@ Main responsibilities:
 
 * load agents from the registry
 * classify tasks by intent, priority, risk, and approval requirement
-* persist tasks, approvals, and memory
+* enforce staged approval policy, revocation, rollback, quarantine, and emergency shutdown controls
+* persist tasks, approvals, approval events, approval artifacts, and memory
 * expose API endpoints to the desktop app and future workers
 * retrieve knowledge and tool definitions
 
@@ -44,6 +45,8 @@ SQLite-backed tables currently store:
 
 * tasks
 * approvals
+* approval events
+* approval artifacts
 * memory entries
 
 Memory scopes:
@@ -55,6 +58,10 @@ Memory scopes:
 * mistake
 * agent
 * user preference
+
+### Approval Layer
+
+The approval subsystem now includes a dedicated policy engine, request tracking, confidence scoring, signed approval records, replay protection, multi-stage chains, emergency controls, websocket event streaming, and CLI verification. Approval evidence is persisted in SQLite plus sidecar JSON artifacts under `data/approvals`.
 
 ### Knowledge
 

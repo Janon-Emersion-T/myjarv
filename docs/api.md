@@ -12,6 +12,18 @@ Base service: `apps/brain/app/main.py`
 * `GET /tasks/{id}`
 * `POST /tasks/{id}/approve`
 * `POST /tasks/{id}/reject`
+* `GET /tasks/{id}/approvals/policy`
+* `POST /tasks/{id}/approvals/simulate`
+* `POST /tasks/{id}/approvals/{approval_id}/revoke`
+* `POST /tasks/{id}/approvals/rollback`
+* `GET /approvals/queue`
+* `GET /approvals/history`
+* `GET /approvals/metrics`
+* `GET /approvals/quarantine`
+* `GET /approvals/archive`
+* `GET /approvals/channels`
+* `GET /approvals/emergency-shutdown`
+* `POST /approvals/emergency-shutdown`
 * `GET /memory`
 * `POST /memory`
 * `GET /logs`
@@ -43,6 +55,7 @@ Base service: `apps/brain/app/main.py`
 * `GET /browser/plan`
 * `GET /workflows/business`
 * `GET /workflows/developer`
+* `WS /ws/approvals`
 
 ## Auth Placeholder
 

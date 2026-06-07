@@ -3,6 +3,7 @@ import asyncio
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response, WebSocket, WebSocketDisconnect
 
 from app.agent_loader import get_agent_detail, get_all_agents, get_department_groups, get_registry_data
+from app.approval_bus import approval_bus
 from app.browser.planner import browser_planner
 from app.collaboration import collaboration_bus, collaboration_engine, collaboration_store
 from app.config import settings
@@ -28,12 +29,16 @@ from app.secops import security_engine
 from app.security import enforce_local_auth
 from app.schemas import (
     ApiKeyCreateRequest,
+    ApprovalEmergencyShutdownRequest,
     AuthLoginRequest,
     AuthMfaVerifyRequest,
     AuthLogoutRequest,
     BackupCreateRequest,
     BackupRestoreRequest,
     ApprovalDecisionRequest,
+    ApprovalRevokeRequest,
+    ApprovalRollbackRequest,
+    ApprovalSimulationRequest,
     IncidentCreateRequest,
     LockdownRequest,
     MemoryCreateRequest,
@@ -152,7 +157,7 @@ def get_task(task_id: str) -> dict:
 @router.post("/tasks/{task_id}/approve")
 def approve_task(task_id: str, request: ApprovalDecisionRequest) -> dict:
     try:
-        return task_manager.approve_task(task_id, request.reviewer, request.notes)
+        return task_manager.approve_task(task_id, request.model_dump())
     except Exception as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
@@ -160,9 +165,84 @@ def approve_task(task_id: str, request: ApprovalDecisionRequest) -> dict:
 @router.post("/tasks/{task_id}/reject")
 def reject_task(task_id: str, request: ApprovalDecisionRequest) -> dict:
     try:
-        return task_manager.reject_task(task_id, request.reviewer, request.notes)
+        return task_manager.reject_task(task_id, request.model_dump())
     except Exception as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.get("/tasks/{task_id}/approvals/policy")
+def get_task_approval_policy(task_id: str) -> dict:
+    try:
+        return task_manager.get_approval_policy(task_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/tasks/{task_id}/approvals/simulate")
+def simulate_task_approval(task_id: str, request: ApprovalSimulationRequest) -> dict:
+    try:
+        return task_manager.simulate_approval(task_id, request.model_dump(), decision=request.decision)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.post("/tasks/{task_id}/approvals/{approval_id}/revoke")
+def revoke_task_approval(task_id: str, approval_id: str, request: ApprovalRevokeRequest) -> dict:
+    try:
+        return task_manager.revoke_approval(task_id, approval_id, request.actor, request.reason)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.post("/tasks/{task_id}/approvals/rollback")
+def rollback_task_approval(task_id: str, request: ApprovalRollbackRequest) -> dict:
+    try:
+        return task_manager.rollback_task(task_id, request.actor, request.reason)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.get("/approvals/queue")
+def list_approval_queue(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"queue": task_manager.list_approval_queue(limit=limit)}
+
+
+@router.get("/approvals/history")
+def list_approval_history(limit: int = Query(default=100, ge=1, le=1000), task_id: str | None = Query(default=None)) -> dict:
+    return {"approvals": task_manager.list_approval_history(limit=limit, task_id=task_id)}
+
+
+@router.get("/approvals/metrics")
+def get_approval_metrics() -> dict:
+    return task_manager.approval_metrics()
+
+
+@router.get("/approvals/quarantine")
+def get_approval_quarantine(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"artifacts": task_manager.list_approval_artifacts("quarantine", limit=limit)}
+
+
+@router.get("/approvals/archive")
+def get_approval_archive(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"artifacts": task_manager.list_approval_artifacts("archive", limit=limit)}
+
+
+@router.get("/approvals/channels")
+def get_approval_channels() -> dict:
+    return {
+        "channels": ["dashboard", "api", "cli", "mobile", "email", "whatsapp", "voice"],
+        "roles": ["operator", "manager", "director", "executive"],
+    }
+
+
+@router.post("/approvals/emergency-shutdown")
+def set_approval_emergency_shutdown(request: ApprovalEmergencyShutdownRequest) -> dict:
+    return task_manager.set_emergency_shutdown(request.active, request.actor, request.reason)
+
+
+@router.get("/approvals/emergency-shutdown")
+def get_approval_emergency_shutdown() -> dict:
+    return task_manager.get_emergency_shutdown()
 
 
 @router.post("/tasks/{task_id}/execute")
@@ -696,6 +776,29 @@ async def dashboard_stream(websocket: WebSocket) -> None:
             )
             await asyncio.sleep(10)
     except (WebSocketDisconnect, RuntimeError):
+        await websocket.close()
+
+
+@router.websocket("/ws/approvals")
+async def approvals_stream(websocket: WebSocket) -> None:
+    await websocket.accept()
+    queue = approval_bus.subscribe()
+    try:
+        await websocket.send_json(
+            {
+                "type": "snapshot",
+                "payload": {
+                    "queue": task_manager.list_approval_queue(limit=100),
+                    "metrics": task_manager.approval_metrics(),
+                    "shutdown": task_manager.get_emergency_shutdown(),
+                },
+            }
+        )
+        while True:
+            message = await asyncio.wait_for(queue.get(), timeout=30)
+            await websocket.send_json(message)
+    except (WebSocketDisconnect, asyncio.TimeoutError):
+        approval_bus.unsubscribe(queue)
         await websocket.close()
 
 

@@ -94,10 +94,30 @@ class BrainPhase4Tests(unittest.TestCase):
 
         approve_response = self.client.post(
             f"/tasks/{task['id']}/approve",
-            json={"reviewer": "Janon", "notes": "Approved for phase 4 test."},
+            json={
+                "reviewer": "Janon",
+                "notes": "Manager approval for phase 4 test.",
+                "reviewer_role": "manager",
+                "department": "finance",
+                "written_document": {"title": "Finance approval", "body": "Initial signoff for controlled follow-up."},
+            },
         )
         self.assertEqual(approve_response.status_code, 200)
-        approved = approve_response.json()
+        partial = approve_response.json()
+        self.assertEqual(partial["status"], "waiting_approval")
+
+        final_approve_response = self.client.post(
+            f"/tasks/{task['id']}/approve",
+            json={
+                "reviewer": "Alicia",
+                "notes": "Director approval for phase 4 test.",
+                "reviewer_role": "director",
+                "department": "finance",
+                "written_document": {"title": "Finance approval", "body": "Director signoff for controlled follow-up."},
+            },
+        )
+        self.assertEqual(final_approve_response.status_code, 200)
+        approved = final_approve_response.json()
         self.assertEqual(approved["status"], "approved")
 
         execute_response = self.client.post(

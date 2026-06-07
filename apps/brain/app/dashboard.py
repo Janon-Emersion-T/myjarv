@@ -51,6 +51,7 @@ def get_dashboard_summary() -> dict[str, Any]:
         "routing": routing_store.analytics(),
         "collaboration": collaboration_store.analytics(),
         "memory": memory_analytics,
+        "approval_metrics": task_manager.approval_metrics(),
     }
 
 

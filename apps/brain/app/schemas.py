@@ -248,6 +248,35 @@ class TaskRecord(BaseModel):
 class ApprovalDecisionRequest(BaseModel):
     reviewer: str = Field(..., min_length=1)
     notes: str | None = None
+    channel: Literal["dashboard", "api", "cli", "mobile", "email", "whatsapp", "voice"] = "dashboard"
+    reviewer_role: Literal["operator", "manager", "director", "executive"] = "manager"
+    department: str | None = None
+    approval_token: str | None = None
+    signature: str | None = None
+    delegated_by: str | None = None
+    emergency_override: bool = False
+    evidence: list[dict[str, Any]] = Field(default_factory=list)
+    written_document: dict[str, Any] | None = None
+
+
+class ApprovalRevokeRequest(BaseModel):
+    actor: str = Field(..., min_length=1)
+    reason: str = Field(..., min_length=1)
+
+
+class ApprovalRollbackRequest(BaseModel):
+    actor: str = Field(..., min_length=1)
+    reason: str = Field(..., min_length=1)
+
+
+class ApprovalSimulationRequest(ApprovalDecisionRequest):
+    decision: Literal["approved", "rejected"] = "approved"
+
+
+class ApprovalEmergencyShutdownRequest(BaseModel):
+    active: bool
+    actor: str = Field(..., min_length=1)
+    reason: str = Field(..., min_length=1)
 
 
 class ApprovalRecord(BaseModel):
@@ -256,6 +285,20 @@ class ApprovalRecord(BaseModel):
     decision: Literal["approved", "rejected"]
     reviewer: str
     notes: str | None = None
+    channel: str = "dashboard"
+    reviewer_role: str = "manager"
+    department: str | None = None
+    delegated_by: str | None = None
+    written_document: dict[str, Any] | None = None
+    evidence: list[dict[str, Any]] = Field(default_factory=list)
+    signature: str | None = None
+    confidence_score: float = Field(default=0.0, ge=0.0, le=1.0)
+    suspicious_flags: list[str] = Field(default_factory=list)
+    chain_step: int = 1
+    stage_label: str = "stage_1_of_1"
+    revoked_at: datetime | None = None
+    revoked_by: str | None = None
+    revoked_reason: str | None = None
     created_at: datetime
 
 

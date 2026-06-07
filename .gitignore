@@ -141,6 +141,7 @@ storage/cache/
 storage/vector/
 storage/embeddings/
 data/memory/
+data/approvals/
 
 # =========================
 # AI generated screenshots
