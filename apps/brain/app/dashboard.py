@@ -10,6 +10,7 @@ from app.collaboration import collaboration_store
 from app.developer_mode import developer_mode
 from app.logger import logger
 from app.memory import memory_store
+from app.project_manager import project_manager
 from app.routing import routing_store
 from app.task_manager import task_manager
 
@@ -157,6 +158,10 @@ def get_dashboard_business() -> dict[str, Any]:
         "leads": business_automation.list_leads()[:10],
         "proposals": business_automation.list_proposals()[:10],
     }
+
+
+def get_dashboard_projects() -> dict[str, Any]:
+    return project_manager.dashboard()
 
 
 def search_dashboard(query: str) -> dict[str, Any]:

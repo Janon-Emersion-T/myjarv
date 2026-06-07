@@ -207,7 +207,7 @@ function renderPage(
     case "approvals":
       return <ApprovalsPage approvals={state.approvals} onApprove={actions.approveTask ?? (async () => undefined)} onReject={actions.rejectTask ?? (async () => undefined)} />;
     case "projects":
-      return <ProjectsPage pipeline={state.pipeline} />;
+      return <ProjectsPage dashboard={state.projectDashboard} />;
     case "memory":
       return <MemoryPage memory={state.memory} tasks={state.tasks} onCreateMemory={actions.createMemory ?? (async () => undefined)} />;
     case "knowledge":

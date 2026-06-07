@@ -31,6 +31,7 @@ from app.routing import routing_engine, routing_store
 from app.routing.rules import routing_rules
 from app.secops import security_engine
 from app.security import enforce_local_auth
+from app.project_manager import project_manager
 from app.schemas import (
     ApiKeyCreateRequest,
     ApprovalEmergencyShutdownRequest,
@@ -59,6 +60,11 @@ from app.schemas import (
     MemoryCreateRequest,
     MemoryImportRequest,
     MemorySnapshotRequest,
+    ProjectBlockerRequest,
+    ProjectCreateRequest,
+    ProjectDependencyRequest,
+    ProjectMilestoneRequest,
+    ProjectWorklogRequest,
     OfflineModeRequest,
     RoutingSimulationRequest,
     ScanRunRequest,
@@ -673,6 +679,11 @@ def dashboard_business() -> dict:
     return get_dashboard_business()
 
 
+@router.get("/dashboard/projects")
+def dashboard_projects() -> dict:
+    return project_manager.dashboard()
+
+
 @router.post("/routing/simulate")
 def simulate_routing(request: RoutingSimulationRequest) -> dict:
     return routing_engine.route(
@@ -1060,6 +1071,95 @@ def developer_changelog(request: DeveloperChangelogRequest) -> dict:
 @router.get("/business/analytics")
 def business_analytics() -> dict:
     return business_automation.analytics()
+
+
+@router.get("/projects")
+def list_projects() -> dict:
+    return {"projects": project_manager.list_projects()}
+
+
+@router.post("/projects")
+def create_project(request: ProjectCreateRequest) -> dict:
+    return project_manager.create_project(
+        name=request.name,
+        client_name=request.client_name,
+        category=request.category,
+        methodology=request.methodology,
+        owner=request.owner,
+        summary=request.summary,
+        deadline=request.deadline,
+        budget=request.budget,
+        goals=request.goals,
+        departments=request.departments,
+    )
+
+
+@router.get("/projects/analytics")
+def project_analytics() -> dict:
+    return project_manager.analytics()
+
+
+@router.get("/projects/{project_id}")
+def get_project(project_id: str) -> dict:
+    try:
+        return project_manager.get_project(project_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/projects/{project_id}/milestones")
+def add_project_milestone(project_id: str, request: ProjectMilestoneRequest) -> dict:
+    try:
+        return project_manager.add_milestone(project_id, title=request.title, due_date=request.due_date, owner=request.owner)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/projects/{project_id}/blockers")
+def add_project_blocker(project_id: str, request: ProjectBlockerRequest) -> dict:
+    try:
+        return project_manager.add_blocker(
+            project_id,
+            title=request.title,
+            severity=request.severity,
+            owner=request.owner,
+            notes=request.notes,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/projects/{project_id}/worklogs")
+def add_project_worklog(project_id: str, request: ProjectWorklogRequest) -> dict:
+    try:
+        return project_manager.add_worklog(
+            project_id,
+            contributor=request.contributor,
+            hours=request.hours,
+            summary=request.summary,
+            task_title=request.task_title,
+            billable=request.billable,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/projects/{project_id}/dependencies")
+def add_project_dependency(project_id: str, request: ProjectDependencyRequest) -> dict:
+    try:
+        return project_manager.add_dependency(project_id, title=request.title, depends_on=request.depends_on, type_=request.type_)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/projects/{project_id}/reports/{report_type}")
+def generate_project_report(project_id: str, report_type: str) -> dict:
+    if report_type not in {"daily", "weekly", "client", "invoice"}:
+        raise HTTPException(status_code=400, detail="Unsupported report type.")
+    try:
+        return project_manager.generate_report(project_id, report_type)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
 
 
 @router.get("/business/leads")

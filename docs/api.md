@@ -71,12 +71,22 @@ Base service: `apps/brain/app/main.py`
 * `POST /business/competitors/analyze`
 * `POST /business/blog-drafts`
 * `POST /business/reports/monthly`
+* `GET /projects`
+* `POST /projects`
+* `GET /projects/{project_id}`
+* `GET /projects/analytics`
+* `POST /projects/{project_id}/milestones`
+* `POST /projects/{project_id}/blockers`
+* `POST /projects/{project_id}/dependencies`
+* `POST /projects/{project_id}/worklogs`
+* `POST /projects/{project_id}/reports/{report_type}`
 * `GET /settings`
 * `GET /browser/plan`
 * `GET /workflows/business`
 * `GET /workflows/developer`
 * `GET /dashboard/developer`
 * `GET /dashboard/business`
+* `GET /dashboard/projects`
 * `WS /ws/approvals`
 
 ## Auth Placeholder

@@ -91,6 +91,32 @@ export type DashboardPipeline = {
   counts: Record<string, number>;
 };
 
+export type ProjectRecord = {
+  id: string;
+  name: string;
+  client_name: string;
+  category: string;
+  methodology: string;
+  owner: string;
+  status: string;
+  deadline?: string | null;
+  health_score: number;
+  risk_score: number;
+  blockers: Array<{ id: string; title: string; severity: string; status: string }>;
+  milestones: Array<{ id: string; title: string; status: string; due_date?: string | null }>;
+};
+
+export type ProjectDashboard = {
+  projects: ProjectRecord[];
+  analytics: Record<string, unknown> & {
+    projects_total?: number;
+    open_blockers?: number;
+    average_health_score?: number;
+  };
+  blockers: Array<{ project_id: string; project_name: string; title: string; severity: string; status: string }>;
+  timeline: Array<{ project_id: string; project_name: string; deadline?: string | null; health_score: number }>;
+};
+
 export type DashboardErrors = {
   failed_tasks: Task[];
   error_logs: LogRecord[];
@@ -249,6 +275,7 @@ export type DesktopState = {
   collaborationSessions: CollaborationSession[];
   reports: DashboardReport | null;
   pipeline: DashboardPipeline | null;
+  projectDashboard: ProjectDashboard | null;
   errors: DashboardErrors | null;
   voiceDashboard: VoiceDashboard | null;
   voiceSessions: VoiceSession[];

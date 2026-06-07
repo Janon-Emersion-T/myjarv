@@ -79,6 +79,10 @@ Developer mode now adds repository scanning, stack and framework detection, heal
 
 Business automation now persists leads, proposals, quotations, follow-ups, invoice reminders, onboarding checklists, competitor reports, and monthly summaries under `data/business`, with API, dashboard, CLI, analytics, and memory integration for captured lead context.
 
+### Project Manager Mode
+
+Project manager mode now persists projects, milestones, blockers, dependencies, worklogs, reports, burndown/timeline views, and budget/invoice tracking under `data/projects`, with methodology-aware planning, report generation, dashboard summaries, desktop project views, and CLI/API access.
+
 ### Desktop
 
 The desktop app lives in `apps/desktop` and is configured for Tauri + React + Tailwind.

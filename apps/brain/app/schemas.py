@@ -76,6 +76,46 @@ class DeveloperChangelogRequest(BaseModel):
     version: str | None = None
 
 
+class ProjectCreateRequest(BaseModel):
+    name: str = Field(..., min_length=1)
+    client_name: str = Field(..., min_length=1)
+    category: str = Field(..., min_length=1)
+    methodology: Literal["agile", "scrum", "kanban", "waterfall"] = "agile"
+    owner: str = Field(..., min_length=1)
+    summary: str = Field(..., min_length=1)
+    deadline: str | None = None
+    budget: float | None = Field(default=None, ge=0)
+    goals: list[str] = Field(default_factory=list)
+    departments: list[str] = Field(default_factory=list)
+
+
+class ProjectMilestoneRequest(BaseModel):
+    title: str = Field(..., min_length=1)
+    due_date: str | None = None
+    owner: str | None = None
+
+
+class ProjectBlockerRequest(BaseModel):
+    title: str = Field(..., min_length=1)
+    severity: Literal["low", "medium", "high", "critical"]
+    owner: str = Field(..., min_length=1)
+    notes: str | None = None
+
+
+class ProjectWorklogRequest(BaseModel):
+    contributor: str = Field(..., min_length=1)
+    hours: float = Field(..., ge=0)
+    summary: str = Field(..., min_length=1)
+    task_title: str | None = None
+    billable: bool = True
+
+
+class ProjectDependencyRequest(BaseModel):
+    title: str = Field(..., min_length=1)
+    depends_on: str = Field(..., min_length=1)
+    type_: Literal["task", "milestone", "approval", "release"] = "task"
+
+
 class BusinessLeadCreateRequest(BaseModel):
     name: str = Field(..., min_length=1)
     company: str = Field(..., min_length=1)

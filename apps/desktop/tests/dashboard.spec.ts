@@ -24,3 +24,12 @@ test("finance operator can capture memory", async ({ page }) => {
   await expect(page.getByLabel("Memory Value")).toBeVisible();
   await expect(page.getByRole("button", { name: "Capture Memory" })).toBeVisible();
 });
+
+test("operations operator can open project portfolio", async ({ page }) => {
+  await page.addInitScript(() => {
+    window.localStorage.setItem("jarvis-operator-index", "1");
+  });
+  await page.goto("/#projects");
+  await expect(page.getByRole("heading", { name: "Project Portfolio" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Active Projects" })).toBeVisible();
+});
