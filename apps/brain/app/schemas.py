@@ -334,6 +334,31 @@ class KnowledgeRecord(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
+class ToolExecuteRequest(BaseModel):
+    tool_name: str = Field(..., min_length=1)
+    input: dict[str, Any] = Field(default_factory=dict)
+    actor: str = Field(default="Jarvis", min_length=1)
+    agent_name: str | None = None
+    task_id: str | None = None
+    approved: bool = False
+    async_mode: bool = False
+
+
+class ToolWorkflowStep(BaseModel):
+    tool_name: str = Field(..., min_length=1)
+    input: dict[str, Any] = Field(default_factory=dict)
+    agent_name: str | None = None
+    task_id: str | None = None
+    approved: bool = False
+    async_mode: bool = False
+
+
+class ToolWorkflowRequest(BaseModel):
+    actor: str = Field(default="Jarvis", min_length=1)
+    approved: bool = False
+    steps: list[ToolWorkflowStep] = Field(default_factory=list)
+
+
 class ToolDefinition(BaseModel):
     name: str
     description: str

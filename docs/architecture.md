@@ -62,7 +62,7 @@ Structured knowledge now lives in `data/knowledge` across markdown and JSON sour
 
 ### Tools
 
-Tool definitions live in `packages/tools/registry.json` and are exposed through the Python brain API.
+Tool definitions live in `packages/tools/registry.json` and are validated against `packages/tools/schema.json`. The Python brain now exposes registry discovery, approval-aware execution, queued workflows, replayable history, compatibility mapping, metrics, and adapter descriptors through the tool API.
 
 ### Desktop
 

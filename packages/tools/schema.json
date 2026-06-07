@@ -1,0 +1,27 @@
+{
+  "required_top_level": ["version", "updated_at", "tools"],
+  "required_tool_fields": [
+    "name",
+    "aliases",
+    "category",
+    "description",
+    "input_schema",
+    "output_schema",
+    "risk_level",
+    "approval_requirement",
+    "mode",
+    "permissions",
+    "tags",
+    "timeout_seconds",
+    "retry_limit",
+    "rate_limit_per_minute",
+    "async_supported",
+    "queue_supported",
+    "integration",
+    "version",
+    "status"
+  ],
+  "risk_levels": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+  "modes": ["read", "write", "plan"],
+  "statuses": ["active", "deprecated", "experimental"]
+}

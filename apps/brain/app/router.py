@@ -46,11 +46,16 @@ from app.schemas import (
     TaskCreateRequest,
     TaskExecutionRequest,
     TaskReassignmentRequest,
+    ToolExecuteRequest,
+    ToolWorkflowRequest,
     VoiceCommandRequest,
     VoiceSessionCreateRequest,
 )
 from app.task_manager import task_manager
+from app.tools.adapters import tool_adapter_registry
+from app.tools.engine import tool_execution_engine
 from app.tools.registry import tool_registry
+from app.tools.store import tool_execution_store
 from app.voice.bus import voice_bus
 from app.voice.devices import voice_device_manager
 from app.voice.engine import voice_engine
@@ -766,7 +771,91 @@ def reindex_knowledge() -> dict:
 
 @router.get("/tools")
 def get_tools() -> dict:
-    return {"tools": tool_registry.list_tools()}
+    return {"tools": tool_registry.list_tools(), "validation": tool_registry.validate(), "capabilities": tool_registry.capabilities()}
+
+
+@router.get("/tools/capabilities")
+def get_tool_capabilities() -> dict:
+    return tool_registry.capabilities()
+
+
+@router.get("/tools/compatibility")
+def get_tool_compatibility() -> dict:
+    return tool_registry.compatibility_matrix()
+
+
+@router.get("/tools/adapters")
+def get_tool_adapters() -> dict:
+    return {"adapters": tool_adapter_registry.describe()}
+
+
+@router.get("/tools/validate")
+def validate_tools() -> dict:
+    return tool_registry.validate()
+
+
+@router.get("/tools/history")
+def get_tool_history(tool_name: str | None = Query(default=None), limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"executions": tool_execution_store.list(tool_name=tool_name, limit=limit)}
+
+
+@router.get("/tools/analytics")
+def get_tool_analytics() -> dict:
+    return tool_execution_store.analytics()
+
+
+@router.get("/tools/health")
+def get_tool_health() -> dict:
+    return tool_execution_store.health()
+
+
+@router.get("/tools/metrics", response_model=None)
+def get_tool_metrics(format: str = Query(default="json")):
+    if format == "prometheus":
+        return Response(content=tool_execution_engine.prometheus_metrics(), media_type="text/plain; version=0.0.4")
+    return tool_execution_store.analytics()
+
+
+@router.get("/tools/{name}")
+def get_tool(name: str) -> dict:
+    try:
+        return tool_registry.get_tool(name)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/tools/execute")
+def execute_tool(request: ToolExecuteRequest) -> dict:
+    try:
+        return tool_execution_engine.execute(
+            tool_name=request.tool_name,
+            input_payload=request.input,
+            actor=request.actor,
+            agent_name=request.agent_name,
+            task_id=request.task_id,
+            approved=request.approved,
+            async_mode=request.async_mode,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.post("/tools/workflows")
+def execute_tool_workflow(request: ToolWorkflowRequest) -> dict:
+    return tool_execution_engine.execute_workflow([step.model_dump() for step in request.steps], actor=request.actor, approved=request.approved)
+
+
+@router.post("/tools/queue/process")
+def process_tool_queue(limit: int = Query(default=10, ge=1, le=100)) -> dict:
+    return tool_execution_engine.process_queue(limit=limit)
+
+
+@router.post("/tools/replay/{execution_id}")
+def replay_tool_execution(execution_id: str, approved: bool = Query(default=False)) -> dict:
+    try:
+        return tool_execution_engine.replay(execution_id, approved=approved)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
 
 
 @router.get("/settings")
