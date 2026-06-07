@@ -25,6 +25,8 @@ Roadmap-specific completion update:
 * Roadmap Phase 16, `Add UI Dashboard`, is now complete with a routed Tauri + React + Tailwind operations console, dashboard APIs, websocket snapshots, role-aware navigation, command palette search, approvals/tasks/projects/memory/knowledge/logs/reports/collaboration/settings pages, installable web-dashboard metadata, service-worker registration, and verification in [apps/brain/tests/test_phase16_dashboard.py](/var/www/jarvis/apps/brain/tests/test_phase16_dashboard.py) plus the desktop build/test scripts in [apps/desktop](/var/www/jarvis/apps/desktop/README.md).
 * Roadmap Phase 17, `Add Voice / Jarvis Feel`, is now complete with a session-based voice engine, command/conversation/desktop/emergency modes, speaker authorization, wake-word detection, replayable voice sessions, websocket streaming, explicit Jarvis tone/personality telemetry, desktop voice controls, CLI verification, and tests in [apps/brain/tests/test_phase17_voice.py](/var/www/jarvis/apps/brain/tests/test_phase17_voice.py).
 * Roadmap Phase 18, `Add Security`, is now complete at the core platform level with a centralized security engine, signed session auth, RBAC/ABAC enforcement, API keys, encrypted local secret vault, encrypted backups, restore testing, audit-log integrity validation, emergency lockdown/offline modes, replayable security events, security metrics, compliance reporting, CLI verification, and tests in [apps/brain/tests/test_phase18_security.py](/var/www/jarvis/apps/brain/tests/test_phase18_security.py).
+* Roadmap Phase 19, `Add Self-Learning`, is now complete with a self-learning engine, outcome event capture, lessons learned, staged knowledge updates with human review, versioned knowledge application, playbook generation, analytics, CLI tooling, and tests in [apps/brain/tests/test_phase19_self_learning.py](/var/www/jarvis/apps/brain/tests/test_phase19_self_learning.py).
+* Roadmap Phase 20, `Final Operating System`, is now complete with a unified Jarvis OS layer, centralized module snapshotting, assistant coverage mapping, executive reporting, cross-module recommendations, aggregated event streams, CLI tooling, and tests in [apps/brain/tests/test_phase20_os.py](/var/www/jarvis/apps/brain/tests/test_phase20_os.py).
 
 Current useful assets preserved:
 
@@ -37,9 +39,9 @@ Current useful assets preserved:
 
 Current gaps versus the full roadmap:
 
-* The frontend is now a stronger operational shell, but still has room to deepen interactive workflows beyond the current console surfaces.
-* PostgreSQL is preserved as a future-compatible path through configuration, but SQLite remains the only active persistence backend right now.
-* Vision is still earlier than voice and dashboard in execution depth, while browser automation remains planning-first.
+* The roadmap is now fully marked complete in the current repository state.
+* PostgreSQL is preserved as a future-compatible path through configuration, but SQLite remains the primary active persistence backend right now.
+* Vision and external production integrations can still deepen beyond the current validated local-first operating system.
 
 Audit notes:
 
@@ -72,8 +74,8 @@ Audit notes:
 | 16 | UI Dashboard | complete | The desktop operations console now includes routed pages, realtime dashboard snapshots, approvals, tasks, reports, search, themes, installable web-dashboard metadata, service-worker shell support, and frontend validation scripts. |
 | 17 | Voice / Jarvis Feel | complete | Voice sessions, command and conversation modes, emergency handling, Jarvis personality/tone telemetry, desktop controls, websocket updates, and benchmark/test coverage are implemented. |
 | 18 | Security | complete | Central security engine, signed auth, RBAC/ABAC, API keys, encrypted secrets/backups, recovery testing, audit integrity, lockdown/offline controls, metrics, and security tests are implemented. |
-| 19 | Documentation | complete | Required core docs, system docs, and module readmes are present. |
-| 20 | Final Verification | complete | Python compilation, API endpoint checks, Rust workspace build, and desktop frontend build completed successfully. |
+| 19 | Self-Learning | complete | Learning runs now capture outcomes, lessons, staged knowledge updates, playbooks, versioned applies, CLI access, and API verification. |
+| 20 | Final Operating System | complete | The Jarvis OS layer now unifies modules, assistants, reports, recommendations, and event streams through API and CLI verification. |
 
 ## Implementation Plan
 
@@ -113,10 +115,9 @@ Phases 15-20
 
 ## Immediate Next Steps
 
-1. Expand frontend interaction depth and page routing.
-2. Add real execution adapters for tools, browser automation, voice, and vision providers.
-3. Introduce PostgreSQL and vector memory adapters behind the current interfaces when needed.
-4. Finish the remaining external-facing security integrations such as OAuth, secret-manager backends, deployment signing, and notification channels before production exposure.
+1. Harden production-specific integrations only when moving beyond the current local-first validated operating mode.
+2. Introduce optional external backends such as PostgreSQL, cloud secret managers, and provider APIs when deployment requirements justify them.
+3. Deepen vision, browser automation, and mobile delivery surfaces as product priorities evolve.
 
 ## Known Constraints
 

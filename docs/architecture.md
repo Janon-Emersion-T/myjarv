@@ -87,6 +87,14 @@ Project manager mode now persists projects, milestones, blockers, dependencies, 
 
 Workflow replacement now persists reusable staff-replacement workflows under `data/workflows`, with role catalogs, decomposition, scoring, approval mapping, SOP/documentation generation, simulation and replay, dashboard summaries, and API/CLI access that integrate with memory, knowledge, tools, browser planning, and project/business systems.
 
+### Self-Learning
+
+Self-learning now persists runs, outcome events, lessons, staged knowledge updates, playbooks, and version snapshots under `data/learning`, with review-gated knowledge application into `data/knowledge/company/self-learning`, API/CLI access, and analytics that connect tasks, logs, projects, developer mode, business automation, security, and knowledge freshness.
+
+### Jarvis OS
+
+The unified Jarvis OS layer now aggregates modules, assistants, recommendations, event streams, and executive reports under `data/os`, exposing a centralized operating snapshot that sits above the existing dashboard, memory, knowledge, tool, approval, project, developer, business, workflow, security, voice, and self-learning systems.
+
 ### Desktop
 
 The desktop app lives in `apps/desktop` and is configured for Tauri + React + Tailwind.

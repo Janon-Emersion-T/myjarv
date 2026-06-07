@@ -76,6 +76,23 @@ class DeveloperChangelogRequest(BaseModel):
     version: str | None = None
 
 
+class SelfLearningRunRequest(BaseModel):
+    limit: int = Field(default=100, ge=1, le=1000)
+    reviewer: str = Field(default="Jarvis", min_length=1)
+    mode: Literal["safe", "apply_ready"] = "safe"
+
+
+class SelfLearningReviewRequest(BaseModel):
+    reviewer: str = Field(..., min_length=1)
+    decision: Literal["approved", "rejected"]
+    notes: str | None = None
+
+
+class SelfLearningApplyRequest(BaseModel):
+    reviewer: str = Field(..., min_length=1)
+    notes: str | None = None
+
+
 class ProjectCreateRequest(BaseModel):
     name: str = Field(..., min_length=1)
     client_name: str = Field(..., min_length=1)

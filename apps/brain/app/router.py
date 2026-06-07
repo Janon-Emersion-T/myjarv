@@ -23,6 +23,7 @@ from app.developer_mode import developer_mode
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.knowledge.loader import knowledge_loader
 from app.knowledge.pipelines import knowledge_pipeline_registry
+from app.jarvis_os import jarvis_os
 from app.logger import logger
 from app.memory_adapters import memory_adapter_registry
 from app.memory import memory_store
@@ -31,6 +32,7 @@ from app.routing import routing_engine, routing_store
 from app.routing.rules import routing_rules
 from app.secops import security_engine
 from app.security import enforce_local_auth
+from app.self_learning import self_learning_engine
 from app.project_manager import project_manager
 from app.workflow_replacement import workflow_replacement_engine
 from app.schemas import (
@@ -70,6 +72,9 @@ from app.schemas import (
     RoutingSimulationRequest,
     ScanRunRequest,
     SecretCreateRequest,
+    SelfLearningApplyRequest,
+    SelfLearningReviewRequest,
+    SelfLearningRunRequest,
     TaskCreateRequest,
     TaskExecutionRequest,
     TaskReassignmentRequest,
@@ -689,6 +694,83 @@ def dashboard_projects() -> dict:
 @router.get("/dashboard/workflows")
 def dashboard_workflows() -> dict:
     return workflow_replacement_engine.dashboard()
+
+
+@router.get("/learning/dashboard")
+def learning_dashboard() -> dict:
+    return self_learning_engine.dashboard()
+
+
+@router.get("/learning/analytics")
+def learning_analytics() -> dict:
+    return self_learning_engine.analytics()
+
+
+@router.get("/learning/events")
+def learning_events(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"events": self_learning_engine.list_events(limit=limit)}
+
+
+@router.get("/learning/lessons")
+def learning_lessons(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"lessons": self_learning_engine.list_lessons(limit=limit)}
+
+
+@router.get("/learning/updates")
+def learning_updates(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"updates": self_learning_engine.list_updates(limit=limit)}
+
+
+@router.get("/learning/playbooks")
+def learning_playbooks(limit: int = Query(default=100, ge=1, le=500)) -> dict:
+    return {"playbooks": self_learning_engine.list_playbooks(limit=limit)}
+
+
+@router.post("/learning/run")
+def run_learning(request: SelfLearningRunRequest) -> dict:
+    return self_learning_engine.run(limit=request.limit, reviewer=request.reviewer, mode=request.mode)
+
+
+@router.post("/learning/updates/{update_id}/review")
+def review_learning_update(update_id: str, request: SelfLearningReviewRequest) -> dict:
+    return self_learning_engine.review_update(update_id, reviewer=request.reviewer, decision=request.decision, notes=request.notes)
+
+
+@router.post("/learning/updates/{update_id}/apply")
+def apply_learning_update(update_id: str, request: SelfLearningApplyRequest) -> dict:
+    return self_learning_engine.apply_update(update_id, reviewer=request.reviewer, notes=request.notes)
+
+
+@router.get("/os/dashboard")
+def operating_system_dashboard() -> dict:
+    return jarvis_os.dashboard()
+
+
+@router.get("/os/modules")
+def operating_system_modules() -> dict:
+    return {"modules": jarvis_os.modules()}
+
+
+@router.get("/os/assistants")
+def operating_system_assistants() -> dict:
+    return {"assistants": jarvis_os.assistants()}
+
+
+@router.get("/os/recommendations")
+def operating_system_recommendations() -> dict:
+    return {"recommendations": jarvis_os.recommendations()}
+
+
+@router.get("/os/event-bus")
+def operating_system_event_bus(limit: int = Query(default=50, ge=1, le=200)) -> dict:
+    return jarvis_os.event_bus(limit=limit)
+
+
+@router.get("/os/reports/{report_type}")
+def operating_system_report(report_type: str) -> dict:
+    if report_type not in {"daily_ceo", "weekly_strategy", "monthly_business"}:
+        raise HTTPException(status_code=400, detail="Unsupported report type.")
+    return jarvis_os.report(report_type)
 
 
 @router.post("/routing/simulate")

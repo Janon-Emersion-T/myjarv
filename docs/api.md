@@ -95,6 +95,21 @@ Base service: `apps/brain/app/main.py`
 * `GET /dashboard/business`
 * `GET /dashboard/projects`
 * `GET /dashboard/workflows`
+* `GET /learning/dashboard`
+* `GET /learning/analytics`
+* `GET /learning/events`
+* `GET /learning/lessons`
+* `GET /learning/updates`
+* `GET /learning/playbooks`
+* `POST /learning/run`
+* `POST /learning/updates/{update_id}/review`
+* `POST /learning/updates/{update_id}/apply`
+* `GET /os/dashboard`
+* `GET /os/modules`
+* `GET /os/assistants`
+* `GET /os/recommendations`
+* `GET /os/event-bus`
+* `GET /os/reports/{report_type}`
 * `WS /ws/approvals`
 
 ## Auth Placeholder
