@@ -81,6 +81,42 @@ class RoutingPhase6Tests(unittest.TestCase):
         self.assertEqual(replay.status_code, 200)
         self.assertEqual(replay.json()["mode"], "replay")
 
+    def test_overrides_and_guardrails_affect_routing(self):
+        override = self.client.post(
+            "/routing/simulate",
+            json={
+                "message": "Need an urgent executive briefing for this week",
+                "metadata": {"route_override": "Jarvis"},
+            },
+        )
+        self.assertEqual(override.status_code, 200)
+        override_payload = override.json()
+        self.assertEqual(override_payload["selected_agent"], "Jarvis")
+
+        whitelisted = self.client.post(
+            "/routing/simulate",
+            json={
+                "message": "Build a Laravel client portal with billing workflows",
+                "metadata": {"agent_whitelist": ["Lara"]},
+            },
+        )
+        self.assertEqual(whitelisted.status_code, 200)
+        whitelist_payload = whitelisted.json()
+        self.assertEqual(whitelist_payload["selected_agent"], "Lara")
+
+        dead_end = self.client.post(
+            "/routing/simulate",
+            json={
+                "message": "Website refresh with approvals and implementation details",
+                "metadata": {"agent_whitelist": ["NonexistentAgent"]},
+            },
+        )
+        self.assertEqual(dead_end.status_code, 200)
+        dead_end_payload = dead_end.json()
+        self.assertEqual(dead_end_payload["selected_agent"], "Jarvis")
+        self.assertTrue(dead_end_payload["is_ambiguous"])
+        self.assertTrue(any("No eligible candidates remained" in warning for warning in dead_end_payload["warnings"]))
+
     def test_routing_analytics_and_stress_pass(self):
         started = time.perf_counter()
         for index in range(40):

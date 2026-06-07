@@ -46,6 +46,8 @@ export default function App() {
     approveTask,
     rejectTask,
     executeTask,
+    createTask,
+    createMemory,
     planCollaboration,
     requestDesktopNotifications,
     createVoiceSession,
@@ -139,6 +141,8 @@ export default function App() {
             approveTask: (taskId: string) => approveTask(taskId, "Desktop", "Approved from Jarvis desktop."),
             rejectTask: (taskId: string) => rejectTask(taskId, "Desktop", "Rejected from Jarvis desktop."),
             executeTask,
+            createTask,
+            createMemory,
             planCollaboration,
             createVoiceSession,
             sendVoiceCommand,
@@ -168,6 +172,15 @@ function renderPage(
     approveTask?: (taskId: string) => Promise<void>;
     rejectTask?: (taskId: string) => Promise<void>;
     executeTask?: (taskId: string) => Promise<void>;
+    createTask?: (payload: { message: string; preferred_agent?: string; requested_action?: string; metadata?: Record<string, unknown> }) => Promise<void>;
+    createMemory?: (payload: {
+      scope: "company" | "client" | "project" | "decision" | "mistake" | "agent" | "user_preference";
+      key: string;
+      value: string;
+      tags: string[];
+      source?: string;
+      task_id?: string;
+    }) => Promise<void>;
     planCollaboration?: (taskId: string) => Promise<void>;
     createVoiceSession?: (payload: { mode: string; text?: string; locale?: string; speaker_id?: string }) => Promise<any>;
     sendVoiceCommand?: (sessionId: string, payload: { text: string; requested_action?: string; locale?: string; speaker_id?: string }) => Promise<unknown>;
@@ -182,13 +195,21 @@ function renderPage(
     case "agents":
       return <AgentsPage agents={state.agents} />;
     case "tasks":
-      return <TasksPage tasks={state.tasks} onExecute={actions.executeTask ?? (async () => undefined)} onPlanCollaboration={actions.planCollaboration ?? (async () => undefined)} />;
+      return (
+        <TasksPage
+          tasks={state.tasks}
+          agents={state.agents}
+          onCreateTask={actions.createTask ?? (async () => undefined)}
+          onExecute={actions.executeTask ?? (async () => undefined)}
+          onPlanCollaboration={actions.planCollaboration ?? (async () => undefined)}
+        />
+      );
     case "approvals":
       return <ApprovalsPage approvals={state.approvals} onApprove={actions.approveTask ?? (async () => undefined)} onReject={actions.rejectTask ?? (async () => undefined)} />;
     case "projects":
       return <ProjectsPage pipeline={state.pipeline} />;
     case "memory":
-      return <MemoryPage memory={state.memory} />;
+      return <MemoryPage memory={state.memory} tasks={state.tasks} onCreateMemory={actions.createMemory ?? (async () => undefined)} />;
     case "knowledge":
       return <KnowledgePage knowledge={state.knowledge} />;
     case "logs":

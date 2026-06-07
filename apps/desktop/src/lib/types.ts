@@ -22,6 +22,13 @@ export type Task = {
   last_error?: string | null;
 };
 
+export type TaskCreatePayload = {
+  message: string;
+  preferred_agent?: string;
+  requested_action?: string;
+  metadata?: Record<string, unknown>;
+};
+
 export type MemoryRecord = {
   id: string;
   scope: string;
@@ -29,6 +36,17 @@ export type MemoryRecord = {
   value: string;
   tags: string[];
   source?: string | null;
+};
+
+export type MemoryScope = "company" | "client" | "project" | "decision" | "mistake" | "agent" | "user_preference";
+
+export type MemoryCreatePayload = {
+  scope: MemoryScope;
+  key: string;
+  value: string;
+  tags: string[];
+  source?: string;
+  task_id?: string;
 };
 
 export type KnowledgeRecord = {

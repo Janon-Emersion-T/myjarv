@@ -11,7 +11,9 @@ import type {
   DesktopState,
   KnowledgeRecord,
   LogRecord,
+  MemoryCreatePayload,
   MemoryRecord,
+  TaskCreatePayload,
   NotificationItem,
   SearchResults,
   SettingsRecord,
@@ -252,6 +254,16 @@ export function useDesktopState() {
     await syncAll();
   }, [syncAll]);
 
+  const createTask = useCallback(async (payload: TaskCreatePayload) => {
+    await postJson("/tasks", payload);
+    await syncAll();
+  }, [syncAll]);
+
+  const createMemory = useCallback(async (payload: MemoryCreatePayload) => {
+    await postJson("/memory", payload);
+    await syncAll();
+  }, [syncAll]);
+
   const planCollaboration = useCallback(async (taskId: string) => {
     await postJson(`/tasks/${taskId}/collaboration/plan`);
     await syncAll();
@@ -322,6 +334,8 @@ export function useDesktopState() {
     approveTask,
     rejectTask,
     executeTask,
+    createTask,
+    createMemory,
     planCollaboration,
     requestDesktopNotifications,
     createVoiceSession,
