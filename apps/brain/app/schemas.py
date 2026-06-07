@@ -312,7 +312,26 @@ class MemorySnapshotRequest(BaseModel):
 class KnowledgeRecord(BaseModel):
     path: str
     category: str
+    title: str | None = None
+    summary: str | None = None
     content: str
+    tags: list[str] = Field(default_factory=list)
+    sources: list[str] = Field(default_factory=list)
+    confidence_score: float = Field(default=0.0, ge=0.0, le=1.0)
+    quality_score: float = Field(default=0.0, ge=0.0, le=1.0)
+    trusted: bool = False
+    verified: bool = False
+    version: str | None = None
+    last_reviewed: str | None = None
+    approval_status: str | None = None
+    domain: str | None = None
+    department: str | None = None
+    frameworks: list[str] = Field(default_factory=list)
+    languages: list[str] = Field(default_factory=list)
+    status: str | None = None
+    outdated: bool = False
+    source_type: str | None = None
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
 class ToolDefinition(BaseModel):

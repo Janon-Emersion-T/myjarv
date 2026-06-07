@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Proposal Templates Library",
+    "summary": "Reusable proposal templates for discovery, delivery, retainer, and implementation engagements.",
+    "tags": ["proposal", "templates", "sales", "business"],
+    "sources": ["internal"],
+    "confidence": 0.95,
+    "verified": true,
+    "version": "1.0",
+    "last_reviewed": "2026-06-07",
+    "approval_status": "approved",
+    "trusted": true,
+    "domain": "templates",
+    "department": "operations",
+    "frameworks": [],
+    "languages": ["business"]
+  },
+  "content": {
+    "templates": [
+      {
+        "name": "Discovery Proposal",
+        "sections": ["Client Context", "Objectives", "Discovery Scope", "Outputs", "Timeline", "Commercial Terms"]
+      },
+      {
+        "name": "Implementation Proposal",
+        "sections": ["Problem Statement", "Solution Scope", "Phases", "Deliverables", "Assumptions", "Approvals", "Pricing"]
+      },
+      {
+        "name": "Retainer Proposal",
+        "sections": ["Support Model", "Hours or Capacity", "Response Expectations", "Reporting", "Change Process", "Fees"]
+      }
+    ]
+  }
+}

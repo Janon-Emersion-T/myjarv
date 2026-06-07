@@ -58,7 +58,7 @@ Memory scopes:
 
 ### Knowledge
 
-Structured markdown knowledge lives in `data/knowledge` and is retrieved by category or simple text relevance.
+Structured knowledge now lives in `data/knowledge` across markdown and JSON sources, with metadata-aware indexing, semantic-style retrieval, validation, source tracking, relationship graphing, and API/CLI inspection support.
 
 ### Tools
 
@@ -71,4 +71,3 @@ The desktop app lives in `apps/desktop` and is configured for Tauri + React + Ta
 ### Rust Core
 
 The Rust workspace lives in `apps/rust-core` and currently exposes small CLI-oriented crates for future Python integration.
-

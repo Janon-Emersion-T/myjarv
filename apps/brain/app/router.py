@@ -17,6 +17,7 @@ from app.dashboard import (
 )
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.knowledge.loader import knowledge_loader
+from app.knowledge.pipelines import knowledge_pipeline_registry
 from app.logger import logger
 from app.memory_adapters import memory_adapter_registry
 from app.memory import memory_store
@@ -712,10 +713,55 @@ async def voice_stream(session_id: str, websocket: WebSocket) -> None:
 
 
 @router.get("/knowledge")
-def get_knowledge(category: str | None = Query(default=None), query: str | None = Query(default=None)) -> dict:
+def get_knowledge(category: str | None = Query(default=None), query: str | None = Query(default=None), limit: int = Query(default=20, ge=1, le=200)) -> dict:
     if query:
-        return {"knowledge": knowledge_loader.retrieve_relevant(query)}
-    return {"knowledge": knowledge_loader.list_entries(category=category)}
+        return {"knowledge": knowledge_loader.retrieve_relevant(query, limit=limit, category=category)}
+    return {"knowledge": knowledge_loader.list_entries(category=category)[:limit]}
+
+
+@router.get("/knowledge/search")
+def search_knowledge(query: str = Query(..., min_length=1), category: str | None = Query(default=None), limit: int = Query(default=20, ge=1, le=200)) -> dict:
+    return {"knowledge": knowledge_loader.search(query=query, category=category, limit=limit, semantic=True)}
+
+
+@router.get("/knowledge/analytics")
+def knowledge_analytics() -> dict:
+    return knowledge_loader.analytics()
+
+
+@router.get("/knowledge/validate")
+def validate_knowledge() -> dict:
+    return knowledge_loader.validate()
+
+
+@router.get("/knowledge/sources")
+def knowledge_sources() -> dict:
+    return knowledge_loader.source_report()
+
+
+@router.get("/knowledge/quarantine")
+def knowledge_quarantine() -> dict:
+    return {"knowledge": knowledge_loader.quarantine()}
+
+
+@router.get("/knowledge/graph")
+def knowledge_graph() -> dict:
+    return knowledge_loader.relationship_graph()
+
+
+@router.get("/knowledge/gaps")
+def knowledge_gaps() -> dict:
+    return knowledge_loader.missing_knowledge()
+
+
+@router.get("/knowledge/pipelines")
+def knowledge_pipelines() -> dict:
+    return knowledge_pipeline_registry.describe()
+
+
+@router.post("/knowledge/reindex")
+def reindex_knowledge() -> dict:
+    return knowledge_loader.reindex()
 
 
 @router.get("/tools")
