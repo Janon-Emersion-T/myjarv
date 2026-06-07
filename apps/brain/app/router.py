@@ -4,11 +4,14 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response,
 
 from app.agent_loader import get_agent_detail, get_all_agents, get_department_groups, get_registry_data
 from app.approval_bus import approval_bus
+from app.business_automation import business_automation
 from app.browser.planner import browser_planner
 from app.collaboration import collaboration_bus, collaboration_engine, collaboration_store
 from app.config import settings
 from app.dashboard import (
     get_dashboard_activity,
+    get_dashboard_business,
+    get_dashboard_developer,
     get_dashboard_errors,
     get_dashboard_kpis,
     get_dashboard_pipeline,
@@ -16,6 +19,7 @@ from app.dashboard import (
     get_dashboard_summary,
     search_dashboard,
 )
+from app.developer_mode import developer_mode
 from app.exceptions import ApprovalRequiredError, TaskExecutionError, TaskStateError
 from app.knowledge.loader import knowledge_loader
 from app.knowledge.pipelines import knowledge_pipeline_registry
@@ -39,7 +43,18 @@ from app.schemas import (
     ApprovalRevokeRequest,
     ApprovalRollbackRequest,
     ApprovalSimulationRequest,
+    BusinessCompetitorAnalysisRequest,
+    BusinessBlogDraftRequest,
+    BusinessFollowupCreateRequest,
+    BusinessInvoiceReminderRequest,
+    BusinessLeadCreateRequest,
+    BusinessMonthlyReportRequest,
+    BusinessOnboardingRequest,
+    BusinessProposalCreateRequest,
+    BusinessQuotationCreateRequest,
     IncidentCreateRequest,
+    DeveloperChangelogRequest,
+    DeveloperFixPlanRequest,
     LockdownRequest,
     MemoryCreateRequest,
     MemoryImportRequest,
@@ -648,6 +663,16 @@ def dashboard_search(query: str = Query(..., min_length=1)) -> dict:
     return search_dashboard(query)
 
 
+@router.get("/dashboard/developer")
+def dashboard_developer() -> dict:
+    return get_dashboard_developer()
+
+
+@router.get("/dashboard/business")
+def dashboard_business() -> dict:
+    return get_dashboard_business()
+
+
 @router.post("/routing/simulate")
 def simulate_routing(request: RoutingSimulationRequest) -> dict:
     return routing_engine.route(
@@ -985,3 +1010,163 @@ def get_business_workflows() -> dict:
 @router.get("/workflows/developer")
 def get_developer_workflows() -> dict:
     return {"workflows": DEVELOPER_WORKFLOWS}
+
+
+@router.get("/developer/scan")
+def developer_scan(path: str = Query(default=".", min_length=1)) -> dict:
+    return developer_mode.analyze_repository(path)
+
+
+@router.get("/developer/health")
+def developer_health(path: str = Query(default=".", min_length=1)) -> dict:
+    return developer_mode.repository_health(path)
+
+
+@router.get("/developer/errors")
+def developer_errors(path: str = Query(default=".", min_length=1)) -> dict:
+    return developer_mode.detect_errors(path)
+
+
+@router.get("/developer/analytics")
+def developer_analytics(path: str = Query(default=".", min_length=1)) -> dict:
+    return developer_mode.analytics(path)
+
+
+@router.get("/developer/deployment-checklist")
+def developer_deployment_checklist(path: str = Query(default=".", min_length=1)) -> dict:
+    return developer_mode.deployment_checklist(path)
+
+
+@router.post("/developer/fix-plan")
+def developer_fix_plan(request: DeveloperFixPlanRequest) -> dict:
+    return developer_mode.fix_plan(
+        goal=request.goal,
+        path=request.path,
+        constraints=request.constraints,
+        preferred_files=request.preferred_files,
+    )
+
+
+@router.post("/developer/changelog")
+def developer_changelog(request: DeveloperChangelogRequest) -> dict:
+    return developer_mode.generate_changelog(
+        title=request.title,
+        summary=request.summary,
+        changes=request.changes,
+        version=request.version,
+    )
+
+
+@router.get("/business/analytics")
+def business_analytics() -> dict:
+    return business_automation.analytics()
+
+
+@router.get("/business/leads")
+def list_business_leads() -> dict:
+    return {"leads": business_automation.list_leads()}
+
+
+@router.post("/business/leads")
+def create_business_lead(request: BusinessLeadCreateRequest) -> dict:
+    return business_automation.create_lead(
+        name=request.name,
+        company=request.company,
+        service_interest=request.service_interest,
+        budget=request.budget,
+        channel=request.channel,
+        notes=request.notes,
+    )
+
+
+@router.post("/business/leads/{lead_id}/qualify")
+def qualify_business_lead(lead_id: str) -> dict:
+    try:
+        return business_automation.qualify_lead(lead_id)
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.get("/business/proposals")
+def list_business_proposals() -> dict:
+    return {"proposals": business_automation.list_proposals()}
+
+
+@router.post("/business/proposals")
+def create_business_proposal(request: BusinessProposalCreateRequest) -> dict:
+    return business_automation.create_proposal(
+        client_name=request.client_name,
+        project_name=request.project_name,
+        scope=request.scope,
+        timeline_weeks=request.timeline_weeks,
+        budget_estimate=request.budget_estimate,
+        lead_id=request.lead_id,
+    )
+
+
+@router.post("/business/quotations")
+def create_business_quotation(request: BusinessQuotationCreateRequest) -> dict:
+    try:
+        return business_automation.create_quotation(
+            proposal_id=request.proposal_id,
+            labor_hours=request.labor_hours,
+            hourly_rate=request.hourly_rate,
+            expenses=request.expenses,
+            discount=request.discount,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@router.post("/business/followups")
+def create_business_followup(request: BusinessFollowupCreateRequest) -> dict:
+    return business_automation.create_followup(
+        client_name=request.client_name,
+        subject=request.subject,
+        channel=request.channel,
+        context=request.context,
+        days_since_last_touch=request.days_since_last_touch,
+    )
+
+
+@router.post("/business/invoices/reminders")
+def create_business_invoice_reminder(request: BusinessInvoiceReminderRequest) -> dict:
+    return business_automation.create_invoice_reminder(
+        client_name=request.client_name,
+        invoice_number=request.invoice_number,
+        amount_due=request.amount_due,
+        days_overdue=request.days_overdue,
+    )
+
+
+@router.post("/business/onboarding")
+def create_business_onboarding(request: BusinessOnboardingRequest) -> dict:
+    return business_automation.create_onboarding(
+        client_name=request.client_name,
+        project_name=request.project_name,
+        service_line=request.service_line,
+    )
+
+
+@router.post("/business/competitors/analyze")
+def analyze_business_competitor(request: BusinessCompetitorAnalysisRequest) -> dict:
+    return business_automation.competitor_analysis(
+        competitor_name=request.competitor_name,
+        website=request.website,
+        focus=request.focus,
+    )
+
+
+@router.post("/business/blog-drafts")
+def create_business_blog_draft(request: BusinessBlogDraftRequest) -> dict:
+    return business_automation.create_blog_draft(
+        title=request.title,
+        audience=request.audience,
+        topic=request.topic,
+        call_to_action=request.call_to_action,
+    )
+
+
+@router.post("/business/reports/monthly")
+def create_business_monthly_report(request: BusinessMonthlyReportRequest) -> dict:
+    return business_automation.create_monthly_report(month=request.month)

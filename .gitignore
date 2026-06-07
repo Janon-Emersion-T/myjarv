@@ -142,6 +142,8 @@ storage/vector/
 storage/embeddings/
 data/memory/
 data/approvals/
+data/developer/
+data/business/
 
 # =========================
 # AI generated screenshots

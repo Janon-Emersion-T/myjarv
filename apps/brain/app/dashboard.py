@@ -5,7 +5,9 @@ from datetime import UTC, datetime
 from typing import Any
 
 from app.agent_loader import get_all_agents
+from app.business_automation import business_automation
 from app.collaboration import collaboration_store
+from app.developer_mode import developer_mode
 from app.logger import logger
 from app.memory import memory_store
 from app.routing import routing_store
@@ -138,6 +140,22 @@ def get_dashboard_pipeline() -> dict[str, Any]:
     return {
         "stages": {key: value[:20] for key, value in buckets.items()},
         "counts": {key: len(value) for key, value in buckets.items()},
+    }
+
+
+def get_dashboard_developer() -> dict[str, Any]:
+    return {
+        "analytics": developer_mode.analytics("."),
+        "health": developer_mode.repository_health("."),
+        "errors": developer_mode.detect_errors("."),
+    }
+
+
+def get_dashboard_business() -> dict[str, Any]:
+    return {
+        "analytics": business_automation.analytics(),
+        "leads": business_automation.list_leads()[:10],
+        "proposals": business_automation.list_proposals()[:10],
     }
 
 

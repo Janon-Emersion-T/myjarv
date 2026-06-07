@@ -5,7 +5,8 @@ import time
 from collections import defaultdict, deque
 from typing import Any
 
-from fastapi import Header, HTTPException, Request
+from fastapi import Header, HTTPException
+from starlette.requests import HTTPConnection, Request
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse
 
@@ -51,7 +52,7 @@ def _check_rate_limit(client_id: str) -> None:
 
 
 async def enforce_local_auth(
-    request: Request,
+    request: HTTPConnection,
     x_jarvis_token: str | None = Header(default=None),
     authorization: str | None = Header(default=None),
     x_api_key: str | None = Header(default=None),
@@ -59,6 +60,7 @@ async def enforce_local_auth(
     client_id = request.client.host if request.client else "unknown"
     _check_rate_limit(client_id)
     path = request.url.path
+    method = getattr(request, "method", "WEBSOCKET")
     request.state.security_subject = None
 
     if path.startswith(_PUBLIC_PATH_PREFIXES):
@@ -95,7 +97,7 @@ async def enforce_local_auth(
                 raise HTTPException(status_code=423, detail="Jarvis security lockdown is active.")
 
     if security_engine.is_offline_mode():
-        if path.startswith(("/tasks", "/voice", "/collaboration", "/routing")) and request.method in {"POST", "PUT", "PATCH", "DELETE"}:
+        if path.startswith(("/tasks", "/voice", "/collaboration", "/routing")) and method in {"POST", "PUT", "PATCH", "DELETE"}:
             if subject is None or subject.get("role") != "admin":
                 raise HTTPException(status_code=503, detail="Jarvis secure offline mode is active.")
 
@@ -104,7 +106,7 @@ async def enforce_local_auth(
 
     if subject is not None:
         request.state.security_subject = subject
-        security_engine.enforce_path(subject, request.url.path, request.method)
+        security_engine.enforce_path(subject, request.url.path, method)
     return subject
 
 

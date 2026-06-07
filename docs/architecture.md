@@ -71,6 +71,14 @@ Structured knowledge now lives in `data/knowledge` across markdown and JSON sour
 
 Tool definitions live in `packages/tools/registry.json` and are validated against `packages/tools/schema.json`. The Python brain now exposes registry discovery, approval-aware execution, queued workflows, replayable history, compatibility mapping, metrics, and adapter descriptors through the tool API.
 
+### Developer Mode
+
+Developer mode now adds repository scanning, stack and framework detection, health scoring, issue heuristics, fix-plan generation, changelog generation, deployment checklist generation, dashboard snapshots, and CLI/API access backed by runtime artifacts under `data/developer`.
+
+### Business Automation
+
+Business automation now persists leads, proposals, quotations, follow-ups, invoice reminders, onboarding checklists, competitor reports, and monthly summaries under `data/business`, with API, dashboard, CLI, analytics, and memory integration for captured lead context.
+
 ### Desktop
 
 The desktop app lives in `apps/desktop` and is configured for Tauri + React + Tailwind.

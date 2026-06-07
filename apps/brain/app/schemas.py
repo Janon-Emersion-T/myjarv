@@ -62,6 +62,84 @@ class RoutingSimulationRequest(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
+class DeveloperFixPlanRequest(BaseModel):
+    goal: str = Field(..., min_length=1)
+    path: str | None = None
+    constraints: list[str] = Field(default_factory=list)
+    preferred_files: list[str] = Field(default_factory=list)
+
+
+class DeveloperChangelogRequest(BaseModel):
+    title: str = Field(..., min_length=1)
+    summary: str = Field(..., min_length=1)
+    changes: list[str] = Field(default_factory=list)
+    version: str | None = None
+
+
+class BusinessLeadCreateRequest(BaseModel):
+    name: str = Field(..., min_length=1)
+    company: str = Field(..., min_length=1)
+    service_interest: str = Field(..., min_length=1)
+    budget: float | None = Field(default=None, ge=0)
+    channel: str = Field(default="website", min_length=1)
+    notes: str | None = None
+
+
+class BusinessProposalCreateRequest(BaseModel):
+    client_name: str = Field(..., min_length=1)
+    project_name: str = Field(..., min_length=1)
+    scope: str = Field(..., min_length=1)
+    timeline_weeks: int = Field(..., ge=1)
+    budget_estimate: float = Field(..., ge=0)
+    lead_id: str | None = None
+
+
+class BusinessQuotationCreateRequest(BaseModel):
+    proposal_id: str = Field(..., min_length=1)
+    labor_hours: float = Field(..., ge=0)
+    hourly_rate: float = Field(..., ge=0)
+    expenses: float = Field(default=0, ge=0)
+    discount: float = Field(default=0, ge=0)
+
+
+class BusinessFollowupCreateRequest(BaseModel):
+    client_name: str = Field(..., min_length=1)
+    subject: str = Field(..., min_length=1)
+    channel: str = Field(..., min_length=1)
+    context: str = Field(..., min_length=1)
+    days_since_last_touch: int = Field(default=0, ge=0)
+
+
+class BusinessInvoiceReminderRequest(BaseModel):
+    client_name: str = Field(..., min_length=1)
+    invoice_number: str = Field(..., min_length=1)
+    amount_due: float = Field(..., ge=0)
+    days_overdue: int = Field(..., ge=0)
+
+
+class BusinessOnboardingRequest(BaseModel):
+    client_name: str = Field(..., min_length=1)
+    project_name: str = Field(..., min_length=1)
+    service_line: str = Field(..., min_length=1)
+
+
+class BusinessCompetitorAnalysisRequest(BaseModel):
+    competitor_name: str = Field(..., min_length=1)
+    website: str = Field(..., min_length=1)
+    focus: str = Field(..., min_length=1)
+
+
+class BusinessBlogDraftRequest(BaseModel):
+    title: str = Field(..., min_length=1)
+    audience: str = Field(..., min_length=1)
+    topic: str = Field(..., min_length=1)
+    call_to_action: str = Field(..., min_length=1)
+
+
+class BusinessMonthlyReportRequest(BaseModel):
+    month: str = Field(..., min_length=1)
+
+
 class TaskReassignmentRequest(BaseModel):
     reviewer: str = Field(..., min_length=1)
     agent: str = Field(..., min_length=1)
