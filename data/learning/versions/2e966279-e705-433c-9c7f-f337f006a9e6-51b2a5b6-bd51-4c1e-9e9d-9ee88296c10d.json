@@ -1,0 +1,16 @@
+{
+  "id": "51b2a5b6-bd51-4c1e-9e9d-9ee88296c10d",
+  "update_id": "2e966279-e705-433c-9c7f-f337f006a9e6",
+  "path": "company/self-learning/finance-operating-playbook.md",
+  "applied_by": "Janon",
+  "notes": "Apply to knowledge base",
+  "applied_at": "2026-06-10T13:33:46.895885+00:00",
+  "before": "",
+  "after": "---\ntitle: Finance operating playbook\nsources: [\"internal\"]\ntrusted: true\nverified: true\napproval_status: approved\nsummary: Review prior routing and approval context.\nReuse the strongest successful task decomposition.\nEscalate early when confidence, risk, or blockers shift.\nWrite memory and knowledge updates after delivery.\ntags: [finance, playbook]\nlast_reviewed: 2026-06-10\n---\n\n# Finance operating playbook\n\nReview prior routing and approval context.\nReuse the strongest successful task decomposition.\nEscalate early when confidence, risk, or blockers shift.\nWrite memory and knowledge updates after delivery.\n\nReviewed by Janon.\nApply to knowledge base\n",
+  "semantic_diff": {
+    "before_lines": 0,
+    "after_lines": 20,
+    "added_lines": 20,
+    "changed": true
+  }
+}

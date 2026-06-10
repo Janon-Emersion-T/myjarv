@@ -1,7 +1,1580 @@
 {
-  "runs": [],
-  "events": [],
-  "lessons": [],
-  "updates": [],
-  "playbooks": []
+  "runs": [
+    {
+      "id": "91d53cda-336e-4edb-b51f-65bca1d185e0",
+      "mode": "safe",
+      "reviewer": "Phase19",
+      "limit": 80,
+      "created_at": "2026-06-10T13:33:45.564627+00:00",
+      "events_added": 29,
+      "lessons_added": 19,
+      "playbooks_added": 3,
+      "updates_open": 22,
+      "analytics": {
+        "runs_total": 0,
+        "events_total": 29,
+        "lessons_total": 19,
+        "updates_total": 22,
+        "pending_updates": 22,
+        "applied_updates": 0,
+        "playbooks_total": 3,
+        "lesson_kinds": {
+          "failure_pattern": 7,
+          "success_pattern": 12
+        },
+        "coverage": {
+          "developer": {
+            "analysis": {
+              "path": ".",
+              "scanned_at": "2026-06-10T13:33:45.952403+00:00",
+              "total_files": 1738,
+              "top_extensions": {
+                ".json": 1099,
+                ".md": 341,
+                ".py": 161,
+                ".tsx": 21,
+                ".bin": 15,
+                ".enc": 10,
+                ".ts": 9,
+                ".example": 8,
+                ".sqlite3": 8,
+                ".jsonl": 8,
+                ".toml": 7,
+                ".rs": 7
+              },
+              "languages": [
+                "JSON",
+                "Markdown",
+                "Python",
+                "TypeScript",
+                "TOML",
+                "Rust",
+                "JavaScript"
+              ],
+              "stack": [
+                "Node.js",
+                "Python",
+                "Rust"
+              ],
+              "frameworks": [
+                "FastAPI",
+                "Playwright",
+                "React",
+                "Tauri"
+              ],
+              "manifests": [
+                "Cargo.toml",
+                "package-lock.json",
+                "package.json",
+                "requirements.txt"
+              ],
+              "test_files": 32,
+              "doc_files": 341,
+              "ci_workflows": [],
+              "key_files": [
+                "ROADMAP.md",
+                "README.md",
+                "apps/brain/README.md",
+                "apps/rust-core/Cargo.toml",
+                "apps/rust-core/README.md",
+                "apps/desktop/README.md",
+                "apps/desktop/package.json",
+                "apps/brain/app/project_manager.py",
+                "apps/brain/app/result_reviewer.py",
+                "apps/brain/app/safety.py",
+                "apps/brain/app/developer_mode.py",
+                "apps/brain/app/schemas.py",
+                "apps/brain/app/approval_engine.py",
+                "apps/brain/app/audit_logger.py",
+                "apps/brain/app/memory_adapters.py",
+                "apps/brain/app/context_builder.py",
+                "apps/brain/app/agent_response.py",
+                "apps/brain/app/agent_loader.py",
+                "apps/brain/app/main.py",
+                "apps/brain/app/knowledge_loader.py"
+              ],
+              "repositories": [
+                {
+                  "name": "jarvis",
+                  "path": ".",
+                  "manifests": []
+                }
+              ]
+            },
+            "health": {
+              "score": 86,
+              "grade": "B"
+            },
+            "open_findings": 0,
+            "recommended_tests": [
+              "Run targeted Python unit tests.",
+              "Run frontend build and focused TypeScript or Playwright checks.",
+              "Run cargo check or targeted Rust tests."
+            ]
+          },
+          "business": {
+            "leads_total": 12,
+            "qualified_leads": 12,
+            "proposals_total": 9,
+            "quotations_total": 9,
+            "followups_total": 7,
+            "invoice_reminders_total": 7,
+            "onboarding_total": 7,
+            "blog_drafts_total": 4,
+            "competitor_reports_total": 7,
+            "monthly_reports_total": 6,
+            "lead_channels": {
+              "linkedin": 7,
+              "website": 5
+            },
+            "followup_channels": {
+              "email": 7
+            },
+            "average_lead_score": 85.83
+          },
+          "projects": {
+            "projects_total": 11,
+            "status_counts": {
+              "planned": 11
+            },
+            "category_counts": {
+              "development": 6,
+              "marketing": 4,
+              "operations": 1
+            },
+            "methodology_counts": {
+              "agile": 6,
+              "kanban": 4,
+              "waterfall": 1
+            },
+            "open_blockers": 5,
+            "deadline_risk_projects": 0,
+            "average_health_score": 77.18,
+            "average_risk_score": 36.0,
+            "worklog_hours": 20.0,
+            "burndown": [
+              {
+                "project_id": "a1f14b05-5148-42f3-ba0e-589cb3300479",
+                "project_name": "Portal Launch 0f8805",
+                "remaining": 3
+              },
+              {
+                "project_id": "060a2e82-94d6-447e-84d4-28a64b3c19f6",
+                "project_name": "SEO Retainer b0d677",
+                "remaining": 3
+              },
+              {
+                "project_id": "d51eff98-08b4-4f4b-bb52-fab8c0beb313",
+                "project_name": "CLI Project 9f2a2b",
+                "remaining": 3
+              },
+              {
+                "project_id": "094c0241-4527-46e8-9cb3-bb7ee9f963bc",
+                "project_name": "Portal Launch 6c7529",
+                "remaining": 3
+              },
+              {
+                "project_id": "0b79d819-1590-4408-bf61-bccf3d926ee7",
+                "project_name": "SEO Retainer 8a1735",
+                "remaining": 3
+              },
+              {
+                "project_id": "9cd95427-b71f-4d31-8c61-31b204b88cbe",
+                "project_name": "Portal Launch 55d239",
+                "remaining": 3
+              },
+              {
+                "project_id": "69718c2b-b4b3-4343-ac2d-c6d41947a0b8",
+                "project_name": "SEO Retainer 138838",
+                "remaining": 3
+              },
+              {
+                "project_id": "b5c106b4-572c-46f0-8ca0-2b647ad2dbe8",
+                "project_name": "OS Project b44c",
+                "remaining": 2
+              },
+              {
+                "project_id": "235058ca-168e-4212-9de4-4713a5887789",
+                "project_name": "OS Project 3da5",
+                "remaining": 2
+              },
+              {
+                "project_id": "fb350e0b-fcc6-4057-ab03-3efc88cb80aa",
+                "project_name": "Portal Launch 01b65f",
+                "remaining": 3
+              },
+              {
+                "project_id": "99157815-409e-45cb-af7d-8b7387797b38",
+                "project_name": "SEO Retainer d34bf9",
+                "remaining": 3
+              }
+            ]
+          },
+          "security": {
+            "users_total": 1,
+            "api_keys_total": 5,
+            "secrets_total": 5,
+            "backups_total": 9,
+            "backups_restore_tested_total": 7,
+            "security_scans_total": 7,
+            "security_incidents_total": 7,
+            "security_alerts_total": 22,
+            "lockdown_active": 0,
+            "offline_mode_active": 0,
+            "audit_log_integrity_valid": 1
+          },
+          "knowledge": {
+            "indexed_at": "2026-06-10T13:33:27.709190+00:00",
+            "total_entries": 48,
+            "categories": {
+              "ai": 8,
+              "automation": 2,
+              "backend": 7,
+              "business": 3,
+              "clients": 1,
+              "company": 2,
+              "devops": 4,
+              "finance": 2,
+              "frontend": 5,
+              "legal": 2,
+              "lkp": 1,
+              "marketing": 1,
+              "operations": 3,
+              "projects": 1,
+              "security": 1,
+              "seo": 1,
+              "templates": 1,
+              "web": 3
+            },
+            "departments": {
+              "research": 8,
+              "development": 17,
+              "operations": 12,
+              "executive": 2,
+              "infrastructure": 4,
+              "finance": 2,
+              "legal": 2,
+              "security": 1
+            },
+            "statuses": {
+              "active": 48
+            },
+            "trusted_entries": 48,
+            "quarantined_entries": 0,
+            "average_confidence": 0.8485,
+            "average_quality": 0.8124,
+            "outdated_entries": 0,
+            "sources": {
+              "internal": 48,
+              "fastapi": 1,
+              "postgresql": 1,
+              "python": 1,
+              "docker": 1,
+              "kubernetes": 1,
+              "mdn": 2
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "08a8e818-9b2a-4b11-8aaa-e254a0c26cba",
+      "mode": "safe",
+      "reviewer": "Phase20",
+      "limit": 50,
+      "created_at": "2026-06-10T13:33:47.190815+00:00",
+      "events_added": 19,
+      "lessons_added": 19,
+      "playbooks_added": 3,
+      "updates_open": 21,
+      "analytics": {
+        "runs_total": 1,
+        "events_total": 29,
+        "lessons_total": 19,
+        "updates_total": 22,
+        "pending_updates": 21,
+        "applied_updates": 1,
+        "playbooks_total": 3,
+        "lesson_kinds": {
+          "failure_pattern": 7,
+          "success_pattern": 12
+        },
+        "coverage": {
+          "developer": {
+            "analysis": {
+              "path": ".",
+              "scanned_at": "2026-06-10T13:33:47.325113+00:00",
+              "total_files": 1746,
+              "top_extensions": {
+                ".json": 1106,
+                ".md": 342,
+                ".py": 161,
+                ".tsx": 21,
+                ".bin": 15,
+                ".enc": 10,
+                ".ts": 9,
+                ".example": 8,
+                ".sqlite3": 8,
+                ".jsonl": 8,
+                ".toml": 7,
+                ".rs": 7
+              },
+              "languages": [
+                "JSON",
+                "Markdown",
+                "Python",
+                "TypeScript",
+                "TOML",
+                "Rust",
+                "JavaScript"
+              ],
+              "stack": [
+                "Node.js",
+                "Python",
+                "Rust"
+              ],
+              "frameworks": [
+                "FastAPI",
+                "Playwright",
+                "React",
+                "Tauri"
+              ],
+              "manifests": [
+                "Cargo.toml",
+                "package-lock.json",
+                "package.json",
+                "requirements.txt"
+              ],
+              "test_files": 32,
+              "doc_files": 342,
+              "ci_workflows": [],
+              "key_files": [
+                "ROADMAP.md",
+                "README.md",
+                "apps/brain/README.md",
+                "apps/rust-core/Cargo.toml",
+                "apps/rust-core/README.md",
+                "apps/desktop/README.md",
+                "apps/desktop/package.json",
+                "apps/brain/app/project_manager.py",
+                "apps/brain/app/result_reviewer.py",
+                "apps/brain/app/safety.py",
+                "apps/brain/app/developer_mode.py",
+                "apps/brain/app/schemas.py",
+                "apps/brain/app/approval_engine.py",
+                "apps/brain/app/audit_logger.py",
+                "apps/brain/app/memory_adapters.py",
+                "apps/brain/app/context_builder.py",
+                "apps/brain/app/agent_response.py",
+                "apps/brain/app/agent_loader.py",
+                "apps/brain/app/main.py",
+                "apps/brain/app/knowledge_loader.py"
+              ],
+              "repositories": [
+                {
+                  "name": "jarvis",
+                  "path": ".",
+                  "manifests": []
+                }
+              ]
+            },
+            "health": {
+              "score": 86,
+              "grade": "B"
+            },
+            "open_findings": 0,
+            "recommended_tests": [
+              "Run targeted Python unit tests.",
+              "Run frontend build and focused TypeScript or Playwright checks.",
+              "Run cargo check or targeted Rust tests."
+            ]
+          },
+          "business": {
+            "leads_total": 13,
+            "qualified_leads": 13,
+            "proposals_total": 9,
+            "quotations_total": 9,
+            "followups_total": 7,
+            "invoice_reminders_total": 7,
+            "onboarding_total": 7,
+            "blog_drafts_total": 4,
+            "competitor_reports_total": 7,
+            "monthly_reports_total": 6,
+            "lead_channels": {
+              "linkedin": 7,
+              "website": 6
+            },
+            "followup_channels": {
+              "email": 7
+            },
+            "average_lead_score": 85.38
+          },
+          "projects": {
+            "projects_total": 12,
+            "status_counts": {
+              "planned": 12
+            },
+            "category_counts": {
+              "development": 7,
+              "marketing": 4,
+              "operations": 1
+            },
+            "methodology_counts": {
+              "agile": 7,
+              "kanban": 4,
+              "waterfall": 1
+            },
+            "open_blockers": 5,
+            "deadline_risk_projects": 0,
+            "average_health_score": 77.58,
+            "average_risk_score": 35.33,
+            "worklog_hours": 20.0,
+            "burndown": [
+              {
+                "project_id": "a1f14b05-5148-42f3-ba0e-589cb3300479",
+                "project_name": "Portal Launch 0f8805",
+                "remaining": 3
+              },
+              {
+                "project_id": "060a2e82-94d6-447e-84d4-28a64b3c19f6",
+                "project_name": "SEO Retainer b0d677",
+                "remaining": 3
+              },
+              {
+                "project_id": "d51eff98-08b4-4f4b-bb52-fab8c0beb313",
+                "project_name": "CLI Project 9f2a2b",
+                "remaining": 3
+              },
+              {
+                "project_id": "094c0241-4527-46e8-9cb3-bb7ee9f963bc",
+                "project_name": "Portal Launch 6c7529",
+                "remaining": 3
+              },
+              {
+                "project_id": "0b79d819-1590-4408-bf61-bccf3d926ee7",
+                "project_name": "SEO Retainer 8a1735",
+                "remaining": 3
+              },
+              {
+                "project_id": "9cd95427-b71f-4d31-8c61-31b204b88cbe",
+                "project_name": "Portal Launch 55d239",
+                "remaining": 3
+              },
+              {
+                "project_id": "69718c2b-b4b3-4343-ac2d-c6d41947a0b8",
+                "project_name": "SEO Retainer 138838",
+                "remaining": 3
+              },
+              {
+                "project_id": "b5c106b4-572c-46f0-8ca0-2b647ad2dbe8",
+                "project_name": "OS Project b44c",
+                "remaining": 2
+              },
+              {
+                "project_id": "235058ca-168e-4212-9de4-4713a5887789",
+                "project_name": "OS Project 3da5",
+                "remaining": 2
+              },
+              {
+                "project_id": "fb350e0b-fcc6-4057-ab03-3efc88cb80aa",
+                "project_name": "Portal Launch 01b65f",
+                "remaining": 3
+              },
+              {
+                "project_id": "99157815-409e-45cb-af7d-8b7387797b38",
+                "project_name": "SEO Retainer d34bf9",
+                "remaining": 3
+              },
+              {
+                "project_id": "27b5dd35-a023-4fb3-87af-7bdaa79c5eff",
+                "project_name": "OS Project b937",
+                "remaining": 2
+              }
+            ]
+          },
+          "security": {
+            "users_total": 1,
+            "api_keys_total": 5,
+            "secrets_total": 5,
+            "backups_total": 9,
+            "backups_restore_tested_total": 7,
+            "security_scans_total": 7,
+            "security_incidents_total": 7,
+            "security_alerts_total": 22,
+            "lockdown_active": 0,
+            "offline_mode_active": 0,
+            "audit_log_integrity_valid": 1
+          },
+          "knowledge": {
+            "indexed_at": "2026-06-10T13:33:46.902075+00:00",
+            "total_entries": 49,
+            "categories": {
+              "ai": 8,
+              "automation": 2,
+              "backend": 7,
+              "business": 3,
+              "clients": 1,
+              "company": 3,
+              "devops": 4,
+              "finance": 2,
+              "frontend": 5,
+              "legal": 2,
+              "lkp": 1,
+              "marketing": 1,
+              "operations": 3,
+              "projects": 1,
+              "security": 1,
+              "seo": 1,
+              "templates": 1,
+              "web": 3
+            },
+            "departments": {
+              "research": 8,
+              "development": 17,
+              "operations": 12,
+              "executive": 3,
+              "infrastructure": 4,
+              "finance": 2,
+              "legal": 2,
+              "security": 1
+            },
+            "statuses": {
+              "active": 49
+            },
+            "trusted_entries": 49,
+            "quarantined_entries": 0,
+            "average_confidence": 0.848,
+            "average_quality": 0.8117,
+            "outdated_entries": 0,
+            "sources": {
+              "internal": 49,
+              "fastapi": 1,
+              "postgresql": 1,
+              "python": 1,
+              "docker": 1,
+              "kubernetes": 1,
+              "mdn": 2
+            }
+          }
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "df3423fb-e23d-44e2-a26b-5c297c9bd47d",
+      "fingerprint": "task:9b250bc8-e2fd-4405-b49a-d9ad3f94a8c5:failed",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "9b250bc8-e2fd-4405-b49a-d9ad3f94a8c5",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "failed",
+      "summary": "Failed learning task 2cb3ed",
+      "created_at": "2026-06-10T13:33:45.564650+00:00"
+    },
+    {
+      "id": "c5ad64d9-c649-494d-8ade-27843c67b689",
+      "fingerprint": "task:33318115-cd6b-42d1-ba38-ec3e0b534e33:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "33318115-cd6b-42d1-ba38-ec3e0b534e33",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Completed learning task ad5cbf",
+      "created_at": "2026-06-10T13:33:45.564658+00:00"
+    },
+    {
+      "id": "f33ded33-c045-4d0a-b851-41d6775666a3",
+      "fingerprint": "task:bc9bc541-23b7-4bb1-a981-1d1c05b69196:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "bc9bc541-23b7-4bb1-a981-1d1c05b69196",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Build a Laravel website with SEO and security review 71b50f",
+      "created_at": "2026-06-10T13:33:45.564664+00:00"
+    },
+    {
+      "id": "e4da23e4-a4f5-49d7-8cc7-8f2ddb81168f",
+      "fingerprint": "task:5d361480-f1d5-4170-b89b-6ba13b3bbcb7:rejected",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "5d361480-f1d5-4170-b89b-6ba13b3bbcb7",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "rejected",
+      "summary": "Delete production files and deploy rollback plan 97adf7",
+      "created_at": "2026-06-10T13:33:45.564669+00:00"
+    },
+    {
+      "id": "630401c2-48e9-4520-884a-d58ed3f2c6c2",
+      "fingerprint": "task:f0575c36-2b8c-41ab-8667-cd93cb3c2f73:failed",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "f0575c36-2b8c-41ab-8667-cd93cb3c2f73",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "failed",
+      "summary": "Failed learning task 798b99",
+      "created_at": "2026-06-10T13:33:45.564673+00:00"
+    },
+    {
+      "id": "a7f5a603-3e7c-4f87-995a-9a67962dcee9",
+      "fingerprint": "task:0ac7c065-77ca-4b87-bcc5-c3e117900dd6:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "0ac7c065-77ca-4b87-bcc5-c3e117900dd6",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Completed learning task 6942c3",
+      "created_at": "2026-06-10T13:33:45.564677+00:00"
+    },
+    {
+      "id": "ec912a28-c1be-4632-8b2b-b5a9330cbe70",
+      "fingerprint": "task:df59205c-931c-4a22-abce-f2d896ef93d0:failed",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "df59205c-931c-4a22-abce-f2d896ef93d0",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "failed",
+      "summary": "Failed learning task 6b039a",
+      "created_at": "2026-06-10T13:33:45.564682+00:00"
+    },
+    {
+      "id": "68243d11-13c1-4d33-b90b-0d00b1953b23",
+      "fingerprint": "task:bf2032ce-c8a9-4a8a-b551-62ebc034aa62:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "bf2032ce-c8a9-4a8a-b551-62ebc034aa62",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Completed learning task df60a1",
+      "created_at": "2026-06-10T13:33:45.564686+00:00"
+    },
+    {
+      "id": "da40ea77-3f18-4a5c-9c1d-b4a94d4672f1",
+      "fingerprint": "task:9dbba1f1-5f8c-4626-b294-32c26bf93888:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "9dbba1f1-5f8c-4626-b294-32c26bf93888",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Build a Laravel website with SEO and security review cfc03c",
+      "created_at": "2026-06-10T13:33:45.564690+00:00"
+    },
+    {
+      "id": "dbe33f7b-4bb8-4ab8-849f-6c742c17272f",
+      "fingerprint": "task:227e344b-5d80-4d91-80e5-4c1032f113b9:rejected",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "227e344b-5d80-4d91-80e5-4c1032f113b9",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "rejected",
+      "summary": "Delete production files and deploy rollback plan 770c5d",
+      "created_at": "2026-06-10T13:33:45.564695+00:00"
+    },
+    {
+      "id": "2dee465a-c30c-496b-8a0e-1725f12a6a45",
+      "fingerprint": "task:c1bcec69-bb65-4c5f-aa50-ca1ebe77b69e:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "c1bcec69-bb65-4c5f-aa50-ca1ebe77b69e",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 45c872",
+      "created_at": "2026-06-10T13:33:45.564701+00:00"
+    },
+    {
+      "id": "714fe6f6-0a27-49c7-a8e1-9874782db34c",
+      "fingerprint": "task:8b432ec1-6e85-4cb0-89b6-744edc3c2b11:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "8b432ec1-6e85-4cb0-89b6-744edc3c2b11",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review ee4533",
+      "created_at": "2026-06-10T13:33:45.564705+00:00"
+    },
+    {
+      "id": "d79e7509-ed81-4bfd-b761-229518b7d7ac",
+      "fingerprint": "task:6d980031-d757-42d1-a086-2f07587c18fd:rejected",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "6d980031-d757-42d1-a086-2f07587c18fd",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "rejected",
+      "summary": "Delete production files and deploy rollback plan 0a78d4",
+      "created_at": "2026-06-10T13:33:45.564709+00:00"
+    },
+    {
+      "id": "e82a2316-2889-482c-ba85-6a2f37cc2a04",
+      "fingerprint": "task:fb47cfab-b007-424f-9044-8e5263554bdc:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "fb47cfab-b007-424f-9044-8e5263554bdc",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 7541c1",
+      "created_at": "2026-06-10T13:33:45.564713+00:00"
+    },
+    {
+      "id": "f715569a-e45a-4765-a3dd-37acfdb48a93",
+      "fingerprint": "task:ac766f17-51ab-44a3-a658-52feec9a62e6:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "ac766f17-51ab-44a3-a658-52feec9a62e6",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review e37d22",
+      "created_at": "2026-06-10T13:33:45.564717+00:00"
+    },
+    {
+      "id": "173b2f34-e7ff-452d-89f5-908015f330d6",
+      "fingerprint": "task:a9b27ffd-89d3-4a03-8491-103967bc21aa:rejected",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "a9b27ffd-89d3-4a03-8491-103967bc21aa",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "rejected",
+      "summary": "Delete production files and deploy rollback plan 3c418d",
+      "created_at": "2026-06-10T13:33:45.564721+00:00"
+    },
+    {
+      "id": "ec9d8438-1a57-49a2-86fe-a76196e36bb1",
+      "fingerprint": "task:6e8822d6-e58e-4be8-a461-401ccfa898df:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "6e8822d6-e58e-4be8-a461-401ccfa898df",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 15140e",
+      "created_at": "2026-06-10T13:33:45.564725+00:00"
+    },
+    {
+      "id": "e456ece2-824e-4924-aa35-53859ec632c5",
+      "fingerprint": "task:fd40474f-4c3f-46b6-a513-cef69e698d3b:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "fd40474f-4c3f-46b6-a513-cef69e698d3b",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review 914dcd",
+      "created_at": "2026-06-10T13:33:45.564729+00:00"
+    },
+    {
+      "id": "3b9ce4b2-be92-4ad5-8863-0880137e96f3",
+      "fingerprint": "task:07c64fb6-51e0-469b-876f-866365bfb129:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "07c64fb6-51e0-469b-876f-866365bfb129",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 8a1705",
+      "created_at": "2026-06-10T13:33:45.564733+00:00"
+    },
+    {
+      "id": "faaadc28-fbd8-4035-bfb0-4116546899b1",
+      "fingerprint": "task:d4b21c36-8d83-4b98-826c-20796d7b0af3:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "d4b21c36-8d83-4b98-826c-20796d7b0af3",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 5f0c91",
+      "created_at": "2026-06-10T13:33:45.564738+00:00"
+    },
+    {
+      "id": "cdd45129-c645-4a70-8687-98e91a7e8602",
+      "fingerprint": "task:de8da7b4-e02c-486d-bb19-38e031904e4a:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "de8da7b4-e02c-486d-bb19-38e031904e4a",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review e00b59",
+      "created_at": "2026-06-10T13:33:45.564741+00:00"
+    },
+    {
+      "id": "8ed1ea0e-439c-4d10-9c18-5a6aa3c9f949",
+      "fingerprint": "task:1d11eb9a-c160-41e7-8770-1edfe31a2749:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "1d11eb9a-c160-41e7-8770-1edfe31a2749",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 06d6cd",
+      "created_at": "2026-06-10T13:33:45.564745+00:00"
+    },
+    {
+      "id": "72a43f2d-99ef-459c-b902-6e843d9cf838",
+      "fingerprint": "task:7349081a-cf09-42cd-ac5e-992af30b00f6:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "7349081a-cf09-42cd-ac5e-992af30b00f6",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review 4112f0",
+      "created_at": "2026-06-10T13:33:45.564750+00:00"
+    },
+    {
+      "id": "a6e772a6-d807-4055-a901-b7018655fc2c",
+      "fingerprint": "task:1ed83bbb-a85c-4e84-829d-3a829c0f1f77:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "1ed83bbb-a85c-4e84-829d-3a829c0f1f77",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 4461c5",
+      "created_at": "2026-06-10T13:33:45.564755+00:00"
+    },
+    {
+      "id": "b313bf2e-1615-4968-95bb-d708fbc62376",
+      "fingerprint": "task:141af055-4d63-4114-8f87-7a8d9516e7b6:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "141af055-4d63-4114-8f87-7a8d9516e7b6",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review 0e7715",
+      "created_at": "2026-06-10T13:33:45.564759+00:00"
+    },
+    {
+      "id": "2f082fdc-008e-411e-a784-ba139ad33ea1",
+      "fingerprint": "task:47f2173e-44e3-43c7-9a0e-302bee553f10:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "47f2173e-44e3-43c7-9a0e-302bee553f10",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals a72cdb",
+      "created_at": "2026-06-10T13:33:45.564763+00:00"
+    },
+    {
+      "id": "6d6bf9e4-aae1-4448-b69c-ca4e49e0ebfb",
+      "fingerprint": "task:1bae852b-280f-4ee1-b779-0b457bf1d107:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "1bae852b-280f-4ee1-b779-0b457bf1d107",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review eb3e99",
+      "created_at": "2026-06-10T13:33:45.564767+00:00"
+    },
+    {
+      "id": "9e9e6339-9c6a-44d5-ae74-0a78b8165669",
+      "fingerprint": "task:b86f02a5-8665-40b5-ae96-3cb0553c14d2:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "b86f02a5-8665-40b5-ae96-3cb0553c14d2",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals 47abd1",
+      "created_at": "2026-06-10T13:33:45.564770+00:00"
+    },
+    {
+      "id": "a0831df6-532a-4737-95c7-709e154dc030",
+      "fingerprint": "task:fb093d6b-c0ad-4e9e-8a5f-5133b3c3888b:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "fb093d6b-c0ad-4e9e-8a5f-5133b3c3888b",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review 99e116",
+      "created_at": "2026-06-10T13:33:45.564774+00:00"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "6e1380d8-4b06-4bc0-9e20-1531ded9413a",
+      "fingerprint": "lesson:task:9b250bc8-e2fd-4405-b49a-d9ad3f94a8c5:failed",
+      "kind": "failure_pattern",
+      "task_id": "9b250bc8-e2fd-4405-b49a-d9ad3f94a8c5",
+      "summary": "Failure pattern detected around Failed learning task 2cb3ed. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:9b250bc8-e2fd-4405-b49a-d9ad3f94a8c5:failed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564822+00:00"
+    },
+    {
+      "id": "6e901556-ff9d-4fe2-bc8e-46eb71a63da9",
+      "fingerprint": "lesson:task:5d361480-f1d5-4170-b89b-6ba13b3bbcb7:rejected",
+      "kind": "failure_pattern",
+      "task_id": "5d361480-f1d5-4170-b89b-6ba13b3bbcb7",
+      "summary": "Failure pattern detected around Delete production files and deploy rollback plan 97adf7. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:5d361480-f1d5-4170-b89b-6ba13b3bbcb7:rejected"
+      ],
+      "created_at": "2026-06-10T13:33:45.564827+00:00"
+    },
+    {
+      "id": "1bdc906a-8352-495f-8bcf-346996ebac7c",
+      "fingerprint": "lesson:task:f0575c36-2b8c-41ab-8667-cd93cb3c2f73:failed",
+      "kind": "failure_pattern",
+      "task_id": "f0575c36-2b8c-41ab-8667-cd93cb3c2f73",
+      "summary": "Failure pattern detected around Failed learning task 798b99. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:f0575c36-2b8c-41ab-8667-cd93cb3c2f73:failed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564830+00:00"
+    },
+    {
+      "id": "b1a82d83-5e98-4b0f-b747-f151e698149a",
+      "fingerprint": "lesson:task:df59205c-931c-4a22-abce-f2d896ef93d0:failed",
+      "kind": "failure_pattern",
+      "task_id": "df59205c-931c-4a22-abce-f2d896ef93d0",
+      "summary": "Failure pattern detected around Failed learning task 6b039a. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:df59205c-931c-4a22-abce-f2d896ef93d0:failed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564833+00:00"
+    },
+    {
+      "id": "985c1298-3fa0-44da-9f26-f06b0049245b",
+      "fingerprint": "lesson:task:227e344b-5d80-4d91-80e5-4c1032f113b9:rejected",
+      "kind": "failure_pattern",
+      "task_id": "227e344b-5d80-4d91-80e5-4c1032f113b9",
+      "summary": "Failure pattern detected around Delete production files and deploy rollback plan 770c5d. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:227e344b-5d80-4d91-80e5-4c1032f113b9:rejected"
+      ],
+      "created_at": "2026-06-10T13:33:45.564836+00:00"
+    },
+    {
+      "id": "1b2cd9fb-004a-4107-a479-8d899f6ffcd2",
+      "fingerprint": "lesson:task:6d980031-d757-42d1-a086-2f07587c18fd:rejected",
+      "kind": "failure_pattern",
+      "task_id": "6d980031-d757-42d1-a086-2f07587c18fd",
+      "summary": "Failure pattern detected around Delete production files and deploy rollback plan 0a78d4. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:6d980031-d757-42d1-a086-2f07587c18fd:rejected"
+      ],
+      "created_at": "2026-06-10T13:33:45.564840+00:00"
+    },
+    {
+      "id": "bb678a67-e56e-4c9d-ad77-296170bebf62",
+      "fingerprint": "lesson:task:a9b27ffd-89d3-4a03-8491-103967bc21aa:rejected",
+      "kind": "failure_pattern",
+      "task_id": "a9b27ffd-89d3-4a03-8491-103967bc21aa",
+      "summary": "Failure pattern detected around Delete production files and deploy rollback plan 3c418d. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:a9b27ffd-89d3-4a03-8491-103967bc21aa:rejected"
+      ],
+      "created_at": "2026-06-10T13:33:45.564843+00:00"
+    },
+    {
+      "id": "3a561294-6825-4972-9928-5a3830021802",
+      "fingerprint": "lesson:task:33318115-cd6b-42d1-ba38-ec3e0b534e33:completed",
+      "kind": "success_pattern",
+      "task_id": "33318115-cd6b-42d1-ba38-ec3e0b534e33",
+      "summary": "Success pattern captured for Completed learning task ad5cbf. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:33318115-cd6b-42d1-ba38-ec3e0b534e33:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564846+00:00"
+    },
+    {
+      "id": "01295fc0-7a2b-4861-baad-b6cb51c057a6",
+      "fingerprint": "lesson:task:bc9bc541-23b7-4bb1-a981-1d1c05b69196:completed",
+      "kind": "success_pattern",
+      "task_id": "bc9bc541-23b7-4bb1-a981-1d1c05b69196",
+      "summary": "Success pattern captured for Build a Laravel website with SEO and security review 71b50f. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:bc9bc541-23b7-4bb1-a981-1d1c05b69196:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564850+00:00"
+    },
+    {
+      "id": "da46ce1e-4a44-46b5-8514-423cab9426be",
+      "fingerprint": "lesson:task:0ac7c065-77ca-4b87-bcc5-c3e117900dd6:completed",
+      "kind": "success_pattern",
+      "task_id": "0ac7c065-77ca-4b87-bcc5-c3e117900dd6",
+      "summary": "Success pattern captured for Completed learning task 6942c3. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:0ac7c065-77ca-4b87-bcc5-c3e117900dd6:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564853+00:00"
+    },
+    {
+      "id": "32d15855-9e44-4fc4-b2bd-fc84bfc7e84c",
+      "fingerprint": "lesson:task:bf2032ce-c8a9-4a8a-b551-62ebc034aa62:completed",
+      "kind": "success_pattern",
+      "task_id": "bf2032ce-c8a9-4a8a-b551-62ebc034aa62",
+      "summary": "Success pattern captured for Completed learning task df60a1. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:bf2032ce-c8a9-4a8a-b551-62ebc034aa62:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564857+00:00"
+    },
+    {
+      "id": "ce7fcf21-01f0-44bb-b3b7-ced90e104956",
+      "fingerprint": "lesson:task:9dbba1f1-5f8c-4626-b294-32c26bf93888:completed",
+      "kind": "success_pattern",
+      "task_id": "9dbba1f1-5f8c-4626-b294-32c26bf93888",
+      "summary": "Success pattern captured for Build a Laravel website with SEO and security review cfc03c. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:9dbba1f1-5f8c-4626-b294-32c26bf93888:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564860+00:00"
+    },
+    {
+      "id": "2ce0b269-2096-4b70-9d9e-b14735a2d999",
+      "fingerprint": "lesson:task:c1bcec69-bb65-4c5f-aa50-ca1ebe77b69e:completed",
+      "kind": "success_pattern",
+      "task_id": "c1bcec69-bb65-4c5f-aa50-ca1ebe77b69e",
+      "summary": "Success pattern captured for Create a content calendar outline for LKProfessionals 45c872. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:c1bcec69-bb65-4c5f-aa50-ca1ebe77b69e:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564863+00:00"
+    },
+    {
+      "id": "d40c8c48-1614-42f8-95f6-52ddfa0b3a34",
+      "fingerprint": "lesson:task:8b432ec1-6e85-4cb0-89b6-744edc3c2b11:completed",
+      "kind": "success_pattern",
+      "task_id": "8b432ec1-6e85-4cb0-89b6-744edc3c2b11",
+      "summary": "Success pattern captured for Prepare invoice follow-up and finance review ee4533. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "finance",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:8b432ec1-6e85-4cb0-89b6-744edc3c2b11:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564866+00:00"
+    },
+    {
+      "id": "c30b875f-da94-4716-b5be-9db0942d909d",
+      "fingerprint": "lesson:task:fb47cfab-b007-424f-9044-8e5263554bdc:completed",
+      "kind": "success_pattern",
+      "task_id": "fb47cfab-b007-424f-9044-8e5263554bdc",
+      "summary": "Success pattern captured for Create a content calendar outline for LKProfessionals 7541c1. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:fb47cfab-b007-424f-9044-8e5263554bdc:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564869+00:00"
+    },
+    {
+      "id": "67cf36ff-3cb0-40ed-9006-d3f426255241",
+      "fingerprint": "lesson:task:ac766f17-51ab-44a3-a658-52feec9a62e6:completed",
+      "kind": "success_pattern",
+      "task_id": "ac766f17-51ab-44a3-a658-52feec9a62e6",
+      "summary": "Success pattern captured for Prepare invoice follow-up and finance review e37d22. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "finance",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:ac766f17-51ab-44a3-a658-52feec9a62e6:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564872+00:00"
+    },
+    {
+      "id": "556c9e63-fb01-4db2-abe8-12b8ee413f59",
+      "fingerprint": "lesson:task:6e8822d6-e58e-4be8-a461-401ccfa898df:completed",
+      "kind": "success_pattern",
+      "task_id": "6e8822d6-e58e-4be8-a461-401ccfa898df",
+      "summary": "Success pattern captured for Create a content calendar outline for LKProfessionals 15140e. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:6e8822d6-e58e-4be8-a461-401ccfa898df:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564875+00:00"
+    },
+    {
+      "id": "70b88f73-abf6-4251-945a-cf5adb753103",
+      "fingerprint": "lesson:task:fd40474f-4c3f-46b6-a513-cef69e698d3b:completed",
+      "kind": "success_pattern",
+      "task_id": "fd40474f-4c3f-46b6-a513-cef69e698d3b",
+      "summary": "Success pattern captured for Prepare invoice follow-up and finance review 914dcd. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "finance",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:fd40474f-4c3f-46b6-a513-cef69e698d3b:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564879+00:00"
+    },
+    {
+      "id": "84e714b4-521c-405c-9e89-7517f98993fd",
+      "fingerprint": "lesson:task:07c64fb6-51e0-469b-876f-866365bfb129:completed",
+      "kind": "success_pattern",
+      "task_id": "07c64fb6-51e0-469b-876f-866365bfb129",
+      "summary": "Success pattern captured for Create a content calendar outline for LKProfessionals 8a1705. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:07c64fb6-51e0-469b-876f-866365bfb129:completed"
+      ],
+      "created_at": "2026-06-10T13:33:45.564882+00:00"
+    }
+  ],
+  "updates": [
+    {
+      "id": "c43ac3e1-39ca-4ac5-b195-cc03770c64f1",
+      "fingerprint": "update:lesson:task:9b250bc8-e2fd-4405-b49a-d9ad3f94a8c5:failed",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Failure pattern detected around Failed learning task 2cb3ed. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T13:33:45.822042+00:00"
+    },
+    {
+      "id": "bf393624-b7d8-4ba0-a0ad-5a99b0f74627",
+      "fingerprint": "update:lesson:task:5d361480-f1d5-4170-b89b-6ba13b3bbcb7:rejected",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Failure pattern detected around Delete production files and deploy rollback plan 97adf7. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T13:33:45.822046+00:00"
+    },
+    {
+      "id": "6c04966d-cae5-42f5-8703-4e95d15ef5c6",
+      "fingerprint": "update:lesson:task:f0575c36-2b8c-41ab-8667-cd93cb3c2f73:failed",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Failure pattern detected around Failed learning task 798b99. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T13:33:45.822050+00:00"
+    },
+    {
+      "id": "0b97f9de-8754-49f5-a54e-85ea7bc974ec",
+      "fingerprint": "update:lesson:task:df59205c-931c-4a22-abce-f2d896ef93d0:failed",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Failure pattern detected around Failed learning task 6b039a. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T13:33:45.822053+00:00"
+    },
+    {
+      "id": "43dc2e96-e4e9-414c-8348-7ec22fd63209",
+      "fingerprint": "update:lesson:task:227e344b-5d80-4d91-80e5-4c1032f113b9:rejected",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Failure pattern detected around Delete production files and deploy rollback plan 770c5d. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T13:33:45.822056+00:00"
+    },
+    {
+      "id": "8abcb7d1-5245-4f74-bc18-b5ef940b23e8",
+      "fingerprint": "update:lesson:task:6d980031-d757-42d1-a086-2f07587c18fd:rejected",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Failure pattern detected around Delete production files and deploy rollback plan 0a78d4. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T13:33:45.822059+00:00"
+    },
+    {
+      "id": "a6f79600-271d-4bfb-a224-d14a13871ee8",
+      "fingerprint": "update:lesson:task:a9b27ffd-89d3-4a03-8491-103967bc21aa:rejected",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Failure pattern detected around Delete production files and deploy rollback plan 3c418d. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T13:33:45.822062+00:00"
+    },
+    {
+      "id": "99d6b2bb-9c12-4e46-8add-382e2e491891",
+      "fingerprint": "update:lesson:task:33318115-cd6b-42d1-ba38-ec3e0b534e33:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Completed learning task ad5cbf. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822065+00:00"
+    },
+    {
+      "id": "72cbd34f-8ecb-452b-9398-794dc1bb3a86",
+      "fingerprint": "update:lesson:task:bc9bc541-23b7-4bb1-a981-1d1c05b69196:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Build a Laravel website with SEO and security review 71b50f. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822067+00:00"
+    },
+    {
+      "id": "de591dbd-edee-4f00-a5c6-cf5a7c1a9261",
+      "fingerprint": "update:lesson:task:0ac7c065-77ca-4b87-bcc5-c3e117900dd6:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Completed learning task 6942c3. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822070+00:00"
+    },
+    {
+      "id": "9434927c-daa0-461b-884f-1f0ef541b9f2",
+      "fingerprint": "update:lesson:task:bf2032ce-c8a9-4a8a-b551-62ebc034aa62:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Completed learning task df60a1. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822073+00:00"
+    },
+    {
+      "id": "3d0fafa2-596d-4193-860f-2f63ab07de8d",
+      "fingerprint": "update:lesson:task:9dbba1f1-5f8c-4626-b294-32c26bf93888:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Build a Laravel website with SEO and security review cfc03c. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "development",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822075+00:00"
+    },
+    {
+      "id": "a9afb1bf-9694-4381-84cf-ca3486eeded6",
+      "fingerprint": "update:lesson:task:c1bcec69-bb65-4c5f-aa50-ca1ebe77b69e:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Create a content calendar outline for LKProfessionals 45c872. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822078+00:00"
+    },
+    {
+      "id": "a56ddde6-3db8-41cb-b6ea-31b32d938eaa",
+      "fingerprint": "update:lesson:task:8b432ec1-6e85-4cb0-89b6-744edc3c2b11:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Prepare invoice follow-up and finance review ee4533. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "finance",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822080+00:00"
+    },
+    {
+      "id": "7349d2ff-aad7-4d0c-9428-c4ccdd99e7a4",
+      "fingerprint": "update:lesson:task:fb47cfab-b007-424f-9044-8e5263554bdc:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Create a content calendar outline for LKProfessionals 7541c1. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822083+00:00"
+    },
+    {
+      "id": "84341845-0a5e-4246-a0b4-b3102bd0bb18",
+      "fingerprint": "update:lesson:task:ac766f17-51ab-44a3-a658-52feec9a62e6:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Prepare invoice follow-up and finance review e37d22. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "finance",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822087+00:00"
+    },
+    {
+      "id": "0be68f38-3174-43b4-9bc0-933538a4340a",
+      "fingerprint": "update:lesson:task:6e8822d6-e58e-4be8-a461-401ccfa898df:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Create a content calendar outline for LKProfessionals 15140e. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822092+00:00"
+    },
+    {
+      "id": "4cdf70fe-b9fd-41a4-8f9b-3559184aa316",
+      "fingerprint": "update:lesson:task:fd40474f-4c3f-46b6-a513-cef69e698d3b:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Prepare invoice follow-up and finance review 914dcd. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "finance",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822095+00:00"
+    },
+    {
+      "id": "99e23190-6e90-497a-97a2-9d088831d05f",
+      "fingerprint": "update:lesson:task:07c64fb6-51e0-469b-876f-866365bfb129:completed",
+      "title": "Learning update for success_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "pending",
+      "content": "Success pattern captured for Create a content calendar outline for LKProfessionals 8a1705. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+      "tags": [
+        "marketing",
+        "success"
+      ],
+      "created_at": "2026-06-10T13:33:45.822098+00:00"
+    },
+    {
+      "id": "1aadd257-d14a-48a7-9918-54a228511a0a",
+      "fingerprint": "update:playbook:development",
+      "title": "Development operating playbook",
+      "target_path": "operations/playbooks",
+      "review_state": "pending",
+      "content": "Review prior routing and approval context.\nReuse the strongest successful task decomposition.\nEscalate early when confidence, risk, or blockers shift.\nWrite memory and knowledge updates after delivery.",
+      "tags": [
+        "development",
+        "playbook"
+      ],
+      "created_at": "2026-06-10T13:33:45.822101+00:00"
+    },
+    {
+      "id": "a2953ac3-208b-49bb-9c42-0a5015151252",
+      "fingerprint": "update:playbook:marketing",
+      "title": "Marketing operating playbook",
+      "target_path": "operations/playbooks",
+      "review_state": "pending",
+      "content": "Review prior routing and approval context.\nReuse the strongest successful task decomposition.\nEscalate early when confidence, risk, or blockers shift.\nWrite memory and knowledge updates after delivery.",
+      "tags": [
+        "marketing",
+        "playbook"
+      ],
+      "created_at": "2026-06-10T13:33:45.822104+00:00"
+    },
+    {
+      "id": "2e966279-e705-433c-9c7f-f337f006a9e6",
+      "fingerprint": "update:playbook:finance",
+      "title": "Finance operating playbook",
+      "target_path": "operations/playbooks",
+      "review_state": "applied",
+      "content": "Review prior routing and approval context.\nReuse the strongest successful task decomposition.\nEscalate early when confidence, risk, or blockers shift.\nWrite memory and knowledge updates after delivery.",
+      "tags": [
+        "finance",
+        "playbook"
+      ],
+      "created_at": "2026-06-10T13:33:45.822107+00:00",
+      "reviewed_by": "Janon",
+      "reviewed_at": "2026-06-10T13:33:46.892935+00:00",
+      "review_notes": "Looks good",
+      "applied_by": "Janon",
+      "applied_at": "2026-06-10T13:33:46.895885+00:00",
+      "applied_path": "company/self-learning/finance-operating-playbook.md"
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "45cf8932-1d75-4a3f-97f7-0fec332d93e0",
+      "fingerprint": "playbook:development",
+      "intent_category": "development",
+      "title": "Development operating playbook",
+      "agents": [
+        "Peter"
+      ],
+      "steps": [
+        "Review prior routing and approval context.",
+        "Reuse the strongest successful task decomposition.",
+        "Escalate early when confidence, risk, or blockers shift.",
+        "Write memory and knowledge updates after delivery."
+      ],
+      "lessons": [
+        "Success pattern captured for Completed learning task ad5cbf. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Build a Laravel website with SEO and security review 71b50f. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Completed learning task 6942c3. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Completed learning task df60a1. Reuse the routing, collaboration, and review sequence as a playbook candidate."
+      ],
+      "created_at": "2026-06-10T13:33:45.822016+00:00"
+    },
+    {
+      "id": "9a719ce3-ce2c-4dfa-9bb3-3808f1e25fe4",
+      "fingerprint": "playbook:marketing",
+      "intent_category": "marketing",
+      "title": "Marketing operating playbook",
+      "agents": [
+        "Neil"
+      ],
+      "steps": [
+        "Review prior routing and approval context.",
+        "Reuse the strongest successful task decomposition.",
+        "Escalate early when confidence, risk, or blockers shift.",
+        "Write memory and knowledge updates after delivery."
+      ],
+      "lessons": [
+        "Success pattern captured for Create a content calendar outline for LKProfessionals 45c872. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Create a content calendar outline for LKProfessionals 7541c1. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Create a content calendar outline for LKProfessionals 15140e. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Create a content calendar outline for LKProfessionals 8a1705. Reuse the routing, collaboration, and review sequence as a playbook candidate."
+      ],
+      "created_at": "2026-06-10T13:33:45.822027+00:00"
+    },
+    {
+      "id": "bb7c6dea-5ac8-4b95-96de-08ece7f92eff",
+      "fingerprint": "playbook:finance",
+      "intent_category": "finance",
+      "title": "Finance operating playbook",
+      "agents": [
+        "Morgan"
+      ],
+      "steps": [
+        "Review prior routing and approval context.",
+        "Reuse the strongest successful task decomposition.",
+        "Escalate early when confidence, risk, or blockers shift.",
+        "Write memory and knowledge updates after delivery."
+      ],
+      "lessons": [
+        "Success pattern captured for Prepare invoice follow-up and finance review ee4533. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Prepare invoice follow-up and finance review e37d22. Reuse the routing, collaboration, and review sequence as a playbook candidate.",
+        "Success pattern captured for Prepare invoice follow-up and finance review 914dcd. Reuse the routing, collaboration, and review sequence as a playbook candidate."
+      ],
+      "created_at": "2026-06-10T13:33:45.822035+00:00"
+    }
+  ]
 }
