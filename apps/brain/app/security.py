@@ -35,7 +35,7 @@ def _extract_token(authorization: str | None, x_jarvis_token: str | None) -> str
 
 
 def _is_auth_required() -> bool:
-    return settings.SECURITY_REQUIRE_AUTH or settings.PRODUCTION_LOCK_MODE or bool(settings.LOCAL_AUTH_TOKEN)
+    return settings.SECURITY_REQUIRE_AUTH or settings.PRODUCTION_LOCK_MODE
 
 
 def _check_rate_limit(client_id: str) -> None:
