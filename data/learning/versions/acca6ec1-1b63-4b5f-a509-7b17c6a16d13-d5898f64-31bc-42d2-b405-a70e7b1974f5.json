@@ -1,0 +1,16 @@
+{
+  "id": "d5898f64-31bc-42d2-b405-a70e7b1974f5",
+  "update_id": "acca6ec1-1b63-4b5f-a509-7b17c6a16d13",
+  "path": "company/self-learning/learning-update-for-failure-pattern.md",
+  "applied_by": "Janon",
+  "notes": "Apply to knowledge base",
+  "applied_at": "2026-06-10T16:25:31.450608+00:00",
+  "before": "---\ntitle: Learning update for failure_pattern\nsources: [\"internal\"]\ntrusted: true\nverified: true\napproval_status: approved\nsummary: Failure pattern detected around Failed learning task 73c7a7. Add approval-aware guardrails, better reproduction notes, and fallback routing.\ntags: [infrastructure, failure]\nlast_reviewed: 2026-06-10\n---\n\n# Learning update for failure_pattern\n\nFailure pattern detected around Failed learning task 73c7a7. Add approval-aware guardrails, better reproduction notes, and fallback routing.\n\nReviewed by Janon.\nApply to knowledge base\n",
+  "after": "---\ntitle: Learning update for failure_pattern\nsources: [\"internal\"]\ntrusted: true\nverified: true\napproval_status: approved\nsummary: Failure pattern detected around Failed learning task 73c7a7. Add approval-aware guardrails, better reproduction notes, and fallback routing.\ntags: [infrastructure, failure]\nlast_reviewed: 2026-06-10\n---\n\n# Learning update for failure_pattern\n\nFailure pattern detected around Failed learning task 73c7a7. Add approval-aware guardrails, better reproduction notes, and fallback routing.\n\nReviewed by Janon.\nApply to knowledge base\n",
+  "semantic_diff": {
+    "before_lines": 14,
+    "after_lines": 14,
+    "added_lines": 0,
+    "changed": false
+  }
+}

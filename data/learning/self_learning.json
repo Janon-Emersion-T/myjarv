@@ -558,6 +558,1134 @@
           }
         }
       }
+    },
+    {
+      "id": "8ee4c8c5-06bc-4558-905d-36079e612dda",
+      "mode": "safe",
+      "reviewer": "Phase19",
+      "limit": 80,
+      "created_at": "2026-06-10T16:23:27.741233+00:00",
+      "events_added": 4,
+      "lessons_added": 21,
+      "playbooks_added": 1,
+      "updates_open": 22,
+      "analytics": {
+        "runs_total": 2,
+        "events_total": 33,
+        "lessons_total": 21,
+        "updates_total": 23,
+        "pending_updates": 22,
+        "applied_updates": 1,
+        "playbooks_total": 3,
+        "lesson_kinds": {
+          "failure_pattern": 9,
+          "success_pattern": 12
+        },
+        "coverage": {
+          "developer": {
+            "analysis": {
+              "path": ".",
+              "scanned_at": "2026-06-10T16:23:27.873113+00:00",
+              "total_files": 3566,
+              "top_extensions": {
+                ".json": 2710,
+                ".md": 493,
+                ".py": 162,
+                ".bin": 30,
+                ".tsx": 21,
+                ".enc": 14,
+                ".example": 11,
+                ".sqlite3": 11,
+                ".jsonl": 11,
+                ".lock": 11,
+                ".rmeta": 10,
+                ".d": 10
+              },
+              "languages": [
+                "JSON",
+                "Markdown",
+                "Python",
+                "TypeScript",
+                "TOML",
+                "Rust",
+                "JavaScript"
+              ],
+              "stack": [
+                "Node.js",
+                "Python",
+                "Rust"
+              ],
+              "frameworks": [
+                "FastAPI",
+                "Playwright",
+                "React",
+                "Tauri"
+              ],
+              "manifests": [
+                "Cargo.toml",
+                "package-lock.json",
+                "package.json",
+                "requirements.txt"
+              ],
+              "test_files": 32,
+              "doc_files": 493,
+              "ci_workflows": [],
+              "key_files": [
+                "ROADMAP.md",
+                "README.md",
+                ".pytest_cache/README.md",
+                "apps/brain/README.md",
+                "apps/rust-core/Cargo.toml",
+                "apps/rust-core/README.md",
+                "apps/desktop/README.md",
+                "apps/desktop/package.json",
+                "apps/brain/app/project_manager.py",
+                "apps/brain/app/result_reviewer.py",
+                "apps/brain/app/safety.py",
+                "apps/brain/app/developer_mode.py",
+                "apps/brain/app/schemas.py",
+                "apps/brain/app/approval_engine.py",
+                "apps/brain/app/audit_logger.py",
+                "apps/brain/app/memory_adapters.py",
+                "apps/brain/app/context_builder.py",
+                "apps/brain/app/agent_response.py",
+                "apps/brain/app/agent_loader.py",
+                "apps/brain/app/main.py"
+              ],
+              "repositories": [
+                {
+                  "name": "jarvis",
+                  "path": ".",
+                  "manifests": []
+                }
+              ]
+            },
+            "health": {
+              "score": 86,
+              "grade": "B"
+            },
+            "open_findings": 0,
+            "recommended_tests": [
+              "Run targeted Python unit tests.",
+              "Run frontend build and focused TypeScript or Playwright checks.",
+              "Run cargo check or targeted Rust tests."
+            ]
+          },
+          "business": {
+            "leads_total": 14,
+            "qualified_leads": 14,
+            "proposals_total": 10,
+            "quotations_total": 10,
+            "followups_total": 8,
+            "invoice_reminders_total": 8,
+            "onboarding_total": 8,
+            "blog_drafts_total": 5,
+            "competitor_reports_total": 8,
+            "monthly_reports_total": 7,
+            "lead_channels": {
+              "linkedin": 8,
+              "website": 6
+            },
+            "followup_channels": {
+              "email": 8
+            },
+            "average_lead_score": 85.71
+          },
+          "projects": {
+            "projects_total": 14,
+            "status_counts": {
+              "planned": 14
+            },
+            "category_counts": {
+              "development": 8,
+              "marketing": 5,
+              "operations": 1
+            },
+            "methodology_counts": {
+              "agile": 8,
+              "kanban": 5,
+              "waterfall": 1
+            },
+            "open_blockers": 6,
+            "deadline_risk_projects": 0,
+            "average_health_score": 77.36,
+            "average_risk_score": 35.71,
+            "worklog_hours": 24.5,
+            "burndown": [
+              {
+                "project_id": "a1f14b05-5148-42f3-ba0e-589cb3300479",
+                "project_name": "Portal Launch 0f8805",
+                "remaining": 3
+              },
+              {
+                "project_id": "060a2e82-94d6-447e-84d4-28a64b3c19f6",
+                "project_name": "SEO Retainer b0d677",
+                "remaining": 3
+              },
+              {
+                "project_id": "d51eff98-08b4-4f4b-bb52-fab8c0beb313",
+                "project_name": "CLI Project 9f2a2b",
+                "remaining": 3
+              },
+              {
+                "project_id": "094c0241-4527-46e8-9cb3-bb7ee9f963bc",
+                "project_name": "Portal Launch 6c7529",
+                "remaining": 3
+              },
+              {
+                "project_id": "0b79d819-1590-4408-bf61-bccf3d926ee7",
+                "project_name": "SEO Retainer 8a1735",
+                "remaining": 3
+              },
+              {
+                "project_id": "9cd95427-b71f-4d31-8c61-31b204b88cbe",
+                "project_name": "Portal Launch 55d239",
+                "remaining": 3
+              },
+              {
+                "project_id": "69718c2b-b4b3-4343-ac2d-c6d41947a0b8",
+                "project_name": "SEO Retainer 138838",
+                "remaining": 3
+              },
+              {
+                "project_id": "b5c106b4-572c-46f0-8ca0-2b647ad2dbe8",
+                "project_name": "OS Project b44c",
+                "remaining": 2
+              },
+              {
+                "project_id": "235058ca-168e-4212-9de4-4713a5887789",
+                "project_name": "OS Project 3da5",
+                "remaining": 2
+              },
+              {
+                "project_id": "fb350e0b-fcc6-4057-ab03-3efc88cb80aa",
+                "project_name": "Portal Launch 01b65f",
+                "remaining": 3
+              },
+              {
+                "project_id": "99157815-409e-45cb-af7d-8b7387797b38",
+                "project_name": "SEO Retainer d34bf9",
+                "remaining": 3
+              },
+              {
+                "project_id": "27b5dd35-a023-4fb3-87af-7bdaa79c5eff",
+                "project_name": "OS Project b937",
+                "remaining": 2
+              }
+            ]
+          },
+          "security": {
+            "users_total": 1,
+            "api_keys_total": 3,
+            "secrets_total": 3,
+            "backups_total": 3,
+            "backups_restore_tested_total": 3,
+            "security_scans_total": 3,
+            "security_incidents_total": 3,
+            "security_alerts_total": 12,
+            "lockdown_active": 0,
+            "offline_mode_active": 0,
+            "audit_log_integrity_valid": 1
+          },
+          "knowledge": {
+            "indexed_at": "2026-06-10T16:23:15.189697+00:00",
+            "total_entries": 49,
+            "categories": {
+              "ai": 8,
+              "automation": 2,
+              "backend": 7,
+              "business": 3,
+              "clients": 1,
+              "company": 3,
+              "devops": 4,
+              "finance": 2,
+              "frontend": 5,
+              "legal": 2,
+              "lkp": 1,
+              "marketing": 1,
+              "operations": 3,
+              "projects": 1,
+              "security": 1,
+              "seo": 1,
+              "templates": 1,
+              "web": 3
+            },
+            "departments": {
+              "research": 8,
+              "development": 17,
+              "operations": 12,
+              "executive": 3,
+              "infrastructure": 4,
+              "finance": 2,
+              "legal": 2,
+              "security": 1
+            },
+            "statuses": {
+              "active": 49
+            },
+            "trusted_entries": 49,
+            "quarantined_entries": 0,
+            "average_confidence": 0.848,
+            "average_quality": 0.8117,
+            "outdated_entries": 0,
+            "sources": {
+              "internal": 49,
+              "fastapi": 1,
+              "postgresql": 1,
+              "python": 1,
+              "docker": 1,
+              "kubernetes": 1,
+              "mdn": 2
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b0e1235c-4d6f-44cb-aa85-c92418499e6f",
+      "mode": "safe",
+      "reviewer": "Phase20",
+      "limit": 50,
+      "created_at": "2026-06-10T16:23:29.045396+00:00",
+      "events_added": 4,
+      "lessons_added": 21,
+      "playbooks_added": 1,
+      "updates_open": 21,
+      "analytics": {
+        "runs_total": 3,
+        "events_total": 33,
+        "lessons_total": 21,
+        "updates_total": 23,
+        "pending_updates": 21,
+        "applied_updates": 2,
+        "playbooks_total": 3,
+        "lesson_kinds": {
+          "failure_pattern": 9,
+          "success_pattern": 12
+        },
+        "coverage": {
+          "developer": {
+            "analysis": {
+              "path": ".",
+              "scanned_at": "2026-06-10T16:23:29.181791+00:00",
+              "total_files": 3574,
+              "top_extensions": {
+                ".json": 2717,
+                ".md": 494,
+                ".py": 162,
+                ".bin": 30,
+                ".tsx": 21,
+                ".enc": 14,
+                ".example": 11,
+                ".sqlite3": 11,
+                ".jsonl": 11,
+                ".lock": 11,
+                ".rmeta": 10,
+                ".d": 10
+              },
+              "languages": [
+                "JSON",
+                "Markdown",
+                "Python",
+                "TypeScript",
+                "TOML",
+                "Rust",
+                "JavaScript"
+              ],
+              "stack": [
+                "Node.js",
+                "Python",
+                "Rust"
+              ],
+              "frameworks": [
+                "FastAPI",
+                "Playwright",
+                "React",
+                "Tauri"
+              ],
+              "manifests": [
+                "Cargo.toml",
+                "package-lock.json",
+                "package.json",
+                "requirements.txt"
+              ],
+              "test_files": 32,
+              "doc_files": 494,
+              "ci_workflows": [],
+              "key_files": [
+                "ROADMAP.md",
+                "README.md",
+                ".pytest_cache/README.md",
+                "apps/brain/README.md",
+                "apps/rust-core/Cargo.toml",
+                "apps/rust-core/README.md",
+                "apps/desktop/README.md",
+                "apps/desktop/package.json",
+                "apps/brain/app/project_manager.py",
+                "apps/brain/app/result_reviewer.py",
+                "apps/brain/app/safety.py",
+                "apps/brain/app/developer_mode.py",
+                "apps/brain/app/schemas.py",
+                "apps/brain/app/approval_engine.py",
+                "apps/brain/app/audit_logger.py",
+                "apps/brain/app/memory_adapters.py",
+                "apps/brain/app/context_builder.py",
+                "apps/brain/app/agent_response.py",
+                "apps/brain/app/agent_loader.py",
+                "apps/brain/app/main.py"
+              ],
+              "repositories": [
+                {
+                  "name": "jarvis",
+                  "path": ".",
+                  "manifests": []
+                }
+              ]
+            },
+            "health": {
+              "score": 86,
+              "grade": "B"
+            },
+            "open_findings": 0,
+            "recommended_tests": [
+              "Run targeted Python unit tests.",
+              "Run frontend build and focused TypeScript or Playwright checks.",
+              "Run cargo check or targeted Rust tests."
+            ]
+          },
+          "business": {
+            "leads_total": 15,
+            "qualified_leads": 15,
+            "proposals_total": 10,
+            "quotations_total": 10,
+            "followups_total": 8,
+            "invoice_reminders_total": 8,
+            "onboarding_total": 8,
+            "blog_drafts_total": 5,
+            "competitor_reports_total": 8,
+            "monthly_reports_total": 7,
+            "lead_channels": {
+              "linkedin": 8,
+              "website": 7
+            },
+            "followup_channels": {
+              "email": 8
+            },
+            "average_lead_score": 85.33
+          },
+          "projects": {
+            "projects_total": 15,
+            "status_counts": {
+              "planned": 15
+            },
+            "category_counts": {
+              "development": 9,
+              "marketing": 5,
+              "operations": 1
+            },
+            "methodology_counts": {
+              "agile": 9,
+              "kanban": 5,
+              "waterfall": 1
+            },
+            "open_blockers": 6,
+            "deadline_risk_projects": 0,
+            "average_health_score": 77.67,
+            "average_risk_score": 35.2,
+            "worklog_hours": 24.5,
+            "burndown": [
+              {
+                "project_id": "a1f14b05-5148-42f3-ba0e-589cb3300479",
+                "project_name": "Portal Launch 0f8805",
+                "remaining": 3
+              },
+              {
+                "project_id": "060a2e82-94d6-447e-84d4-28a64b3c19f6",
+                "project_name": "SEO Retainer b0d677",
+                "remaining": 3
+              },
+              {
+                "project_id": "d51eff98-08b4-4f4b-bb52-fab8c0beb313",
+                "project_name": "CLI Project 9f2a2b",
+                "remaining": 3
+              },
+              {
+                "project_id": "094c0241-4527-46e8-9cb3-bb7ee9f963bc",
+                "project_name": "Portal Launch 6c7529",
+                "remaining": 3
+              },
+              {
+                "project_id": "0b79d819-1590-4408-bf61-bccf3d926ee7",
+                "project_name": "SEO Retainer 8a1735",
+                "remaining": 3
+              },
+              {
+                "project_id": "9cd95427-b71f-4d31-8c61-31b204b88cbe",
+                "project_name": "Portal Launch 55d239",
+                "remaining": 3
+              },
+              {
+                "project_id": "69718c2b-b4b3-4343-ac2d-c6d41947a0b8",
+                "project_name": "SEO Retainer 138838",
+                "remaining": 3
+              },
+              {
+                "project_id": "b5c106b4-572c-46f0-8ca0-2b647ad2dbe8",
+                "project_name": "OS Project b44c",
+                "remaining": 2
+              },
+              {
+                "project_id": "235058ca-168e-4212-9de4-4713a5887789",
+                "project_name": "OS Project 3da5",
+                "remaining": 2
+              },
+              {
+                "project_id": "fb350e0b-fcc6-4057-ab03-3efc88cb80aa",
+                "project_name": "Portal Launch 01b65f",
+                "remaining": 3
+              },
+              {
+                "project_id": "99157815-409e-45cb-af7d-8b7387797b38",
+                "project_name": "SEO Retainer d34bf9",
+                "remaining": 3
+              },
+              {
+                "project_id": "27b5dd35-a023-4fb3-87af-7bdaa79c5eff",
+                "project_name": "OS Project b937",
+                "remaining": 2
+              }
+            ]
+          },
+          "security": {
+            "users_total": 1,
+            "api_keys_total": 3,
+            "secrets_total": 3,
+            "backups_total": 3,
+            "backups_restore_tested_total": 3,
+            "security_scans_total": 3,
+            "security_incidents_total": 3,
+            "security_alerts_total": 12,
+            "lockdown_active": 0,
+            "offline_mode_active": 0,
+            "audit_log_integrity_valid": 1
+          },
+          "knowledge": {
+            "indexed_at": "2026-06-10T16:23:29.003951+00:00",
+            "total_entries": 50,
+            "categories": {
+              "ai": 8,
+              "automation": 2,
+              "backend": 7,
+              "business": 3,
+              "clients": 1,
+              "company": 4,
+              "devops": 4,
+              "finance": 2,
+              "frontend": 5,
+              "legal": 2,
+              "lkp": 1,
+              "marketing": 1,
+              "operations": 3,
+              "projects": 1,
+              "security": 1,
+              "seo": 1,
+              "templates": 1,
+              "web": 3
+            },
+            "departments": {
+              "research": 8,
+              "development": 17,
+              "operations": 12,
+              "executive": 4,
+              "infrastructure": 4,
+              "finance": 2,
+              "legal": 2,
+              "security": 1
+            },
+            "statuses": {
+              "active": 50
+            },
+            "trusted_entries": 50,
+            "quarantined_entries": 0,
+            "average_confidence": 0.8474,
+            "average_quality": 0.8108,
+            "outdated_entries": 0,
+            "sources": {
+              "internal": 50,
+              "fastapi": 1,
+              "postgresql": 1,
+              "python": 1,
+              "docker": 1,
+              "kubernetes": 1,
+              "mdn": 2
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "2ada69c8-4dd5-4b08-96b1-5944a7f32253",
+      "mode": "safe",
+      "reviewer": "Phase19",
+      "limit": 80,
+      "created_at": "2026-06-10T16:25:29.914092+00:00",
+      "events_added": 10,
+      "lessons_added": 23,
+      "playbooks_added": 3,
+      "updates_open": 21,
+      "analytics": {
+        "runs_total": 4,
+        "events_total": 39,
+        "lessons_total": 23,
+        "updates_total": 23,
+        "pending_updates": 21,
+        "applied_updates": 2,
+        "playbooks_total": 3,
+        "lesson_kinds": {
+          "failure_pattern": 11,
+          "success_pattern": 12
+        },
+        "coverage": {
+          "developer": {
+            "analysis": {
+              "path": ".",
+              "scanned_at": "2026-06-10T16:25:30.093452+00:00",
+              "total_files": 4389,
+              "top_extensions": {
+                ".json": 3478,
+                ".md": 543,
+                ".py": 162,
+                ".bin": 30,
+                ".tsx": 21,
+                ".enc": 16,
+                ".example": 12,
+                ".sqlite3": 12,
+                ".jsonl": 12,
+                ".lock": 11,
+                ".rmeta": 10,
+                ".d": 10
+              },
+              "languages": [
+                "JSON",
+                "Markdown",
+                "Python",
+                "TypeScript",
+                "TOML",
+                "Rust",
+                "JavaScript"
+              ],
+              "stack": [
+                "Node.js",
+                "Python",
+                "Rust"
+              ],
+              "frameworks": [
+                "FastAPI",
+                "Playwright",
+                "React",
+                "Tauri"
+              ],
+              "manifests": [
+                "Cargo.toml",
+                "package-lock.json",
+                "package.json",
+                "requirements.txt"
+              ],
+              "test_files": 32,
+              "doc_files": 543,
+              "ci_workflows": [],
+              "key_files": [
+                "ROADMAP.md",
+                "README.md",
+                ".pytest_cache/README.md",
+                "apps/brain/README.md",
+                "apps/rust-core/Cargo.toml",
+                "apps/rust-core/README.md",
+                "apps/desktop/README.md",
+                "apps/desktop/package.json",
+                "apps/brain/app/project_manager.py",
+                "apps/brain/app/result_reviewer.py",
+                "apps/brain/app/safety.py",
+                "apps/brain/app/developer_mode.py",
+                "apps/brain/app/schemas.py",
+                "apps/brain/app/approval_engine.py",
+                "apps/brain/app/audit_logger.py",
+                "apps/brain/app/memory_adapters.py",
+                "apps/brain/app/context_builder.py",
+                "apps/brain/app/agent_response.py",
+                "apps/brain/app/agent_loader.py",
+                "apps/brain/app/main.py"
+              ],
+              "repositories": [
+                {
+                  "name": "jarvis",
+                  "path": ".",
+                  "manifests": []
+                }
+              ]
+            },
+            "health": {
+              "score": 86,
+              "grade": "B"
+            },
+            "open_findings": 0,
+            "recommended_tests": [
+              "Run targeted Python unit tests.",
+              "Run frontend build and focused TypeScript or Playwright checks.",
+              "Run cargo check or targeted Rust tests."
+            ]
+          },
+          "business": {
+            "leads_total": 16,
+            "qualified_leads": 16,
+            "proposals_total": 11,
+            "quotations_total": 11,
+            "followups_total": 9,
+            "invoice_reminders_total": 9,
+            "onboarding_total": 9,
+            "blog_drafts_total": 6,
+            "competitor_reports_total": 9,
+            "monthly_reports_total": 8,
+            "lead_channels": {
+              "linkedin": 9,
+              "website": 7
+            },
+            "followup_channels": {
+              "email": 9
+            },
+            "average_lead_score": 85.62
+          },
+          "projects": {
+            "projects_total": 17,
+            "status_counts": {
+              "planned": 17
+            },
+            "category_counts": {
+              "development": 10,
+              "marketing": 6,
+              "operations": 1
+            },
+            "methodology_counts": {
+              "agile": 10,
+              "kanban": 6,
+              "waterfall": 1
+            },
+            "open_blockers": 7,
+            "deadline_risk_projects": 0,
+            "average_health_score": 77.47,
+            "average_risk_score": 35.53,
+            "worklog_hours": 29.0,
+            "burndown": [
+              {
+                "project_id": "a1f14b05-5148-42f3-ba0e-589cb3300479",
+                "project_name": "Portal Launch 0f8805",
+                "remaining": 3
+              },
+              {
+                "project_id": "060a2e82-94d6-447e-84d4-28a64b3c19f6",
+                "project_name": "SEO Retainer b0d677",
+                "remaining": 3
+              },
+              {
+                "project_id": "d51eff98-08b4-4f4b-bb52-fab8c0beb313",
+                "project_name": "CLI Project 9f2a2b",
+                "remaining": 3
+              },
+              {
+                "project_id": "094c0241-4527-46e8-9cb3-bb7ee9f963bc",
+                "project_name": "Portal Launch 6c7529",
+                "remaining": 3
+              },
+              {
+                "project_id": "0b79d819-1590-4408-bf61-bccf3d926ee7",
+                "project_name": "SEO Retainer 8a1735",
+                "remaining": 3
+              },
+              {
+                "project_id": "9cd95427-b71f-4d31-8c61-31b204b88cbe",
+                "project_name": "Portal Launch 55d239",
+                "remaining": 3
+              },
+              {
+                "project_id": "69718c2b-b4b3-4343-ac2d-c6d41947a0b8",
+                "project_name": "SEO Retainer 138838",
+                "remaining": 3
+              },
+              {
+                "project_id": "b5c106b4-572c-46f0-8ca0-2b647ad2dbe8",
+                "project_name": "OS Project b44c",
+                "remaining": 2
+              },
+              {
+                "project_id": "235058ca-168e-4212-9de4-4713a5887789",
+                "project_name": "OS Project 3da5",
+                "remaining": 2
+              },
+              {
+                "project_id": "fb350e0b-fcc6-4057-ab03-3efc88cb80aa",
+                "project_name": "Portal Launch 01b65f",
+                "remaining": 3
+              },
+              {
+                "project_id": "99157815-409e-45cb-af7d-8b7387797b38",
+                "project_name": "SEO Retainer d34bf9",
+                "remaining": 3
+              },
+              {
+                "project_id": "27b5dd35-a023-4fb3-87af-7bdaa79c5eff",
+                "project_name": "OS Project b937",
+                "remaining": 2
+              }
+            ]
+          },
+          "security": {
+            "users_total": 1,
+            "api_keys_total": 4,
+            "secrets_total": 4,
+            "backups_total": 4,
+            "backups_restore_tested_total": 4,
+            "security_scans_total": 4,
+            "security_incidents_total": 4,
+            "security_alerts_total": 22,
+            "lockdown_active": 0,
+            "offline_mode_active": 0,
+            "audit_log_integrity_valid": 1
+          },
+          "knowledge": {
+            "indexed_at": "2026-06-10T16:25:15.676148+00:00",
+            "total_entries": 50,
+            "categories": {
+              "ai": 8,
+              "automation": 2,
+              "backend": 7,
+              "business": 3,
+              "clients": 1,
+              "company": 4,
+              "devops": 4,
+              "finance": 2,
+              "frontend": 5,
+              "legal": 2,
+              "lkp": 1,
+              "marketing": 1,
+              "operations": 3,
+              "projects": 1,
+              "security": 1,
+              "seo": 1,
+              "templates": 1,
+              "web": 3
+            },
+            "departments": {
+              "research": 8,
+              "development": 17,
+              "operations": 12,
+              "executive": 4,
+              "infrastructure": 4,
+              "finance": 2,
+              "legal": 2,
+              "security": 1
+            },
+            "statuses": {
+              "active": 50
+            },
+            "trusted_entries": 50,
+            "quarantined_entries": 0,
+            "average_confidence": 0.8474,
+            "average_quality": 0.8108,
+            "outdated_entries": 0,
+            "sources": {
+              "internal": 50,
+              "fastapi": 1,
+              "postgresql": 1,
+              "python": 1,
+              "docker": 1,
+              "kubernetes": 1,
+              "mdn": 2
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "820fce17-02ce-405f-afa2-0616a130b287",
+      "mode": "safe",
+      "reviewer": "Phase20",
+      "limit": 50,
+      "created_at": "2026-06-10T16:25:31.523716+00:00",
+      "events_added": 10,
+      "lessons_added": 23,
+      "playbooks_added": 3,
+      "updates_open": 21,
+      "analytics": {
+        "runs_total": 5,
+        "events_total": 39,
+        "lessons_total": 23,
+        "updates_total": 23,
+        "pending_updates": 21,
+        "applied_updates": 2,
+        "playbooks_total": 3,
+        "lesson_kinds": {
+          "failure_pattern": 11,
+          "success_pattern": 12
+        },
+        "coverage": {
+          "developer": {
+            "analysis": {
+              "path": ".",
+              "scanned_at": "2026-06-10T16:25:31.677848+00:00",
+              "total_files": 4396,
+              "top_extensions": {
+                ".json": 3485,
+                ".md": 543,
+                ".py": 162,
+                ".bin": 30,
+                ".tsx": 21,
+                ".enc": 16,
+                ".example": 12,
+                ".sqlite3": 12,
+                ".jsonl": 12,
+                ".lock": 11,
+                ".rmeta": 10,
+                ".d": 10
+              },
+              "languages": [
+                "JSON",
+                "Markdown",
+                "Python",
+                "TypeScript",
+                "TOML",
+                "Rust",
+                "JavaScript"
+              ],
+              "stack": [
+                "Node.js",
+                "Python",
+                "Rust"
+              ],
+              "frameworks": [
+                "FastAPI",
+                "Playwright",
+                "React",
+                "Tauri"
+              ],
+              "manifests": [
+                "Cargo.toml",
+                "package-lock.json",
+                "package.json",
+                "requirements.txt"
+              ],
+              "test_files": 32,
+              "doc_files": 543,
+              "ci_workflows": [],
+              "key_files": [
+                "ROADMAP.md",
+                "README.md",
+                ".pytest_cache/README.md",
+                "apps/brain/README.md",
+                "apps/rust-core/Cargo.toml",
+                "apps/rust-core/README.md",
+                "apps/desktop/README.md",
+                "apps/desktop/package.json",
+                "apps/brain/app/project_manager.py",
+                "apps/brain/app/result_reviewer.py",
+                "apps/brain/app/safety.py",
+                "apps/brain/app/developer_mode.py",
+                "apps/brain/app/schemas.py",
+                "apps/brain/app/approval_engine.py",
+                "apps/brain/app/audit_logger.py",
+                "apps/brain/app/memory_adapters.py",
+                "apps/brain/app/context_builder.py",
+                "apps/brain/app/agent_response.py",
+                "apps/brain/app/agent_loader.py",
+                "apps/brain/app/main.py"
+              ],
+              "repositories": [
+                {
+                  "name": "jarvis",
+                  "path": ".",
+                  "manifests": []
+                }
+              ]
+            },
+            "health": {
+              "score": 86,
+              "grade": "B"
+            },
+            "open_findings": 0,
+            "recommended_tests": [
+              "Run targeted Python unit tests.",
+              "Run frontend build and focused TypeScript or Playwright checks.",
+              "Run cargo check or targeted Rust tests."
+            ]
+          },
+          "business": {
+            "leads_total": 17,
+            "qualified_leads": 17,
+            "proposals_total": 11,
+            "quotations_total": 11,
+            "followups_total": 9,
+            "invoice_reminders_total": 9,
+            "onboarding_total": 9,
+            "blog_drafts_total": 6,
+            "competitor_reports_total": 9,
+            "monthly_reports_total": 8,
+            "lead_channels": {
+              "linkedin": 9,
+              "website": 8
+            },
+            "followup_channels": {
+              "email": 9
+            },
+            "average_lead_score": 85.29
+          },
+          "projects": {
+            "projects_total": 18,
+            "status_counts": {
+              "planned": 18
+            },
+            "category_counts": {
+              "development": 11,
+              "marketing": 6,
+              "operations": 1
+            },
+            "methodology_counts": {
+              "agile": 11,
+              "kanban": 6,
+              "waterfall": 1
+            },
+            "open_blockers": 7,
+            "deadline_risk_projects": 0,
+            "average_health_score": 77.72,
+            "average_risk_score": 35.11,
+            "worklog_hours": 29.0,
+            "burndown": [
+              {
+                "project_id": "a1f14b05-5148-42f3-ba0e-589cb3300479",
+                "project_name": "Portal Launch 0f8805",
+                "remaining": 3
+              },
+              {
+                "project_id": "060a2e82-94d6-447e-84d4-28a64b3c19f6",
+                "project_name": "SEO Retainer b0d677",
+                "remaining": 3
+              },
+              {
+                "project_id": "d51eff98-08b4-4f4b-bb52-fab8c0beb313",
+                "project_name": "CLI Project 9f2a2b",
+                "remaining": 3
+              },
+              {
+                "project_id": "094c0241-4527-46e8-9cb3-bb7ee9f963bc",
+                "project_name": "Portal Launch 6c7529",
+                "remaining": 3
+              },
+              {
+                "project_id": "0b79d819-1590-4408-bf61-bccf3d926ee7",
+                "project_name": "SEO Retainer 8a1735",
+                "remaining": 3
+              },
+              {
+                "project_id": "9cd95427-b71f-4d31-8c61-31b204b88cbe",
+                "project_name": "Portal Launch 55d239",
+                "remaining": 3
+              },
+              {
+                "project_id": "69718c2b-b4b3-4343-ac2d-c6d41947a0b8",
+                "project_name": "SEO Retainer 138838",
+                "remaining": 3
+              },
+              {
+                "project_id": "b5c106b4-572c-46f0-8ca0-2b647ad2dbe8",
+                "project_name": "OS Project b44c",
+                "remaining": 2
+              },
+              {
+                "project_id": "235058ca-168e-4212-9de4-4713a5887789",
+                "project_name": "OS Project 3da5",
+                "remaining": 2
+              },
+              {
+                "project_id": "fb350e0b-fcc6-4057-ab03-3efc88cb80aa",
+                "project_name": "Portal Launch 01b65f",
+                "remaining": 3
+              },
+              {
+                "project_id": "99157815-409e-45cb-af7d-8b7387797b38",
+                "project_name": "SEO Retainer d34bf9",
+                "remaining": 3
+              },
+              {
+                "project_id": "27b5dd35-a023-4fb3-87af-7bdaa79c5eff",
+                "project_name": "OS Project b937",
+                "remaining": 2
+              }
+            ]
+          },
+          "security": {
+            "users_total": 1,
+            "api_keys_total": 4,
+            "secrets_total": 4,
+            "backups_total": 4,
+            "backups_restore_tested_total": 4,
+            "security_scans_total": 4,
+            "security_incidents_total": 4,
+            "security_alerts_total": 22,
+            "lockdown_active": 0,
+            "offline_mode_active": 0,
+            "audit_log_integrity_valid": 1
+          },
+          "knowledge": {
+            "indexed_at": "2026-06-10T16:25:31.456719+00:00",
+            "total_entries": 50,
+            "categories": {
+              "ai": 8,
+              "automation": 2,
+              "backend": 7,
+              "business": 3,
+              "clients": 1,
+              "company": 4,
+              "devops": 4,
+              "finance": 2,
+              "frontend": 5,
+              "legal": 2,
+              "lkp": 1,
+              "marketing": 1,
+              "operations": 3,
+              "projects": 1,
+              "security": 1,
+              "seo": 1,
+              "templates": 1,
+              "web": 3
+            },
+            "departments": {
+              "research": 8,
+              "development": 17,
+              "operations": 12,
+              "executive": 4,
+              "infrastructure": 4,
+              "finance": 2,
+              "legal": 2,
+              "security": 1
+            },
+            "statuses": {
+              "active": 50
+            },
+            "trusted_entries": 50,
+            "quarantined_entries": 0,
+            "average_confidence": 0.8474,
+            "average_quality": 0.8108,
+            "outdated_entries": 0,
+            "sources": {
+              "internal": 50,
+              "fastapi": 1,
+              "postgresql": 1,
+              "python": 1,
+              "docker": 1,
+              "kubernetes": 1,
+              "mdn": 2
+            }
+          }
+        }
+      }
     }
   ],
   "events": [
@@ -908,6 +2036,126 @@
       "status": "completed",
       "summary": "Prepare invoice follow-up and finance review 99e116",
       "created_at": "2026-06-10T13:33:45.564774+00:00"
+    },
+    {
+      "id": "d15f7fde-acfe-4aed-830c-b947ee886be7",
+      "fingerprint": "task:90edede0-9d60-47b3-a8ad-6837be85308a:failed",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "90edede0-9d60-47b3-a8ad-6837be85308a",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "failed",
+      "summary": "Failed learning task 73c7a7",
+      "created_at": "2026-06-10T16:23:27.741249+00:00"
+    },
+    {
+      "id": "cbb0ee54-662f-4876-afb1-a05a2bebf25e",
+      "fingerprint": "task:581122cb-ada7-48d6-93c0-621df82b26d9:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "581122cb-ada7-48d6-93c0-621df82b26d9",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Completed learning task aa74d4",
+      "created_at": "2026-06-10T16:23:27.741261+00:00"
+    },
+    {
+      "id": "d1c8dc86-e334-4afd-8cc1-e8ec2b44b42b",
+      "fingerprint": "task:f6590806-2210-4e97-a46d-1c7b246214b5:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "f6590806-2210-4e97-a46d-1c7b246214b5",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Build a Laravel website with SEO and security review 2e8f59",
+      "created_at": "2026-06-10T16:23:27.741266+00:00"
+    },
+    {
+      "id": "c5050022-c851-4977-8bd5-02fbd6ae87a3",
+      "fingerprint": "task:e5d18133-87f2-47f8-aa7d-49b16ffb164a:rejected",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "e5d18133-87f2-47f8-aa7d-49b16ffb164a",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "rejected",
+      "summary": "Delete production files and deploy rollback plan c5c9aa",
+      "created_at": "2026-06-10T16:23:27.741270+00:00"
+    },
+    {
+      "id": "263c37c4-d8d4-4972-91e8-43ed26ced181",
+      "fingerprint": "task:6e4a8201-58a9-48a8-b594-f6b013206cf3:failed",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "6e4a8201-58a9-48a8-b594-f6b013206cf3",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "failed",
+      "summary": "Failed learning task f5a925",
+      "created_at": "2026-06-10T16:25:29.914110+00:00"
+    },
+    {
+      "id": "fe656fd7-af7b-4fa6-b1e1-b9efdbdafc3b",
+      "fingerprint": "task:28f15947-0896-4992-a4ca-f0527d39d58c:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "28f15947-0896-4992-a4ca-f0527d39d58c",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Completed learning task b47dda",
+      "created_at": "2026-06-10T16:25:29.914118+00:00"
+    },
+    {
+      "id": "35d360d9-d92a-4fde-a11c-2996010c7186",
+      "fingerprint": "task:60106967-a9f3-4b24-92a7-1d8f0555a646:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "60106967-a9f3-4b24-92a7-1d8f0555a646",
+      "intent_category": "development",
+      "selected_agent": "Peter",
+      "status": "completed",
+      "summary": "Build a Laravel website with SEO and security review 84cddf",
+      "created_at": "2026-06-10T16:25:29.914124+00:00"
+    },
+    {
+      "id": "3971742c-00ff-4a1b-b71f-f0d2afcbc9f7",
+      "fingerprint": "task:59c0b5e7-0c63-4e86-af4a-d332e7475ec4:rejected",
+      "kind": "task_outcome",
+      "outcome": "failure",
+      "task_id": "59c0b5e7-0c63-4e86-af4a-d332e7475ec4",
+      "intent_category": "infrastructure",
+      "selected_agent": "Nginx",
+      "status": "rejected",
+      "summary": "Delete production files and deploy rollback plan 5a9281",
+      "created_at": "2026-06-10T16:25:29.914130+00:00"
+    },
+    {
+      "id": "2e9e0fe3-43e2-49c0-b6f1-b560fb0e1903",
+      "fingerprint": "task:f49d2917-5042-4e0b-8810-6ad3766af75a:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "f49d2917-5042-4e0b-8810-6ad3766af75a",
+      "intent_category": "marketing",
+      "selected_agent": "Neil",
+      "status": "completed",
+      "summary": "Create a content calendar outline for LKProfessionals ef8a5d",
+      "created_at": "2026-06-10T16:25:29.914135+00:00"
+    },
+    {
+      "id": "a6cad0e6-940f-41c1-862e-abb0bdab49dd",
+      "fingerprint": "task:c96470ba-5bd9-4730-ba9b-9cc4508e3f40:completed",
+      "kind": "task_outcome",
+      "outcome": "success",
+      "task_id": "c96470ba-5bd9-4730-ba9b-9cc4508e3f40",
+      "intent_category": "finance",
+      "selected_agent": "Morgan",
+      "status": "completed",
+      "summary": "Prepare invoice follow-up and finance review 664760",
+      "created_at": "2026-06-10T16:25:29.914139+00:00"
     }
   ],
   "lessons": [
@@ -1214,6 +2462,70 @@
         "task:07c64fb6-51e0-469b-876f-866365bfb129:completed"
       ],
       "created_at": "2026-06-10T13:33:45.564882+00:00"
+    },
+    {
+      "id": "75cf85df-005b-4946-9419-c585cfadd841",
+      "fingerprint": "lesson:task:90edede0-9d60-47b3-a8ad-6837be85308a:failed",
+      "kind": "failure_pattern",
+      "task_id": "90edede0-9d60-47b3-a8ad-6837be85308a",
+      "summary": "Failure pattern detected around Failed learning task 73c7a7. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:90edede0-9d60-47b3-a8ad-6837be85308a:failed"
+      ],
+      "created_at": "2026-06-10T16:23:27.741333+00:00"
+    },
+    {
+      "id": "929e5bac-ebc5-497d-9431-037f24adcaf4",
+      "fingerprint": "lesson:task:e5d18133-87f2-47f8-aa7d-49b16ffb164a:rejected",
+      "kind": "failure_pattern",
+      "task_id": "e5d18133-87f2-47f8-aa7d-49b16ffb164a",
+      "summary": "Failure pattern detected around Delete production files and deploy rollback plan c5c9aa. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:e5d18133-87f2-47f8-aa7d-49b16ffb164a:rejected"
+      ],
+      "created_at": "2026-06-10T16:23:27.741337+00:00"
+    },
+    {
+      "id": "3bda50bf-a0ca-44ac-bfb9-e80a1321c49d",
+      "fingerprint": "lesson:task:6e4a8201-58a9-48a8-b594-f6b013206cf3:failed",
+      "kind": "failure_pattern",
+      "task_id": "6e4a8201-58a9-48a8-b594-f6b013206cf3",
+      "summary": "Failure pattern detected around Failed learning task f5a925. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:6e4a8201-58a9-48a8-b594-f6b013206cf3:failed"
+      ],
+      "created_at": "2026-06-10T16:25:29.914249+00:00"
+    },
+    {
+      "id": "8a1d7f67-3f70-41b0-9ca0-463b924f5798",
+      "fingerprint": "lesson:task:59c0b5e7-0c63-4e86-af4a-d332e7475ec4:rejected",
+      "kind": "failure_pattern",
+      "task_id": "59c0b5e7-0c63-4e86-af4a-d332e7475ec4",
+      "summary": "Failure pattern detected around Delete production files and deploy rollback plan 5a9281. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "review_state": "pending",
+      "sources": [
+        "task:59c0b5e7-0c63-4e86-af4a-d332e7475ec4:rejected"
+      ],
+      "created_at": "2026-06-10T16:25:29.914253+00:00"
     }
   ],
   "updates": [
@@ -1508,6 +2820,25 @@
       "applied_by": "Janon",
       "applied_at": "2026-06-10T13:33:46.895885+00:00",
       "applied_path": "company/self-learning/finance-operating-playbook.md"
+    },
+    {
+      "id": "acca6ec1-1b63-4b5f-a509-7b17c6a16d13",
+      "fingerprint": "update:lesson:task:90edede0-9d60-47b3-a8ad-6837be85308a:failed",
+      "title": "Learning update for failure_pattern",
+      "target_path": "company/self-learning",
+      "review_state": "applied",
+      "content": "Failure pattern detected around Failed learning task 73c7a7. Add approval-aware guardrails, better reproduction notes, and fallback routing.",
+      "tags": [
+        "infrastructure",
+        "failure"
+      ],
+      "created_at": "2026-06-10T16:23:27.761316+00:00",
+      "reviewed_by": "Janon",
+      "reviewed_at": "2026-06-10T16:25:31.446818+00:00",
+      "review_notes": "Looks good",
+      "applied_by": "Janon",
+      "applied_at": "2026-06-10T16:25:31.450608+00:00",
+      "applied_path": "company/self-learning/learning-update-for-failure-pattern.md"
     }
   ],
   "playbooks": [
