@@ -102,3 +102,22 @@ The desktop app lives in `apps/desktop` and is configured for Tauri + React + Ta
 ### Rust Core
 
 The Rust workspace lives in `apps/rust-core` and currently exposes small CLI-oriented crates for future Python integration.
+
+# Jarvis Architecture
+
+## Architecture Target
+## Non-Negotiable Principles
+## System Context
+## Runtime Layers
+## Agent and Organization Layer
+## Task Lifecycle
+## Approval and Risk Layer
+## Memory and Knowledge Layer
+## Tool and Integration Layer
+## Security Layer
+## Event and Observability Layer
+## Persistence Layer
+## Desktop Layer
+## Rust Core Layer
+## Production Architecture Gates
+## Extension Rules

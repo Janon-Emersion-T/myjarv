@@ -29,16 +29,16 @@ class Settings(BaseSettings):
     VOICE_ALLOWED_SPEAKERS: str = "janon,lkp-admin"
     VOICE_EMERGENCY_CONTACT: str = "Janon"
     VOICE_SESSION_TIMEOUT_SECONDS: int = 900
-    SECURITY_SECRET_KEY: str = "jarvis-dev-secret-key"
+    SECURITY_SECRET_KEY: str
     SECURITY_BOOTSTRAP_ADMIN: str = "janon"
-    SECURITY_BOOTSTRAP_PASSWORD: str = "change-me-now"
-    SECURITY_REQUIRE_AUTH: bool = False
+    SECURITY_BOOTSTRAP_PASSWORD: str
+    SECURITY_REQUIRE_AUTH: bool = True
     SECURITY_RATE_LIMIT_WINDOW_SECONDS: int = 60
     SECURITY_RATE_LIMIT_MAX_REQUESTS: int = 240
     HASHICORP_VAULT_ADDR: str | None = None
     CLOUD_SECRET_MANAGER_ENDPOINT: str | None = None
     BACKUP_DIR: str = str(ROOT_DIR / "data" / "backups")
-    PRODUCTION_LOCK_MODE: bool = False
+    PRODUCTION_LOCK_MODE: bool = True
     LOCAL_AUTH_TOKEN: str | None = None
     DEFAULT_LOG_LIMIT: int = 100
 
