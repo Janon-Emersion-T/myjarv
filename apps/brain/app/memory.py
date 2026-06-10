@@ -255,7 +255,7 @@ class MemoryStore:
             params.append(self._now())
         if filters:
             query += " WHERE " + " AND ".join(filters)
-        query += " ORDER BY importance_score DESC, updated_at DESC LIMIT ?"
+        query += " ORDER BY updated_at DESC, importance_score DESC LIMIT ?"
         params.append(limit)
         with self._connect() as connection:
             rows = connection.execute(query, tuple(params)).fetchall()
